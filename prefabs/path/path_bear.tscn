@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://upvk43d8anp0"]
+
+[ext_resource type="Script" uid="uid://cktqc128jci3t" path="res://code/path_node.gd" id="1_hccfk"]
+
+[node name="path_bear" type="Node3D" unique_id=368272810]
+
+[node name="kitchen" type="Marker3D" parent="." unique_id=760898227 node_paths=PackedStringArray("neighbours")]
+script = ExtResource("1_hccfk")
+neighbours = [NodePath("../window_left"), NodePath("../hall_est_up")]
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="window_left" type="Marker3D" parent="." unique_id=1113180259 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1, 0, 1.5)
+script = ExtResource("1_hccfk")
+neighbours = [NodePath("../office"), NodePath("../window_right"), NodePath("../hall_west_up")]
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="window_right" type="Marker3D" parent="." unique_id=863859762 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.952927, 0, 5.7)
+script = ExtResource("1_hccfk")
+neighbours = [NodePath("../window_left"), NodePath("../office"), NodePath("../hall_est_up")]
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="hall_west_up" type="Marker3D" parent="." unique_id=1955760471 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, 0, 9)
+script = ExtResource("1_hccfk")
+neighbours = [NodePath("../toilet"), null]
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="hall_est_up" type="Marker3D" parent="." unique_id=287359151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2, 0, 7.2)
+script = ExtResource("1_hccfk")
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="maze" type="Marker3D" parent="." unique_id=1987174797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2, 0, 14.2)
+script = ExtResource("1_hccfk")
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="swim" type="Marker3D" parent="." unique_id=601240503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1, 0, 17.9)
+script = ExtResource("1_hccfk")
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="toilet" type="Marker3D" parent="." unique_id=1891267481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6000004, 0, 21.5)
+script = ExtResource("1_hccfk")
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="playground" type="Marker3D" parent="." unique_id=602928615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6, 0, 18.5)
+script = ExtResource("1_hccfk")
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="scene" type="Marker3D" parent="." unique_id=255196987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3999996, 0, 31.5)
+script = ExtResource("1_hccfk")
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"
+
+[node name="office" type="Marker3D" parent="." unique_id=620488637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.300001, 0, 2.7000008)
+script = ExtResource("1_hccfk")
+occupation = "bear"
+metadata/_custom_type_script = "uid://cktqc128jci3t"

@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://dprhetlvxpq8d"]
+
+[ext_resource type="Texture2D" uid="uid://dyu3lv2206hci" path="res://pics/loadout.png" id="1_to74f"]
+[ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="2_bo30h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_phlf1"]
+font = ExtResource("2_bo30h")
+font_size = 20
+font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_to74f"]
+font = ExtResource("2_bo30h")
+font_size = 20
+font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="loadout" type="Control" unique_id=1258714916]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="loadout" type="Sprite2D" parent="." unique_id=910677748]
+position = Vector2(627.00006, 422)
+scale = Vector2(0.881733, 0.8625)
+texture = ExtResource("1_to74f")
+
+[node name="flashlight" type="Label" parent="." unique_id=1447778571]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 127.0
+offset_right = 1003.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "фонарик"
+label_settings = SubResource("LabelSettings_phlf1")
+
+[node name="flashlight_charge" type="Label" parent="." unique_id=2084561199]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 162.0
+offset_right = 1079.0
+offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "зарядить
+фонарик"
+label_settings = SubResource("LabelSettings_phlf1")
+
+[node name="pc" type="Label" parent="." unique_id=53843804]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 553.0
+offset_right = 639.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "компьютер"
+label_settings = SubResource("LabelSettings_phlf1")
+horizontal_alignment = 1
+
+[node name="left" type="Label" parent="." unique_id=2016775703]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 521.0
+offset_right = 471.0
+offset_bottom = 564.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "лево"
+label_settings = SubResource("LabelSettings_phlf1")
+
+[node name="right" type="Label" parent="." unique_id=1843135621]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 544.0
+offset_right = 370.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "право"
+label_settings = SubResource("LabelSettings_phlf1")
+
+[node name="under" type="Label" parent="." unique_id=1584035122]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 586.0
+offset_right = 471.0
+offset_bottom = 629.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "прятаться"
+label_settings = SubResource("LabelSettings_to74f")
+horizontal_alignment = 1
+
+[node name="light" type="Label" parent="." unique_id=2049199182]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 282.0
+offset_right = 472.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "свет
+"
+label_settings = SubResource("LabelSettings_to74f")
+
+[node name="scheme" type="Label" parent="." unique_id=1024024686]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 231.0
+offset_right = 518.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "схема"
+label_settings = SubResource("LabelSettings_to74f")
+
+[node name="cam" type="Label" parent="." unique_id=1887318306]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 362.0
+offset_right = 235.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "cam"
+label_settings = SubResource("LabelSettings_to74f")
+horizontal_alignment = 2
+
+[node name="peek" type="Label" parent="." unique_id=1164815167]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 391.0
+offset_right = 251.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+text = "peek"
+label_settings = SubResource("LabelSettings_to74f")
+horizontal_alignment = 2
+
+[node name="flashlight2" type="Line2D" parent="." unique_id=144164040]
+position = Vector2(0, 9.834251)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(903, 367, 903, 139.545)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="flashligh_charge" type="Line2D" parent="." unique_id=1960568701]
+position = Vector2(46.999996, 7)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(903, 367, 903, 202.225)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="pc2" type="Line2D" parent="." unique_id=1249714544]
+position = Vector2(-368.99997, 131.4169)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(903, 367, 903, 439.185)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="light2" type="Line2D" parent="." unique_id=1203786386]
+position = Vector2(-541, -55.999996)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(903, 367, 903, 473.675)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="cam2" type="Line2D" parent="." unique_id=600668233]
+position = Vector2(-584, -87)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(818, 473.675, 903, 473.675)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="peek2" type="Line2D" parent="." unique_id=1499073037]
+position = Vector2(-568, -56.999996)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(818, 473.675, 903, 473.675)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="scheme2" type="Line2D" parent="." unique_id=1152555080]
+position = Vector2(-526, -108)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(903, 367, 903, 493.37)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="right2" type="Line2D" parent="." unique_id=1588509868]
+position = Vector2(-503, 74.000015)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(903, 367, 903, 462.55)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="left2" type="Line2D" parent="." unique_id=171251558]
+position = Vector2(-561.495, 74)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(903, 367, 903, 485.765)
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)
+
+[node name="under2" type="Line2D" parent="." unique_id=506600169]
+position = Vector2(-532.735, 74)
+scale = Vector2(1, 0.97391444)
+points = PackedVector2Array(903, 367, 903, 528.865)
+closed = true
+width = 6.0
+default_color = Color(0.972549, 1, 0.44705883, 1)

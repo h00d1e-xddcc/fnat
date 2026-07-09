@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cju1tnaihyves"]
+
+[sub_resource type="Shader" id="Shader_6trwc"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.6.3.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_prepass_alpha, diffuse_toon;
+
+instance uniform vec4 albedo : source_color;
+instance uniform float em = 0.0;
+
+void fragment() {
+    ALBEDO = albedo.rgb;
+	if (albedo.a != 255.0) ALPHA = albedo.a;
+	if (em != 0.0) {
+		EMISSION.rgb = albedo.rgb;
+		EMISSION.s = em;
+	}
+}"
+
+[resource]
+resource_name = "color_pallete.001"
+render_priority = 0
+shader = SubResource("Shader_6trwc")

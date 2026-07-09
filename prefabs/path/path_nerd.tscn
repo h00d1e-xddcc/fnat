@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://babo7flsiv4a6"]
+
+[ext_resource type="Script" uid="uid://cktqc128jci3t" path="res://code/path_node.gd" id="1_qdhoa"]
+
+[node name="path_nerd" type="Node3D" unique_id=585619140]
+
+[node name="arcade" type="Marker3D" parent="." unique_id=1022318393 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(0.8660255, 0, 0.50000006, 0, 1.0000001, 0, -0.50000006, 0, 0.8660255, -24.635006, -5.960465e-08, 7.993003)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../jeffry"), NodePath("../toilet"), NodePath("../hall_west_down")]
+pose = Array[String](["tpose", "peta", "sniper", "look"])
+flag = "door"
+occupation = "nerd"
+
+[node name="stage_view" type="Marker3D" parent="." unique_id=2134217283 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -12.675144, -5.960465e-08, 12.984881)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../hall_west_down"), NodePath("../backstage")]
+pose = Array[String](["tpose", "peta", "skeletAction"])
+occupation = "nerd"
+
+[node name="hall_west_down" type="Marker3D" parent="." unique_id=440604006 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(0.70710677, 0, -0.7071069, 0, 1.0000001, 0, 0.7071069, 0, 0.70710677, -19.56295, -5.960465e-08, 9.669451)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../stage_view"), NodePath("../downstairs"), NodePath("../backstage"), NodePath("../arcade"), NodePath("../toilet")]
+pose = Array[String](["pootis_pow", "lotos", "engage"])
+flag = "door"
+occupation = "nerd"
+
+[node name="backstage" type="Marker3D" parent="." unique_id=1476845934 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -11.572246, -5.960465e-08, 21.931131)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../stage_view"), NodePath("../downstairs")]
+occupation = "nerd"
+
+[node name="downstairs" type="Marker3D" parent="." unique_id=2006526985 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -21.684599, -5.960465e-08, 18.244247)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../arcade"), NodePath("../hall_west_down")]
+occupation = "nerd"
+
+[node name="jeffry" type="Marker3D" parent="." unique_id=1094932556 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -25.721464, -5.960465e-08, -2.354548)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../arcade"), NodePath("../vent_toilet")]
+flag = "door"
+occupation = "nerd"
+
+[node name="toilet" type="Marker3D" parent="." unique_id=241524657 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.7071066, 0, 0.70710695, 0, 1.0000001, 0, -0.70710695, 0, -0.7071066, -12.809012, -5.960465e-08, -2.6407232)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../hall_west_up"), NodePath("../playground"), NodePath("../vent_toilet")]
+pose = Array[String](["peta", "lotos", "pootis_pow", "guitar"])
+occupation = "nerd"
+
+[node name="vent_toilet" type="Marker3D" parent="." unique_id=1909852303 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.7071066, 0, 0.70710695, 0, 1.0000001, 0, -0.70710695, 0, -0.7071066, -16.75736, -5.960465e-08, -9.739113)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../jeffry"), NodePath("../kitchen"), NodePath("../hall_west_up")]
+flag = "vent"
+occupation = "nerd"
+
+[node name="kitchen" type="Marker3D" parent="." unique_id=1043212549 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.7071066, 0, 0.70710695, 0, 1.0000001, 0, -0.70710695, 0, -0.7071066, -15.75168, -5.960465e-08, -20.840786)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../fire_exit")]
+flag = "vent"
+occupation = "nerd"
+
+[node name="fire_exit" type="Marker3D" parent="." unique_id=1538419857 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.7071066, 0, 0.70710695, 0, 1.0000001, 0, -0.70710695, 0, -0.7071066, -6.1492386, -5.960465e-08, -21.904694)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../window_right"), NodePath("../hall_west_up")]
+pose = Array[String](["guitar", "tpose", "peta", "sniper", "dab"])
+flag = "vent"
+occupation = "nerd"
+
+[node name="staff" type="Marker3D" parent="." unique_id=77313200 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.7071066, 0, 0.70710695, 0, 1.0000001, 0, -0.70710695, 0, -0.7071066, -1.4571362, -5.960465e-08, -23.241398)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../vent_office"), NodePath(".")]
+flag = "vent"
+occupation = "nerd"
+
+[node name="playground" type="Marker3D" parent="." unique_id=432918221 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 3.2728944, -5.960465e-08, 3.417225)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../meza")]
+flag = "door"
+occupation = "nerd"
+
+[node name="meza" type="Marker3D" parent="." unique_id=625139876 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -4.4098783, -5.960465e-08, -9.619256)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../hall_west_up")]
+flag = "vent"
+occupation = "nerd"
+
+[node name="hall_west_up" type="Marker3D" parent="." unique_id=1943048346 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1.0000001, 0, 1.0000001, 0, -4.3711392e-08, -6.1493073, -5.364418e-07, -8.695408)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../window_right"), NodePath("../hall_est_up")]
+pose = Array[String](["dab", "tpose", "mrbeast", "reference"])
+flag = "vent"
+occupation = "nerd"
+
+[node name="window_right" type="Marker3D" parent="." unique_id=468901109 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, -3.5527137e-15, 0, 1.0000001, 0, 3.5527137e-15, 0, 1.0000001, -2.1258762, -5.960465e-08, -14.299972)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../office")]
+pose = Array[String](["reference", "dab", "mrbeast", "sniper"])
+flag = "window"
+occupation = "nerd"
+
+[node name="hall_est_up" type="Marker3D" parent="." unique_id=378539000 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 1.6980655, -5.960465e-08, -14.1300535)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../hall_west_up"), NodePath("../parts_and_service")]
+pose = Array[String](["tpose"])
+flag = "door"
+occupation = "nerd"
+
+[node name="parts_and_service" type="Marker3D" parent="." unique_id=1067450369 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 7.9752216, -5.960465e-08, -18.714973)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../vent_office")]
+pose = Array[String](["lotos", "dab", "reference", "pootis_pow"])
+flag = "door"
+occupation = "nerd"
+
+[node name="vent_office" type="Marker3D" parent="." unique_id=791927333 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 1.1339321, -5.960465e-08, -18.303017)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../office")]
+flag = "vent"
+occupation = "nerd"
+
+[node name="office" type="Marker3D" parent="." unique_id=1816012588 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -3.5724483, -5.960465e-08, -15.616497)
+script = ExtResource("1_qdhoa")
+neighbours = [NodePath("../downstairs")]
+pose = Array[String](["reference", "pootis_pow", "dab"])
+flag = "office"
+occupation = "nerd"

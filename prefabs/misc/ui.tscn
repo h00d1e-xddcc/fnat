@@ -1,0 +1,480 @@
+[gd_scene format=3 uid="uid://dlne2diiv70gw"]
+
+[ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="1_8bix8"]
+[ext_resource type="Texture2D" uid="uid://dys8mmluxcuvv" path="res://pics/map.png" id="2_mhwow"]
+[ext_resource type="Texture2D" uid="uid://co5fnl16y5p22" path="res://pics/bootscreen.png" id="3_i4vt5"]
+[ext_resource type="Texture2D" uid="uid://bsk45r67qn7g2" path="res://pics/bolt.png" id="4_5u5yk"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mhwow"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdd1f"]
+font = ExtResource("1_8bix8")
+font_size = 53
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdd1f"]
+bg_color = Color(0.3779188, 0.3779189, 0.37791875, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="Gradient" id="Gradient_5u5yk"]
+colors = PackedColorArray(0.15686275, 0.039215688, 0.15686275, 1, 0.5647059, 0.8784314, 0.69411767, 1)
+metadata/_snap_count = 34
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g6d76"]
+noise_type = 2
+frequency = 0.0176
+fractal_type = 2
+fractal_octaves = 2
+fractal_lacunarity = 2.275
+cellular_distance_function = 1
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_amplitude = 10.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qdm3c"]
+width = 1152
+height = 648
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_g6d76")
+color_ramp = SubResource("Gradient_5u5yk")
+
+[node name="ui" type="Control" unique_id=927469561]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="back" type="ColorRect" parent="." unique_id=874011662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08274146, 0.08274145, 0.08274143, 1)
+
+[node name="cam" type="TextureRect" parent="." unique_id=1858130358]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_mhwow")
+
+[node name="noise" type="ColorRect" parent="cam" unique_id=1283423652]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07683582, 0.07683582, 0.07683582, 1)
+
+[node name="audio" type="Label" parent="." unique_id=1174151964]
+visible = false
+layout_mode = 0
+offset_left = 241.0
+offset_top = 480.0
+offset_right = 771.0
+offset_bottom = 533.0
+text = "audio only"
+label_settings = SubResource("LabelSettings_vdd1f")
+
+[node name="scheme" type="Node2D" parent="." unique_id=1092765403]
+position = Vector2(826.5, 327)
+scale = Vector2(0.6268518, 0.57592595)
+
+[node name="shock" type="HBoxContainer" parent="scheme" unique_id=2132131354]
+offset_left = -1178.1094
+offset_top = -253.50479
+offset_right = -1128.1094
+offset_bottom = -203.50479
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="chimera" type="Button" parent="scheme/shock" unique_id=1793139134]
+modulate = Color(0.90588236, 0.30588236, 0.37254903, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+icon = ExtResource("4_5u5yk")
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="noise" type="Button" parent="scheme/shock" unique_id=592480936]
+modulate = Color(0.5882353, 0.6784314, 0.90588236, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+icon = ExtResource("4_5u5yk")
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="nerd" type="Button" parent="scheme/shock" unique_id=1680293934]
+modulate = Color(0.90588236, 0.8156863, 0.54901963, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+icon = ExtResource("4_5u5yk")
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="bear" type="Button" parent="scheme/shock" unique_id=1279419411]
+modulate = Color(0.5647059, 0.8784314, 0.69411767, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+icon = ExtResource("4_5u5yk")
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="endo" type="Button" parent="scheme/shock" unique_id=459348181]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+icon = ExtResource("4_5u5yk")
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="buttons" type="VBoxContainer" parent="scheme" unique_id=1296010987]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1179.7047
+offset_top = 293.4405
+offset_right = -891.7047
+offset_bottom = 361.4405
+grow_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="mini_game" type="Button" parent="scheme/buttons" unique_id=576102964]
+visible = false
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+text = "мини  игра"
+
+[node name="play_sound" type="Button" parent="scheme/buttons" unique_id=1954867843]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/icon_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+text = "bait"
+
+[node name="ping_pong" type="Button" parent="scheme/buttons" unique_id=787834422]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/icon_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+text = "ping_pong"
+
+[node name="info" type="Label" parent="scheme" unique_id=1218901319]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1179.7046
+offset_top = -378.52087
+offset_right = -257.6366
+offset_bottom = -311.52087
+grow_horizontal = 0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 32
+text = "room > fire exit"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="map" type="Sprite2D" parent="scheme" unique_id=2014552017]
+texture_filter = 1
+texture = ExtResource("2_mhwow")
+
+[node name="fire_exit" type="Button" parent="scheme" unique_id=739321568]
+offset_left = -80.561295
+offset_top = -517.4276
+offset_right = -21.536148
+offset_bottom = -467.0739
+
+[node name="hallway" type="Button" parent="scheme" unique_id=384169104]
+offset_left = 308.68542
+offset_top = -263.9228
+offset_right = 367.71057
+offset_bottom = -213.56909
+
+[node name="parts_and_service" type="Button" parent="scheme" unique_id=424230723]
+offset_left = 319.85236
+offset_top = -390.67523
+offset_right = 378.87753
+offset_bottom = -340.32153
+
+[node name="ware" type="Button" parent="scheme" unique_id=978602677]
+offset_left = 380.47272
+offset_top = -232.6688
+offset_right = 439.49786
+offset_bottom = -182.3151
+
+[node name="kitchen" type="Button" parent="scheme" unique_id=213521290]
+offset_left = -270.3988
+offset_top = -449.7106
+offset_right = -211.37366
+offset_bottom = -399.3569
+
+[node name="backstage" type="Button" parent="scheme" unique_id=1580844858]
+offset_left = -327.82867
+offset_top = 465.3376
+offset_right = -268.80353
+offset_bottom = 515.6913
+
+[node name="playground" type="Button" parent="scheme" unique_id=678400217]
+offset_left = 16.750381
+offset_top = -10.418018
+offset_right = 75.77553
+offset_bottom = 39.93568
+
+[node name="enter" type="Button" parent="scheme" unique_id=514904095]
+offset_left = 351.75778
+offset_top = 272.6045
+offset_right = 410.78293
+offset_bottom = 322.9582
+
+[node name="toilet" type="Button" parent="scheme" unique_id=1113415746]
+offset_left = -315.0665
+offset_top = 45.144688
+offset_right = -256.04135
+offset_bottom = 95.49838
+
+[node name="main_stage" type="Button" parent="scheme" unique_id=677841548]
+offset_left = -244.87444
+offset_top = 210.09647
+offset_right = -185.84929
+offset_bottom = 260.45016
+
+[node name="arcade" type="Button" parent="scheme" unique_id=1178469586]
+offset_left = -463.4269
+offset_top = 210.09647
+offset_right = -404.40176
+offset_bottom = 260.4502
+
+[node name="jeffry" type="Button" parent="scheme" unique_id=228160658]
+offset_left = -453.8553
+offset_top = -123.27974
+offset_right = -394.83014
+offset_bottom = -72.92604
+
+[node name="label" type="HBoxContainer" parent="." unique_id=2132759669]
+layout_mode = 1
+offset_left = 87.0
+offset_top = 20.0
+offset_right = 615.0
+offset_bottom = 60.0
+theme_override_constants/separation = 28
+
+[node name="cam" type="Button" parent="label" unique_id=1880539845]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 28
+text = "cam"
+flat = true
+icon_alignment = 1
+
+[node name="scheme" type="Button" parent="label" unique_id=1391376075]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 28
+text = "sceme
+"
+flat = true
+icon_alignment = 1
+
+[node name="terminal" type="Button" parent="label" unique_id=1219891531]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 28
+text = "terminal
+"
+flat = true
+icon_alignment = 1
+
+[node name="time" type="Label" parent="." unique_id=2007929098]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -266.0
+offset_top = 16.0
+offset_right = -10.0
+offset_bottom = 83.0
+grow_horizontal = 0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 32
+text = "1 ночь
+12 пн"
+horizontal_alignment = 2
+autowrap_mode = 1
+autowrap_trim_flags = 128
+
+[node name="status" type="Label" parent="." unique_id=1588223738]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -84.0
+offset_right = 304.0
+offset_bottom = -17.0
+grow_vertical = 0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 32
+text = "трата 1.75
+заряд 57"
+
+[node name="booting" type="TextureRect" parent="." unique_id=1400849281]
+visible = false
+layout_mode = 0
+offset_right = 970.0
+offset_bottom = 444.0
+texture = SubResource("NoiseTexture2D_qdm3c")
+
+[node name="texture_rect" type="TextureRect" parent="booting" unique_id=458063073]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i4vt5")

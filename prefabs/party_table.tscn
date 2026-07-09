@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ciermrei2cxg3"]
+
+[ext_resource type="ArrayMesh" uid="uid://cp1vubtlfleot" path="res://prefabs/mesh/fnat_table_1_3.res" id="1_1ooh3"]
+[ext_resource type="ArrayMesh" uid="uid://1ib2fk1d3cj3" path="res://prefabs/mesh/fnat_chair.res" id="2_88nsa"]
+[ext_resource type="ArrayMesh" uid="uid://dqf1cfkconl1r" path="res://prefabs/mesh/fnat_light.res" id="3_88nsa"]
+[ext_resource type="ArrayMesh" uid="uid://b4jnxsbpptkxe" path="res://prefabs/mesh/fnat_cup.res" id="4_fnf2g"]
+[ext_resource type="ArrayMesh" uid="uid://ymedem8sfpbv" path="res://prefabs/mesh/fnat_hat.res" id="5_smqtf"]
+
+[node name="party_table" type="MeshInstance3D" unique_id=150319818]
+transform = Transform3D(1.4932748, 0, 0, 0, 1.7267036, 0, 0, 0, 1.4932748, 0, 0, 0)
+mesh = ExtResource("1_1ooh3")
+
+[node name="fnat_chair" type="MeshInstance3D" parent="." unique_id=733198132]
+transform = Transform3D(-2.3360691e-08, 0, -0.5344303, 0, 0.5344303, 0, 0.5344303, 0, -2.3360691e-08, -0.4000001, 0, 0.40000057)
+mesh = ExtResource("2_88nsa")
+
+[node name="fnat_chair2" type="MeshInstance3D" parent="." unique_id=663676382]
+transform = Transform3D(-2.3360691e-08, 0, -0.5344303, 0, 0.5344303, 0, 0.5344303, 0, -2.3360691e-08, -0.4000001, 0, -0.24000025)
+mesh = ExtResource("2_88nsa")
+
+[node name="fnat_chair3" type="MeshInstance3D" parent="." unique_id=2016164417]
+transform = Transform3D(7.008207e-08, 0, 0.5344303, 0, 0.5344303, 0, -0.5344303, 0, 7.008207e-08, 0.3199997, 0, -0.2399993)
+mesh = ExtResource("2_88nsa")
+
+[node name="fnat_chair4" type="MeshInstance3D" parent="." unique_id=1586517397]
+transform = Transform3D(7.008207e-08, 0, 0.5344303, 0, 0.5344303, 0, -0.5344303, 0, 7.008207e-08, 0.3199997, 0, 0.40000057)
+mesh = ExtResource("2_88nsa")
+
+[node name="fnat_light" type="MeshInstance3D" parent="." unique_id=2144154629]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.5015998, 0)
+mesh = ExtResource("3_88nsa")
+
+[node name="fnat_cup" type="MeshInstance3D" parent="." unique_id=743756392]
+transform = Transform3D(0.6936, 0, 0, 0, 0.6936, 0, 0, 0, 0.6936, -0.024614906, 0.6200394, 0.34999463)
+instance_shader_parameters/coloring = Color(0.5882353, 0.6784314, 0.90588236, 1)
+mesh = ExtResource("4_fnf2g")
+
+[node name="fnat_cup2" type="MeshInstance3D" parent="." unique_id=965816642]
+transform = Transform3D(0.6936, 0, 0, 0, 0.6936, 0, 0, 0, 0.6936, -0.21692033, 0.6200394, -0.4984003)
+instance_shader_parameters/coloring = Color(0.90588236, 0.30588236, 0.37254903, 1)
+mesh = ExtResource("4_fnf2g")
+
+[node name="fnat_hat" type="MeshInstance3D" parent="." unique_id=1356887813]
+transform = Transform3D(0.56568545, 0, 0.56568545, 0, 0.8, 0, -0.56568545, 0, 0.56568545, 0.16985653, 0.62369215, 0.110240296)
+instance_shader_parameters/coloring = Color(0.90588236, 0.30588236, 0.37254903, 1)
+mesh = ExtResource("5_smqtf")

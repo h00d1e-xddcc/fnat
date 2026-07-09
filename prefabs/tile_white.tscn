@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dyvh6r7wneo3b"]
+
+[ext_resource type="Material" uid="uid://do6s3sdsxm7se" path="res://resources/materials/floor.tres" id="1_85sta"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ylo7o"]
+center_offset = Vector3(1, 0, 1)
+
+[node name="tile" type="MeshInstance3D" unique_id=1886201623]
+layers = 3
+material_override = ExtResource("1_85sta")
+instance_shader_parameters/add_color = Color(1, 1, 1, 1)
+mesh = SubResource("PlaneMesh_ylo7o")

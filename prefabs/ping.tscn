@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://5xklnlidts8x"]
+
+[ext_resource type="Material" uid="uid://cju1tnaihyves" path="res://resources/materials/solid.tres" id="1_7vrjo"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gdi43"]
+top_radius = 1.0
+bottom_radius = 1.0
+radial_segments = 10
+rings = 0
+
+[node name="mesh_instance_3d" type="MeshInstance3D" unique_id=2039713968]
+layers = 4
+mesh = SubResource("CylinderMesh_gdi43")
+surface_material_override/0 = ExtResource("1_7vrjo")

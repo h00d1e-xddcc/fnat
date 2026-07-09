@@ -1,0 +1,17 @@
+[gd_resource type="Environment" format=3 uid="uid://dsyhpkuuvqa2f"]
+
+[sub_resource type="Sky" id="Sky_4sl7s"]
+
+[resource]
+background_mode = 2
+background_color = Color(0.3198733, 0.31987324, 0.31987324, 1)
+sky = SubResource("Sky_4sl7s")
+sky_custom_fov = 29.0
+ambient_light_source = 2
+ambient_light_color = Color(0.4140658, 0.4140658, 0.4140657, 1)
+tonemap_agx_white = 2.0
+tonemap_agx_contrast = 1.0
+adjustment_enabled = true
+adjustment_brightness = 0.32
+adjustment_contrast = 0.92
+adjustment_saturation = 0.3

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://c70gr3sxaisry"]
+
+[ext_resource type="Script" uid="uid://2ajjnaepr1td" path="res://code/screen.gd" id="1_86wwx"]
+[ext_resource type="PackedScene" uid="uid://dlne2diiv70gw" path="res://prefabs/misc/ui.tscn" id="2_y2f56"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03q50"]
+size = Vector3(0.766, 0.06, 0.46)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ev6ek"]
+viewport_path = NodePath("sub")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2f56"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ev6ek")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bia8q"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_y2f56")
+size = Vector2(0.766, 0.46)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lx5rw"]
+
+[sub_resource type="CameraTexture" id="CameraTexture_dgndv"]
+
+[node name="screen" type="StaticBody3D" unique_id=1479514998 node_paths=PackedStringArray("status", "time", "info", "sub", "mesh", "cam", "scheme", "booting", "sfx", "noise", "noise_sfx")]
+script = ExtResource("1_86wwx")
+status = NodePath("sub/ui/status")
+time = NodePath("sub/ui/time")
+info = NodePath("sub/ui/scheme/info")
+sub = NodePath("sub")
+mesh = NodePath("mesh")
+cam = NodePath("sub/ui/cam")
+scheme = NodePath("sub/ui/scheme")
+booting = NodePath("sub/ui/booting")
+sfx = NodePath("sfx")
+noise = NodePath("sub/ui/cam/noise")
+noise_sfx = NodePath("noise")
+
+[node name="collision" type="CollisionShape3D" parent="." unique_id=1015772746]
+transform = Transform3D(0.99999994, -2.9802322e-08, -1.3322676e-15, -1.4901163e-08, 0.99999994, 3.6879621e-31, 3.5527137e-15, -2.1316282e-14, 1, 0, -0.029000003, 0)
+shape = SubResource("BoxShape3D_03q50")
+
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=630072916]
+transform = Transform3D(1, 1.4901163e-08, -3.552714e-15, -1.4901163e-08, 1, 2.1316282e-14, 3.5527145e-15, -2.1316282e-14, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_bia8q")
+
+[node name="sfx" type="AudioStreamPlayer3D" parent="." unique_id=2121313411]
+
+[node name="noise" type="AudioStreamPlayer3D" parent="." unique_id=743127527]
+
+[node name="sub" type="SubViewport" parent="." unique_id=874640317]
+size = Vector2i(1152, 648)
+
+[node name="ui" parent="sub" unique_id=927469561 instance=ExtResource("2_y2f56")]
+
+[node name="cam" parent="sub/ui" index="1" unique_id=1858130358]
+texture = SubResource("ViewportTexture_lx5rw")
+
+[node name="noise" parent="sub/ui/cam" index="0" unique_id=1283423652]
+visible = true
+
+[node name="map" parent="sub/ui/scheme" parent_id_path=PackedInt32Array(927469561, 1092765403) index="3" unique_id=2014552017]
+texture = SubResource("CameraTexture_dgndv")
+
+[connection signal="pressed" from="sub/ui/scheme/shock/chimera" to="." method="shock" binds= [&"chimera"]]
+[connection signal="pressed" from="sub/ui/scheme/shock/noise" to="." method="shock" binds= [&"noise"]]
+[connection signal="pressed" from="sub/ui/scheme/shock/nerd" to="." method="shock" binds= [&"nerd"]]
+[connection signal="pressed" from="sub/ui/scheme/shock/bear" to="." method="shock" binds= [&"bear"]]
+[connection signal="pressed" from="sub/ui/scheme/shock/endo" to="." method="shock" binds= [&"endo"]]
+[connection signal="pressed" from="sub/ui/scheme/buttons/play_sound" to="." method="_on_play_sound_pressed"]
+[connection signal="pressed" from="sub/ui/scheme/buttons/ping_pong" to="." method="_on_ping_pong_pressed"]
+[connection signal="pressed" from="sub/ui/scheme/fire_exit" to="." method="_pressed" binds= [&"fire_exit"]]
+[connection signal="pressed" from="sub/ui/scheme/hallway" to="." method="_pressed" binds= [&"hallway"]]
+[connection signal="pressed" from="sub/ui/scheme/parts_and_service" to="." method="_pressed" binds= [&"parts_and_service"]]
+[connection signal="pressed" from="sub/ui/scheme/ware" to="." method="_pressed" binds= [&"ware"]]
+[connection signal="pressed" from="sub/ui/scheme/kitchen" to="." method="_pressed" binds= [&"kitchen"]]
+[connection signal="pressed" from="sub/ui/scheme/backstage" to="." method="_pressed" binds= [&"backstage"]]
+[connection signal="pressed" from="sub/ui/scheme/playground" to="." method="_pressed" binds= [&"playground"]]
+[connection signal="pressed" from="sub/ui/scheme/enter" to="." method="_pressed" binds= [&"enter"]]
+[connection signal="pressed" from="sub/ui/scheme/toilet" to="." method="_pressed" binds= [&"toilet"]]
+[connection signal="pressed" from="sub/ui/scheme/main_stage" to="." method="_pressed" binds= [&"main_stage"]]
+[connection signal="pressed" from="sub/ui/scheme/arcade" to="." method="_pressed" binds= [&"arcade"]]
+[connection signal="pressed" from="sub/ui/scheme/jeffry" to="." method="_pressed" binds= [&"jeffry"]]
+[connection signal="pressed" from="sub/ui/label/cam" to="." method="_on_cam_pressed"]
+[connection signal="pressed" from="sub/ui/label/scheme" to="." method="_on_scheme_pressed"]
+
+[editable path="sub/ui"]

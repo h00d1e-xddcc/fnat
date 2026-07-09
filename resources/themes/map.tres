@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bvdxiwlaha7f5"]
+
+[ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="1_lx2j6"]
+
+[resource]
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 26
+Label/fonts/font = ExtResource("1_lx2j6")

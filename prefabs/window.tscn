@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b7dexg7f8r2gi"]
+
+[ext_resource type="Material" uid="uid://cju1tnaihyves" path="res://resources/materials/solid.tres" id="2_pc82h"]
+[ext_resource type="ArrayMesh" uid="uid://b7milqfb0xs33" path="res://prefabs/mesh/fnat_window.res" id="3_krkvt"]
+[ext_resource type="Texture2D" uid="uid://bx2g8enw6snml" path="res://pics/wall.png" id="3_pc82h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8eb8i"]
+albedo_texture = ExtResource("3_pc82h")
+uv1_scale = Vector3(1.5, 0.3, 1.5)
+uv1_offset = Vector3(0.5, 0, 0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_krkvt"]
+size = Vector2(1, 3)
+center_offset = Vector3(0.5, 0, -1.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rgun0"]
+size = Vector2(1, 3)
+center_offset = Vector3(0.5, 0, -1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8eb8i"]
+material = ExtResource("2_pc82h")
+size = Vector3(1, 0.32, 0.04)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pc82h"]
+size = Vector3(0.15, 1.55, 3.45)
+
+[node name="window" type="Node3D" unique_id=2111428700]
+
+[node name="wall" type="MeshInstance3D" parent="." unique_id=9586464]
+transform = Transform3D(0.7208, 2.670635e-07, -1.0469703e-14, 0, -4.8738187e-08, -1, -2.1266936e-07, 1.1149998, -4.371139e-08, -3.4925054e-07, 0, 0)
+layers = 3
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_krkvt")
+
+[node name="walls" type="MeshInstance3D" parent="wall" unique_id=1693352975]
+transform = Transform3D(-1, 8.742276e-08, -4.260828e-15, -8.742278e-08, -1, 9.747639e-08, 4.260828e-15, 9.747639e-08, 1, 1, -0.29999995, 1.4621449e-08)
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_rgun0")
+
+[node name="wall3" type="MeshInstance3D" parent="." unique_id=867731314]
+transform = Transform3D(3.876691, 7.590134e-06, -6.903307e-14, 0, -4.8738197e-08, -0.232, -9.128174e-07, 1.115, -1.0141042e-08, -3.4925054e-07, 0, 0)
+layers = 3
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_krkvt")
+
+[node name="walls" type="MeshInstance3D" parent="wall3" unique_id=114699609]
+transform = Transform3D(-1, 8.742276e-08, -4.260828e-15, -8.742278e-08, -1, 9.747639e-08, 4.260828e-15, 9.747639e-08, 1, 1, -0.29999995, 1.4621449e-08)
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_rgun0")
+
+[node name="wall4" type="MeshInstance3D" parent="." unique_id=878691190]
+transform = Transform3D(3.876691, 7.590134e-06, -6.903307e-14, 0, -4.8738197e-08, -0.232, -9.128174e-07, 1.115, -1.0141042e-08, 0.09999965, 2.3, 0)
+layers = 3
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_krkvt")
+
+[node name="walls" type="MeshInstance3D" parent="wall4" unique_id=1408422777]
+transform = Transform3D(-1, 8.742276e-08, -4.260828e-15, -8.742278e-08, -1, 9.747639e-08, 4.260828e-15, 9.747639e-08, 1, 1, -0.29999995, 1.4621449e-08)
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_rgun0")
+
+[node name="wall2" type="MeshInstance3D" parent="." unique_id=1646822082]
+transform = Transform3D(-0.3286848, -1.2178096e-07, 4.7741847e-15, 0, -4.8738187e-08, -1, -2.1266936e-07, 1.1149998, -4.371139e-08, 3.9999998, 0, 0)
+layers = 3
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_krkvt")
+
+[node name="walls" type="MeshInstance3D" parent="wall2" unique_id=1147167440]
+transform = Transform3D(-1, 8.742276e-08, -4.260828e-15, -8.742278e-08, -1, 9.747639e-08, 4.260828e-15, 9.747639e-08, 1, 1, -0.29999995, 1.4621449e-08)
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_rgun0")
+
+[node name="up" type="MeshInstance3D" parent="wall2" unique_id=1097122642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.14976603, -1.3172933)
+instance_shader_parameters/albedo = Color(0.90588236, 0.30588236, 0.37254903, 1)
+mesh = SubResource("BoxMesh_8eb8i")
+
+[node name="down" type="MeshInstance3D" parent="wall2" unique_id=1458452649]
+transform = Transform3D(12.2, -1.7510354e-07, 8.534224e-15, 2.1362632e-06, 1, 3.197439e-14, -1.041176e-13, -3.197439e-14, 1, 6.0646014, -0.14976497, -0.67594683)
+instance_shader_parameters/albedo = Color(0.90588236, 0.30588236, 0.37254903, 1)
+mesh = SubResource("BoxMesh_8eb8i")
+
+[node name="up2" type="MeshInstance3D" parent="wall2" unique_id=2013607778]
+transform = Transform3D(-2.1929824, -1.1830315e-06, 4.6378442e-14, -6.0901317e-07, 1, 0, 2.96822e-14, -3.5527137e-15, 1, 11.073223, -0.14976402, -1.3172933)
+instance_shader_parameters/albedo = Color(0.90588236, 0.30588236, 0.37254903, 1)
+mesh = SubResource("BoxMesh_8eb8i")
+
+[node name="window" type="MeshInstance3D" parent="." unique_id=1441925880]
+transform = Transform3D(-4.4629328e-08, 0, 1.021, 0, 1, 0, -1, 0, -4.371139e-08, 0.952, 0, -0.118999965)
+layers = 3
+mesh = ExtResource("3_krkvt")
+
+[node name="mesh_instance_3d" type="MeshInstance3D" parent="window" unique_id=1475905850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04199995, 1.6, 0.9794319)
+visible = false
+layers = 3
+instance_shader_parameters/albedo = Color(0.15686275, 0.039215688, 0.15686275, 0.27450982)
+mesh = SubResource("BoxMesh_pc82h")
+surface_material_override/0 = ExtResource("2_pc82h")

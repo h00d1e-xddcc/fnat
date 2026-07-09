@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://bqepshvbdifvy"]
+
+[ext_resource type="Script" uid="uid://cktqc128jci3t" path="res://code/path_node.gd" id="1_3vusp"]
+
+[node name="path_noise" type="Node3D" unique_id=1884691848]
+
+[node name="stage" type="Marker3D" parent="." unique_id=235420073 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.600001, 0.5500001, 14.3)
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../backstage"), NodePath("../corn")]
+occupation = "noise"
+
+[node name="backstage" type="Marker3D" parent="." unique_id=535505709 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -13.675144, -5.960465e-08, 18.984882)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../stairsdown"), NodePath("../admin")]
+flag = "vent"
+occupation = "noise"
+
+[node name="corn" type="Marker3D" parent="." unique_id=557731032 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -1.0751442, -5.960465e-08, 13.184882)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../meza"), NodePath("../playground")]
+occupation = "noise"
+
+[node name="admin" type="Marker3D" parent="." unique_id=581993512 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -3.8751442, -5.960465e-08, 19.284882)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../hall_foye")]
+flag = "vent"
+occupation = "noise"
+
+[node name="stairsdown" type="Marker3D" parent="." unique_id=978161687 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -25.075146, -5.960465e-08, 14.684881)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../arcade")]
+flag = "vent"
+occupation = "noise"
+
+[node name="arcade" type="Marker3D" parent="." unique_id=1082713975 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -22.175146, -5.960465e-08, 0.38488102)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../toilet"), NodePath("../toilet_vent")]
+flag = "vent"
+occupation = "noise"
+
+[node name="toilet" type="Marker3D" parent="." unique_id=1532345002 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -15.975145, -5.960465e-08, -1.9151189)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../toilet_vent"), NodePath("../hall_west_up")]
+flag = "vent"
+occupation = "noise"
+
+[node name="toilet_vent" type="Marker3D" parent="." unique_id=1866077556 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -14.975145, -5.960465e-08, -9.915119)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../kitchen"), NodePath("../jeffry"), NodePath("../toilet"), NodePath("../hall_west_up")]
+flag = "vent"
+occupation = "noise"
+
+[node name="jeffry" type="Marker3D" parent="." unique_id=1993257012 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -23.275145, -5.960465e-08, -7.0151196)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../toilet_vent")]
+flag = "vent"
+occupation = "noise"
+
+[node name="kitchen" type="Marker3D" parent="." unique_id=1123163743 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -11.975145, -5.960465e-08, -17.91512)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../toilet_vent"), NodePath("../fire_exit")]
+flag = "vent"
+occupation = "noise"
+
+[node name="fire_exit" type="Marker3D" parent="." unique_id=697361704 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -8.175376, -5.960465e-08, -24.958206)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../staff"), NodePath("../hall_west_up")]
+flag = "vent"
+occupation = "noise"
+
+[node name="staff" type="Marker3D" parent="." unique_id=227485367 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -1.0165639, -5.960465e-08, -24.958206)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../office_vent")]
+flag = "vent"
+occupation = "noise"
+
+[node name="hall_foye" type="Marker3D" parent="." unique_id=511861085 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, 3.124855, -5.960465e-08, 12.284881)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../playground")]
+flag = "vent"
+occupation = "noise"
+
+[node name="playground" type="Marker3D" parent="." unique_id=356198011 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, 1.7248551, -5.960465e-08, 3.5848808)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../swim"), NodePath("../meza")]
+flag = "vent"
+occupation = "noise"
+
+[node name="swim" type="Marker3D" parent="." unique_id=779516966 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, 13.724855, -5.960465e-08, -1.4151192)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../janitor")]
+occupation = "noise"
+
+[node name="janitor" type="Marker3D" parent="." unique_id=2066252562 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, 13.124855, -5.960465e-08, -6.8151193)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("."), NodePath("../ware")]
+flag = "vent"
+occupation = "noise"
+
+[node name="ware" type="Marker3D" parent="." unique_id=1512489658 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, 14.124855, -5.960465e-08, -15.815119)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("."), NodePath("../parts_and_service")]
+flag = "vent"
+occupation = "noise"
+
+[node name="parts_and_service" type="Marker3D" parent="." unique_id=1455304127 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, 6.324855, -5.960465e-08, -18.115118)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("."), NodePath("../office_vent")]
+flag = "vent"
+occupation = "noise"
+
+[node name="office_vent" type="Marker3D" parent="." unique_id=890713618 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, 1.0248547, -5.960465e-08, -18.315119)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("."), NodePath("../office")]
+flag = "vent"
+occupation = "noise"
+
+[node name="office" type="Marker3D" parent="." unique_id=170395201 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(0.25881904, 0, 0.96592593, 0, 1.0000001, 0, -0.96592593, 0, 0.25881904, -0.97514534, -5.960465e-08, -18.315119)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../backstage")]
+flag = "vent"
+occupation = "noise"
+
+[node name="meza" type="Marker3D" parent="." unique_id=930554706 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -4.0751457, -5.960465e-08, -3.8151188)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../hall_west_up"), NodePath("../playground")]
+flag = "vent"
+occupation = "noise"
+
+[node name="hall_west_up" type="Marker3D" parent="." unique_id=619316723 node_paths=PackedStringArray("neighbours")]
+transform = Transform3D(-0.7071069, 0, 0.7071068, 0, 1.0000001, 0, -0.7071068, 0, -0.7071069, -6.2751455, -5.960465e-08, -9.715118)
+gizmo_extents = 0.3
+script = ExtResource("1_3vusp")
+neighbours = [NodePath("../meza"), NodePath("../toilet"), NodePath("../fire_exit")]
+flag = "vent"
+occupation = "noise"
