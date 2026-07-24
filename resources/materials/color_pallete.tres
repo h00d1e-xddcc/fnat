@@ -11,6 +11,7 @@ render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_burley, specula
 uniform vec4 albedo : source_color;
 instance uniform vec4 coloring : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 instance uniform float tint : hint_range(0.0, 1.0) = 1;
+instance uniform float em : hint_range(0.0, 2.0) = 0;
 uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
 uniform ivec2 albedo_texture_size;
 uniform float point_size : hint_range(0.1, 128.0, 0.1);
@@ -38,7 +39,9 @@ void fragment() {
 	vec4 albedo_tex = texture(texture_albedo, base_uv);
 	ALBEDO = albedo.rgb * albedo_tex.rgb;
     float mask = step(tint, ALBEDO.r);
+	float mask_em = step(em, ALBEDO.r);
 	ALBEDO *= mix(albedo.rgb, coloring.rgb, mask);
+	EMISSION *= mix(albedo.rgb, coloring.rgb, mask_em);
 
 	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
 	METALLIC = metallic_tex * metallic;

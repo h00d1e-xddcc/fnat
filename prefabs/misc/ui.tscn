@@ -25,6 +25,14 @@ expand_margin_top = 8.0
 expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 
+[sub_resource type="Theme" id="Theme_mto5o"]
+default_font = ExtResource("1_8bix8")
+default_font_size = 32
+
+[sub_resource type="Theme" id="Theme_0vcn1"]
+default_font = ExtResource("1_8bix8")
+default_font_size = 24
+
 [sub_resource type="Gradient" id="Gradient_5u5yk"]
 colors = PackedColorArray(0.15686275, 0.039215688, 0.15686275, 1, 0.5647059, 0.8784314, 0.69411767, 1)
 metadata/_snap_count = 34
@@ -249,11 +257,9 @@ text = "мини  игра"
 
 [node name="play_sound" type="Button" parent="scheme/buttons" unique_id=1954867843]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme = SubResource("Theme_mto5o")
+theme_type_variation = &"FlatButton"
 theme_override_colors/icon_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("1_8bix8")
-theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
@@ -271,7 +277,6 @@ text = "bait"
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_colors/icon_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
-theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_8bix8")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
@@ -307,77 +312,109 @@ autowrap_mode = 1
 texture_filter = 1
 texture = ExtResource("2_mhwow")
 
+[node name="you" type="ColorRect" parent="scheme/map" unique_id=643736449]
+custom_minimum_size = Vector2(40, 40)
+custom_maximum_size = Vector2(40, 40)
+offset_left = 42.274742
+offset_top = -324.69452
+offset_right = 82.27474
+offset_bottom = -284.69452
+color = Color(1, 0.53333336, 0, 1)
+
 [node name="fire_exit" type="Button" parent="scheme" unique_id=739321568]
 offset_left = -80.561295
 offset_top = -517.4276
 offset_right = -21.536148
 offset_bottom = -467.0739
+theme = SubResource("Theme_0vcn1")
+text = "00"
 
 [node name="hallway" type="Button" parent="scheme" unique_id=384169104]
 offset_left = 308.68542
 offset_top = -263.9228
 offset_right = 367.71057
 offset_bottom = -213.56909
+theme = SubResource("Theme_0vcn1")
+text = "02"
 
 [node name="parts_and_service" type="Button" parent="scheme" unique_id=424230723]
 offset_left = 319.85236
 offset_top = -390.67523
 offset_right = 378.87753
 offset_bottom = -340.32153
+theme = SubResource("Theme_0vcn1")
+text = "03"
 
 [node name="ware" type="Button" parent="scheme" unique_id=978602677]
 offset_left = 380.47272
 offset_top = -232.6688
 offset_right = 439.49786
 offset_bottom = -182.3151
+theme = SubResource("Theme_0vcn1")
+text = "04"
 
 [node name="kitchen" type="Button" parent="scheme" unique_id=213521290]
 offset_left = -270.3988
 offset_top = -449.7106
 offset_right = -211.37366
 offset_bottom = -399.3569
+theme = SubResource("Theme_0vcn1")
+text = "01"
 
 [node name="backstage" type="Button" parent="scheme" unique_id=1580844858]
 offset_left = -327.82867
 offset_top = 465.3376
 offset_right = -268.80353
 offset_bottom = 515.6913
+theme = SubResource("Theme_0vcn1")
+text = "09"
 
 [node name="playground" type="Button" parent="scheme" unique_id=678400217]
 offset_left = 16.750381
 offset_top = -10.418018
 offset_right = 75.77553
 offset_bottom = 39.93568
+theme = SubResource("Theme_0vcn1")
+text = "06"
 
 [node name="enter" type="Button" parent="scheme" unique_id=514904095]
 offset_left = 351.75778
 offset_top = 272.6045
 offset_right = 410.78293
 offset_bottom = 322.9582
+theme = SubResource("Theme_0vcn1")
+text = "10"
 
 [node name="toilet" type="Button" parent="scheme" unique_id=1113415746]
 offset_left = -315.0665
 offset_top = 45.144688
 offset_right = -256.04135
 offset_bottom = 95.49838
+theme = SubResource("Theme_0vcn1")
+text = "05"
 
 [node name="main_stage" type="Button" parent="scheme" unique_id=677841548]
 offset_left = -244.87444
 offset_top = 210.09647
 offset_right = -185.84929
 offset_bottom = 260.45016
+theme = SubResource("Theme_0vcn1")
+text = "07"
 
 [node name="arcade" type="Button" parent="scheme" unique_id=1178469586]
 offset_left = -463.4269
 offset_top = 210.09647
 offset_right = -404.40176
 offset_bottom = 260.4502
+theme = SubResource("Theme_0vcn1")
+text = "08"
 
 [node name="jeffry" type="Button" parent="scheme" unique_id=228160658]
 offset_left = -453.8553
 offset_top = -123.27974
 offset_right = -394.83014
 offset_bottom = -72.92604
+theme = SubResource("Theme_0vcn1")
 
 [node name="label" type="HBoxContainer" parent="." unique_id=2132759669]
 layout_mode = 1
@@ -389,23 +426,42 @@ theme_override_constants/separation = 28
 
 [node name="cam" type="Button" parent="label" unique_id=1880539845]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_8bix8")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
 text = "cam"
-flat = true
 icon_alignment = 1
 
 [node name="scheme" type="Button" parent="label" unique_id=1391376075]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_8bix8")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
 text = "sceme
 "
-flat = true
 icon_alignment = 1
 
 [node name="terminal" type="Button" parent="label" unique_id=1219891531]

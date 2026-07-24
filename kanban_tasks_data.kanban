@@ -1,0 +1,181 @@
+{
+	"categories": [
+		{
+			"uuid": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"title": "Task",
+			"color": "569eff"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "9eed2b1b-924a-4e5e-a112-ca23148dc49c",
+			"title": "Todo",
+			"tasks": [
+				"42ed4fc0-4729-4c2b-a719-624ef4c7b35a",
+				"5267621c-4d3d-48e4-aa4e-2c5028d98c87",
+				"79e7992e-de71-4236-a45a-32eb2cb5d4c0"
+			]
+		},
+		{
+			"uuid": "d4a1ccb6-2ee0-4cf8-8974-4e4d8fccecf9",
+			"title": "Doing",
+			"tasks": [
+				"051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
+				"c56fe474-dc64-49d4-9778-ea456be1b4cd",
+				"5e6dee22-3104-4ac8-a562-52bd23919f5a",
+				"92b532ea-e596-4a1f-9cff-0255f15857c9"
+			]
+		},
+		{
+			"uuid": "dc00f911-ac5a-4510-81ec-9ed13ec61747",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "42ed4fc0-4729-4c2b-a719-624ef4c7b35a",
+			"title": "chimera's statemode",
+			"description": "",
+			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"steps": [
+				{
+					"details": "just walks around",
+					"done": false
+				},
+				{
+					"details": "hunting",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "c56fe474-dc64-49d4-9778-ea456be1b4cd",
+			"title": "passive actions",
+			"description": "",
+			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"steps": [
+				{
+					"details": "chimera - eating, 2 anims",
+					"done": false
+				},
+				{
+					"details": "nerd - playing, 2 anims",
+					"done": false
+				},
+				{
+					"details": "noise - guitar",
+					"done": false
+				},
+				{
+					"details": "bear - ",
+					"done": false
+				},
+				{
+					"details": "all - kasotsky kick",
+					"done": false
+				},
+				{
+					"details": "all - mannrobics, 4 anims",
+					"done": false
+				},
+				{
+					"details": "all - hadooken",
+					"done": false
+				},
+				{
+					"details": "all - Mmmph",
+					"done": false
+				},
+				{
+					"details": "all - /impatient ",
+					"done": false
+				},
+				{
+					"details": "all - romantic",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "5267621c-4d3d-48e4-aa4e-2c5028d98c87",
+			"title": "трансляция звуков из камеры",
+			"description": "в душе не чаю как это сделать, так что отложу на потом",
+			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"steps": [
+				{
+					"details": "",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
+			"title": "rotate head into Vector3",
+			"description": "Что-то сделала, нужно проверить только, не стала сразу в  `Done` пихать",
+			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"steps": [
+				{
+					"details": "",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "5e6dee22-3104-4ac8-a562-52bd23919f5a",
+			"title": "поменять точки позиций",
+			"description": "в место того, чтобы тока `fnat_point.gd` была просто каким-то обстракным не понятным чем-то.\nСделай, чтобы анимации или были абсолютно рандомными, или только одними. Ну или еще лучше, сделай словарь \"страшных\" анимаций, и бери тогда от туда анимации ",
+			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"steps": [
+				{
+					"details": "",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "79e7992e-de71-4236-a45a-32eb2cb5d4c0",
+			"title": "поменять анимацию скримерам",
+			"description": "я тут в раздумиях,\nделать или 4 разных скримера из первых четырех og частей. Или наверное стоит так и сделать",
+			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"steps": []
+		},
+		{
+			"uuid": "92b532ea-e596-4a1f-9cff-0255f15857c9",
+			"title": "New task",
+			"description": "нужна интуитивность",
+			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"steps": [
+				{
+					"details": "для начала пронумеруй кнопки камер",
+					"done": false
+				},
+				{
+					"details": "после сделай видимыми кнопками, кнопки на мониторе",
+					"done": false
+				},
+				{
+					"details": "после в главном меню не хватало бы сделать пресетов",
+					"done": false
+				},
+				{
+					"details": "обозначение офиса на схеме",
+					"done": false
+				}
+			]
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"9eed2b1b-924a-4e5e-a112-ca23148dc49c"
+			],
+			[
+				"d4a1ccb6-2ee0-4cf8-8974-4e4d8fccecf9"
+			],
+			[
+				"dc00f911-ac5a-4510-81ec-9ed13ec61747"
+			]
+		]
+	}
+}

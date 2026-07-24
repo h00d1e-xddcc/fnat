@@ -42,6 +42,7 @@ func _process(delta):
 		ray_origin,
 		ray_origin + ray_direction * ray_length)
 		var result = get_world_3d().direct_space_state.intersect_ray(query)
+		if result.collider.name == "teto" : arc.play_teto()
 		flash_light.look_at(result.position)
 		flash_light_charge -= delta * 2
 		flash_light.light_energy = flash_light_charge / 100
@@ -53,7 +54,7 @@ func _process(delta):
 	else : 
 		mental_sickness += 1.75 * delta
 
-	if randi_range(0,5000) >= 4980 : play_some_event("start")
+	if randi_range(0,1000) == 256 : play_some_event("start")
 	if mental_sickness >= 40 :
 		play_some_event("mental")
 		mental_sickness -= 40
@@ -75,9 +76,12 @@ func input() :
 	if Input.is_action_just_released("right") : to_rotate = 0
 
 	if Input.is_action_just_pressed("recharge") : recharge()
+	if Input.is_action_just_pressed("cancel") : cancel_call()
 
 	if Input.is_action_just_pressed("scheme") and state == action.pc : arc.screen._on_scheme_pressed()
 	if Input.is_action_just_pressed("cam") and state == action.pc : arc.screen._on_cam_pressed()
+
+	if Input.is_action_just_pressed("konami") : debug()
 
 func spotlight() :
 	if is_booting or arc.batary < 0 : 
@@ -108,27 +112,28 @@ func play_some_event(event : String) :
 		"start" :
 			var roll = randi_range(0,15)
 			match roll :
-				0 : arc.play_sound("ambient/random/dog", 0, null, -25) 
-				1 : arc.play_sound("ambient/random/crows", 0, null, 0, 40)
-				2 : arc.play_sound("ambient/random/horn", 0, null, 0, -20)
-				3 :arc.play_sound("ambient/rainstorm", 0, null, 1, 10) 
-				4 :arc.play_sound("ambient/random/punch", 0, null, 5, -10)
-				5 :arc.play_sound("ambient/random/roof_walk", 0, null, 0, -20)
-				6 :arc.play_sound("ambient/random/siren", 0, null, 1)
-				7 :arc.play_sound("ambient/random/fall_pot", 0, null, 0, )
-				8 :arc.play_sound("ambient/random/fall_armature", 0, arc, 3, 28)
+				0 : arc.play2D_sound("ambient/random/dog", 0, 3) 
+				1 : arc.play2D_sound("ambient/random/crows", 0, -12)
+				2 : arc.play2D_sound("ambient/random/horn", 0, -3)
+				3 :arc.play2D_sound("ambient/rainstorm", 1, 4) 
+				4 :arc.play2D_sound("ambient/random/punch", 0, 14)
+				5 :arc.play2D_sound("ambient/random/roof_walk", 0, 13)
+				6 :arc.play2D_sound("ambient/random/siren", 0, 0)
+				7 :arc.play2D_sound("ambient/random/fall_pot", 0, -15)
+				8 :arc.play2D_sound("ambient/random/fall_armature", 3, -17)
 				#9 :arc.play_sound("ambient/random/pipes", 0, null, 3, 0, 10)
-				10 :arc.play_sound("ambient/fire_alarm", 0, null, 3, -20)
+				10 :arc.play2D_sound("ambient/fire_alarm", 0, -16)
+				_: blink(randf_range(0.15, 2.56))
 				
 		"mental":
-			var roll = randi_range(0,7)
+			var roll = randi_range(0,5)
 			match roll :
-				0 : arc.play_sound("ambient/random/sanity" + str(randi_range(0,2)), 0, null, 0, -5)
-				1 : arc.play_sound("ambient/random/deerclops" + str(randi_range(0,2)), 0, null, 0, 19)
-				2 : arc.play_sound("ambient/random/laugh", 0, null, 0, 2)
-				3 : arc.play_sound("anim/spotted", 0, null, 0, -10)
-				4 : arc.play_sound("anim/" + arc.user.anims[randi_range(0,3)].name + "/moved", 0, null, 0, -13)
-				5 : arc.play_sound("anim/it/breath" + str(randi_range(0,1)), 0, null, 0, 25)
+				0 : arc.play2D_sound("ambient/random/sanity" + str(randi_range(0,2)), 0, -0)
+				1 : arc.play2D_sound("ambient/random/deerclops" + str(randi_range(0,2)), 0, -10)
+				2 : arc.play2D_sound("ambient/random/laugh", 0, 10)
+				3 : arc.play2D_sound("anim/spotted", 0, -3)
+				4 : arc.play2D_sound("anim/" + arc.user.anims[randi_range(0,3)].name + "/moved", 0, -8)
+				5 : arc.play2D_sound("anim/it/breath" + str(randi_range(0,1)), 0, -9)
 
 func recharge() :
 	#anims[0].jumpscare()
@@ -136,6 +141,12 @@ func recharge() :
 	arc.user.flash_light_charge += randf_range(7, 20)
 	if arc.user.flash_light_charge > 100 : arc.user.flash_light_charge = 100
 	arc.play_sound("user/flashlight_charge")
+
+func cancel_call() :
+	var node = get_node("user_call_" + arc.lang.get_lange())
+	if node != null : 
+		node.queue_free()
+		arc.play2D_sound("user/math_correct")
 
 func change_state(numba : int = 0) :
 	match numba :
@@ -196,6 +207,7 @@ func _input(event) :
 	elif event.is_action_pressed("light") and cast.is_colliding() :
 		var collider = cast.get_collider()
 		interaction = collider
+		if collider.name == "teto" : arc.play_teto()
 		if collider is fnat_screen :
 			set_physics_process(false)
 
@@ -204,10 +216,17 @@ func blink(time : float = 0) :
 	await  get_tree().create_timer(time).timeout
 	blink_screen.visible = false
 
+func debug() :
+	arc.time = -9999
+	arc.batary = 999999
+
 func _ready() -> void:
 	change_state()
 	arc.set_dif()
-	#arc.play_sound("user/12am", 0, null, 2, 10)
+	arc.play2D_sound("ambient/warning", 0, -23)
 	await get_tree().create_timer(.257).timeout
 	play_some_event("start")
-	
+	print(arc.lang.get_lange())
+	arc.play2D_sound("user/call")
+	await get_tree().create_timer(7).timeout
+	arc.play2D_sound("user/call_" + arc.lang.get_lange())

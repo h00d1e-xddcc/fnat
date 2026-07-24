@@ -13,6 +13,7 @@ extends Node3D
 @export var lang : fnat_lange
 @export var volume : int = 15
 @export var diff : Array[int] = [0,0,0,0,0]
+@export var teto : bool = true
 
 signal out_of_power
 signal second_pass
@@ -94,6 +95,20 @@ func button_delay(button : Button, waiting : float) :
 	button.disabled = false
 	if arc.user.spot_light.visible == true : arc.play_sound("user/math_correct", 0, null, 0, 6)
 
+func play2D_sound(path : String, delay : float = 0, volume_to_decrease : float = 0) :
+	var sfx : AudioStreamPlayer = AudioStreamPlayer.new()
+	var audio = sounds.get(path)
+	if audio == null : 
+		audio = preload("res://resources/sounds/user/alarm.wav")
+		push_error("sound eggor >" + path)
+	arc.user.add_child(sfx)
+	sfx.stream = audio
+	sfx.name = path
+	sfx.volume_db = volume_to_decrease
+	sfx.finished.connect(func() : sfx.queue_free())
+	await get_tree().create_timer(delay).timeout
+	sfx.play()
+
 func play_sound(path : String, second : float = 0, node : Node3D = null, delay : float = 0, volume_to_decrease : float = 0, max_dist : int = 45) :
 	var sfx : AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 	if node != null :
@@ -117,6 +132,13 @@ func play_sound(path : String, second : float = 0, node : Node3D = null, delay :
 	sfx.finished.connect(func() : sfx.queue_free())
 	await get_tree().create_timer(delay).timeout
 	sfx.play(second)
+
+func play_teto() :
+	if teto == true :
+		teto = false
+		play2D_sound("user/teto",0, -10)
+		await get_tree().create_timer(.257).timeout
+		teto = true
 
 func play_external(sfx : AudioStreamPlayer3D, path : String, volume_to_decrease : int, delay : float) :
 	if sfx == null : return

@@ -16,7 +16,12 @@ enum mind {IDLE, WALKING, HUNTING}
 @export var noise : AudioStreamPlayer3D
 @export var is_lock : bool
 
+@export var pose_default : Array[String]
+@export var pose_hunting : Array[String]
+
 signal in_office
+
+#func get_pose(pose : String)
 
 func jumpscare() :
 	for i in arc.user.anims.size() :
@@ -53,10 +58,14 @@ func move() :
 			arc.user.flash_light_charge = 0
 			visible = false
 			if arc.user.flash_light.visible == true : arc.play_sound("user/error")
-			arc.play_sound("anim/chimera/knock")
+			if current_point.name == "office_vent" : arc.play_sound("/anim/vent_quiet" + str(randi_range(0,1)))
+			else : arc.play_sound("anim/chimera/knock")
+			if name == "noise" : guitar(false)
 			await get_tree().create_timer(2.57).timeout
-			arc.play_sound("anim/door_move" + str(randi_range(0,2)))
+			#rotate_head()
+			arc.play_sound("anim/"+ name + "/move")
 			animator.play(move_to.get_pose())
+			arc.user.blink(.257)
 			global_position = move_to.global_position
 			rotation = move_to.rotation
 			visible = true
@@ -69,7 +78,9 @@ func move() :
 			arc.play_sound("anim/vent_quiet" + str(randi_range(0,1)), 0, self)
 
 		"window":
+			#rotate_head()
 			arc.user.blink(.3)
+			arc.play2D_sound("anim/tapglass", 0, -4)
 
 	match current_point.name :
 		"office" :
@@ -77,14 +88,19 @@ func move() :
 			mood = mind.WALKING
 			arc.user.mental_sickness += 40
 			arc.user.blink(.350)
+			#rotate_head(Vector3.ONE)
 			match name :
 				"chimera", "bear", "nerd" :
-					arc.play_sound("anim/door_move" + str(randi_range(0,2)), 0, self, 0, 7)
-				"noise" : arc.play_sound("anim/vent_quiet" + str(randi_range(0,1)), 0, self, 0, 7)
+					arc.play2D_sound("anim/door_move" + str(randi_range(0,2)), 2)
+				"noise" : arc.play2D_sound("anim/vent_quiet" + str(randi_range(0,1)), 2)
+			if name == "noise" : guitar(true)
 		"kitchen" :
 			if name == "nerd" and move_to.name == "fire_exit" and arc.user.anims[3].is_lock == true:
 				arc.user.anims[3].is_lock = false
 				arc.play_sound("anim/nerd/lockpick",0, arc.user.anims[3])
+		"window":
+			arc.user.blink(.3)
+			arc.play2D_sound("anim/tapglass", 0, -4)
 
 	var anim_to_play : String = move_to.get_pose()
 	match name :
@@ -105,8 +121,8 @@ func move() :
 	global_position = move_to.global_position
 	rotation = move_to.rotation
 	current_point = move_to
-	if name == "endo" : arc.play_sound("anim/" + arc.user.anims[randi_range(0,3)].name + "/moved", 0, self, 0, 15)
-	else : arc.play_sound("anim/" + name + "/moved", 0, self, 0, 15)
+	if name == "endo" : arc.play_sound("anim/" + arc.user.anims[randi_range(0,3)].name + "/moved", 0, self, 0, 0)
+	else : arc.play_sound("anim/" + name + "/moved", 0, self, 0, 0)
 
 func toss_roll() :
 	var value : int = randi_range(1,25)
@@ -209,6 +225,13 @@ func _ready() -> void:
 		await get_tree().create_timer(randf_range(4,25)).timeout
 		toss_roll()
 
+#func rotate_head(point : Vector3 = Vector3.ZERO) : 
+	#var bone = get_node("skelet/Skeleton3D").find_bone("head")
+	#match point :
+		#Vector3.ZERO : bone.look_at(arc.user.global_position)
+		#Vector3.ONE : bone.rotation = Vector3.ZERO
+		#_ : bone.look_at(point)
+
 func _process(delta: float) -> void:
 	if current_point.name == "office" :
 		match name :
@@ -231,13 +254,3 @@ func _process(delta: float) -> void:
 				if arc.user.state != arc.user.action.hide and arc.user.spot_light.visible == false :
 					emit_signal("in_office")
 					in_office.disconnect(jumpscare)
-# Емае, такое надо было записывать,
-# Сейчас, во время тестовой ночи, все стояли с интелектом 0, и химера на 25, для теста анимаций перемещений. 
-# Первую половину ночи, химера с интелектом 25, перемещалась буквально между двумя комнатами. Только между двумя комнатами. 
-# Чуть позже, она менее чем за 5 секунд, каким-то образом появилась на другой части карты. 
-# И там она еще около двух минут опять же таки перемещалась между двумя комнатами, уже как обычно.
-# И все бы ничего, сижу мониторю химеру на анимации. 
-# Смотрю, нет на камерах ее, думаю дай посмотрю все заведение, куда делась то. 
-# Открываю аркады, и там зануды нет. У меня прямо животный страх в этот момент появился, и паника началась. 
-# У меня еще ночь за окном, и страшный эмбиент играл, так еще и дома никого нет. Это копец как страшно было. 
-# Такого никогда не было, это в первые такое, что перемещение между двумя комнатами, и перемещение с 0 интелектом.

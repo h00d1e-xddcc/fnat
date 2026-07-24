@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://cju1tnaihyves" path="res://resources/materials/solid.tres" id="2_pc82h"]
 [ext_resource type="ArrayMesh" uid="uid://b7milqfb0xs33" path="res://prefabs/mesh/fnat_window.res" id="3_krkvt"]
 [ext_resource type="Texture2D" uid="uid://bx2g8enw6snml" path="res://pics/wall.png" id="3_pc82h"]
+[ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="4_krkvt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8eb8i"]
 albedo_texture = ExtResource("3_pc82h")
@@ -92,11 +93,12 @@ mesh = SubResource("BoxMesh_8eb8i")
 transform = Transform3D(-4.4629328e-08, 0, 1.021, 0, 1, 0, -1, 0, -4.371139e-08, 0.952, 0, -0.118999965)
 layers = 3
 mesh = ExtResource("3_krkvt")
+surface_material_override/0 = ExtResource("4_krkvt")
 
 [node name="mesh_instance_3d" type="MeshInstance3D" parent="window" unique_id=1475905850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04199995, 1.6, 0.9794319)
-visible = false
 layers = 3
-instance_shader_parameters/albedo = Color(0.15686275, 0.039215688, 0.15686275, 0.27450982)
+instance_shader_parameters/albedo = Color(0.15686275, 0.039215688, 0.15686275, 0)
+instance_shader_parameters/em = 0.0
 mesh = SubResource("BoxMesh_pc82h")
 surface_material_override/0 = ExtResource("2_pc82h")
