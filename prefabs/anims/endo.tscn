@@ -3139,6 +3139,8 @@ color = Color(0.36078432, 0.36078432, 0.36078432, 1)
 animator = NodePath("AnimationPlayer")
 hunger = null
 is_lock = null
+pose_default = Array[String](["tpose", "default", "reference", "mrbeast", "skeletAction", "guitar"])
+pose_hunting = Array[String](["tpose", "default", "reference", "mrbeast", "skeletAction"])
 
 [node name="skelet" type="Node3D" parent="." unique_id=824087671]
 

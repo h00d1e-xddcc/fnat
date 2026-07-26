@@ -3035,11 +3035,12 @@ _data = {
 
 [node name="noise" type="Node3D" unique_id=233678744 node_paths=PackedStringArray("animator", "acc", "noise")]
 script = ExtResource("1_2q17q")
-ai_lvl = 25
 color = Color(0.5882353, 0.6784314, 0.90588236, 1)
 animator = NodePath("AnimationPlayer")
 acc = NodePath("guitar")
 noise = NodePath("noise")
+pose_default = Array[String](["guitar", "reference", "tpose", "sniper"])
+pose_hunting = Array[String](["timeout", "tpose", "guitar", "timeout"])
 
 [node name="skelet" type="Node3D" parent="." unique_id=1595234489]
 

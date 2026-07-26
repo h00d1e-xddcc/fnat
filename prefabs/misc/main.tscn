@@ -3336,7 +3336,7 @@ environment = SubResource("Environment_b26oi")
 size = Vector2i(1152, 864)
 
 [node name="fire_exit" type="Camera3D" parent="cams" unique_id=1463756470]
-transform = Transform3D(-0.9848077, 0.08682415, -0.15038384, 0, 0.8660254, 0.5, 0.1736483, 0.49240386, -0.85286856, -8.499999, 2.7000012, -25.547998)
+transform = Transform3D(-0.9063077, 0.21130918, -0.36599827, 0, 0.8660254, 0.5, 0.42261836, 0.45315385, -0.7848856, -8.499999, 2.7000012, -25.547998)
 visible = false
 cull_mask = 1048571
 environment = ExtResource("2_b26oi")
@@ -3346,7 +3346,7 @@ min = -130.0
 max = -175.0
 
 [node name="hallway" type="Camera3D" parent="cams" unique_id=668238282]
-transform = Transform3D(0.05582155, -0.49922037, 0.86467505, 0, 0.8660254, 0.5, -0.99844074, -0.027910775, 0.04834288, 11.700001, 2.7, -12.799998)
+transform = Transform3D(-0.4508775, -0.4462929, 0.77300197, 0, 0.8660254, 0.5, -0.8925858, 0.22543874, -0.39047137, 11.700001, 2.7, -12.799998)
 visible = false
 cull_mask = 1048571
 environment = ExtResource("2_b26oi")
@@ -3355,7 +3355,7 @@ min = 165.0
 max = 30.0
 
 [node name="toilet" type="Camera3D" parent="cams" unique_id=210081256]
-transform = Transform3D(-0.90704405, -0.21051787, 0.36462763, 0, 0.8660254, 0.5, -0.42103574, 0.45352203, -0.7855232, -17.363646, 2.7000005, 2.498902)
+transform = Transform3D(0.907044, 0.21051794, -0.36462766, 1.1579676e-08, 0.8660254, 0.50000006, 0.42103583, -0.45352212, 0.78552306, -17.363646, 2.7000005, 2.498902)
 visible = false
 cull_mask = 1048571
 environment = ExtResource("2_b26oi")
@@ -3397,7 +3397,7 @@ script = ExtResource("3_b26oi")
 is_audio_only = true
 
 [node name="playground" type="Camera3D" parent="cams" unique_id=1549109388]
-transform = Transform3D(-0.97084934, 0.11984497, -0.20757745, -4.7835966e-09, 0.8660254, 0.5000001, 0.23968986, 0.485425, -0.8407804, -4.6523476, 2.700001, -1.8734188)
+transform = Transform3D(-0.72093534, 0.3465014, -0.60015756, -1.147653e-08, 0.86602527, 0.50000024, 0.6930021, 0.3604678, -0.6243483, -4.6523476, 2.700001, -1.8734188)
 visible = false
 cull_mask = 1048571
 environment = ExtResource("2_b26oi")
@@ -3432,7 +3432,7 @@ min = -35.0
 max = -150.0
 
 [node name="arcade" type="Camera3D" parent="cams" unique_id=609475079]
-transform = Transform3D(-0.30071017, -0.47685778, 0.8259419, -5.7575917e-08, 0.86602545, 0.49999997, -0.9537156, 0.15035504, -0.26042268, -24.565912, 2.7000012, 10.278567)
+transform = Transform3D(0.99904805, -0.021811925, 0.03777948, -7.178739e-08, 0.86602545, 0.49999997, -0.043623954, -0.499524, 0.86520106, -24.565912, 2.7000012, 10.278567)
 visible = false
 cull_mask = 1048571
 environment = ExtResource("2_b26oi")
@@ -3686,6 +3686,14 @@ mesh = ExtResource("20_3x8yp")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.4850776, 2.7831163, -15.267379)
 mesh = ExtResource("20_3x8yp")
 
+[node name="fnat_pipe_clip3" type="MeshInstance3D" parent="office/decor" unique_id=277736500]
+transform = Transform3D(-8.881784e-16, -1.0000001, 0, -1, 1.9106855e-15, -4.371139e-08, 4.371139e-08, 0, -1.0000001, -0.28908294, 2.799978, -19.182022)
+mesh = ExtResource("20_3x8yp")
+
+[node name="fnat_pipe_clip4" type="MeshInstance3D" parent="office/decor" unique_id=2092585452]
+transform = Transform3D(-8.881784e-16, -1.0000001, 0, -1, 1.9106855e-15, -4.371139e-08, 4.371139e-08, 0, -1.0000001, -0.28908294, 0.3672297, -19.182022)
+mesh = ExtResource("20_3x8yp")
+
 [node name="teto" type="StaticBody3D" parent="office/decor" unique_id=1364513586]
 transform = Transform3D(0.4083635, 0, 0.24651203, 0, 0.47699994, 0, -0.24651203, 0, 0.4083635, -2.2929873, 0.8649629, -17.834484)
 
@@ -3740,7 +3748,6 @@ size = 50.0
 [node name="chimera" parent="." unique_id=1173604488 node_paths=PackedStringArray("current_point") instance=ExtResource("20_l1unm")]
 transform = Transform3D(0.49999994, 0, -0.8660253, 0, 1, 0, 0.8660253, 0, 0.49999994, -14.626275, 0.54499984, 14.746042)
 current_point = NodePath("../path_chimera/stage")
-ai_lvl = 0
 
 [node name="endo" parent="." unique_id=229964717 node_paths=PackedStringArray("current_point") instance=ExtResource("20_ksp3k")]
 transform = Transform3D(-0.14330427, -0.9896787, 4.9524257e-08, -4.371139e-08, -4.371139e-08, -1, 0.9896787, -0.14330427, -3.6996198e-08, 11.436367, 0.9121151, -18.877054)
@@ -3950,12 +3957,10 @@ bones/19/scale = Vector3(1, 1, 1)
 [node name="noise" parent="." unique_id=233678744 node_paths=PackedStringArray("current_point") instance=ExtResource("20_pfkic")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -15.600001, 0.5500001, 14.3)
 current_point = NodePath("../path_noise/stage")
-ai_lvl = 0
 
 [node name="nerd" parent="." unique_id=421923076 node_paths=PackedStringArray("current_point") instance=ExtResource("42_8c3lo")]
 transform = Transform3D(-0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.96592575, -24.6, 0, 7.9)
 current_point = NodePath("../path_nerd/arcade")
-ai_lvl = 0
 
 [node name="path_bear" type="Node3D" parent="." unique_id=368272810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -20)
@@ -4038,7 +4043,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(-0.14330427, -0.9896787, 4.326023e-08, 0, -4.371139e-08, -1, 0.9896787, -0.14330427, 6.264029e-09, 11.436367, 0.9121151, -18.877054)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_est")]
-pose = Array[String](["default", "tpose", "engage"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -4046,7 +4050,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -9)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../window_right"), NodePath("../playground"), NodePath("../toilet")]
-pose = Array[String](["lotos", "mrbeast", "peta", "sniper", "dab"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -4054,7 +4057,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.700001, 0, -0.5)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../playground"), NodePath("../window_left"), NodePath("../hall_est"), NodePath("../fire_exit")]
-pose = Array[String](["peta", "mrbeast", "dab"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -4062,7 +4064,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.9000006, 0, -16.7)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../window_right"), NodePath("../toilet"), NodePath("../window_right")]
-pose = Array[String](["default", "tpose", "reference"])
 flag = "window"
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
@@ -4071,7 +4072,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -8.460586, 0.71250623, -25.048277)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../window_right"), NodePath("../window_left"), NodePath("../toilet")]
-pose = Array[String](["tpose", "default"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -4079,7 +4079,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9393039, 0, -14.45258)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_est"), NodePath("../window_left")]
-pose = Array[String](["mrbeast", "tpose", "sniper", "dab"])
 flag = "window"
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
@@ -4088,7 +4087,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.999999, 0, -19.432827)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../parts_and_service"), NodePath("../hall_est")]
-pose = Array[String](["tpose", "default"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -4096,7 +4094,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -3.900001, 1, -1.3328271)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../toilet"), NodePath("../hall_est")]
-pose = Array[String](["lotos", "tpose", "default"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -4297,7 +4294,6 @@ transform = Transform3D(-1.0000001, 0, -2.9802326e-08, 0, 1, 0, 2.9802326e-08, 0
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../arcade"), NodePath("../toilet")]
-pose = Array[String](["peta", "default", "tpose"])
 occupation = "chimera"
 
 [node name="hall_west_down" type="Marker3D" parent="path_chimera" unique_id=1994875570 node_paths=PackedStringArray("neighbours")]
@@ -4305,7 +4301,6 @@ transform = Transform3D(0.9659261, 0, 0.25881913, 0, 1.0000001, 0, -0.25881913, 
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../stage_view"), NodePath("../downstairs"), NodePath("../backstage"), NodePath("../arcade"), NodePath("../toilet")]
-pose = Array[String](["tpose", "peta", "dab"])
 flag = "door"
 occupation = "chimera"
 
@@ -4328,7 +4323,6 @@ transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1.0000001, 0, 1.000000
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../jeffry"), NodePath("../toilet")]
-pose = Array[String](["tpose", "peta"])
 flag = "door"
 occupation = "chimera"
 
@@ -4353,7 +4347,6 @@ transform = Transform3D(-0.7071066, 0, 0.70710695, 0, 1.0000001, 0, -0.70710695,
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_west_up"), NodePath("../playground")]
-pose = Array[String](["look", "engage", "dab", "skeletAction"])
 occupation = "chimera"
 
 [node name="playground" type="Marker3D" parent="path_chimera" unique_id=4489056 node_paths=PackedStringArray("neighbours")]
@@ -4361,7 +4354,6 @@ transform = Transform3D(0.86602557, 0, 0.50000006, 0, 1.0000001, 0, -0.50000006,
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../meza"), NodePath("../swim")]
-pose = Array[String](["tpose", "engage", "pootis_pow"])
 flag = "door"
 occupation = "chimera"
 
@@ -4385,7 +4377,6 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -7.40
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../window_left"), NodePath("../office"), NodePath("../fire_exit")]
-pose = Array[String](["tpose", "reference", "lotos", "pootis_pow", "dab"])
 occupation = "chimera"
 
 [node name="fire_exit" type="Marker3D" parent="path_chimera" unique_id=138605888 node_paths=PackedStringArray("neighbours")]
@@ -4393,7 +4384,6 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -6.00
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../window_left"), NodePath("../window_left")]
-pose = Array[String](["tpose"])
 occupation = "chimera"
 
 [node name="window_left" type="Marker3D" parent="path_chimera" unique_id=1073895199 node_paths=PackedStringArray("neighbours")]
@@ -4401,7 +4391,6 @@ transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1.0000001, 0, 1.000000
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../office"), NodePath("../fire_exit")]
-pose = Array[String](["mrbeast", "reference", "skeletAction", "sniper", "engage"])
 flag = "window"
 occupation = "chimera"
 
@@ -4410,7 +4399,6 @@ transform = Transform3D(0, 0, -1.0000001, 0, 1.0000001, 0, 1.0000001, 0, 0, 9.20
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_west_up"), NodePath("../parts_and_service"), NodePath("../ware")]
-pose = Array[String](["engage", "pootis_pow", "default", "timeout"])
 flag = "door"
 occupation = "chimera"
 
@@ -4419,7 +4407,6 @@ transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1.0000001, 0, 1.000000
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_est_up")]
-pose = Array[String](["tpose", "skeletAction", "pootis_pow", "lotos"])
 flag = "door"
 occupation = "chimera"
 
@@ -4428,7 +4415,6 @@ transform = Transform3D(-0.8660256, 0, -0.5, 0, 1.0000001, 0, 0.5, 0, -0.8660256
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_est_up")]
-pose = Array[String](["peta", "engage", "dab", "pootis_pow"])
 flag = "door"
 occupation = "chimera"
 
@@ -4437,7 +4423,6 @@ transform = Transform3D(0.8660255, 0, -0.50000006, 0, 1.0000001, 0, 0.50000006, 
 gizmo_extents = 0.3
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../jeffry"), NodePath("../stage_view")]
-pose = Array[String](["mrbeast", "reference"])
 flag = "office"
 occupation = "chimera"
 
@@ -4449,7 +4434,6 @@ occupation = "chimera"
 transform = Transform3D(0.8660255, 0, 0.50000006, 0, 1.0000001, 0, -0.50000006, 0, 0.8660255, -24.635006, -5.960465e-08, 7.993003)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../jeffry"), NodePath("../toilet"), NodePath("../hall_west_down")]
-pose = Array[String](["tpose", "peta", "sniper", "look"])
 flag = "door"
 occupation = "nerd"
 
@@ -4457,14 +4441,12 @@ occupation = "nerd"
 transform = Transform3D(-0.9659259, 0, -0.25881916, 0, 1.0000001, 0, 0.25881916, 0, -0.9659259, -12.675144, -5.960465e-08, 12.984881)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_west_down"), NodePath("../backstage")]
-pose = Array[String](["tpose", "peta", "skeletAction"])
 occupation = "nerd"
 
 [node name="hall_west_down" type="Marker3D" parent="path_nerd" unique_id=440604006 node_paths=PackedStringArray("neighbours")]
 transform = Transform3D(0.70710677, 0, -0.7071069, 0, 1.0000001, 0, 0.7071069, 0, 0.70710677, -19.56295, -5.960465e-08, 9.669451)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../stage_view"), NodePath("../downstairs"), NodePath("../backstage"), NodePath("../arcade"), NodePath("../toilet")]
-pose = Array[String](["pootis_pow", "lotos", "engage"])
 flag = "door"
 occupation = "nerd"
 
@@ -4491,7 +4473,6 @@ occupation = "nerd"
 transform = Transform3D(-0.7071066, 0, 0.70710695, 0, 1.0000001, 0, -0.70710695, 0, -0.7071066, -12.809012, -5.960465e-08, -2.6407232)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_west_up"), NodePath("../playground"), NodePath("../vent_toilet")]
-pose = Array[String](["peta", "lotos", "pootis_pow", "guitar"])
 occupation = "nerd"
 
 [node name="vent_toilet" type="Marker3D" parent="path_nerd" unique_id=1909852303 node_paths=PackedStringArray("neighbours")]
@@ -4512,7 +4493,6 @@ occupation = "nerd"
 transform = Transform3D(-0.49999976, 0, 0.8660255, 0, 1.0000002, 0, -0.8660255, 0, -0.49999976, -8.549238, -5.960465e-08, -18.004694)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../window_right"), NodePath("../hall_west_up")]
-pose = Array[String](["guitar", "tpose", "peta", "sniper", "dab"])
 flag = "vent"
 occupation = "nerd"
 
@@ -4541,7 +4521,6 @@ occupation = "nerd"
 transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1.0000001, 0, 1.0000001, 0, -4.3711392e-08, -6.1493073, -5.364418e-07, -8.695408)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../window_right"), NodePath("../hall_est_up")]
-pose = Array[String](["dab", "tpose", "mrbeast", "reference"])
 flag = "vent"
 occupation = "nerd"
 
@@ -4549,7 +4528,6 @@ occupation = "nerd"
 transform = Transform3D(1.0000001, 0, -3.5527137e-15, 0, 1.0000001, 0, 3.5527137e-15, 0, 1.0000001, -2.1258762, -5.960465e-08, -14.299972)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../office")]
-pose = Array[String](["reference", "dab", "mrbeast", "sniper"])
 flag = "window"
 occupation = "nerd"
 
@@ -4557,7 +4535,6 @@ occupation = "nerd"
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 1.6980655, -5.960465e-08, -14.1300535)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../hall_west_up"), NodePath("../parts_and_service")]
-pose = Array[String](["tpose"])
 flag = "door"
 occupation = "nerd"
 
@@ -4565,7 +4542,6 @@ occupation = "nerd"
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 7.9752216, -5.960465e-08, -18.714973)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../vent_office")]
-pose = Array[String](["lotos", "dab", "reference", "pootis_pow"])
 flag = "door"
 occupation = "nerd"
 
@@ -4580,15 +4556,14 @@ occupation = "nerd"
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -3.5724483, -5.960465e-08, -15.616497)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../downstairs")]
-pose = Array[String](["reference", "pootis_pow", "dab"])
 flag = "office"
 occupation = "nerd"
 
 [node name="estab" parent="." unique_id=18833205 instance=ExtResource("24_3uipr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -17)
 
-[node name="fnat_cup" parent="estab" index="151" unique_id=330511375]
-transform = Transform3D(-0.42025715, 0, -0.621181, 0, 0.74998796, 0, 0.621181, 0, -0.42025715, 0.52968454, 0.8405676, -0.7281532)
+[node name="fnat_cup" parent="estab" index="166" unique_id=330511375]
+transform = Transform3D(-0.37837404, 0, -0.6475454, 0, 0.74998796, 0, 0.6475454, 0, -0.37837404, 0.52968454, 0.8405676, -0.7281532)
 
 [node name="door23" parent="estab" unique_id=680225520 instance=ExtResource("26_8feyi")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 3.236391e-07, 0, 1.851, 17, 0, 37)
@@ -4706,7 +4681,7 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.4416134
 mesh = ExtResource("36_iwq5g")
 
 [node name="fnat_extinguisher" type="MeshInstance3D" parent="." unique_id=784014632]
-transform = Transform3D(0.9650084, -0.2622185, 0.00049693114, 0.0037824376, 0.01202504, -0.9999205, 0.26219174, 0.96493363, 0.0125960875, -0.41104567, 0.791692, -16.170856)
+transform = Transform3D(0.8837277, -0.2293918, 0.40792722, 0.41426522, -0.022103824, -0.90988773, 0.2177376, 0.9730834, 0.07549527, -0.41104567, 1.5099576, -16.28643)
 mesh = ExtResource("32_50ym8")
 
 [node name="fnat_cup" type="MeshInstance3D" parent="." unique_id=33973411]

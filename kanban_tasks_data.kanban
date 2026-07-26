@@ -2,8 +2,23 @@
 	"categories": [
 		{
 			"uuid": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
-			"title": "Task",
+			"title": "reflection",
 			"color": "569eff"
+		},
+		{
+			"uuid": "969d723e-d2c3-47f1-b565-082cccf9df52",
+			"title": "done",
+			"color": "e7e7e7"
+		},
+		{
+			"uuid": "95686080-b83c-479d-b691-55683f5acac9",
+			"title": "in this version",
+			"color": "ff8800"
+		},
+		{
+			"uuid": "6bca8cab-90d0-46b1-826b-27f66add392f",
+			"title": "other version",
+			"color": "e74e5f"
 		}
 	],
 	"stages": [
@@ -11,9 +26,11 @@
 			"uuid": "9eed2b1b-924a-4e5e-a112-ca23148dc49c",
 			"title": "Todo",
 			"tasks": [
-				"42ed4fc0-4729-4c2b-a719-624ef4c7b35a",
 				"5267621c-4d3d-48e4-aa4e-2c5028d98c87",
-				"79e7992e-de71-4236-a45a-32eb2cb5d4c0"
+				"42ed4fc0-4729-4c2b-a719-624ef4c7b35a",
+				"92b532ea-e596-4a1f-9cff-0255f15857c9",
+				"5e6dee22-3104-4ac8-a562-52bd23919f5a",
+				"d2cc32d8-85ac-4340-8f36-5dd2ec5e56ed"
 			]
 		},
 		{
@@ -22,14 +39,9 @@
 			"tasks": [
 				"051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
 				"c56fe474-dc64-49d4-9778-ea456be1b4cd",
-				"5e6dee22-3104-4ac8-a562-52bd23919f5a",
-				"92b532ea-e596-4a1f-9cff-0255f15857c9"
+				"9b18d48a-9ae5-45bf-baaf-7754bf36cd99",
+				"79e7992e-de71-4236-a45a-32eb2cb5d4c0"
 			]
-		},
-		{
-			"uuid": "dc00f911-ac5a-4510-81ec-9ed13ec61747",
-			"title": "Done",
-			"tasks": []
 		}
 	],
 	"tasks": [
@@ -37,7 +49,7 @@
 			"uuid": "42ed4fc0-4729-4c2b-a719-624ef4c7b35a",
 			"title": "chimera's statemode",
 			"description": "",
-			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"category": "6bca8cab-90d0-46b1-826b-27f66add392f",
 			"steps": [
 				{
 					"details": "just walks around",
@@ -53,7 +65,7 @@
 			"uuid": "c56fe474-dc64-49d4-9778-ea456be1b4cd",
 			"title": "passive actions",
 			"description": "",
-			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"category": "95686080-b83c-479d-b691-55683f5acac9",
 			"steps": [
 				{
 					"details": "chimera - eating, 2 anims",
@@ -72,7 +84,7 @@
 					"done": false
 				},
 				{
-					"details": "all - kasotsky kick",
+					"details": "all - kasotsky kick, 3 anim",
 					"done": false
 				},
 				{
@@ -94,14 +106,18 @@
 				{
 					"details": "all - romantic",
 					"done": false
+				},
+				{
+					"details": "all - update old anims",
+					"done": false
 				}
 			]
 		},
 		{
 			"uuid": "5267621c-4d3d-48e4-aa4e-2c5028d98c87",
 			"title": "трансляция звуков из камеры",
-			"description": "в душе не чаю как это сделать, так что отложу на потом",
-			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"description": "в душе не чаю как это сделать, так что отложу на потом. Не, ну есть предположения как это делать, но пожалуй все таки сейчас лучше на другом сосредаточится",
+			"category": "6bca8cab-90d0-46b1-826b-27f66add392f",
 			"steps": [
 				{
 					"details": "",
@@ -112,11 +128,15 @@
 		{
 			"uuid": "051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
 			"title": "rotate head into Vector3",
-			"description": "Что-то сделала, нужно проверить только, не стала сразу в  `Done` пихать",
-			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"description": "",
+			"category": "95686080-b83c-479d-b691-55683f5acac9",
 			"steps": [
 				{
-					"details": "",
+					"details": "Нука сходи глянь, что там было сделано, на не трезвую голову",
+					"done": false
+				},
+				{
+					"details": "[eqyz у тебя вышла переделывай",
 					"done": false
 				}
 			]
@@ -125,11 +145,11 @@
 			"uuid": "5e6dee22-3104-4ac8-a562-52bd23919f5a",
 			"title": "поменять точки позиций",
 			"description": "в место того, чтобы тока `fnat_point.gd` была просто каким-то обстракным не понятным чем-то.\nСделай, чтобы анимации или были абсолютно рандомными, или только одними. Ну или еще лучше, сделай словарь \"страшных\" анимаций, и бери тогда от туда анимации ",
-			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
 			"steps": [
 				{
 					"details": "",
-					"done": false
+					"done": true
 				}
 			]
 		},
@@ -137,32 +157,51 @@
 			"uuid": "79e7992e-de71-4236-a45a-32eb2cb5d4c0",
 			"title": "поменять анимацию скримерам",
 			"description": "я тут в раздумиях,\nделать или 4 разных скримера из первых четырех og частей. Или наверное стоит так и сделать",
-			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"category": "95686080-b83c-479d-b691-55683f5acac9",
 			"steps": []
 		},
 		{
 			"uuid": "92b532ea-e596-4a1f-9cff-0255f15857c9",
 			"title": "New task",
 			"description": "нужна интуитивность",
-			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
+			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
 			"steps": [
 				{
 					"details": "для начала пронумеруй кнопки камер",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "после сделай видимыми кнопками, кнопки на мониторе",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "после в главном меню не хватало бы сделать пресетов",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "обозначение офиса на схеме",
-					"done": false
+					"done": true
 				}
 			]
+		},
+		{
+			"uuid": "d2cc32d8-85ac-4340-8f36-5dd2ec5e56ed",
+			"title": "start_shift.ogg",
+			"description": "",
+			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
+			"steps": [
+				{
+					"details": "1",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "9b18d48a-9ae5-45bf-baaf-7754bf36cd99",
+			"title": "про предметы",
+			"description": "по лору,\nхимера, она же динозавр с переферийным зрением, так пусть ее предметом будет микрофон, аля издает звуки, таким образом ориентируется в пространстве, почему бы и нет? зачем я пишу этот текст?\n\nшум, ну тут очевидно, электрогитару в руки и в перед\n\nвот с занудой по тяжелее. Дать ей телефон? как-то слишком просто. Может ноут сразу дать? Кстати ака вариант да.\n\nТак, а что с медведем? Просто дать ей большую морковку это слишком просто и тупо. Ладно отложу этот вопрос на потом",
+			"category": "95686080-b83c-479d-b691-55683f5acac9",
+			"steps": []
 		}
 	],
 	"layout": {
@@ -172,9 +211,6 @@
 			],
 			[
 				"d4a1ccb6-2ee0-4cf8-8974-4e4d8fccecf9"
-			],
-			[
-				"dc00f911-ac5a-4510-81ec-9ed13ec61747"
 			]
 		]
 	}

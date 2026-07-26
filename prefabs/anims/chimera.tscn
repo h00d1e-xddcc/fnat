@@ -3060,9 +3060,10 @@ _data = {
 
 [node name="chimera" type="Node3D" unique_id=1173604488 node_paths=PackedStringArray("animator")]
 script = ExtResource("1_l3s26")
-ai_lvl = 25
 color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 animator = NodePath("AnimationPlayer")
+pose_default = Array[String](["dab", "engage", "pootis_pow", "peta", "tpose"])
+pose_hunting = Array[String](["tpose", "timeout", "mrbeast", "engage", "reference"])
 
 [node name="skelet" type="Node3D" parent="." unique_id=169285267]
 

@@ -111,8 +111,8 @@ scale = Vector2(0.6268518, 0.57592595)
 [node name="shock" type="HBoxContainer" parent="scheme" unique_id=2132131354]
 offset_left = -1178.1094
 offset_top = -253.50479
-offset_right = -1128.1094
-offset_bottom = -203.50479
+offset_right = -800.1094
+offset_bottom = -183.50479
 theme_override_constants/separation = 32
 alignment = 1
 
@@ -315,10 +315,10 @@ texture = ExtResource("2_mhwow")
 [node name="you" type="ColorRect" parent="scheme/map" unique_id=643736449]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
-offset_left = 42.274742
-offset_top = -324.69452
-offset_right = 82.27474
-offset_bottom = -284.69452
+offset_left = 43.870018
+offset_top = -376.78455
+offset_right = 83.87002
+offset_bottom = -336.78455
 color = Color(1, 0.53333336, 0, 1)
 
 [node name="fire_exit" type="Button" parent="scheme" unique_id=739321568]

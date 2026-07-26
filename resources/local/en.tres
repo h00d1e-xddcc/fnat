@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_2qiky")
 dictionary = Dictionary[String, String]({
+"da_rules": "Rules loss Teto's\\n Family Dinner\\n \\n1 don't run\\n 2 haven't come up yet\\n 3 don't scream\\n 4 don't poo on floor\\n 5 stay whit parents\\n 6 don't touch Teto\\n 8 Susceptible to lava!\\n don't enter in jeffry room",
 "note0": "D338 Nu78",
 "note1": "MILK OUTSIDE \\nA BAG OF MILK \\nMILK OUTSIDE \\nA BAG OF MILK \\nMILK OUTSIDE \\nA BAG OF MILK \\nMILK OUTSIDE \\nA BAG OF MILK \\nMILK OUTSIDE \\nA BAG OF MILK \\n",
 "note2": "father\\n it's me",
@@ -34,6 +35,7 @@ dictionary = Dictionary[String, String]({
 "room_toilet": "toilet",
 "room_warderobe": "warderobe",
 "room_ware": "ware",
+"thanks_ad": "your ad could\\n be here",
 "ui_back": "back",
 "ui_bait": "bait",
 "ui_cam": "cam",

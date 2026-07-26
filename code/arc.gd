@@ -5,7 +5,7 @@ extends Node3D
 @export var screen : fnat_screen
 @export var debug : bool
 @export var pause : bool
-@export var night : int = 1
+@export var night : int = 0
 @export var usage : float = 1.75
 @export var time : float
 @export var batary : float = 57.9
@@ -101,7 +101,7 @@ func play2D_sound(path : String, delay : float = 0, volume_to_decrease : float =
 	if audio == null : 
 		audio = preload("res://resources/sounds/user/alarm.wav")
 		push_error("sound eggor >" + path)
-	arc.user.add_child(sfx)
+	arc.add_child(sfx)
 	sfx.stream = audio
 	sfx.name = path
 	sfx.volume_db = volume_to_decrease
@@ -187,6 +187,7 @@ func change_da_note(text : String, size : int = 18) :
 	note.font_size = size
 
 func retranslate_title() :
+	# yandere
 	get_node("/root/main_menu/ui/title").text = get_word("ui_title")
 	get_node("/root/main_menu/ui/main/buttons/custom_night").text = get_word("ui_custom")
 	get_node("/root/main_menu/ui/main/buttons/thanks").text = get_word("ui_thanks")
@@ -215,6 +216,8 @@ func retranslate_title() :
 	get_node("/root/main_menu/ui/loadout_back/loadout/cam").text = get_word("ui_cam")
 	get_node("/root/main_menu/ui/loadout_back/loadout/peek").text = get_word("ui_peek")
 	
-	
+	get_node("/root/main_menu/thanks/da_rules/label").text = get_word("da_rules")
+	get_node("/root/main_menu/thanks/board/thanks").text = get_word("ui_thanks")
+	get_node("/root/main_menu/thanks/board/ad").text = get_word("thanks_ad")
 	
 	

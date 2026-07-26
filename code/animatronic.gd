@@ -15,18 +15,22 @@ enum mind {IDLE, WALKING, HUNTING}
 @export var acc : Node3D
 @export var noise : AudioStreamPlayer3D
 @export var is_lock : bool
+@export var is_static : bool
 
 @export var pose_default : Array[String]
 @export var pose_hunting : Array[String]
 
-signal in_office
+# animation_array
+# dab, damn, default, engage, guitar, look, lotos, mrbeast, peta, pootis_pow, reference, skeletAction, sniper, timeout, tpose
 
-#func get_pose(pose : String)
+signal in_office
 
 func jumpscare() :
 	for i in arc.user.anims.size() :
 		arc.user.anims[i].ai_lvl = 0
 	await get_tree().create_timer(2.57).timeout
+	arc.user.blink(.15)
+	await get_tree().create_timer(.2).timeout
 	arc.user.blink(.15)
 	await get_tree().create_timer(.257).timeout
 	arc.user.blink(.3)
@@ -211,7 +215,7 @@ func _ready() -> void:
 			#else : current_point = get_node("/root/main/path_chimera/walking/stage")
 		"noise" :
 			animator.play("guitar")
-			if roll >= 95 :
+			if roll >= 95 and is_static == false :
 				if roll % 2 == 0 : 
 					arc.play_external(noise, "anim/noise/bass/it_is_sad_day", 15, randf_range(0, 7))
 				else : arc.play_external(noise, "anim/noise/bass/вещественное_доказательсво", 17, randf_range(0, 7))
@@ -220,19 +224,27 @@ func _ready() -> void:
 			animator.play("engage")
 		"nerd" :
 			animator.play("look")
-		"endo" : ai_lvl = randi_range(0,25)
-	while true :
-		await get_tree().create_timer(randf_range(4,25)).timeout
-		toss_roll()
+		"bear" :
+			animator.play("tpose")
+		"endo" : 
+			animator.play("tpose")
+			ai_lvl = randi_range(0,25)
+	if is_static == false :
+		while true :
+			await get_tree().create_timer(randf_range(4,25)).timeout
+			toss_roll()
 
 #func rotate_head(point : Vector3 = Vector3.ZERO) : 
 	#var bone = get_node("skelet/Skeleton3D").find_bone("head")
+	#var pose = get_node("skelet/Skeleton3D").get_bone_pose_rotation(bone)
 	#match point :
-		#Vector3.ZERO : bone.look_at(arc.user.global_position)
+		#Vector3.ZERO :
+			#get_node("skelet/Skeleton3D").set_bone_pose_rotation(bone,Quaternion.from_euler(arc.user.global_position))
 		#Vector3.ONE : bone.rotation = Vector3.ZERO
 		#_ : bone.look_at(point)
 
 func _process(delta: float) -> void:
+	if is_lock == true : return
 	if current_point.name == "office" :
 		match name :
 			"chimera" :
@@ -249,7 +261,7 @@ func _process(delta: float) -> void:
 				if arc.user.spot_light.visible == false:
 					emit_signal("in_office")
 					in_office.disconnect(jumpscare)
-			
+
 			"bear" :
 				if arc.user.state != arc.user.action.hide and arc.user.spot_light.visible == false :
 					emit_signal("in_office")

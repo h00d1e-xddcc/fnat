@@ -143,7 +143,7 @@ func recharge() :
 	arc.play_sound("user/flashlight_charge")
 
 func cancel_call() :
-	var node = get_node("user_call_" + arc.lang.get_lange())
+	var node = get_node("/root/arc/user_call_" + arc.lang.get_lange())
 	if node != null : 
 		node.queue_free()
 		arc.play2D_sound("user/math_correct")
@@ -215,6 +215,8 @@ func blink(time : float = 0) :
 	blink_screen.visible = true
 	await  get_tree().create_timer(time).timeout
 	blink_screen.visible = false
+	var roll = randi_range(0,100)
+	if roll > 90 : blink(0.13)
 
 func debug() :
 	arc.time = -9999

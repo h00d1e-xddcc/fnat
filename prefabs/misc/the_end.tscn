@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ddiwpgxckfkpv"]
 
 [ext_resource type="Script" uid="uid://brx21jqfoiia2" path="res://code/the_end.gd" id="1_61rlb"]
-[ext_resource type="ArrayMesh" uid="uid://ck20r1da1302j" path="res://prefabs/mesh/fnat_item_cloks.res" id="2_b0xhl"]
+[ext_resource type="ArrayMesh" uid="uid://bgrimssfhfpg3" path="res://prefabs/mesh/fnat_item_cloks.res" id="2_b0xhl"]
 [ext_resource type="AudioStream" uid="uid://ctrt4y6atqind" path="res://resources/sounds/ambient/random/Clock.ogg" id="3_iyxkc"]
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="4_iyxkc"]
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="5_cbddy"]
@@ -3088,7 +3088,6 @@ stream = ExtResource("3_iyxkc")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.2453668e-08, -2.2, -0.6)
 visible = false
 script = ExtResource("4_iyxkc")
-pers = 1
 current_point = NodePath("node_path")
 color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 animator = NodePath("AnimationPlayer")
