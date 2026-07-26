@@ -1278,7 +1278,6 @@ autowrap_mode = 2
 autowrap_trim_flags = 0
 
 [node name="main" type="Control" parent="ui" unique_id=2035603169]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1330,6 +1329,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="label" type="Label" parent="ui/main/control" unique_id=1995695313]
+visible = false
 layout_mode = 0
 offset_left = -200.0
 offset_top = 23.0
@@ -1463,6 +1463,7 @@ theme_override_fonts/font = ExtResource("4_gacyl")
 text = "я соглашаюсь на обработку персональных данных"
 
 [node name="loadout_back" type="ColorRect" parent="ui" unique_id=536123523]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

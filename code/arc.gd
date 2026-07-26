@@ -97,9 +97,11 @@ func button_delay(button : Button, waiting : float) :
 
 func play2D_sound(path : String, delay : float = 0, volume_to_decrease : float = 0) :
 	var sfx : AudioStreamPlayer = AudioStreamPlayer.new()
-	var audio = sounds.get(path)
-	if audio == null : 
-		audio = preload("res://resources/sounds/user/alarm.wav")
+	var audio = load("res://resources/sounds/" + path + ".wav")
+	if audio == null : audio = load("res://resources/sounds/" + path + ".ogg")
+	if audio == null : audio = load("res://resources/sounds/" + path + ".mp3")
+	if audio == null :
+		audio = load("res://resources/sounds/user/alarm.wav")
 		push_error("sound eggor >" + path)
 	arc.add_child(sfx)
 	sfx.stream = audio
@@ -117,11 +119,12 @@ func play_sound(path : String, second : float = 0, node : Node3D = null, delay :
 	else : 
 		user.add_child(sfx)
 		sfx.position = Vector3.ZERO
-	var audio = sounds.get(path)
-	if audio == null : 
-		audio = preload("res://resources/sounds/user/alarm.wav")
+	var audio = load("res://resources/sounds/" + path + ".wav")
+	if audio == null : audio = load("res://resources/sounds/" + path + ".ogg")
+	if audio == null : audio = load("res://resources/sounds/" + path + ".mp3")
+	if audio == null :
+		audio = load("res://resources/sounds/user/alarm.wav")
 		push_error("sound eggor >" + path)
-		sfx.volume_db = -80
 	sfx.max_distance = max_dist
 	sfx.stream = audio
 	sfx.name = path
