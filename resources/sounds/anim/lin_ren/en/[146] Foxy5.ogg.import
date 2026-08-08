@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://mt8bpyq3hiyg"
+path="res://.godot/imported/[146] Foxy5.ogg-69724177c2d20272a57cc487f934be0b.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/lin_ren/en/[146] Foxy5.ogg"
+dest_files=["res://.godot/imported/[146] Foxy5.ogg-69724177c2d20272a57cc487f934be0b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

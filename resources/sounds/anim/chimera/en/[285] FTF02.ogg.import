@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1k3vhfp68jmy"
+path="res://.godot/imported/[285] FTF02.ogg-1c1301043a5c71cf4f07ce8851aab6e6.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/chimera/en/[285] FTF02.ogg"
+dest_files=["res://.godot/imported/[285] FTF02.ogg-1c1301043a5c71cf4f07ce8851aab6e6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

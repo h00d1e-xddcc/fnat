@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://sot2mdavjcr2"
+path="res://.godot/imported/[282] Mar04.ogg-7860f5578c25738c23156d35a9e26ee5.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pearto/en/[282] Mar04.ogg"
+dest_files=["res://.godot/imported/[282] Mar04.ogg-7860f5578c25738c23156d35a9e26ee5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

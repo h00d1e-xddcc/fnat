@@ -9,7 +9,7 @@ enum action {sit, hide, peek, pc, back, loss}
 @export var flash_light_charge : float = 100
 @export var spot_light : SpotLight3D
 @export var cast : RayCast3D
-@export var audios : Dictionary[String,AudioStreamPlayer3D]
+@export var audios : Dictionary[String,AudioStreamPlayer3D] # аудиос, как так можно было поле назвать? 
 @export var cam : fnat_camera
 @export var fan_rotor : MeshInstance3D
 @export var is_booting : bool
@@ -20,32 +20,42 @@ enum action {sit, hide, peek, pc, back, loss}
 var interaction
 
 func _process(delta):
-	if state == action.loss : return
+	if Input.is_action_just_pressed("pause") : arc.pause()
+	if get_tree().paused or state == action.loss : return
 	input()
 	if to_rotate != 0 :
-		if state == action.sit :
-			rotation.y = lerp(rotation.y, rotation.y + to_rotate, delta * 1.25)
-		if state == action.pc and arc.screen.cam.visible == true :
-			var rot = cam.rotation_degrees.y + to_rotate
-			cam.rotation_degrees.y = lerp(cam.rotation_degrees.y, rot, delta * 100)
-			if cam.rotation_degrees.y > cam.min : cam.rotation_degrees.y = cam.min
-			if cam.rotation_degrees.y < cam.max : cam.rotation_degrees.y = cam.max
+		match state :
+			action.sit, action.hide:
+				rotation.y = lerp(rotation.y, rotation.y + to_rotate, delta * 1.57)
+			action.pc :
+				if arc.screen.cam.visible == true:
+					var rot = cam.rotation_degrees.y + to_rotate
+					cam.rotation_degrees.y = lerp(cam.rotation_degrees.y, rot, delta * 100)
+					if cam.rotation_degrees.y > cam.min : cam.rotation_degrees.y = cam.min
+					if cam.rotation_degrees.y < cam.max : cam.rotation_degrees.y = cam.max
 
-	if state == action.sit or state == action.peek : 
+	if state != action.pc : 
 		flash_light.visible = Input.is_action_pressed("light")
-	if flash_light.visible :
-		var mouse_pos = get_viewport().get_mouse_position()
-		var ray_origin = project_ray_origin(mouse_pos)
-		var ray_direction = project_ray_normal(mouse_pos)
-		var ray_length = 100
-		var query = PhysicsRayQueryParameters3D.create(
-		ray_origin,
-		ray_origin + ray_direction * ray_length)
-		var result = get_world_3d().direct_space_state.intersect_ray(query)
-		if result.collider.name == "teto" : arc.play_teto()
-		flash_light.look_at(result.position)
-		flash_light_charge -= delta * 2
-		flash_light.light_energy = flash_light_charge / 100
+		if flash_light.visible :
+			var mouse_pos = get_viewport().get_mouse_position()
+			var ray_origin = project_ray_origin(mouse_pos)
+			var ray_direction = project_ray_normal(mouse_pos)
+			var ray_length = 1000
+			var query = PhysicsRayQueryParameters3D.create(
+			ray_origin,
+			ray_origin + ray_direction * ray_length)
+			var result = get_world_3d().direct_space_state.intersect_ray(query)
+			#print(result.collider.name)
+			match result.collider.name :
+				"fatass" : arc_event.play_teto()
+				"nchimera" : 
+					get_node("/root/main/nchimera").hunger -= 45 * delta
+					if get_node("/root/main/nchimera").hunger <= 0:
+						arc.user.blink(.31)
+						get_node("/root/main/nchimera").poof()
+			flash_light.look_at(result.position)
+			flash_light_charge -= delta * 2
+			flash_light.light_energy = flash_light_charge / 100
 
 	if spot_light.visible == true :
 		fan_rotor.rotation_degrees.y += 1000 * delta
@@ -54,9 +64,9 @@ func _process(delta):
 	else : 
 		mental_sickness += 1.75 * delta
 
-	if randi_range(0,1000) == 256 : play_some_event("start")
+	if randi_range(0,1256) == 256 : arc_event.play_some_event("start")
 	if mental_sickness >= 40 :
-		play_some_event("mental")
+		arc_event.play_some_event("mental")
 		mental_sickness -= 40
 
 func input() :
@@ -107,46 +117,27 @@ func spotlight() :
 		arc.screen.booting.visible = false
 		is_booting = false
 
-func play_some_event(event : String) :
-	match event :
-		"start" :
-			var roll = randi_range(0,15)
-			match roll :
-				0 : arc.play2D_sound("ambient/random/dog", 0, 3) 
-				1 : arc.play2D_sound("ambient/random/crows", 0, -12)
-				2 : arc.play2D_sound("ambient/random/horn", 0, -3)
-				3 :arc.play2D_sound("ambient/rainstorm", 1, 4) 
-				4 :arc.play2D_sound("ambient/random/punch", 0, 14)
-				5 :arc.play2D_sound("ambient/random/roof_walk", 0, 13)
-				6 :arc.play2D_sound("ambient/random/siren", 0, 0)
-				7 :arc.play2D_sound("ambient/random/fall_pot", 0, -15)
-				8 :arc.play2D_sound("ambient/random/fall_armature", 3, -17)
-				#9 :arc.play_sound("ambient/random/pipes", 0, null, 3, 0, 10)
-				10 :arc.play2D_sound("ambient/fire_alarm", 0, -16)
-				_: blink(randf_range(0.15, 2.56))
-				
-		"mental":
-			var roll = randi_range(0,5)
-			match roll :
-				0 : arc.play2D_sound("ambient/random/sanity" + str(randi_range(0,2)), 0, -0)
-				1 : arc.play2D_sound("ambient/random/deerclops" + str(randi_range(0,2)), 0, -10)
-				2 : arc.play2D_sound("ambient/random/laugh", 0, 10)
-				3 : arc.play2D_sound("anim/spotted", 0, -3)
-				4 : arc.play2D_sound("anim/" + arc.user.anims[randi_range(0,3)].name + "/moved", 0, -8)
-				5 : arc.play2D_sound("anim/it/breath" + str(randi_range(0,1)), 0, -9)
-
 func recharge() :
 	#anims[0].jumpscare()
-	if state != action.sit or arc.user.flash_light_charge >= 90: return
+	if randi_range(0,100) > 80 :
+		flashlight_brake()
+		return
+	if arc.user.flash_light_charge >= 90: 
+		arc.user.flash_light_charge = 100
+		arc_event.play_sfx({"path" = "user/flashlight_full", "sec" = .28})
+		return
 	arc.user.flash_light_charge += randf_range(7, 20)
-	if arc.user.flash_light_charge > 100 : arc.user.flash_light_charge = 100
-	arc.play_sound("user/flashlight_charge")
+	arc_event.play_sfx({"path" = "user/flashlight_charge", "volume" = 1})
+
+func flashlight_brake() :
+	arc.user.flash_light_charge = 0
+	arc_event.play_sfx({"path" = "user/flashlight_die", "volume" = 5})
 
 func cancel_call() :
 	var node = get_node("/root/arc/user_call_" + arc.lang.get_lange())
 	if node != null : 
 		node.queue_free()
-		arc.play2D_sound("user/math_correct")
+		arc_event.play_sfx({"path" = "user/math_correct"})
 
 func change_state(numba : int = 0) :
 	match numba :
@@ -165,6 +156,8 @@ func change_state(numba : int = 0) :
 		1 : # hide
 				if state != action.hide :
 					state = action.hide
+					arc.fatass.position = Vector3(-2.782, .503, -18.876)
+					arc.fatass.rotation_degrees = Vector3(0, 176, 0)
 					flash_light.visible = false
 					position = Vector3(-2.9, .5, -17.9)
 					rotation = Vector3.ZERO
@@ -174,6 +167,8 @@ func change_state(numba : int = 0) :
 				else :change_state()
 		0, _ : # default
 			state = action.sit
+			arc.fatass.position = Vector3(-2.23, .865, -17.834)
+			arc.fatass.rotation_degrees = Vector3(0, 31, 0)
 			position = Vector3(-2.7, 1.3, -18.9)
 			rotation_degrees.y = -175
 			rotation_degrees.x = 0
@@ -199,7 +194,8 @@ func _on_right_trigger_mouse_entered() -> void:
 
 func _input(event) :
 	#if event.is_action_pressed("ui_cancel") : get_tree().quit()
-	
+	if state != action.pc : return
+
 	if Input.is_action_just_pressed("light") and interaction :
 		interaction = null
 		set_physics_process(true)
@@ -207,14 +203,29 @@ func _input(event) :
 	elif event.is_action_pressed("light") and cast.is_colliding() :
 		var collider = cast.get_collider()
 		interaction = collider
-		if collider.name == "teto" : arc.play_teto()
-		if collider is fnat_screen :
-			set_physics_process(false)
+		set_physics_process(false)
+
+	if arc.screen.teto_input.visible == true and event is InputEventKey and event.pressed:
+		if event.unicode != 0 :
+			var line = get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/input")
+			var text = char(event.unicode)
+			if text == " " : return
+			line.text += str(text)
+			if line.text == arc.screen.teto_word :
+				arc.screen.teto_input.visible = false
+
+			if line.text.length() == 10 :
+				line.text = ""
+				line.visible = true
+				arc.batary -= 1
+				arc_event.play_sfx({"path" = "user/fish_miss"})
 
 func blink(time : float = 0) :
 	blink_screen.visible = true
+	arc.is_can_pause = false
 	await  get_tree().create_timer(time).timeout
 	blink_screen.visible = false
+	arc.is_can_pause = true
 	var roll = randi_range(0,100)
 	if roll > 90 : blink(0.13)
 
@@ -222,13 +233,21 @@ func debug() :
 	arc.time = -9999
 	arc.batary = 999999
 
+func mute() :
+	audios["fan"].playing = false
+	audios["spot"].playing = false
+
 func _ready() -> void:
 	change_state()
 	arc.set_dif()
-	arc.play2D_sound("ambient/warning", 0, -23)
+	arc_event.play_sfx({"type" = "2d", "path" = "ambient/warning", "volume" = -23})
 	await get_tree().create_timer(.257).timeout
-	play_some_event("start")
+	get_node("/root/main/office/triggers/vhs").visible = false
+	arc_event.play_some_event("start")
 	print(arc.lang.get_lange())
-	arc.play2D_sound("user/call")
+	await get_tree().create_timer(3.1).timeout
+	arc.is_can_pause = true
+	#arc_event.play_sfx({"type" = "2d", "path" = "user/call"})
 	await get_tree().create_timer(7).timeout
-	arc.play2D_sound("user/call_" + arc.lang.get_lange())
+	#arc_event.play_sfx({"type" = "2d", "path" = "user/call_" + arc.lang.get_lange()})
+	#if randi_range(0,100 > 90) : arc_event.play_some_event("long")

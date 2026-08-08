@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://n2mxbvv5cgpa"]
+
+[ext_resource type="Script" uid="uid://drtp2lue81uti" path="res://code/console.gd" id="1_f20xa"]
+[ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="2_caq8l"]
+
+[node name="console" type="Control" unique_id=991387515 node_paths=PackedStringArray("output", "input")]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+script = ExtResource("1_f20xa")
+output = NodePath("panel/rich_text_label")
+input = NodePath("panel/input")
+
+[node name="panel" type="Panel" parent="." unique_id=36756786]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -272.0
+offset_right = 452.0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(40, -40)
+offset_transform_visual_only = false
+
+[node name="rich_text_label" type="RichTextLabel" parent="panel" unique_id=1782590902]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = ExtResource("2_caq8l")
+bbcode_enabled = true
+
+[node name="input" type="LineEdit" parent="panel" unique_id=1191321777]
+z_index = 257
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 31.95)
+offset_transform_visual_only = false
+theme_override_fonts/font = ExtResource("2_caq8l")
+
+[node name="v_scroll_bar" type="VScrollBar" parent="panel" unique_id=287374409]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="text_submitted" from="panel/input" to="." method="_on_input_text_submitted"]

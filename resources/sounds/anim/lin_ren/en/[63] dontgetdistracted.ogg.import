@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0sfq4sww7n54"
+path="res://.godot/imported/[63] dontgetdistracted.ogg-5cd0ca64a234136039970848258056ba.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/lin_ren/en/[63] dontgetdistracted.ogg"
+dest_files=["res://.godot/imported/[63] dontgetdistracted.ogg-5cd0ca64a234136039970848258056ba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

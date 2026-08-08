@@ -4,6 +4,8 @@
 [ext_resource type="ArrayMesh" uid="uid://b7milqfb0xs33" path="res://prefabs/mesh/fnat_window.res" id="3_krkvt"]
 [ext_resource type="Texture2D" uid="uid://bx2g8enw6snml" path="res://pics/wall.png" id="3_pc82h"]
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="4_krkvt"]
+[ext_resource type="ArrayMesh" uid="uid://bxb8l1dn3wivf" path="res://prefabs/mesh/fnat_fance_net.res" id="5_rgun0"]
+[ext_resource type="ArrayMesh" uid="uid://chv84jgxv6kvn" path="res://prefabs/mesh/fnat_cube.res" id="5_rl805"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8eb8i"]
 albedo_texture = ExtResource("3_pc82h")
@@ -24,9 +26,6 @@ center_offset = Vector3(0.5, 0, -1.5)
 [sub_resource type="BoxMesh" id="BoxMesh_8eb8i"]
 material = ExtResource("2_pc82h")
 size = Vector3(1, 0.32, 0.04)
-
-[sub_resource type="BoxMesh" id="BoxMesh_pc82h"]
-size = Vector3(0.15, 1.55, 3.45)
 
 [node name="window" type="Node3D" unique_id=2111428700]
 
@@ -96,9 +95,41 @@ mesh = ExtResource("3_krkvt")
 surface_material_override/0 = ExtResource("4_krkvt")
 
 [node name="mesh_instance_3d" type="MeshInstance3D" parent="window" unique_id=1475905850]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04199995, 1.6, 0.9794319)
+transform = Transform3D(0.246, 0, -4.2757458e-07, 0, 5.53979, 0, -4.275743e-07, 0, 10.027769, 0.054370224, 0.68720734, 1.2077334)
+visible = false
 layers = 3
-instance_shader_parameters/albedo = Color(0.15686275, 0.039215688, 0.15686275, 0)
+instance_shader_parameters/coloring = Color(0.15686275, 0.039215688, 0.15686275, 1)
 instance_shader_parameters/em = 0.0
-mesh = SubResource("BoxMesh_pc82h")
-surface_material_override/0 = ExtResource("2_pc82h")
+instance_shader_parameters/trans = 0.6350000301625
+mesh = ExtResource("5_rl805")
+surface_material_override/0 = ExtResource("4_krkvt")
+
+[node name="mesh_instance_3d2" type="MeshInstance3D" parent="window" unique_id=1578570002]
+transform = Transform3D(1.6896227e-07, 0, -1.779, 0, 1, 0, -0.30740574, 0, -1.0463681e-07, 0.08427934, 0.63096976, 0.07551664)
+mesh = ExtResource("5_rgun0")
+surface_material_override/0 = ExtResource("4_krkvt")
+
+[node name="mesh_instance_3d3" type="MeshInstance3D" parent="window" unique_id=281188460]
+transform = Transform3D(-1.4208803e-07, 0, 1.7790003, 0, 1, 0, 0.3074059, 0, -5.088831e-08, 0.08439003, 0.63100004, 0.62043196)
+mesh = ExtResource("5_rgun0")
+surface_material_override/0 = ExtResource("4_krkvt")
+
+[node name="mesh_instance_3d4" type="MeshInstance3D" parent="window" unique_id=2081306580]
+transform = Transform3D(1.6896227e-07, 0, -1.779, 0, 1, 0, -0.30740586, 0, -1.0463681e-07, 0.08427933, 0.63096976, 1.1674104)
+mesh = ExtResource("5_rgun0")
+surface_material_override/0 = ExtResource("4_krkvt")
+
+[node name="mesh_instance_3d5" type="MeshInstance3D" parent="window" unique_id=413990070]
+transform = Transform3D(-1.4208803e-07, 0, 1.7790003, 0, 1, 0, 0.30740595, 0, -5.088831e-08, 0.084389985, 0.63100004, 1.712326)
+mesh = ExtResource("5_rgun0")
+surface_material_override/0 = ExtResource("4_krkvt")
+
+[node name="mesh_instance_3d6" type="MeshInstance3D" parent="window" unique_id=2054898221]
+transform = Transform3D(1.6896227e-07, 0, -1.779, 0, 1, 0, -0.30740595, 0, -1.0463681e-07, 0.08427933, 0.63096976, 2.2598243)
+mesh = ExtResource("5_rgun0")
+surface_material_override/0 = ExtResource("4_krkvt")
+
+[node name="mesh_instance_3d7" type="MeshInstance3D" parent="window" unique_id=1234958265]
+transform = Transform3D(-1.4208803e-07, 0, 1.7790003, 0, 1, 0, 0.30740595, 0, -5.088831e-08, 0.08439, 0.63100004, 2.806224)
+mesh = ExtResource("5_rgun0")
+surface_material_override/0 = ExtResource("4_krkvt")

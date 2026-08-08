@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bmvg82bprk781"]
+
+[ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="1_kj8hq"]
+[ext_resource type="ArrayMesh" uid="uid://boc4dshhrqyg3" path="res://prefabs/mesh/fnat_tt_smile.res" id="2_srxjj"]
+
+[node name="tt" type="Node3D" unique_id=1308891161]
+script = ExtResource("1_kj8hq")
+color = Color(0.7764706, 0.22352941, 0.77254903, 1)
+is_lock = true
+is_static = true
+
+[node name="tt_smile" type="MeshInstance3D" parent="." unique_id=1880356336]
+mesh = ExtResource("2_srxjj")

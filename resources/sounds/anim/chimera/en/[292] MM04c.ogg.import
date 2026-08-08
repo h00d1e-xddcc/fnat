@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ducsbliiro5so"
+path="res://.godot/imported/[292] MM04c.ogg-d0235e399662ed6ca986fe6ca77e8eb6.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/chimera/en/[292] MM04c.ogg"
+dest_files=["res://.godot/imported/[292] MM04c.ogg-d0235e399662ed6ca986fe6ca77e8eb6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

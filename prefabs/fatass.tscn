@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://7xtsswcgq6qq"]
+
+[ext_resource type="ArrayMesh" uid="uid://dgw4rvoyxmb60" path="res://prefabs/mesh/fnat_fatass.res" id="1_kk3tf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0vcn1"]
+size = Vector3(0.6, 0.95, 0.4)
+
+[node name="fatass" type="StaticBody3D" unique_id=1150366874]
+transform = Transform3D(0.40886876, 0, 0.24567313, 0, 0.47699994, 0, -0.24567313, 0, 0.40886876, 0, 0, 0)
+
+[node name="fnat_fatass" type="MeshInstance3D" parent="." unique_id=822199748 groups=["teto"]]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 0.99999994, 0, -2.9802322e-08, 0, 0.99999994, 0, 1.1920929e-07, 0)
+mesh = ExtResource("1_kk3tf")
+
+[node name="collision" type="CollisionShape3D" parent="." unique_id=940711823]
+transform = Transform3D(0.99999976, 0, 2.682209e-07, 0, 0.99999934, 0, -2.682209e-07, 0, 0.99999976, 0, 0.14999986, 0)
+shape = SubResource("BoxShape3D_0vcn1")

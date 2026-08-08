@@ -57,7 +57,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_27xno")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
@@ -106,14 +106,14 @@ frame_progress = 1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=901287732]
 stream = ExtResource("3_jetkh")
-volume_db = -12.0
+volume_db = -24.0
 autoplay = true
 
 [node name="Timer" type="Timer" parent="." unique_id=245722775]
 one_shot = true
 
 [node name="Label" type="Label" parent="." unique_id=1688259486]
-modulate = Color(0.9402245, 1.8254814, 0.5340602, 1)
+modulate = Color(0.15878676, 1.8747702, 1.6058183, 1)
 texture_filter = 1
 offset_left = -35.0
 offset_top = -70.0

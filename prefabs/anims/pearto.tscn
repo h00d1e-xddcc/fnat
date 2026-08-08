@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://diukdktdn3jmv"]
+
+[ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="1_h248p"]
+[ext_resource type="ArrayMesh" uid="uid://cd78tpps47oqd" path="res://prefabs/mesh/fnat___p.res" id="1_j40ny"]
+[ext_resource type="ArrayMesh" uid="uid://cvgb54meu1ufg" path="res://prefabs/mesh/fnat_pearto.res" id="2_h248p"]
+
+[sub_resource type="Skin" id="Skin_pvso1"]
+resource_name = "Skin"
+bind_count = 21
+bind/0/name = &"leg.L"
+bind/0/bone = -1
+bind/0/pose = Transform3D(-0.0013445689, -0.024650745, 0.9996952, -0.054447874, -0.9982114, -0.024687385, 0.9985156, -0.054464493, -2.0023434e-08, 0.14561136, 1.1815497, -0.055553768)
+bind/1/name = &"feet.L"
+bind/1/bone = -1
+bind/1/pose = Transform3D(0.0005199351, 0.016110143, 0.9998701, -0.032237098, -0.9993503, 0.016118532, 0.99948, -0.0322413, -2.5611368e-07, 0.11978691, 0.6345876, -0.06964121)
+bind/2/name = &"leg.R"
+bind/2/bone = -1
+bind/2/pose = Transform3D(-0.0013456892, 0.024676176, -0.99969447, 0.035554305, -0.999062, -0.024708426, -0.9993667, -0.035576552, 0.0004670858, -0.14562738, 1.1799129, -0.067469046)
+bind/3/name = &"feet.R"
+bind/3/bone = -1
+bind/3/pose = Transform3D(0.00051993533, -0.016110152, -0.9998701, 0.03223725, -0.99935013, 0.016118543, -0.99948007, -0.0322413, -2.474407e-07, -0.1197869, 0.6345874, -0.06964121)
+bind/4/name = &"spine"
+bind/4/bone = -1
+bind/4/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19, 0.1)
+bind/5/name = &"item"
+bind/5/bone = -1
+bind/5/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2395157, 0.6)
+bind/6/name = &"neck"
+bind/6/bone = -1
+bind/6/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9395156, 0.1)
+bind/7/name = &"head"
+bind/7/bone = -1
+bind/7/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0695157, 0.1)
+bind/8/name = &"shoulder.L"
+bind/8/bone = -1
+bind/8/pose = Transform3D(-0.98979086, -0.1424513, -3.0547045e-07, 0.14244267, -0.9897421, -0.010980015, 0.0015621525, -0.010868195, 0.9999396, 0.42753047, 1.8460133, 0.14131738)
+bind/9/name = &"arm.L"
+bind/9/bone = -1
+bind/9/pose = Transform3D(-0.9565926, -0.29139286, -7.972033e-07, 0.290573, -0.9539183, 0.07487408, -0.021820063, 0.071624465, 0.9971929, 0.6416971, 1.364067, 0.023443315)
+bind/10/name = &"hand.L"
+bind/10/bone = -1
+bind/10/pose = Transform3D(-0.9991617, -0.040665958, -7.059998e-07, 0.040667016, -0.9991727, 5.8561984e-08, -2.3694624e-06, -8.898055e-08, 0.9999999, 0.36396834, 1.1476632, 0.10000085)
+bind/11/name = &"fingers.L"
+bind/11/bone = -1
+bind/11/pose = Transform3D(-0.9828763, -0.18396744, 0.009409465, 0.1759802, -0.9528564, -0.24717493, 0.054436173, -0.24128935, 0.9689252, 0.5155822, 0.95549154, 0.3419489)
+bind/12/name = &"pre_big_finger.L"
+bind/12/bone = -1
+bind/12/pose = Transform3D(-0.8112904, -0.58462965, -9.0936635e-07, 0.5846245, -0.81130016, -8.9971314e-07, -1.8734385e-06, -1.3803639e-06, 0.9999999, 0.94899046, 0.7354517, 0.12000221)
+bind/13/name = &"big_finger.L"
+bind/13/bone = -1
+bind/13/pose = Transform3D(-0.87063617, -0.49190918, -1.0496223e-06, 0.49190512, -0.8706465, -7.139824e-07, -2.2243e-06, -1.256729e-06, 0.9999999, 0.8694399, 0.77164435, 0.12000222)
+bind/14/name = &"shoulder.R"
+bind/14/bone = -1
+bind/14/pose = Transform3D(-0.98979086, 0.1424513, 3.0547045e-07, -0.14244267, -0.9897421, -0.010980015, -0.0015621525, -0.010868195, 0.9999396, -0.42753047, 1.8460133, 0.14131738)
+bind/15/name = &"arm.R"
+bind/15/bone = -1
+bind/15/pose = Transform3D(-0.9565926, 0.29139286, 7.972033e-07, -0.290573, -0.9539183, 0.07487408, 0.021820063, 0.071624465, 0.9971929, -0.6416971, 1.364067, 0.023443315)
+bind/16/name = &"hand.R"
+bind/16/bone = -1
+bind/16/pose = Transform3D(-0.9991617, 0.040665958, 7.059998e-07, -0.040667016, -0.9991727, 5.8561984e-08, 2.3694624e-06, -8.898055e-08, 0.9999999, -0.36396834, 1.1476632, 0.10000085)
+bind/17/name = &"fingers.R"
+bind/17/bone = -1
+bind/17/pose = Transform3D(-0.9828763, 0.18396744, -0.009409465, -0.1759802, -0.9528564, -0.24717493, -0.054436173, -0.24128935, 0.9689252, -0.5155822, 0.95549154, 0.3419489)
+bind/18/name = &"pre_big_finger.R"
+bind/18/bone = -1
+bind/18/pose = Transform3D(-0.8983746, 0.4392085, 1.0483403e-06, -0.43920505, -0.89838505, -6.2840684e-07, 2.3274756e-06, -1.1437755e-06, 0.9999999, -0.8219631, 0.8798754, 0.12000213)
+bind/19/name = &"big_finger.R"
+bind/19/bone = -1
+bind/19/pose = Transform3D(-0.8706363, 0.49190918, 1.0496199e-06, -0.49190512, -0.87064654, -7.139822e-07, 2.2242987e-06, -1.2567277e-06, 1, -0.86943996, 0.77164435, 0.12000222)
+bind/20/name = &"neutral_bone"
+bind/20/bone = -1
+bind/20/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+
+[node name="pearto" type="Node3D" unique_id=1486262563]
+script = ExtResource("1_h248p")
+color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+is_lock = true
+is_static = true
+
+[node name="skelet" type="Node3D" parent="." unique_id=46573293]
+
+[node name="pearto" type="MeshInstance3D" parent="skelet" unique_id=291813247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = ExtResource("2_h248p")
+skin = SubResource("Skin_pvso1")
+skeleton = NodePath("../Skeleton3D")
+
+[node name="__p" type="MeshInstance3D" parent="skelet/pearto" unique_id=141832061]
+instance_shader_parameters/coloring = Color(0.90588236, 0.30588236, 0.37254903, 1)
+mesh = ExtResource("1_j40ny")
+skin = SubResource("Skin_pvso1")
+skeleton = NodePath("../Skeleton3D")

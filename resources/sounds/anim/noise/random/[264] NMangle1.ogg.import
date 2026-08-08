@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgfvpau3xtnad"
+path="res://.godot/imported/[264] NMangle1.ogg-377a283be32628c81e86a9c6268a9339.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/noise/random/[264] NMangle1.ogg"
+dest_files=["res://.godot/imported/[264] NMangle1.ogg-377a283be32628c81e86a9c6268a9339.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

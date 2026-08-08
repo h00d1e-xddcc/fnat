@@ -64,7 +64,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ye4cv")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
@@ -137,7 +137,7 @@ frame_progress = 1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=464749217]
 stream = ExtResource("3_6frqe")
-volume_db = -17.399
+volume_db = -27.0
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1622325907]
@@ -156,7 +156,7 @@ process_material = SubResource("ParticleProcessMaterial_5k50n")
 one_shot = true
 
 [node name="Label" type="Label" parent="." unique_id=947882731]
-modulate = Color(0.9156839, 0.035365093, 0.5221964, 1)
+modulate = Color(1.7271271, 1.3470762, 1.3502599, 1)
 texture_filter = 1
 offset_left = -35.0
 offset_top = -70.0

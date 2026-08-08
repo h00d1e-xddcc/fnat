@@ -63,6 +63,9 @@ visible = true
 [node name="map" parent="sub/ui/scheme" parent_id_path=PackedInt32Array(927469561, 1092765403) index="3" unique_id=2014552017]
 texture = SubResource("CameraTexture_dgndv")
 
+[node name="input" parent="sub/ui/word_minigame/back/teto_word" parent_id_path=PackedInt32Array(927469561, 587035667) index="0" unique_id=541610182]
+editable = false
+
 [connection signal="pressed" from="sub/ui/scheme/shock/chimera" to="." method="shock" binds= [&"chimera"]]
 [connection signal="pressed" from="sub/ui/scheme/shock/noise" to="." method="shock" binds= [&"noise"]]
 [connection signal="pressed" from="sub/ui/scheme/shock/nerd" to="." method="shock" binds= [&"nerd"]]
@@ -84,5 +87,6 @@ texture = SubResource("CameraTexture_dgndv")
 [connection signal="pressed" from="sub/ui/scheme/jeffry" to="." method="_pressed" binds= [&"jeffry"]]
 [connection signal="pressed" from="sub/ui/label/cam" to="." method="_on_cam_pressed"]
 [connection signal="pressed" from="sub/ui/label/scheme" to="." method="_on_scheme_pressed"]
+[connection signal="text_changed" from="sub/ui/word_minigame/back/teto_word/input" to="." method="_on_input"]
 
 [editable path="sub/ui"]

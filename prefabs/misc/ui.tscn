@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dlne2diiv70gw"]
 
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="1_8bix8"]
-[ext_resource type="Texture2D" uid="uid://dys8mmluxcuvv" path="res://pics/map.png" id="2_mhwow"]
+[ext_resource type="Texture2D" uid="uid://cbelwxsg8ko6j" path="res://pics/477.png" id="3_5u5yk"]
 [ext_resource type="Texture2D" uid="uid://co5fnl16y5p22" path="res://pics/bootscreen.png" id="3_i4vt5"]
 [ext_resource type="Texture2D" uid="uid://bsk45r67qn7g2" path="res://pics/bolt.png" id="4_5u5yk"]
+[ext_resource type="Texture2D" uid="uid://dkq8euhd5kv2s" path="res://pics/479.png" id="4_g6d76"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mhwow"]
 
@@ -29,9 +30,28 @@ expand_margin_bottom = 8.0
 default_font = ExtResource("1_8bix8")
 default_font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_0vcn1"]
+font = ExtResource("1_8bix8")
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Theme" id="Theme_0vcn1"]
 default_font = ExtResource("1_8bix8")
 default_font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67nhv"]
+bg_color = Color(0.9882353, 0.98039216, 0.9882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrs8n"]
+bg_color = Color(0.019607844, 0.011764706, 0.019607844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kba4"]
+bg_color = Color(0.011764706, 0.003921569, 0.019607844, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_67nhv"]
+font = ExtResource("1_8bix8")
+font_color = Color(0.011764706, 0.003921569, 0.019607844, 1)
 
 [sub_resource type="Gradient" id="Gradient_5u5yk"]
 colors = PackedColorArray(0.15686275, 0.039215688, 0.15686275, 1, 0.5647059, 0.8784314, 0.69411767, 1)
@@ -310,14 +330,153 @@ autowrap_mode = 1
 
 [node name="map" type="Sprite2D" parent="scheme" unique_id=2014552017]
 texture_filter = 1
-texture = ExtResource("2_mhwow")
+
+[node name="office" type="Label" parent="scheme/map" unique_id=1989208393]
+offset_left = 8.773979
+offset_top = -328.16718
+offset_right = 128.77399
+offset_bottom = -277.16718
+text = "office
+"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="staff" type="Label" parent="scheme/map" unique_id=194811622]
+offset_left = 11.964526
+offset_top = -501.8006
+offset_right = 131.96454
+offset_bottom = -450.8006
+text = "staff"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="kitchen" type="Label" parent="scheme/map" unique_id=442624251]
+offset_left = -270.39886
+offset_top = -378.52087
+offset_right = -102.398865
+offset_bottom = -327.52087
+text = "kithcen"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="parts_and_service" type="Label" parent="scheme/map" unique_id=1003135936]
+offset_left = 236.89806
+offset_top = -340.32153
+offset_right = 404.89804
+offset_bottom = -289.32153
+text = "parts n
+service"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="ware" type="Label" parent="scheme/map" unique_id=627926422]
+offset_left = 396.42538
+offset_top = -288.2315
+offset_right = 564.4254
+offset_bottom = -237.2315
+text = "ware"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="janitor" type="Label" parent="scheme/map" unique_id=634007710]
+offset_left = 377.28214
+offset_top = -93.76207
+offset_right = 545.2822
+offset_bottom = -42.76207
+text = "janiror"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="maze" type="Label" parent="scheme/map" unique_id=1041881867]
+offset_left = 74.180176
+offset_top = -114.59808
+offset_right = 242.18018
+offset_bottom = -63.598083
+text = "maze"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="playground" type="Label" parent="scheme/map" unique_id=430643978]
+offset_left = 19.940882
+offset_top = 57.299015
+offset_right = 259.9409
+offset_bottom = 108.29901
+text = "playground"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="foye" type="Label" parent="scheme/map" unique_id=1632207304]
+offset_left = 235.3028
+offset_top = 289.96783
+offset_right = 475.3028
+offset_bottom = 340.96786
+text = "foye"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="admin" type="Label" parent="scheme/map" unique_id=560136961]
+offset_left = 23.13144
+offset_top = 444.5016
+offset_right = 263.13144
+offset_bottom = 495.50162
+text = "admin"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="stage" type="Label" parent="scheme/map" unique_id=1047012364]
+offset_left = -163.51555
+offset_top = 251.76846
+offset_right = 76.48445
+offset_bottom = 302.7685
+text = "stage"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="backstage" type="Label" parent="scheme/map" unique_id=471745248]
+offset_left = -323.04288
+offset_top = 430.61087
+offset_right = -83.04288
+offset_bottom = 481.6109
+text = "backstage"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="arcade" type="Label" parent="scheme/map" unique_id=261594387]
+offset_left = -511.28513
+offset_top = 140.64304
+offset_right = -271.28513
+offset_bottom = 191.64307
+text = "arcade"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="downstairs" type="Label" parent="scheme/map" unique_id=467504387]
+offset_left = -463.4269
+offset_top = 366.36658
+offset_right = -223.42691
+offset_bottom = 417.3666
+text = "down
+staris"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="toilet" type="Label" parent="scheme/map" unique_id=1653556390]
+offset_left = -315.0665
+offset_top = -29.517656
+offset_right = -75.0665
+offset_bottom = 21.482374
+text = "toilets"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="jeffry" type="Label" parent="scheme/map" unique_id=1166817408]
+offset_left = -471.4033
+offset_top = -59.035343
+offset_right = -231.40329
+offset_bottom = -8.035313
+text = "jeffry"
+label_settings = SubResource("LabelSettings_0vcn1")
+
+[node name="swim" type="Label" parent="scheme/map" unique_id=1437762693]
+offset_left = 300.70898
+offset_top = 26.04501
+offset_right = 468.70898
+offset_bottom = 77.04501
+text = "swim
+"
+label_settings = SubResource("LabelSettings_0vcn1")
 
 [node name="you" type="ColorRect" parent="scheme/map" unique_id=643736449]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
-offset_left = 43.870018
+offset_left = 43.869995
 offset_top = -376.78455
-offset_right = 83.87002
+offset_right = 83.869995
 offset_bottom = -336.78455
 color = Color(1, 0.53333336, 0, 1)
 
@@ -510,6 +669,134 @@ theme_override_fonts/font = ExtResource("1_8bix8")
 theme_override_font_sizes/font_size = 32
 text = "трата 1.75
 заряд 57"
+
+[node name="word_minigame" type="Control" parent="." unique_id=834981706]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back" type="Panel" parent="word_minigame" unique_id=1676301632]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="teto_word" type="Panel" parent="word_minigame/back" unique_id=587035667]
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = 76.0
+offset_right = 576.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_67nhv")
+
+[node name="input" type="LineEdit" parent="word_minigame/back/teto_word" unique_id=541610182]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_uneditable_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_selected_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_outline_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_placeholder_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/caret_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/selection_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/clear_button_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/clear_button_color_pressed = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yrs8n")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2kba4")
+placeholder_text = "#####"
+alignment = 1
+max_length = 12
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="teto_left" type="TextureRect" parent="word_minigame/back/teto_word" unique_id=961759595]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -93.0
+offset_bottom = 53.5
+grow_horizontal = 0
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-39, 0)
+texture = ExtResource("3_5u5yk")
+expand_mode = 1
+
+[node name="teto_right" type="TextureRect" parent="word_minigame/back/teto_word" unique_id=1128914805]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -93.0
+offset_right = 150.0
+offset_bottom = 53.5
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(39, 0)
+texture = ExtResource("4_g6d76")
+expand_mode = 1
+flip_h = true
+
+[node name="teto_word_of_the_day" type="Label" parent="word_minigame/back/teto_word" unique_id=921513702]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 33.0
+text = "Teto Word Of The Day!"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="word" type="Label" parent="word_minigame/back/teto_word" unique_id=139513908]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 450.0
+offset_bottom = 63.0
+text = "sample_text"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bozo" type="Label" parent="word_minigame/back/teto_word" unique_id=210819270]
+visible = false
+layout_mode = 0
+offset_top = 180.0
+offset_right = 450.0
+offset_bottom = 213.0
+text = "ha-ha bozo try again
+you lose 1 power"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="booting" type="TextureRect" parent="." unique_id=1400849281]
 visible = false

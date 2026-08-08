@@ -12,12 +12,14 @@ class_name fnat_screen
 @export var sfx : AudioStreamPlayer3D
 @export var noise : Control
 @export var noise_sfx : AudioStreamPlayer3D
+@export var teto_input : Control
+@export var teto_word : String
 
 func _ready() -> void:
 	arc.loadout()
 	input_event.connect(_on_input_event)
 	noise.visible = false
-	arc.play_sound("ambient/they_coming", 0, null, 0, 15)
+	#arc.play_sound("ambient/they_coming", 0, null, 0, 15)
 
 func _on_input_event(camera : Camera3D, event : InputEvent, event_position : Vector3, normal : Vector3, shape_idx: int) :
 		if arc.user.state != arc.user.action.pc : return
@@ -32,15 +34,14 @@ func _on_input_event(camera : Camera3D, event : InputEvent, event_position : Vec
 		sub.push_input(event)
 
 func update_text() :
-	status.text = arc.get_word("ui_usage") + " " + str(arc.usage)
-	status.text += "\n" + arc.get_word("ui_power") + " " + str(int(arc.batary))
-	
-	time.text = str(arc.night) + " " + arc.get_word("ui_night")
-	var hour : int = int(arc.time / 60) 
-	if hour == 0 : time.text += "\n12 " + arc.get_word("ui_time_pm")
-	else : time.text += "\n" + str(hour) + " " + arc.get_word("ui_time_am")
-
-# ты остановилась здесь https://youtu.be/80mT-2EfZyU?t=176
+	#status.text = arc.get_word("ui_usage") + " " + str(arc.usage)
+	#status.text += "\n" + arc.get_word("ui_power") + " " + str(int(arc.batary))
+	#
+	#time.text = str(arc.night.start_night) + " " + arc.get_word("ui_night")
+	#var hour : int = int(arc.time / 60) 
+	var hour : int
+	#if hour == 0 : time.text += "\n12 " + arc.get_word("ui_time_pm")
+	#else : time.text += "\n" + str(hour) + " " + arc.get_word("ui_time_am")
 
 func _pressed(extra_arg_0: StringName) -> void:
 	info.text = arc.get_word("ui_cam") + " > " + arc.get_word("room_" + extra_arg_0)
@@ -53,14 +54,14 @@ func _pressed(extra_arg_0: StringName) -> void:
 	play_uniq_room_sfx()
 	arc.user.cam.visible = true
 	arc.user.cam.current = true
-	arc.play_sound("user/swap")
+	arc_event.play_sfx({"type" = "2d", "path" = "user/swap"})
 
 func _on_scheme_pressed() -> void:
 	if scheme.visible == true or arc.user.spot_light.visible == false : return
 	cam.visible = false
 	scheme.visible = true
 	get_node("sub/ui/audio").visible = false
-	arc.play_sound("user/swap")
+	arc_event.play_sfx({"type" = "2d", "path" = "user/swap"})
 	
 func _on_cam_pressed() -> void:
 	if cam.visible == true or arc.user.spot_light.visible == false : return
@@ -71,7 +72,7 @@ func _on_cam_pressed() -> void:
 	else :
 		cam.visible = true
 		get_node("sub/ui/audio").visible = false
-	arc.play_sound("user/swap")
+	arc_event.play_sfx({"type" = "2d", "path" = "user/swap"})
 
 func play_uniq_room_sfx() :
 	var room : String = arc.user.cam.name
@@ -110,16 +111,16 @@ func _on_ping_pong_pressed() -> void:
 	arc.batary -= 1
 	for i in arc.user.anims.size() :
 		arc.user.anims[i].ping()
-	arc.play_sound("user/wait")
+	arc_event.play_sfx({"path" = "user/wait"})
 
 func _on_play_sound_pressed() :
 	arc.button_delay(get_node("sub/ui/scheme/buttons/play_sound"), PI)
-	arc.play_sound("user/echo" + str(randi_range(0,2)))
+	arc_event.play_sfx({"path" = str("user/echo" + str(randi_range(0,2)))})
 	arc.batary -= 1
 
 func interupt_cam() :
 	noise.visible = true
-	noise_sfx.stream = arc.sounds["user/camera_interruption" + str(randi_range(0,2))]
+	noise_sfx.stream = load("res://resources/sounds/user/camera_interruption" + str(randi_range(0,2)) + ".vaw")
 	if cam.visible and arc.user.spot_light.visible == true : noise_sfx.play()
 	await get_tree().create_timer(2.57).timeout
 	noise.visible = false
@@ -127,6 +128,22 @@ func interupt_cam() :
 func mute_channel(boolean : bool = false) :
 	noise_sfx.playing = boolean
 	sfx.playing = boolean
+
+func teto_word_of_the_day():
+	var rand_word = arc.save.words.pick_random()
+	var rand_pos : Vector2i = Vector2i(randi_range(0,700), randi_range(0,400))
+	get_node("sub/ui/word_minigame/back/teto_word").position = rand_pos
+	get_node("sub/ui/word_minigame/back/teto_word/word").text = rand_word
+	get_node("sub/ui/word_minigame/back/teto_word/input").placeholder_text = rand_word
+	get_node("sub/ui/word_minigame/back/teto_word/input").text = ""
+	teto_word = rand_word
+	teto_input.visible = true
+	arc_event.play_sfx({"path" = "anim/virus/teto_word" + str(randi_range(0,2))})
+
+func _on_input_text_changed(new_text: String) -> void:
+	print(1)
+	if new_text == teto_word :
+		teto_input.visible = false
 
 #func game_math() :
 	#var power_to_add = 0.0
@@ -172,4 +189,10 @@ func shock(extra_arg_0: StringName) -> void:
 		"endo" :
 			arc.user.anims[4].ai_lvl += randi_range(-7,7)
 			if arc.user.anims[4].ai_lvl <= 0 : arc.user.anims[4].ai_lvl = 0
-	arc.play_sound("user/wait")
+	arc_event.play_sfx({path = "user/shock", type = "3d"})
+
+
+func _on_input(new_text: String) -> void:
+	print(1)
+	if new_text == teto_word :
+		teto_input.visible = false

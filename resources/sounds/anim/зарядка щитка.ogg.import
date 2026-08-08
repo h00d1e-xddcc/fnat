@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://f6prfmtjctuv"
+path="res://.godot/imported/зарядка щитка.ogg-850a468561e5b0de40c0181e9c4937c0.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/зарядка щитка.ogg"
+dest_files=["res://.godot/imported/зарядка щитка.ogg-850a468561e5b0de40c0181e9c4937c0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

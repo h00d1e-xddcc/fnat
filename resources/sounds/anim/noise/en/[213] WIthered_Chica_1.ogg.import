@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqjbgg44d06nc"
+path="res://.godot/imported/[213] WIthered_Chica_1.ogg-20c2875a3be2d99563a0a1674aebfc3d.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/noise/en/[213] WIthered_Chica_1.ogg"
+dest_files=["res://.godot/imported/[213] WIthered_Chica_1.ogg-20c2875a3be2d99563a0a1674aebfc3d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

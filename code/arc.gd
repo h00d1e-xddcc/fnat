@@ -4,16 +4,16 @@ extends Node3D
 @export var world : WorldEnvironment
 @export var screen : fnat_screen
 @export var debug : bool
-@export var pause : bool
-@export var night : int = 0
 @export var usage : float = 1.75
 @export var time : float
 @export var batary : float = 57.9
-@export var sounds : Dictionary[String, AudioStream]
 @export var lang : fnat_lange
 @export var volume : int = 15
 @export var diff : Array[int] = [0,0,0,0,0]
-@export var teto : bool = true
+@export var fatass : Node3D
+@export var is_can_pause : bool = true
+@export var night : fnat_night
+@export var save : fnat_save
 
 signal out_of_power
 signal second_pass
@@ -22,6 +22,7 @@ func loadout() -> void:
 	user = get_node("/root/main/office/user")
 	world = get_node("/root/main/world")
 	screen = get_node("/root/main/office/screen")
+	arc.screen.teto_input.visible = false
 
 	if world == null : return
 	if debug == true:
@@ -35,10 +36,25 @@ func loadout() -> void:
 	second_pass.connect(pass_time)
 	second_pass.connect(eat_batary)
 
-	change_da_note(get_word("note" + str(randi_range(0,7))))
+	fatass = get_node("/root/main/office/decor/fatass")
+
+	change_da_note(get_word("note" + str(randi_range(0,9))))
 	while true :
 		await get_tree().create_timer(1).timeout
 		emit_signal("second_pass")
+
+	await get_tree().create_timer(3.1).timeout
+	is_can_pause = true
+
+func deloadout() :
+	user = null
+	world = null
+	screen = null
+	
+	out_of_power.disconnect(run_out_power)
+
+	second_pass.disconnect(pass_time)
+	second_pass.disconnect(eat_batary)
 
 func eat_batary(value : int = 1) :
 	batary -= value * usage * .075
@@ -55,30 +71,6 @@ func pass_time() :
 		SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"} )
 	arc.screen.update_text()
 
-func load_sounds(path) :
-	var dir = DirAccess.open(path)
-	if dir == null:
-		return
-
-	dir.list_dir_begin()
-	var file = dir.get_next()
-
-	while file != "" :
-		var full_path = path + "/" + file
-		if dir.current_is_dir():
-			if file != "." and file != "..":
-				load_sounds(full_path) # рекурсия
-		else:
-			var ext = file.get_extension()
-			if ext == "wav" or ext == "mp3" or ext == "ogg" :
-				var id_audio : String = full_path
-				id_audio = id_audio.replace("res://resources/sounds/", "")
-				id_audio = id_audio.replace("." + ext, "")
-				id_audio[0] = ""
-				sounds[id_audio] = load(full_path)
-		file = dir.get_next()
-	dir.list_dir_end() 
-
 func button_delay(button : Button, waiting : float) :
 	var old_string = button.text
 	var icon = button.icon
@@ -93,64 +85,39 @@ func button_delay(button : Button, waiting : float) :
 	button.text = old_string
 	button.icon = icon
 	button.disabled = false
-	if arc.user.spot_light.visible == true : arc.play_sound("user/math_correct", 0, null, 0, 6)
+	if arc.user.spot_light.visible == true : arc_event.play_sfx({"path" = "user/math_correct", "volume" = 3})
 
-func play2D_sound(path : String, delay : float = 0, volume_to_decrease : float = 0) :
-	var sfx : AudioStreamPlayer = AudioStreamPlayer.new()
-	var audio = load("res://resources/sounds/" + path + ".wav")
-	if audio == null : audio = load("res://resources/sounds/" + path + ".ogg")
-	if audio == null : audio = load("res://resources/sounds/" + path + ".mp3")
-	if audio == null :
-		audio = load("res://resources/sounds/user/alarm.wav")
-		push_error("sound eggor >" + path)
-	arc.add_child(sfx)
-	sfx.stream = audio
-	sfx.name = path
-	sfx.volume_db = volume_to_decrease
-	sfx.finished.connect(func() : sfx.queue_free())
-	await get_tree().create_timer(delay).timeout
-	sfx.play()
+func start_night(night_to_paste : fnat_night) :
+	night = night_to_paste
+	arc.user.anims[0].ai_lvl = night.chimera
+	arc.user.anims[1].ai_lvl = night.nerd
+	arc.user.anims[2].ai_lvl = night.noised
+	arc.user.anims[3].ai_lvl = night.bear
+	
+	arc.batary = night.start_power
+	arc.usage = night.start_usagedd
 
-func play_sound(path : String, second : float = 0, node : Node3D = null, delay : float = 0, volume_to_decrease : float = 0, max_dist : int = 45) :
-	var sfx : AudioStreamPlayer3D = AudioStreamPlayer3D.new()
-	if node != null :
-		node.add_child(sfx)
-		sfx.position = Vector3.ZERO
-	else : 
-		user.add_child(sfx)
-		sfx.position = Vector3.ZERO
-	var audio = load("res://resources/sounds/" + path + ".wav")
-	if audio == null : audio = load("res://resources/sounds/" + path + ".ogg")
-	if audio == null : audio = load("res://resources/sounds/" + path + ".mp3")
-	if audio == null :
-		audio = load("res://resources/sounds/user/alarm.wav")
-		push_error("sound eggor >" + path)
-	sfx.max_distance = max_dist
-	sfx.stream = audio
-	sfx.name = path
-	sfx.attenuation_filter_db = -10
-	sfx.unit_size = 1
-	sfx.attenuation_filter_cutoff_hz = 6400
-	sfx.volume_db = volume_to_decrease
-	sfx.finished.connect(func() : sfx.queue_free())
-	await get_tree().create_timer(delay).timeout
-	sfx.play(second)
-
-func play_teto() :
-	if teto == true :
-		teto = false
-		play2D_sound("user/teto",0, -10)
-		await get_tree().create_timer(.257).timeout
-		teto = true
-
-func play_external(sfx : AudioStreamPlayer3D, path : String, volume_to_decrease : int, delay : float) :
-	if sfx == null : return
-	sfx.stream = sounds[path]
-	sfx.attenuation_filter_db = -24
-	sfx.volume_db = arc.volume - volume_to_decrease
-	sfx.finished.connect(func() : sfx.queue_free())
-	await get_tree().create_timer(delay).timeout
-	sfx.play()
+func pause() :
+	match get_tree().paused :
+		false :
+			if is_can_pause == true :
+				is_can_pause = false
+				Engine.time_scale = 0
+				get_tree().paused = true
+				arc_event.play_sfx({"type" = "2d", "path" = "user/pause"})
+				arc.user.audios["pause"].playing = true
+				get_node("/root/main/office/triggers/vhs").visible = true
+			else : arc_event.play_sfx({"type" = "2d", "path" = "user/pause_error"})
+		true :
+			Engine.time_scale = 1
+			get_tree().paused = false
+			arc.user.audios["pause"].playing = false
+			arc_event.play_sfx({"path" = "user/pause_un"})
+			get_node("/root/main/office/triggers/vhs").visible = false
+			await get_tree().create_timer(3.1).timeout
+			is_can_pause = true
+		_ :
+			print("ляяя, надо сделать, чтобы bool имел третье свойство, maybe, вот смеха будет XD")
 
 func set_dif() :
 	user.anims[0].ai_lvl = diff[0] # chimera
@@ -158,13 +125,12 @@ func set_dif() :
 	user.anims[2].ai_lvl = diff[2] # nerd
 
 func run_out_power() :
-	#run_out_power().disconnect(run_out_power())
 	out_of_power.disconnect(run_out_power)
 	user.audios["fan"].playing = false
 	user.audios["spot"].playing = false
 	user.spot_light.visible = false
 	screen.visible = false
-	play_sound("user/power_down")
+	arc_event.play_sfx({"type" = "2d", "path" = "user/pause_error"})
 
 func add_word(id : String, word : String) :
 	lang.dictionary[id] = word 
@@ -188,6 +154,9 @@ func change_da_note(text : String, size : int = 18) :
 	note.text = text
 	note.text = text.replace("\\n", "\n")
 	note.font_size = size
+
+func save_settings() :
+	ResourceSaver.save(save, "user://fnat.tres")
 
 func retranslate_title() :
 	# yandere
@@ -219,8 +188,8 @@ func retranslate_title() :
 	get_node("/root/main_menu/ui/loadout_back/loadout/cam").text = get_word("ui_cam")
 	get_node("/root/main_menu/ui/loadout_back/loadout/peek").text = get_word("ui_peek")
 	
-	get_node("/root/main_menu/thanks/da_rules/label").text = get_word("da_rules")
-	get_node("/root/main_menu/thanks/board/thanks").text = get_word("ui_thanks")
-	get_node("/root/main_menu/thanks/board/ad").text = get_word("thanks_ad")
+	get_node("/root/main_menu/sub/thanks/da_rules/label").text = get_word("da_rules")
+	get_node("/root/main_menu/sub/thanks/board/thanks").text = get_word("ui_thanks")
+	get_node("/root/main_menu/sub/thanks/board/ad").text = get_word("thanks_ad")
 	
 	

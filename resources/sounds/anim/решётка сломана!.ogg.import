@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6xuwhbrtf64j"
+path="res://.godot/imported/решётка сломана!.ogg-3ee0958209a9bd4a0cc3e4a39682e426.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/решётка сломана!.ogg"
+dest_files=["res://.godot/imported/решётка сломана!.ogg-3ee0958209a9bd4a0cc3e4a39682e426.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

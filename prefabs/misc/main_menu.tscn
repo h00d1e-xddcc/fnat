@@ -2,23 +2,32 @@
 
 [ext_resource type="PackedScene" uid="uid://dyvh6r7wneo3b" path="res://prefabs/tile_white.tscn" id="1_gc5mo"]
 [ext_resource type="Script" uid="uid://dr4o0165568h4" path="res://code/main_menu.gd" id="1_gi84n"]
+[ext_resource type="AudioStream" uid="uid://b0pg0byp40bke" path="res://resources/sounds/ambient/long/star_zero.ogg" id="2_pqhnj"]
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="2_pxua0"]
-[ext_resource type="AudioStream" uid="uid://cscuv42wf8asm" path="res://resources/sounds/ambient/menu.wav" id="3_t8av2"]
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="4_gacyl"]
 [ext_resource type="Texture2D" uid="uid://dyu3lv2206hci" path="res://pics/loadout.png" id="6_2cuxt"]
+[ext_resource type="PackedScene" uid="uid://c5qekra7dp2cw" path="res://prefabs/anims/gnoise.tscn" id="6_4ya4h"]
+[ext_resource type="PackedScene" uid="uid://cgaobj5urjfh7" path="res://prefabs/anims/nchimera.tscn" id="6_e1vna"]
+[ext_resource type="ArrayMesh" uid="uid://c6wql3jx6ahn3" path="res://prefabs/mesh/fnat_pc.res" id="6_xpylm"]
+[ext_resource type="Texture2D" uid="uid://dsgkdjsv8y5jq" path="res://pics/pc.png" id="7_1ojbv"]
 [ext_resource type="PackedScene" uid="uid://djx0fyctwr5x4" path="res://prefabs/anims/chimera.tscn" id="7_godb5"]
+[ext_resource type="PackedScene" uid="uid://bmvg82bprk781" path="res://prefabs/anims/tt.tscn" id="8_3gd81"]
 [ext_resource type="PackedScene" uid="uid://d4el3ofnkbj27" path="res://prefabs/anims/noise.tscn" id="8_73bd1"]
+[ext_resource type="Texture2D" uid="uid://dbesgd7bs2oci" path="res://pics/1385.png" id="8_xjrve"]
 [ext_resource type="PackedScene" uid="uid://dhton8vvj606o" path="res://prefabs/anims/nerd.tscn" id="9_88v2a"]
+[ext_resource type="Texture2D" uid="uid://cbelwxsg8ko6j" path="res://pics/477.png" id="9_lkkgg"]
+[ext_resource type="PackedScene" uid="uid://c3hmow7pswfp8" path="res://prefabs/anims/hakua.tscn" id="9_uoqgc"]
 [ext_resource type="PackedScene" uid="uid://cdghcukm0ylg1" path="res://prefabs/walls.tscn" id="10_73bd1"]
 [ext_resource type="PackedScene" uid="uid://por3ayfdxe3f" path="res://prefabs/anims/endo.tscn" id="10_dwenj"]
 [ext_resource type="Texture2D" uid="uid://g8dje47f3861" path="res://pics/blender_logo_no_socket_white-1280x391.png" id="10_ypoyp"]
-[ext_resource type="Texture2D" uid="uid://c2jcl5s16ffcx" path="res://pics/hqdefault.jpg" id="11_8wdta"]
 [ext_resource type="PackedScene" uid="uid://dupv1tte46n8w" path="res://prefabs/anims/bear.tscn" id="11_ypoyp"]
 [ext_resource type="Texture2D" uid="uid://vkw7g8ff2xrn" path="res://pics/logo_vertical_monochrome_dark.png" id="12_pvoyk"]
 [ext_resource type="Texture2D" uid="uid://eiotg54dq82l" path="res://pics/2023_Obsidian_logo.svg.webp" id="13_4ryb6"]
+[ext_resource type="PackedScene" uid="uid://g3i4i03i38hm" path="res://prefabs/anims/alien.tscn" id="13_cn0f5"]
 [ext_resource type="Texture2D" uid="uid://dnxxyw8cyw8nd" path="res://pics/Scott_Cawthon_transparent.webp" id="14_8wdta"]
 [ext_resource type="Texture2D" uid="uid://du1erv81l1rg1" path="res://pics/386563.png" id="15_pvoyk"]
 [ext_resource type="Texture2D" uid="uid://ie5gxton6oi5" path="res://pics/92278811.png" id="17_cqjcy"]
+[ext_resource type="PackedScene" uid="uid://diukdktdn3jmv" path="res://prefabs/anims/pearto.tscn" id="19_ns5uy"]
 [ext_resource type="ArrayMesh" uid="uid://pg0283d36uix" path="res://prefabs/mesh/fnat_baguette.res" id="20_1w7hp"]
 [ext_resource type="Texture2D" uid="uid://d1w6e2mhrneex" path="res://pics/Unnamed.png" id="20_pqhnj"]
 [ext_resource type="ArrayMesh" uid="uid://c1vn3560fii4u" path="res://prefabs/mesh/fnat_carrot.res" id="21_pqhnj"]
@@ -27,7 +36,13 @@
 [ext_resource type="ArrayMesh" uid="uid://bdvc600ai85nl" path="res://prefabs/mesh/fnat_nokia.res" id="25_4ya4h"]
 [ext_resource type="ArrayMesh" uid="uid://cpo841rkiehts" path="res://prefabs/mesh/fnat_onion.res" id="26_3gd81"]
 [ext_resource type="ArrayMesh" uid="uid://dbsshmtp42gih" path="res://prefabs/mesh/fnat_table_toy.res" id="27_1w7hp"]
+[ext_resource type="Texture2D" uid="uid://d1ik86042awxh" path="res://pics/star.webp" id="27_jkqr7"]
 [ext_resource type="ArrayMesh" uid="uid://n8tsjisrp7xf" path="res://prefabs/mesh/fnat_shelf.res" id="27_uoqgc"]
+[ext_resource type="Texture2D" uid="uid://57peobvd68a2" path="res://pics/2c8b8c8123eb082c2938c45d2675d5ca.jpg" id="28_1ojbv"]
+[ext_resource type="Texture2D" uid="uid://c1nh04axlaqi4" path="res://pics/18a7c9bd2bd03cccc909d6e0da612c5f.jpg" id="29_xjrve"]
+[ext_resource type="PackedScene" uid="uid://n2mxbvv5cgpa" path="res://prefabs/misc/console.tscn" id="30_urhsd"]
+[ext_resource type="Texture2D" uid="uid://c2ejaysy8j8jv" path="res://pics/9fac2fa4264c5b6b7dbc085d12012fc7.jpg" id="30_xjrve"]
+[ext_resource type="ArrayMesh" uid="uid://djftaeeb6o5i8" path="res://prefabs/mesh/fnat_keyboard.res" id="41_lkkgg"]
 
 [sub_resource type="Environment" id="Environment_t8av2"]
 background_mode = 1
@@ -501,85 +516,202 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="main_menu" type="Node3D" unique_id=556714941 node_paths=PackedStringArray("light", "start_sfx", "anims")]
 script = ExtResource("1_gi84n")
-light = NodePath("main/light")
+light = NodePath("sub/main/light")
 start_sfx = NodePath("audio")
-anims = [NodePath("custom/chimera"), NodePath("custom/noise"), NodePath("custom/nerd")]
+anims = [NodePath("sub/custom/chimera"), NodePath("sub/custom/noise"), NodePath("sub/custom/nerd")]
 
 [node name="audio" type="AudioStreamPlayer3D" parent="." unique_id=392620485]
-stream = ExtResource("3_t8av2")
+stream = ExtResource("2_pqhnj")
 volume_db = -15.0
 autoplay = true
 
-[node name="tile" parent="." unique_id=1886201623 instance=ExtResource("1_gc5mo")]
+[node name="sub" type="Node" parent="." unique_id=1544920883]
+
+[node name="tile" parent="sub" unique_id=1886201623 instance=ExtResource("1_gc5mo")]
 transform = Transform3D(21.630896, 0, 0, 0, 21.630896, 0, 0, 0, 21.630896, -24.150705, -2.3841858e-07, -14.341568)
 layers = 4
 
-[node name="custom" type="Node3D" parent="." unique_id=1326032578]
+[node name="custom" type="Node3D" parent="sub" unique_id=1326032578]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4157145, 0, 1.899662)
 
-[node name="area" type="AreaLight3D" parent="custom" unique_id=719723467]
+[node name="area" type="AreaLight3D" parent="sub/custom" unique_id=719723467]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.5375257, 2.49871, 1.9349136)
 layers = 3
 light_color = Color(0.21590185, 0.21590167, 0.2159017, 1)
 light_cull_mask = 4294967291
-area_range = 4.195
+area_range = 0.0
 area_normalize_energy = false
 area_size = Vector2(4.7198577, 2.7)
 
-[node name="chimera" parent="custom" unique_id=1173604488 instance=ExtResource("7_godb5")]
+[node name="chimera" parent="sub/custom" unique_id=1173604488 instance=ExtResource("7_godb5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 4)
 is_lock = true
 is_static = true
 
-[node name="light" type="SpotLight3D" parent="custom/chimera" unique_id=1304273582]
-transform = Transform3D(0.8629555, -0.5022849, -0.054934055, -0.055831213, -0.20284188, 0.97761863, -0.50218594, -0.84057426, -0.20308672, -0.41170073, 4.8106513, -0.971339)
+[node name="face" parent="sub/custom/chimera/skelet/Skeleton3D" parent_id_path=PackedInt32Array(1173604488, 1601045017) index="0" unique_id=80155413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.3748136, 0)
+
+[node name="light" type="SpotLight3D" parent="sub/custom/chimera" unique_id=1304273582]
+transform = Transform3D(0.8647526, -0.48908764, -0.11400107, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.84057426, -0.2030867, -0.41170073, 4.8106513, -0.9713392)
 spot_range = 5.876
 spot_angle = 7.97
 spot_angle_attenuation = 0.2871751
 
-[node name="noise" parent="custom" unique_id=233678744 instance=ExtResource("8_73bd1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8853936, 0, 4)
+[node name="noise" parent="sub/custom" unique_id=233678744 instance=ExtResource("8_73bd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.316297, 0, 3.5696344)
 is_lock = true
 is_static = true
 
-[node name="light" type="SpotLight3D" parent="custom/noise" unique_id=1421275392]
+[node name="light" type="SpotLight3D" parent="sub/custom/noise" unique_id=1421275392]
 transform = Transform3D(0.9272252, 0.36642975, 0.07734748, 0.009413196, -0.2292712, 0.9733171, 0.37438586, -0.90175587, -0.21603534, 0.29044485, 4.8106513, -1.0938969)
 spot_range = 5.876
 spot_angle = 8.34
 spot_angle_attenuation = 0.2871751
 
-[node name="nerd" parent="custom" unique_id=421923076 instance=ExtResource("9_88v2a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2996802, 0, 4)
+[node name="fnat_pc" type="MeshInstance3D" parent="sub/custom" unique_id=763720284]
+transform = Transform3D(0.724914, 0, 0, 0, 0.64879805, 0, 0, 0, 0.724914, 1.6190056, 0, 2.8048)
+mesh = ExtResource("6_xpylm")
+
+[node name="fnat_keyboard" type="MeshInstance3D" parent="sub/custom/fnat_pc" unique_id=620229416]
+transform = Transform3D(1.3794739, 0, 0, 0, 1.5413117, 0, 0, 0, 1.3794739, -0.037307024, 0, -0.89473295)
+mesh = ExtResource("41_lkkgg")
+
+[node name="light" type="SpotLight3D" parent="sub/custom/fnat_pc" unique_id=1944133618]
+transform = Transform3D(0.86475253, -0.4890877, -0.114001065, -0.034554243, -0.2844131, 0.9580789, -0.50100803, -0.824562, -0.26284695, -0.41170073, 4.4110084, -1.1982603)
+spot_range = 2.98
+spot_attenuation = 0.54
+spot_angle = 20.38
+spot_angle_attenuation = 0.2871751
+
+[node name="main" type="Sprite3D" parent="sub/custom/fnat_pc" unique_id=452965198]
+transform = Transform3D(0.09890036, 6.423676e-10, 2.4088784e-09, -7.177292e-10, 0.11682943, 2.8709168e-09, -9.635515e-10, -2.5694704e-09, 0.097314045, 4.7683716e-07, 1.0035696, -0.2368555)
+flip_h = true
+texture = ExtResource("7_1ojbv")
+
+[node name="vissy" type="Sprite3D" parent="sub/custom/fnat_pc/main" unique_id=1836307466]
+transform = Transform3D(0.8323294, 0.24497171, 0.058178816, -0.22055785, 0.8338851, 0.013687697, -0.05386341, -0.03229504, 0.86385393, -5.137022, 0, -0.34678268)
+render_priority = 1
+texture = ExtResource("8_xjrve")
+
+[node name="virus" type="Sprite3D" parent="sub/custom/fnat_pc/main" unique_id=155486441]
+transform = Transform3D(1.2277343, -9.861126e-17, 3.5527137e-15, 3.851439e-15, 1.2277335, -2.1316282e-14, 0, 7.1054274e-15, 1.2277339, 4.5023537, 1.0088167, -0.34678268)
+render_priority = 1
+texture = ExtResource("9_lkkgg")
+
+[node name="gnoise" parent="sub/custom" unique_id=411477254 instance=ExtResource("6_4ya4h")]
+transform = Transform3D(0.92137617, 0, 0, 0, 0.92137617, 0, 0, 0, 0.92137617, 4.6961784, -0.025614738, 5.369829)
 is_lock = true
 is_static = true
 
-[node name="light" type="SpotLight3D" parent="custom/nerd" unique_id=164485701]
-transform = Transform3D(-0.98225486, 0.18263969, 0.042641513, 0.07139555, 0.15388301, 0.9855064, 0.1734308, 0.97106284, -0.16419202, 0.079986095, 4.8106513, -0.6507697)
-spot_range = 6.853
-spot_attenuation = 1.74
-spot_angle = 6.87
+[node name="face" parent="sub/custom/gnoise/skelet/Skeleton3D" parent_id_path=PackedInt32Array(411477254, 694886080) index="0" unique_id=1470662816]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000004, 0, -16.429464, 0)
+
+[node name="light" type="SpotLight3D" parent="sub/custom/gnoise" unique_id=1364313347]
+transform = Transform3D(0.92722523, 0.36642975, 0.07734752, 0.009413197, -0.22927125, 0.9733171, 0.3743859, -0.90175605, -0.21603537, 0.29044485, 5.8106513, -1.0938969)
+spot_range = 14.573
+spot_angle = 10.89
 spot_angle_attenuation = 0.2871751
 
-[node name="endo" parent="custom" unique_id=229964717 instance=ExtResource("10_dwenj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, -0.25, 5.616)
-mood = 0
-ai_lvl = 0
-hunger = 0
+[node name="nchimera" parent="sub/custom" unique_id=1978210908 instance=ExtResource("6_e1vna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9220834, -0.55494285, 8.264147)
 is_lock = true
 is_static = true
 
-[node name="bear" parent="custom" unique_id=388083625 instance=ExtResource("11_ypoyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8187432, 0, 4)
-is_static = true
+[node name="face" parent="sub/custom/nchimera/skelet/Skeleton3D" parent_id_path=PackedInt32Array(1978210908, 250224205) index="0" unique_id=1862296159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1937323, 0)
 
-[node name="light" type="SpotLight3D" parent="custom/bear" unique_id=2008133172]
-transform = Transform3D(-0.48372114, -0.87361985, -0.05293413, -0.27824417, 0.09615649, 0.95568526, -0.8298158, 0.47701377, -0.2895926, -0.27345705, 4.7697, -1.3893123)
-spot_range = 6.853
-spot_attenuation = 1.74
-spot_angle = 7.77
+[node name="light" type="SpotLight3D" parent="sub/custom/nchimera" unique_id=1793070842]
+transform = Transform3D(0.8647526, -0.48908764, -0.11400107, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.84057426, -0.2030867, -0.41170073, 4.8106513, -0.9713392)
+spot_range = 4.461
+spot_angle = 7.97
 spot_angle_attenuation = 0.2871751
 
-[node name="cam" type="Camera3D" parent="custom" unique_id=1869284834]
+[node name="alien" parent="sub/custom" unique_id=787385900 instance=ExtResource("13_cn0f5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9572433, -0.0791105, 5.7799983)
+visible = false
+
+[node name="_rage" parent="sub/custom/alien/skelet/Skeleton3D" parent_id_path=PackedInt32Array(787385900, 1374410335) index="0" unique_id=834270211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.725377, 0)
+
+[node name="light" type="SpotLight3D" parent="sub/custom/alien" unique_id=163303279]
+transform = Transform3D(0.8647526, -0.4890877, -0.11400108, -0.003500824, -0.23286948, 0.97250175, -0.502186, -0.84057426, -0.20308667, -0.41170073, 4.8106513, -1.2824478)
+spot_range = 5.876
+spot_angle = 7.97
+spot_angle_attenuation = 0.2871751
+
+[node name="tt" parent="sub/custom" unique_id=1308891161 instance=ExtResource("8_3gd81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8187513, 0, 4.8774967)
+
+[node name="light" type="SpotLight3D" parent="sub/custom/tt" unique_id=2004853191]
+transform = Transform3D(0.8647526, -0.4890877, -0.11400108, -0.003500824, -0.23286948, 0.97250175, -0.502186, -0.84057426, -0.20308667, -0.41170073, 3.0315344, -0.55777216)
+spot_range = 3.349
+spot_attenuation = 0.54
+spot_angle = 7.97
+spot_angle_attenuation = 0.2871751
+
+[node name="hakua" parent="sub/custom" unique_id=21744238 instance=ExtResource("9_uoqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8501713, 2.3841858e-07, 4.9569497)
+visible = false
+is_lock = true
+is_static = true
+
+[node name="face" parent="sub/custom/hakua/skelet/Skeleton3D" parent_id_path=PackedInt32Array(21744238, 172769531) index="0" unique_id=1975513079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1548657, 0)
+
+[node name="light" type="SpotLight3D" parent="sub/custom/hakua" unique_id=632774975]
+transform = Transform3D(0.857863, 0.4990429, 0.12258599, -0.014168492, -0.21548997, 0.97640324, 0.5136832, -0.8393572, -0.1777902, 0.38391584, 4.810652, -0.87120247)
+spot_range = 4.853
+spot_angle = 7.97
+spot_angle_attenuation = 0.2871751
+
+[node name="nerd" parent="sub/custom" unique_id=421923076 instance=ExtResource("9_88v2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.012134, 2.3841858e-07, 4.4997954)
+is_lock = true
+is_static = true
+
+[node name="light" type="SpotLight3D" parent="sub/custom/nerd" unique_id=164485701]
+transform = Transform3D(-0.98225474, 0.18263972, 0.042641535, 0.09377476, 0.28136075, 0.9550092, 0.16242494, 0.94206095, -0.29349494, 0.10941529, 4.810652, -1.860157)
+spot_range = 6.853
+spot_attenuation = 1.74
+spot_angle = 8.05
+spot_angle_attenuation = 0.2871751
+
+[node name="endo" parent="sub/custom" unique_id=229964717 instance=ExtResource("10_dwenj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2275965, -0.018931389, 4.2184067)
+is_lock = true
+is_static = true
+
+[node name="light" type="SpotLight3D" parent="sub/custom/endo" unique_id=2085327077]
+transform = Transform3D(0.8647526, -0.48908764, -0.11400107, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.84057426, -0.2030867, -0.41170073, 4.8106513, -0.9713392)
+spot_range = 4.853
+spot_angle = 7.97
+spot_angle_attenuation = 0.2871751
+
+[node name="bear" parent="sub/custom" unique_id=388083625 instance=ExtResource("11_ypoyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.656578, 2.3841858e-07, 3.5999875)
+is_static = true
+
+[node name="light" type="SpotLight3D" parent="sub/custom/bear" unique_id=2008133172]
+transform = Transform3D(0.9985529, -0.05127688, -0.016210094, 0.0071387333, -0.17237096, 0.98500633, -0.0533022, -0.98369664, -0.1717554, 2.3841858e-07, 5.1489096, -0.6308346)
+spot_range = 6.853
+spot_attenuation = 2.0
+spot_angle = 5.82
+spot_angle_attenuation = 0.2871751
+
+[node name="pearto" parent="sub/custom" unique_id=1486262563 instance=ExtResource("19_ns5uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4613717, 0.9576533, 8.259268)
+visible = false
+
+[node name="__p" parent="sub/custom/pearto/skelet/pearto" parent_id_path=PackedInt32Array(1486262563, 291813247) index="0" unique_id=141832061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.715351, 0)
+
+[node name="light" type="SpotLight3D" parent="sub/custom/pearto" unique_id=87139304]
+transform = Transform3D(0.8647526, -0.48908776, -0.114001095, -0.18667562, -0.52379, 0.8311416, -0.4662138, -0.6974506, -0.5442495, 0.397802, 3.364601, -2.341784)
+spot_range = 4.461
+spot_angle = 7.97
+spot_angle_attenuation = 0.2871751
+
+[node name="cam" type="Camera3D" parent="sub/custom" unique_id=1869284834]
 transform = Transform3D(-1, -1.6681055e-08, 8.581658e-08, 0, 0.9816272, 0.19080901, -8.742278e-08, 0.19080901, -0.9816272, 3.824, 1.39, 0.48)
 environment = SubResource("Environment_t8av2")
 projection = 1
@@ -587,76 +719,70 @@ size = 3.895
 near = 0.001
 far = 46.05
 
-[node name="thanks" type="Node3D" parent="." unique_id=2076910507]
+[node name="thanks" type="Node3D" parent="sub" unique_id=2076910507]
 
-[node name="board" type="MeshInstance3D" parent="thanks" unique_id=358860963]
+[node name="board" type="MeshInstance3D" parent="sub/thanks" unique_id=358860963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6121831, -2.5765662)
 mesh = SubResource("ArrayMesh_88v2a")
 
-[node name="blender" type="Sprite3D" parent="thanks/board" unique_id=2015329153]
+[node name="blender" type="Sprite3D" parent="sub/thanks/board" unique_id=2015329153]
 transform = Transform3D(0.089279234, 0, 0, 0, 0.089279234, 0, 0, 0, 0.089279234, 1.0903184, 0.7542683, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("10_ypoyp")
 
-[node name="sounds" type="Sprite3D" parent="thanks/board" unique_id=1737762385]
-transform = Transform3D(0.21735029, 0, 0, 0, 0.21735029, 0, 0, 0, 0.21735029, 1.1107223, 0.39145935, 0)
-shaded = true
-texture_filter = 0
-texture = ExtResource("11_8wdta")
-
-[node name="godot" type="Sprite3D" parent="thanks/board" unique_id=1905026630]
+[node name="godot" type="Sprite3D" parent="sub/thanks/board" unique_id=1905026630]
 transform = Transform3D(0.060263496, 0, 0, 0, 0.060263496, 0, 0, 0, 0.06026348, 1.3398023, 1.2221572, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("12_pvoyk")
 
-[node name="godot2" type="Sprite3D" parent="thanks/board" unique_id=2075648831]
+[node name="godot2" type="Sprite3D" parent="sub/thanks/board" unique_id=2075648831]
 transform = Transform3D(0.045800257, 0, 0, 0, 0.045800257, 0, 0, 0, 0.045800246, 0.79128504, 1.2783225, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("13_4ryb6")
 
-[node name="scott" type="Label3D" parent="thanks/board" unique_id=88887036]
+[node name="scott" type="Label3D" parent="sub/thanks/board" unique_id=88887036]
 transform = Transform3D(0.437, 0, 0, 0, 0.437, 0, 0, 0, 0.437, -1.1992944, 0.21624911, 0)
 texture_filter = 0
 text = "Scott Cawthon"
 font = ExtResource("4_gacyl")
 outline_size = 8
 
-[node name="scott_sprite" type="Sprite3D" parent="thanks/board" unique_id=992570893]
+[node name="scott_sprite" type="Sprite3D" parent="sub/thanks/board" unique_id=992570893]
 transform = Transform3D(0.15198454, 0, 0, 0, 0.15198454, 0, 0, 0, 0.1519845, -1.2738883, 0.5936171, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("14_8wdta")
 
-[node name="codeman38" type="Label3D" parent="thanks/board" unique_id=1372265070]
+[node name="codeman38" type="Label3D" parent="sub/thanks/board" unique_id=1372265070]
 transform = Transform3D(0.437, 0, 0, 0, 0.437, 0, 0, 0, 0.437, -0.3236556, 0.28084934, 0)
 texture_filter = 0
 text = "CodeMan38"
 font = ExtResource("4_gacyl")
 outline_size = 8
 
-[node name="codeman38_sprite" type="Sprite3D" parent="thanks/board" unique_id=1676742369]
+[node name="codeman38_sprite" type="Sprite3D" parent="sub/thanks/board" unique_id=1676742369]
 transform = Transform3D(0.11657215, 0, 0, 0, 0.11657215, 0, 0, 0, 0.11657211, -0.3059312, 0.6352271, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("15_pvoyk")
 
-[node name="glassbrick" type="Label3D" parent="thanks/board" unique_id=161585243]
+[node name="glassbrick" type="Label3D" parent="sub/thanks/board" unique_id=161585243]
 transform = Transform3D(0.437, 0, 0, 0, 0.437, 0, 0, 0, 0.437, -1.2418027, 1.0825065, 0)
 texture_filter = 0
 text = "glassbrick"
 font = ExtResource("4_gacyl")
 outline_size = 8
 
-[node name="glassbrick_sprite" type="Sprite3D" parent="thanks/board" unique_id=534030339]
+[node name="glassbrick_sprite" type="Sprite3D" parent="sub/thanks/board" unique_id=534030339]
 transform = Transform3D(0.27884057, 0, 0, 0, 0.27884057, 0, 0, 0, 0.27884048, -1.2240782, 1.4368844, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("17_cqjcy")
 
-[node name="godot3" type="Sprite3D" parent="thanks/board" unique_id=78001723]
+[node name="godot3" type="Sprite3D" parent="sub/thanks/board" unique_id=78001723]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007161498, 0.9856031, -0.049591064)
 modulate = Color(0.47007585, 0.47007585, 0.47007585, 1)
 shaded = true
@@ -665,14 +791,14 @@ texture_filter = 0
 render_priority = -1
 texture = SubResource("NoiseTexture2D_1w7hp")
 
-[node name="thanks" type="Label3D" parent="thanks/board" unique_id=1590248838]
+[node name="thanks" type="Label3D" parent="sub/thanks/board" unique_id=1590248838]
 transform = Transform3D(0.763, 0, 0, 0, 0.763, 0, 0, 0, 0.763, 0, 1.771384, 0)
 texture_filter = 0
 text = "Thanks"
 font = ExtResource("4_gacyl")
 outline_size = 6
 
-[node name="ad" type="Label3D" parent="thanks/board" unique_id=970403045]
+[node name="ad" type="Label3D" parent="sub/thanks/board" unique_id=970403045]
 transform = Transform3D(0.763, 0, 0, 0, 0.763, 0, 0, 0, 0.763, 0, 1.3987865, 0)
 texture_filter = 0
 text = "здесь могла
@@ -682,14 +808,14 @@ font = ExtResource("4_gacyl")
 font_size = 19
 outline_size = 6
 
-[node name="walls" parent="thanks" unique_id=588054537 instance=ExtResource("10_73bd1")]
-transform = Transform3D(-8.818237, -8.5957004e-07, 3.3697756e-14, 0, -4.8738197e-08, -1, 8.742278e-08, -1.115, 4.371139e-08, 4.4244576, 0, -3)
+[node name="walls" parent="sub/thanks" unique_id=588054537 instance=ExtResource("10_73bd1")]
+transform = Transform3D(-30.33209, -2.956663e-06, 1.1591018e-13, 0, -4.8738197e-08, -1, 8.742278e-08, -1.115, 4.371139e-08, 15.229955, 0, -3)
 
-[node name="da_rules" type="MeshInstance3D" parent="thanks" unique_id=1859438264]
+[node name="da_rules" type="MeshInstance3D" parent="sub/thanks" unique_id=1859438264]
 transform = Transform3D(8.998349e-15, -4.6788667e-08, -0.83212626, -1.6470239, -4.678867e-08, 0, -7.199369e-08, 1.0704, -3.6373393e-08, 2.597718, 1.3997455, -2.5694714)
 mesh = SubResource("ArrayMesh_urhsd")
 
-[node name="label" type="Label3D" parent="thanks/da_rules" unique_id=1553512088]
+[node name="label" type="Label3D" parent="sub/thanks/da_rules" unique_id=1553512088]
 transform = Transform3D(-2.9229452e-09, -0.19100003, 1.6833821e-08, 1.7627828e-08, 1.6833805e-08, 0.19099987, -0.191, 2.9229483e-09, 1.7627835e-08, 0, 0, 0.0236032)
 offset = Vector2(-319.525, 0)
 shaded = true
@@ -698,26 +824,26 @@ horizontal_alignment = 0
 line_spacing = 7.0
 autowrap_trim_flags = 64
 
-[node name="baguette" type="MeshInstance3D" parent="thanks" unique_id=1144245272]
+[node name="baguette" type="MeshInstance3D" parent="sub/thanks" unique_id=1144245272]
 transform = Transform3D(0.73217183, 0, -0.25881898, 0, 1, 0, 0.19618478, 0, 0.9659258, -1.2919979, 0.6498867, -1.8029823)
 mesh = ExtResource("20_1w7hp")
 
-[node name="chalk" type="MeshInstance3D" parent="thanks/baguette" unique_id=755563578]
+[node name="chalk" type="MeshInstance3D" parent="sub/thanks/baguette" unique_id=755563578]
 transform = Transform3D(0.49999994, 0, -0.8660255, 0, 1, 0, 0.8660253, 0, 0.49999997, 0.4349358, 0, 0.24259305)
 instance_shader_parameters/coloring = Color(0.90588236, 0.30588236, 0.37254903, 1)
 mesh = SubResource("ArrayMesh_jkqr7")
 
-[node name="chalk2" type="MeshInstance3D" parent="thanks/baguette" unique_id=72059055]
+[node name="chalk2" type="MeshInstance3D" parent="sub/thanks/baguette" unique_id=72059055]
 transform = Transform3D(1, 0, 0, 0, 1, 0, -1.4901161e-08, 0, 1, 0.65191793, 0, -0.13240814)
 instance_shader_parameters/coloring = Color(0.5882353, 0.6784314, 0.90588236, 1)
 mesh = SubResource("ArrayMesh_jkqr7")
 
-[node name="chalk3" type="MeshInstance3D" parent="thanks/baguette" unique_id=183788752]
+[node name="chalk3" type="MeshInstance3D" parent="sub/thanks/baguette" unique_id=183788752]
 transform = Transform3D(-0.96592575, 0, -0.2588191, 0, 1, 0, 0.25881916, 0, -0.96592575, 0.76068664, 2.3841858e-07, 0.042794943)
 instance_shader_parameters/coloring = Color(0.90588236, 0.90588236, 0.90588236, 1)
 mesh = SubResource("ArrayMesh_jkqr7")
 
-[node name="sprite_3d" type="Sprite3D" parent="thanks/baguette" unique_id=1829013631]
+[node name="sprite_3d" type="Sprite3D" parent="sub/thanks/baguette" unique_id=1829013631]
 transform = Transform3D(0.80215114, 0, 0.11893008, 0, 0.74592096, 0, -0.15785131, 0, 0.6944716, 3.9889498, 0.8162303, -1.6422694)
 shaded = true
 texture_filter = 0
@@ -725,7 +851,7 @@ texture = ExtResource("20_pqhnj")
 region_enabled = true
 region_rect = Rect2(87.40409, 0.21487522, 66.319084, 74.98927)
 
-[node name="sprite_3d2" type="Sprite3D" parent="thanks/baguette" unique_id=1044030171]
+[node name="sprite_3d2" type="Sprite3D" parent="sub/thanks/baguette" unique_id=1044030171]
 transform = Transform3D(1.0986792, 0, 0.17586671, 0, 0.804, 0, -0.21694623, 0, 0.9846791, 4.2857447, 1.5687152, -1.7025504)
 shaded = true
 texture_filter = 0
@@ -733,45 +859,67 @@ texture = ExtResource("20_pqhnj")
 region_enabled = true
 region_rect = Rect2(280.16235, 0.16440201, 95.13217, 75.131454)
 
-[node name="carrot" type="MeshInstance3D" parent="thanks" unique_id=2050261892]
+[node name="sprite_3d3" type="Sprite3D" parent="sub/thanks/baguette" unique_id=620658953]
+transform = Transform3D(0.08731405, 0, 0.017241105, 0, 0.089, 0, -0.017241126, 0, 0.08731404, 8.125149, 1.5126735, -2.4823544)
+shaded = true
+texture_filter = 0
+texture = ExtResource("28_1ojbv")
+
+[node name="sprite_3d4" type="Sprite3D" parent="sub/thanks/baguette" unique_id=362097144]
+transform = Transform3D(0.08731405, 0, 0.017241102, 0, 0.089, 0, -0.017241126, 0, 0.08731404, 5.6403656, 1.329027, -1.9776814)
+shaded = true
+texture_filter = 0
+texture = ExtResource("29_xjrve")
+
+[node name="sprite_3d5" type="Sprite3D" parent="sub/thanks/baguette" unique_id=2038147499]
+transform = Transform3D(0.15010168, 0, 0.029639242, 0, 0.153, 0, -0.029639248, 0, 0.15010168, 6.615588, 1.1121148, -2.1757545)
+shaded = true
+texture_filter = 0
+texture = ExtResource("30_xjrve")
+
+[node name="carrot" type="MeshInstance3D" parent="sub/thanks" unique_id=2050261892]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2.3419228, 0, -2.3670187)
 mesh = ExtResource("21_pqhnj")
 
-[node name="crate_big" type="MeshInstance3D" parent="thanks" unique_id=1940500517]
+[node name="crate_big" type="MeshInstance3D" parent="sub/thanks" unique_id=1940500517]
 transform = Transform3D(0.803527, 0, 0, 0, 0.803527, 0, 0, 0, 0.803527, 0.72414017, 0, -2.136581)
 mesh = ExtResource("23_urhsd")
 
-[node name="fatass" type="MeshInstance3D" parent="thanks" unique_id=1860691485]
+[node name="fatass" type="MeshInstance3D" parent="sub/thanks" unique_id=1860691485]
 transform = Transform3D(-0.99560785, 0, 0.09362173, 0, 1, 0, -0.09362173, 0, -0.99560785, 0.241, 0.727, -2.062)
 mesh = ExtResource("24_e1vna")
 
-[node name="nokia" type="MeshInstance3D" parent="thanks" unique_id=308981845]
+[node name="nokia" type="MeshInstance3D" parent="sub/thanks" unique_id=308981845]
 transform = Transform3D(0.35282615, 0, -0.9356889, 0, 1, 0, 0.9356889, 0, 0.35282615, 1.0550171, 0.75785565, -2.0578043)
 mesh = ExtResource("25_4ya4h")
 
-[node name="onion" type="MeshInstance3D" parent="thanks" unique_id=794071076]
+[node name="onion" type="MeshInstance3D" parent="sub/thanks" unique_id=794071076]
 transform = Transform3D(0.86082196, 0, -0.50890625, 0, 1, 0, 0.50890625, 0, 0.86082196, -2.4464357, 1.5784992, -2.1979816)
 mesh = ExtResource("26_3gd81")
 
-[node name="shelf" type="MeshInstance3D" parent="thanks" unique_id=1569886152]
+[node name="shelf" type="MeshInstance3D" parent="sub/thanks" unique_id=1569886152]
 transform = Transform3D(-9.524712e-08, 0, 2.1790001, 0, 2.1790001, 0, -2.1790001, 0, -9.524712e-08, -3.1944833, 0, -2.2707987)
 mesh = ExtResource("27_uoqgc")
 
-[node name="cam" type="Camera3D" parent="thanks" unique_id=2120635114]
+[node name="cam" type="Camera3D" parent="sub/thanks" unique_id=2120635114]
 transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21643962, 0, -0.21643962, 0.976296, 0.36, 1.562, 0)
 environment = SubResource("Environment_t8av2")
 projection = 1
 size = 3.355
 
-[node name="area_light_3d" type="AreaLight3D" parent="thanks" unique_id=1887149216]
+[node name="area_light_3d" type="AreaLight3D" parent="sub/thanks" unique_id=1887149216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3079147, -0.50200224)
 light_color = Color(0.28485015, 0.28485033, 0.2848502, 1)
 area_normalize_energy = false
 area_size = Vector2(5.6285324, 2.9176607)
 
-[node name="main" type="Node3D" parent="." unique_id=1493518933]
+[node name="fnat_table_toy" type="MeshInstance3D" parent="sub/thanks" unique_id=1799086906]
+transform = Transform3D(0.717, 0, 0, 0, 0.717, 0, 0, 0, 0.717, -0.97471577, 0.7044568, -1.8171701)
+mesh = ExtResource("27_1w7hp")
 
-[node name="light" type="SpotLight3D" parent="main" unique_id=107450124]
+[node name="main" type="Node3D" parent="sub" unique_id=1493518933]
+
+[node name="light" type="SpotLight3D" parent="sub/main" unique_id=107450124]
 transform = Transform3D(1, 0, 0, 0, 0.2644817, 0.96439075, 0, -0.96439075, 0.2644817, 0, 1.1550008, 0.6589911)
 light_color = Color(0.6255971, 0.6255971, 0.6255971, 1)
 light_size = 0.85
@@ -780,33 +928,50 @@ spot_attenuation = 10.0
 spot_angle = 30.16
 spot_angle_attenuation = 0.105113074
 
-[node name="0" type="MeshInstance3D" parent="main" unique_id=1529946431]
+[node name="0" type="MeshInstance3D" parent="sub/main" unique_id=1529946431]
 transform = Transform3D(0.37106767, 7.4240933e-09, 0.69050384, -1.5288592e-08, 0.773, 1.4901161e-08, -0.35422847, -2.3037195e-08, 0.72332877, 0.13953844, -0.023542762, 0.043429554)
 mesh = SubResource("ArrayMesh_gacyl")
 
-[node name="1" type="MeshInstance3D" parent="main" unique_id=184971997]
+[node name="1" type="MeshInstance3D" parent="sub/main" unique_id=184971997]
 transform = Transform3D(1.0109854, -0.09777662, 0.6594463, 0.099562526, 1.2066144, 0.02626811, -0.6591791, 0.03228686, 1.0153629, -0.2687325, -0.023542792, 0.34335005)
 mesh = SubResource("ArrayMesh_gi84n")
 
-[node name="2" type="MeshInstance3D" parent="main" unique_id=1496554598]
+[node name="2" type="MeshInstance3D" parent="sub/main" unique_id=1496554598]
 transform = Transform3D(-0.69445324, 0.00012281912, -0.7195384, 0.00017019361, 1, 6.4373016e-06, 0.7195381, -0.00011800762, -0.6944536, 0.06840522, -0.023542792, 0.42863852)
 mesh = SubResource("ArrayMesh_2cuxt")
 
-[node name="3" type="MeshInstance3D" parent="main" unique_id=1223928487]
+[node name="3" type="MeshInstance3D" parent="sub/main" unique_id=1223928487]
 transform = Transform3D(0.79171485, -8.496922e-09, -0.6108908, 5.9604645e-08, 1, 1.4901161e-08, 0.6108909, -2.9802322e-08, 0.79171485, 0.329, -0.023542792, 0.6227778)
 mesh = SubResource("ArrayMesh_i4vf5")
 
-[node name="4" type="MeshInstance3D" parent="main" unique_id=962215699]
+[node name="4" type="MeshInstance3D" parent="sub/main" unique_id=962215699]
 transform = Transform3D(-0.9116174, 1.3271275e-08, -0.41103995, 2.2351742e-08, 1, 0, 0.4110399, -3.3410814e-08, -0.9116175, -0.64597714, 0.041457087, 0.6989007)
 mesh = SubResource("ArrayMesh_4dys7")
 
-[node name="cam" type="Camera3D" parent="main" unique_id=517046001]
+[node name="cam" type="Camera3D" parent="sub/main" unique_id=517046001]
 transform = Transform3D(1, 0, 0, 0, 0.6154689, 0.78816116, 0, -0.78816116, 0.6154689, 0.3561766, 1.3992616, 1.4248598)
 environment = SubResource("Environment_t8av2")
 fov = 38.7
 
+[node name="sub2" type="SubViewport" parent="." unique_id=965522228]
+handle_input_locally = false
+msaa_3d = 3
+scaling_3d_mode = 5
+scaling_3d_scale = 2.0
+size = Vector2i(1152, 648)
+view_count = 10
+
 [node name="ui" type="Control" parent="." unique_id=358763200]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="texture_rect" type="TextureRect" parent="ui" unique_id=1206300775]
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -821,7 +986,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 80.0
 grow_vertical = 0
-text = "v26.-1 - pre alpha prototype early access demo edition"
+text = "v26.0 - demo edition"
 label_settings = SubResource("LabelSettings_w6bwt")
 vertical_alignment = 2
 
@@ -840,7 +1005,67 @@ text = "Четыре ночи
 label_settings = SubResource("LabelSettings_i4vf5")
 horizontal_alignment = 2
 
+[node name="stars" type="GridContainer" parent="ui/title" unique_id=2018073417]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -114.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 120)
+offset_transform_visual_only = false
+theme_override_constants/h_separation = 16
+columns = 4
+
+[node name="0" type="TextureRect" parent="ui/title/stars" unique_id=1695297065]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("27_jkqr7")
+
+[node name="1" type="TextureRect" parent="ui/title/stars" unique_id=2108251460]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("27_jkqr7")
+
+[node name="2" type="TextureRect" parent="ui/title/stars" unique_id=1428814666]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("27_jkqr7")
+
+[node name="3" type="TextureRect" parent="ui/title/stars" unique_id=1668318651]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("27_jkqr7")
+
+[node name="4" type="TextureRect" parent="ui/title/stars" unique_id=467068126]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("27_jkqr7")
+
+[node name="5" type="TextureRect" parent="ui/title/stars" unique_id=1718110370]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("27_jkqr7")
+
+[node name="6" type="TextureRect" parent="ui/title/stars" unique_id=457125436]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("27_jkqr7")
+
 [node name="custom_night" type="Control" parent="ui" unique_id=73468786]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -855,16 +1080,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -607.0
+offset_left = -455.0
 offset_top = -267.0
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="start" type="Button" parent="ui/custom_night/cont" unique_id=1026554685]
 layout_mode = 0
-offset_left = 263.0
+offset_left = 111.0
 offset_top = 156.0
-offset_right = 583.0
+offset_right = 431.0
 offset_bottom = 188.0
 theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 theme_override_colors/font_focus_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
@@ -875,9 +1100,9 @@ text = "продолжить"
 
 [node name="back" type="Button" parent="ui/custom_night/cont" unique_id=956062954]
 layout_mode = 0
-offset_left = 263.0
+offset_left = 111.0
 offset_top = 196.0
-offset_right = 583.0
+offset_right = 431.0
 offset_bottom = 228.0
 theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 theme_override_colors/font_focus_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
@@ -893,9 +1118,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -580.0
+offset_left = -732.0
 offset_top = 165.5
-offset_right = 8.0
+offset_right = -144.0
 offset_bottom = 264.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -915,17 +1140,19 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 
-[node name="input" type="HBoxContainer" parent="ui/custom_night/diff" unique_id=50552221]
-custom_minimum_size = Vector2(-1, -1)
-custom_maximum_size = Vector2(1000, 30)
+[node name="input" type="GridContainer" parent="ui/custom_night/diff" unique_id=532067546]
 layout_mode = 1
-offset_left = 13.0
-offset_top = -126.0
-offset_right = 373.0
-offset_bottom = -102.0
-alignment = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 245.0
+offset_top = -78.0
+offset_right = 605.0
+offset_bottom = -45.0
+grow_vertical = 0
+columns = 5
 
-[node name="0" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=183921003]
+[node name="chimera" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=183921003]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 theme_override_colors/font_selected_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
@@ -943,8 +1170,9 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
-[node name="1" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=2061365487]
+[node name="noise" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=2061365487]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_colors/font_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
 theme_override_colors/font_selected_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
 theme_override_colors/font_placeholder_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
@@ -962,8 +1190,9 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
-[node name="2" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=1166672027]
+[node name="nerd" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=1166672027]
 layout_mode = 2
+offset_transform_position = Vector2(-8, 0)
 theme_override_colors/font_color = Color(0.90588236, 0.8156863, 0.54901963, 1)
 theme_override_colors/font_selected_color = Color(0.90588236, 0.8156863, 0.54901963, 1)
 theme_override_colors/font_placeholder_color = Color(0.90588236, 0.8156863, 0.54901963, 1)
@@ -981,35 +1210,9 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
-[node name="3" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=1876416745]
+[node name="endo" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=593666097]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
-theme_override_colors/font_placeholder_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
-theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
-theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
-theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
-placeholder_text = "24"
-alignment = 1
-max_length = 2
-editable = false
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-
-[node name="4" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=593666097]
-layout_mode = 2
+offset_transform_position = Vector2(-92.185, 0)
 theme_override_colors/font_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
@@ -1022,10 +1225,262 @@ theme_override_fonts/font = ExtResource("4_gacyl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
 theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
-placeholder_text = "##"
+placeholder_text = "0-25"
 alignment = 1
 max_length = 2
-editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="bear" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=1876416745]
+layout_mode = 2
+offset_transform_position = Vector2(-22, 0)
+theme_override_colors/font_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
+theme_override_colors/font_placeholder_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="input2" type="GridContainer" parent="ui/custom_night/diff" unique_id=672405895]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 244.0
+offset_top = -112.0
+offset_right = 604.0
+offset_bottom = -88.0
+grow_vertical = 0
+columns = 5
+
+[node name="nchimera" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=630855146]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.22352941, 0.29411766, 1)
+theme_override_colors/font_selected_color = Color(0.23921569, 0.22352941, 0.29411766, 1)
+theme_override_colors/font_placeholder_color = Color(0.23921569, 0.22352941, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="tt" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=2001428476]
+layout_mode = 2
+offset_transform_position = Vector2(-8, 0)
+theme_override_colors/font_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
+theme_override_colors/font_selected_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
+theme_override_colors/font_placeholder_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="gnoise" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=131301899]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(1, 0.96862745, 0.39215687, 1)
+theme_override_colors/font_selected_color = Color(1, 0.96862745, 0.39215687, 1)
+theme_override_colors/font_placeholder_color = Color(1, 0.96862745, 0.39215687, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="hakua" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=344348494]
+layout_mode = 2
+offset_transform_position = Vector2(-22, 0)
+theme_override_colors/font_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
+theme_override_colors/font_placeholder_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="pg_sm" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=821173135]
+layout_mode = 2
+offset_transform_position = Vector2(-92.185, 0)
+theme_override_colors/font_color = Color(1, 0.9490196, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 0.9490196, 0, 1)
+theme_override_colors/font_placeholder_color = Color(1, 0.9490196, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="input3" type="GridContainer" parent="ui/custom_night/diff" unique_id=1607356509]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 652.0
+offset_top = -112.0
+offset_right = 800.0
+offset_bottom = -88.0
+grow_vertical = 0
+columns = 5
+
+[node name="pearto" type="LineEdit" parent="ui/custom_night/diff/input3" unique_id=1436932184]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+theme_override_colors/font_selected_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+theme_override_colors/font_placeholder_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="alien" type="LineEdit" parent="ui/custom_night/diff/input3" unique_id=643864556]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
+theme_override_colors/font_selected_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
+theme_override_colors/font_placeholder_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="input4" type="GridContainer" parent="ui/custom_night/diff" unique_id=1049701708]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 652.0
+offset_top = -78.0
+offset_right = 976.0
+offset_bottom = -54.0
+grow_vertical = 0
+columns = 5
+
+[node name="viruses" type="LineEdit" parent="ui/custom_night/diff/input4" unique_id=2138287323]
+layout_mode = 2
+offset_transform_position = Vector2(-8, 0)
+theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 0.53333336, 0, 1)
+theme_override_colors/font_placeholder_color = Color(1, 0.53333336, 0, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="vissy" type="LineEdit" parent="ui/custom_night/diff/input4" unique_id=1032630880]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.8862745, 0.8862745, 0.8980392, 1)
+theme_override_colors/font_selected_color = Color(0.8862745, 0.8862745, 0.8980392, 1)
+theme_override_colors/font_placeholder_color = Color(0.8862745, 0.8862745, 0.8980392, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "0-25"
+alignment = 1
+max_length = 2
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
@@ -1675,24 +2130,20 @@ theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 theme_override_fonts/font = ExtResource("4_gacyl")
 text = "продолжить"
 
-[node name="fnat_table_toy" type="MeshInstance3D" parent="." unique_id=1799086906]
-transform = Transform3D(0.717, 0, 0, 0, 0.717, 0, 0, 0, 0.717, -0.97471577, 0.7044568, -1.8171701)
-mesh = ExtResource("27_1w7hp")
+[node name="console" parent="." unique_id=991387515 instance=ExtResource("30_urhsd")]
 
 [connection signal="pressed" from="ui/custom_night/cont/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ui/custom_night/cont/back" to="." method="_on_back_pressed"]
-[connection signal="text_changed" from="ui/custom_night/diff/input/0" to="." method="convert_line" binds= [0]]
-[connection signal="text_changed" from="ui/custom_night/diff/input/1" to="." method="convert_line" binds= [1]]
-[connection signal="text_changed" from="ui/custom_night/diff/input/2" to="." method="convert_line" binds= [2]]
-[connection signal="pressed" from="ui/custom_night/diff/-int/-1" to="." method="add_diff" binds= [-1, -1]]
-[connection signal="pressed" from="ui/custom_night/diff/-int/-3" to="." method="add_diff" binds= [-3, -1]]
-[connection signal="pressed" from="ui/custom_night/diff/-int/-5" to="." method="add_diff" binds= [-5, -1]]
-[connection signal="pressed" from="ui/custom_night/diff/int/1" to="." method="add_diff" binds= [1, -1]]
-[connection signal="pressed" from="ui/custom_night/diff/int/3" to="." method="add_diff" binds= [3, -1]]
-[connection signal="pressed" from="ui/custom_night/diff/int/5" to="." method="add_diff" binds= [5, -1]]
-[connection signal="pressed" from="ui/custom_night/diff/spe/1" to="." method="set_diff" binds= [-57, -1]]
-[connection signal="pressed" from="ui/custom_night/diff/spe/3" to="." method="set_diff" binds= [0, -1]]
-[connection signal="pressed" from="ui/custom_night/diff/spe/5" to="." method="set_diff" binds= [25, -1]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/chimera" to="." method="convert_line" binds= [0]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/noise" to="." method="convert_line" binds= [1]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/nerd" to="." method="convert_line" binds= [2]]
+[connection signal="text_changed" from="ui/custom_night/diff/input2/nchimera" to="." method="convert_line" binds= [0]]
+[connection signal="text_changed" from="ui/custom_night/diff/input2/tt" to="." method="convert_line" binds= [2]]
+[connection signal="text_changed" from="ui/custom_night/diff/input2/gnoise" to="." method="convert_line" binds= [1]]
+[connection signal="text_changed" from="ui/custom_night/diff/input3/pearto" to="." method="convert_line" binds= [0]]
+[connection signal="text_changed" from="ui/custom_night/diff/input3/alien" to="." method="convert_line" binds= [1]]
+[connection signal="text_changed" from="ui/custom_night/diff/input4/viruses" to="." method="convert_line" binds= [2]]
+[connection signal="text_changed" from="ui/custom_night/diff/input4/vissy" to="." method="convert_line" binds= [1]]
 [connection signal="pressed" from="ui/thanks/thanks_back" to="." method="_on_thanks_back_pressed"]
 [connection signal="pressed" from="ui/main/buttons/custom_night" to="." method="_on_custom_night_pressed"]
 [connection signal="pressed" from="ui/main/buttons/thanks" to="." method="_on_thanks_pressed"]
@@ -1702,3 +2153,10 @@ mesh = ExtResource("27_1w7hp")
 [connection signal="pressed" from="ui/main/control/lang" to="." method="swap_lang"]
 [connection signal="pressed" from="ui/disclaimer_back/cont" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ui/loadout_back/continue" to="." method="_on_continue_pressed"]
+
+[editable path="sub/custom/chimera"]
+[editable path="sub/custom/gnoise"]
+[editable path="sub/custom/nchimera"]
+[editable path="sub/custom/alien"]
+[editable path="sub/custom/hakua"]
+[editable path="sub/custom/pearto"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c43g136y68mwo"
+path="res://.godot/imported/[52] call1.ogg-2713aa2845fc685a8db5f429d6bf26b1.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/ambient/[52] call1.ogg"
+dest_files=["res://.godot/imported/[52] call1.ogg-2713aa2845fc685a8db5f429d6bf26b1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c24yfg5ydrvag"
+path="res://.godot/imported/[163] Lefty4.ogg-2ce03e64a3821e0cdbe9e7ea71cfb7ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pearto/en/[163] Lefty4.ogg"
+dest_files=["res://.godot/imported/[163] Lefty4.ogg-2ce03e64a3821e0cdbe9e7ea71cfb7ee.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
