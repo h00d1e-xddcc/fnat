@@ -13,10 +13,10 @@
 ## Установка
 Для людей что не пользуются этой платформой,
 
-Установить последний билд, можно во вкладке `Releases`, с правого боку по середине
+Установить последний билд, можно во вкладке `Releases`, с правого боку по середине, и нажать на тест с синим `.exe`
 
 
-[Ну или можно просто нажать на этот текст](https://youtu.be/xvFZjo5PgG0)
+[Ну или можно просто нажать на этот текст](https://github.com/h00d1e-xddcc/fnat/releases/download/water_bucket_release/fnat_x86_64.exe)
 
 ## Обратный отчет
 
@@ -39,9 +39,9 @@ This is only pre-demo, and there is some errors, what will have impact at game e
 ## Install
 For people, what don't use GitHub,
 
-For install last build, press in right-middle tab `Releases`, and press at blue text, whit .exe file
+For install last build, press in right-middle tab `Releases`, and press at blue text whit `.exe`
 
-[Or you can press this text](https://youtu.be/xvFZjo5PgG0)
+[Or you can press this text](https://github.com/h00d1e-xddcc/fnat/releases/download/water_bucket_release/fnat_x86_64.exe)
 
 ## Feed Back
 If some reason, appears wish leave review, you can make it on Youtube, or tab Discussion on GitHub.  
