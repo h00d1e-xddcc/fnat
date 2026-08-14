@@ -33,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/line_separation = 10
 theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_caq8l")
 bbcode_enabled = true

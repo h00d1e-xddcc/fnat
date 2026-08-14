@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://diukdktdn3jmv"]
 
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="1_h248p"]
-[ext_resource type="ArrayMesh" uid="uid://cd78tpps47oqd" path="res://prefabs/mesh/fnat___p.res" id="1_j40ny"]
-[ext_resource type="ArrayMesh" uid="uid://cvgb54meu1ufg" path="res://prefabs/mesh/fnat_pearto.res" id="2_h248p"]
+[ext_resource type="ArrayMesh" uid="uid://baph5voc2sxph" path="res://prefabs/mesh/fnat___p.res" id="1_j40ny"]
+[ext_resource type="ArrayMesh" uid="uid://bimfpyrn3gvyt" path="res://prefabs/mesh/fnat_pearto.res" id="2_h248p"]
 
 [sub_resource type="Skin" id="Skin_pvso1"]
 resource_name = "Skin"

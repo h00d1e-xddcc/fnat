@@ -12,6 +12,7 @@ var is_transitioning := false
 @onready var _current_scene := _tree.current_scene
 @onready var _animation_player : AnimationPlayer = $AnimationPlayer
 @onready var _shader_blend_rect : ColorRect = $CanvasLayer/ColorRect
+@export var title : Label
 
 var default_options := {
 	"speed": 2,
@@ -98,16 +99,19 @@ func _process(_delta: float) -> void:
 	if _tree.current_scene != _previous_scene:
 		_previous_scene = _tree.current_scene
 
-func change_scene(path: Variant, setted_options: Dictionary = {}) -> void:
+func change_scene(path: Variant, setted_options: Dictionary = {}, fast_trans : bool = false) -> void:
 	assert(path == null or path is String or path is PackedScene, 'Path must be a string or a PackedScene')
 	var options = _get_final_options(setted_options)
 	if not options["skip_fade_out"]:
 		await fade_out(setted_options)
+	title.visible = true #
 	if not options["skip_scene_change"]:
 		if path == null:
 			_reload_scene()
 		else:
 			_replace_scene(path, options)
+	if fast_trans == false:
+		await get_tree().create_timer(2.57).timeout #
 	await _tree.create_timer(options["wait_time"]).timeout
 	if not options["skip_fade_in"]:
 		await fade_in(setted_options)
@@ -178,3 +182,11 @@ func fade_in(setted_options: Dictionary = {}) -> void:
 	is_transitioning = false
 	transition_finished.emit()
 	options["on_fade_in"].call()
+
+func set_title(text : String = "") :
+	title.text = text
+	#burn_target = .34
+	#await get_tree().create_timer(5).timeout
+	#burn_target = -18
+	await get_tree().create_timer(10).timeout
+	title.visible = false

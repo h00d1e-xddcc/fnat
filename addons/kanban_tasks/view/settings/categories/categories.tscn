@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2likgss81t0s"]
+[gd_scene format=3 uid="uid://b2likgss81t0s"]
 
 [ext_resource type="Script" uid="uid://brn3wr8cbs41k" path="res://addons/kanban_tasks/view/settings/categories/categories.gd" id="1_n36ev"]
 
-[node name="Categories" type="VBoxContainer"]
+[node name="Categories" type="VBoxContainer" unique_id=522211978]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,30 +11,30 @@ grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_n36ev")
 
-[node name="Header" type="HBoxContainer" parent="."]
+[node name="Header" type="HBoxContainer" parent="." unique_id=1565262204]
 layout_mode = 2
 
-[node name="\'Available Categories\'" type="Label" parent="Header"]
+[node name="\'Available Categories\'" type="Label" parent="Header" unique_id=339621615]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Available Categories:"
 
-[node name="Add" type="Button" parent="Header"]
+[node name="Add" type="Button" parent="Header" unique_id=1784452061]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=140740096]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer" unique_id=51010877]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
 
-[node name="CategoryHolder" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
+[node name="CategoryHolder" type="VBoxContainer" parent="PanelContainer/ScrollContainer" unique_id=1221463870]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

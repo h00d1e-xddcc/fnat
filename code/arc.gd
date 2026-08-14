@@ -9,11 +9,17 @@ extends Node3D
 @export var batary : float = 57.9
 @export var lang : fnat_lange
 @export var volume : int = 15
-@export var diff : Array[int] = [0,0,0,0,0]
+@export var diff : Array[int] = [0,0,0,0,0,0,0,0,0]
+@export var rand_event : bool
+@export var rand_pg : bool
+@export var rand_ult : bool
+@export var diff_static : bool
 @export var fatass : Node3D
 @export var is_can_pause : bool = true
 @export var night : fnat_night
 @export var save : fnat_save
+@export var deads : int
+@export var loss : bool = false
 
 signal out_of_power
 signal second_pass
@@ -31,34 +37,30 @@ func loadout() -> void:
 		world.environment.background_color = Color.BLACK
 
 	lang.retranslate_screen()
+	arc_event.connect_all()
 	out_of_power.connect(run_out_power)
-
 	second_pass.connect(pass_time)
-	second_pass.connect(eat_batary)
 
 	fatass = get_node("/root/main/office/decor/fatass")
 
-	change_da_note(get_word("note" + str(randi_range(0,9))))
+	change_da_note(arc.lang.get_word("note" + str(randi_range(0,9))))
+	arc.time = 0
+	arc.screen.hour = 0
+	loss = false
+
 	while true :
 		await get_tree().create_timer(1).timeout
 		emit_signal("second_pass")
 
-	await get_tree().create_timer(3.1).timeout
-	is_can_pause = true
 
 func deloadout() :
+	arc_event.connect_all()
 	user = null
 	world = null
 	screen = null
 	
 	out_of_power.disconnect(run_out_power)
-
 	second_pass.disconnect(pass_time)
-	second_pass.disconnect(eat_batary)
-
-func eat_batary(value : int = 1) :
-	batary -= value * usage * .075
-	if batary < 0 : emit_signal("out_of_power")
 
 func pass_time() :
 	time += 1
@@ -67,9 +69,12 @@ func pass_time() :
 		for i in arc.user.anims.size() :
 			arc.user.anims[i].ai_lvl = 0
 		arc.user.process_mode = Node.PROCESS_MODE_DISABLED
-		await get_tree().create_timer(2.57).timeout
-		SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"} )
+		await get_tree().create_timer(.257).timeout
+		SceneManager.set_title("")
+		SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"}, true )
 	arc.screen.update_text()
+	batary -= 1 * usage * .075
+	if batary < 0 : emit_signal("out_of_power")
 
 func button_delay(button : Button, waiting : float) :
 	var old_string = button.text
@@ -88,14 +93,23 @@ func button_delay(button : Button, waiting : float) :
 	if arc.user.spot_light.visible == true : arc_event.play_sfx({"path" = "user/math_correct", "volume" = 3})
 
 func start_night(night_to_paste : fnat_night) :
-	night = night_to_paste
-	arc.user.anims[0].ai_lvl = night.chimera
-	arc.user.anims[1].ai_lvl = night.nerd
-	arc.user.anims[2].ai_lvl = night.noised
-	arc.user.anims[3].ai_lvl = night.bear
-	
+	arc.night = night_to_paste
+
+	rand_event = night.is_can_random_event
+	rand_pg = night.is_can_be_more_difficult
+	rand_ult = night.is_can_be_ultimate_difficult
+	diff_static = night.is_static_diffucult
+
 	arc.batary = night.start_power
-	arc.usage = night.start_usagedd
+	arc.usage = night.start_usage
+	arc.time = night.start_time
+
+	for i in arc.diff.size() :
+		arc.user.anims[i].ai_lvl = night.diff[i]
+
+func start_custom_night() :
+	for i in arc.diff.size() :
+		arc.user.anims[i].ai_lvl = arc.diff[i]
 
 func pause() :
 	match get_tree().paused :
@@ -105,24 +119,19 @@ func pause() :
 				Engine.time_scale = 0
 				get_tree().paused = true
 				arc_event.play_sfx({"type" = "2d", "path" = "user/pause"})
-				arc.user.audios["pause"].playing = true
+				#arc.user.audios["pause"].playing = true
 				get_node("/root/main/office/triggers/vhs").visible = true
 			else : arc_event.play_sfx({"type" = "2d", "path" = "user/pause_error"})
 		true :
 			Engine.time_scale = 1
 			get_tree().paused = false
-			arc.user.audios["pause"].playing = false
+			#arc.user.audios["pause"].playing = false
 			arc_event.play_sfx({"path" = "user/pause_un"})
 			get_node("/root/main/office/triggers/vhs").visible = false
 			await get_tree().create_timer(3.1).timeout
 			is_can_pause = true
 		_ :
 			print("ляяя, надо сделать, чтобы bool имел третье свойство, maybe, вот смеха будет XD")
-
-func set_dif() :
-	user.anims[0].ai_lvl = diff[0] # chimera
-	user.anims[1].ai_lvl = diff[1] # noise
-	user.anims[2].ai_lvl = diff[2] # nerd
 
 func run_out_power() :
 	out_of_power.disconnect(run_out_power)
@@ -144,11 +153,6 @@ func room_check(anim_id : int, room : String) -> bool :
 			if user.anims[anim_id].current_point.name == room : return true
 	return false
 
-func get_word(id : String) -> String :
-	var word = lang.dictionary.get(id)
-	if word == "" or word == null : return ""
-	else : return word.replace("\\n", "\n")
-	# это уже не хоррор, а шапито какое-то
 func change_da_note(text : String, size : int = 18) :
 	var note : Label3D = get_node("/root/main/office/decor/fnat_note/label_3d")
 	note.text = text
@@ -160,36 +164,38 @@ func save_settings() :
 
 func retranslate_title() :
 	# yandere
-	get_node("/root/main_menu/ui/title").text = get_word("ui_title")
-	get_node("/root/main_menu/ui/main/buttons/custom_night").text = get_word("ui_custom")
-	get_node("/root/main_menu/ui/main/buttons/thanks").text = get_word("ui_thanks")
-	get_node("/root/main_menu/ui/thanks/label").text = get_word("ui_thanks_text")
-	get_node("/root/main_menu/ui/thanks/thanks_back").text = get_word("ui_back")
-	get_node("/root/main_menu/ui/main/control/label").text = get_word("ui_volume")
-	get_node("/root/main_menu/ui/main/control/v_box_container/v-sync").text = get_word("ui_v-sync")
-	get_node("/root/main_menu/ui/main/control/v_box_container/full-screen").text = get_word("ui_fullscreen")
-	get_node("/root/main_menu/ui/custom_night/cont/start").text = get_word("ui_cont")
-	get_node("/root/main_menu/ui/custom_night/cont/p_s_").text = get_word("p.s.")
-	get_node("/root/main_menu/ui/custom_night/cont/back").text = get_word("ui_back")
-	get_node("/root/main_menu/ui/disclaimer_back/title").text = get_word("ui_dis_title")
-	get_node("/root/main_menu/ui/disclaimer_back/text").text = get_word("ui_dis_text")
-	get_node("/root/main_menu/ui/disclaimer_back/ps").text = get_word("ui_dis_p.s.")
-	get_node("/root/main_menu/ui/disclaimer_back/cont").text = get_word("ui_dis_cont")
+	get_node("/root/main_menu/ui/title").text = lang.get_word("ui_title")
+	get_node("/root/main_menu/ui/main/buttons/custom_night").text = lang.get_word("ui_custom")
+	get_node("/root/main_menu/ui/main/buttons/story").text = lang.get_word("ui_story") + str(arc.save.night)
+	get_node("/root/main_menu/ui/main/buttons/thanks").text = lang.get_word("ui_thanks")
+	get_node("/root/main_menu/ui/thanks/label").text = lang.get_word("ui_thanks_text")
+	get_node("/root/main_menu/ui/thanks/thanks_back").text = lang.get_word("ui_back")
+	get_node("/root/main_menu/ui/main/control/label").text = lang.get_word("ui_volume")
+	get_node("/root/main_menu/ui/main/control/v_box_container/v-sync").text = lang.get_word("ui_v-sync")
+	get_node("/root/main_menu/ui/main/control/v_box_container/full-screen").text = lang.get_word("ui_fullscreen")
+	get_node("/root/main_menu/ui/custom_night/cont/start").text = lang.get_word("ui_cont")
+	get_node("/root/main_menu/ui/custom_night/cont/p_s_").text = lang.get_word("p.s.")
+	get_node("/root/main_menu/ui/custom_night/cont/back").text = lang.get_word("ui_back")
+	get_node("/root/main_menu/ui/disclaimer_back/title").text = lang.get_word("ui_dis_title")
+	get_node("/root/main_menu/ui/disclaimer_back/text").text = lang.get_word("ui_dis_text")
+	get_node("/root/main_menu/ui/disclaimer_back/ps").text = lang.get_word("ui_dis_p.s.")
+	get_node("/root/main_menu/ui/disclaimer_back/cont").text = lang.get_word("ui_dis_cont")
 	
-	get_node("/root/main_menu/ui/loadout_back/loadout/flashlight").text = get_word("ui_flashligh")
-	get_node("/root/main_menu/ui/loadout_back/continue").text = get_word("ui_cont")
-	get_node("/root/main_menu/ui/loadout_back/loadout/flashlight_charge").text = get_word("ui_flashlight_recharge")
-	get_node("/root/main_menu/ui/loadout_back/loadout/pc").text = get_word("ui_pc")
-	get_node("/root/main_menu/ui/loadout_back/loadout/left").text = get_word("ui_left")
-	get_node("/root/main_menu/ui/loadout_back/loadout/light").text = get_word("ui_light")
-	get_node("/root/main_menu/ui/loadout_back/loadout/under").text = get_word("ui_hide")
-	get_node("/root/main_menu/ui/loadout_back/loadout/right").text = get_word("ui_right")
-	get_node("/root/main_menu/ui/loadout_back/loadout/scheme").text = get_word("ui_scheme")
-	get_node("/root/main_menu/ui/loadout_back/loadout/cam").text = get_word("ui_cam")
-	get_node("/root/main_menu/ui/loadout_back/loadout/peek").text = get_word("ui_peek")
+	get_node("/root/main_menu/ui/loadout_back/loadout/flashlight").text = lang.get_word("ui_flashligh")
+	get_node("/root/main_menu/ui/loadout_back/continue").text = lang.get_word("ui_cont")
+	get_node("/root/main_menu/ui/loadout_back/story").text = lang.get_word("ui_cont")
+	get_node("/root/main_menu/ui/loadout_back/loadout/flashlight_charge").text = lang.get_word("ui_flashlight_recharge")
+	get_node("/root/main_menu/ui/loadout_back/loadout/pc").text = lang.get_word("ui_pc")
+	get_node("/root/main_menu/ui/loadout_back/loadout/left").text = lang.get_word("ui_left")
+	get_node("/root/main_menu/ui/loadout_back/loadout/light").text = lang.get_word("ui_light")
+	get_node("/root/main_menu/ui/loadout_back/loadout/under").text = lang.get_word("ui_hide")
+	get_node("/root/main_menu/ui/loadout_back/loadout/right").text = lang.get_word("ui_right")
+	get_node("/root/main_menu/ui/loadout_back/loadout/scheme").text = lang.get_word("ui_scheme")
+	get_node("/root/main_menu/ui/loadout_back/loadout/pause").text = lang.get_word("ui_pause")
+	get_node("/root/main_menu/ui/loadout_back/loadout/cam").text = lang.get_word("ui_cam")
+	get_node("/root/main_menu/ui/loadout_back/loadout/peek").text = lang.get_word("ui_peek")
 	
-	get_node("/root/main_menu/sub/thanks/da_rules/label").text = get_word("da_rules")
-	get_node("/root/main_menu/sub/thanks/board/thanks").text = get_word("ui_thanks")
-	get_node("/root/main_menu/sub/thanks/board/ad").text = get_word("thanks_ad")
-	
+	get_node("/root/main_menu/sub/thanks/da_rules/label").text = lang.get_word("da_rules")
+	get_node("/root/main_menu/sub/thanks/board/thanks").text = lang.get_word("ui_thanks")
+	get_node("/root/main_menu/sub/thanks/board/ad").text = lang.get_word("thanks_ad")
 	

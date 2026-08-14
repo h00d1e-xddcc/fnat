@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="1_2q17q"]
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="1_86icv"]
-[ext_resource type="ArrayMesh" uid="uid://cd8l4a608cshs" path="res://prefabs/mesh/fnat__smile.res" id="3_pahme"]
+[ext_resource type="ArrayMesh" uid="uid://dcykx76f6pa5v" path="res://prefabs/mesh/fnat__smile.res" id="3_pahme"]
 [ext_resource type="AudioStream" uid="uid://cpwb2mkpu7gx6" path="res://resources/sounds/ambient/short/noise.ogg" id="3_v7syf"]
-[ext_resource type="ArrayMesh" uid="uid://bat27vi7gw3hr" path="res://prefabs/mesh/fnat_guitar.res" id="4_4h2oj"]
+[ext_resource type="ArrayMesh" uid="uid://dwdt42cmj7p0k" path="res://prefabs/mesh/fnat_guitar.res" id="4_4h2oj"]
 
 [sub_resource type="Skin" id="Skin_wvr6i"]
 resource_name = "Skin"
@@ -5161,11 +5161,10 @@ _data = {
 &"tpose": SubResource("Animation_ty3ci")
 }
 
-[node name="noise" type="Node3D" unique_id=233678744 node_paths=PackedStringArray("animator", "acc", "noise")]
+[node name="noise" type="Node3D" unique_id=233678744 node_paths=PackedStringArray("animator", "noise")]
 script = ExtResource("1_2q17q")
 color = Color(0.5882353, 0.6784314, 0.90588236, 1)
-animator = NodePath("")
-acc = NodePath("")
+animator = NodePath("AnimationPlayer")
 noise = NodePath("noise")
 pose_default = Array[String](["guitar", "reference", "tpose", "sniper"])
 pose_hunting = Array[String](["timeout", "tpose", "guitar", "timeout"])

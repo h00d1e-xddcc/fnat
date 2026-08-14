@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cp3e2karfgysq"
+path="res://.godot/imported/[183] ToyChica5b.ogg-86d5c045bc5445d4e18aa2f3bc0df040.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pg_sm/en/[183] ToyChica5b.ogg"
+dest_files=["res://.godot/imported/[183] ToyChica5b.ogg-86d5c045bc5445d4e18aa2f3bc0df040.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

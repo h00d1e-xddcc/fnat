@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bfsj6cbk88m2c"]
+
+[ext_resource type="ArrayMesh" uid="uid://blqlf5bjddnfs" path="res://prefabs/mesh/fnat_fridger_002.res" id="1_qqvu2"]
+[ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="2_84opy"]
+[ext_resource type="ArrayMesh" uid="uid://cboutum4jinp8" path="res://prefabs/mesh/fnat_fridger_door_002.res" id="3_xk6cb"]
+
+[node name="virus" type="MeshInstance3D" unique_id=446555829]
+transform = Transform3D(-1.5277567, -3.7252903e-09, 0.082820706, 2.7939677e-09, 1.530001, 0, -0.082820825, 1.4901161e-08, -1.5277569, 0, 0, 0)
+mesh = ExtResource("1_qqvu2")
+script = ExtResource("2_84opy")
+color = Color(1, 1, 1, 0)
+is_static = true
+
+[node name="fnat_fridger_door_002" type="MeshInstance3D" parent="." unique_id=1884921020]
+transform = Transform3D(-4.4703484e-08, 2.7755576e-16, -1, 1.3877788e-17, 1, -5.7679556e-17, 0.99999994, 0, -4.8428774e-08, -0.1300106, 0, 0.19081402)
+mesh = ExtResource("3_xk6cb")

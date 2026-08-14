@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="1_qcogv"]
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="2_0kumr"]
 [ext_resource type="ArrayMesh" uid="uid://d01hf2odntim7" path="res://prefabs/mesh/fnat__rage.res" id="2_ksmke"]
-[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/images.steamusercontent.png" id="3_ksmke"]
+[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/tf2.png" id="3_ksmke"]
 
 [sub_resource type="Skin" id="Skin_hkhml"]
 resource_name = "Skin"
@@ -5180,6 +5180,9 @@ _data = {
 &"tpose": SubResource("Animation_afvrq")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_67nhv"]
+size = Vector3(1.065, 2.530625, 0.58)
+
 [node name="gnoise" type="Node3D" unique_id=411477254 node_paths=PackedStringArray("animator")]
 script = ExtResource("1_qcogv")
 color = Color(1, 0.96862745, 0.39215687, 1)
@@ -5367,3 +5370,9 @@ billboard = 2
 shaded = true
 texture_filter = 0
 texture = ExtResource("3_ksmke")
+
+[node name="gnoise" type="StaticBody3D" parent="." unique_id=867660299]
+
+[node name="collider" type="CollisionShape3D" parent="gnoise" unique_id=875807459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2496876, 0)
+shape = SubResource("BoxShape3D_67nhv")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bi6r3ifnp2i8a"
+path="res://.godot/imported/[81] getburnedb.ogg-084bc9728ea2d53aa226fb14818b8d92.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pg_sm/en/[81] getburnedb.ogg"
+dest_files=["res://.godot/imported/[81] getburnedb.ogg-084bc9728ea2d53aa226fb14818b8d92.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -49,19 +49,19 @@ layout_mode = 2
 [node name="xpLabel" type="Label" parent="VBoxContainer/XP/HBoxContainer" unique_id=1229073751]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "XP: 5560 / 6050"
+text = "XP: 13372 / 13850"
 
 [node name="levelLabel" type="Label" parent="VBoxContainer/XP/HBoxContainer" unique_id=2024704103]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Level: 15"
+text = "Level: 23"
 horizontal_alignment = 2
 
 [node name="ProgressBar" type="TextureProgressBar" parent="VBoxContainer/XP" unique_id=138624486]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
-max_value = 750.0
-value = 260.0
+max_value = 1150.0
+value = 672.0
 nine_patch_stretch = true
 texture_under = ExtResource("3_vdb3k")
 texture_progress = ExtResource("4_y2kl4")
@@ -138,7 +138,6 @@ text = "Sound"
 [node name="fireworksCheckbox" type="CheckButton" parent="VBoxContainer/GridContainer" unique_id=1923436600]
 layout_mode = 2
 size_flags_horizontal = 11
-button_pressed = true
 text = "Fireworks"
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=1615128363]

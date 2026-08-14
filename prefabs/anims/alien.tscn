@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://g3i4i03i38hm"]
 
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="1_223ug"]
-[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/images.steamusercontent.png" id="2_jkpd0"]
+[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/tf2.png" id="2_jkpd0"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_m6k01"]
 resource_name = "fnat__rage"

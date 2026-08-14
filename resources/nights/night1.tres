@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="fnat_night" format=3 uid="uid://k44hasfc1x8p"]
+
+[ext_resource type="Script" uid="uid://bbbvwvgyoyx18" path="res://code/night.gd" id="1_egadq"]
+
+[resource]
+script = ExtResource("1_egadq")
+diff = Array[int]([3, 2, 1, 4, 0, 0, 0, 4, 0])
+chimera = 3
+noise = 2
+nerd = 1
+endo = 4
+viruses = 4
+is_can_be_more_difficult = true
+is_can_random_event = false
+true_night = true
+start_night = 1
+metadata/_custom_type_script = "uid://bbbvwvgyoyx18"

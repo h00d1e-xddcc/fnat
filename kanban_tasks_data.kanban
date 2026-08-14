@@ -32,24 +32,27 @@
 			"title": "Todo",
 			"tasks": [
 				"5267621c-4d3d-48e4-aa4e-2c5028d98c87",
+				"de63bc0a-e14c-4df1-b7c1-703792e66cfc",
 				"42ed4fc0-4729-4c2b-a719-624ef4c7b35a",
 				"92b532ea-e596-4a1f-9cff-0255f15857c9",
+				"da38b171-c9b1-45bc-863c-d71202c297b6",
 				"5e6dee22-3104-4ac8-a562-52bd23919f5a",
-				"d2cc32d8-85ac-4340-8f36-5dd2ec5e56ed"
+				"d2cc32d8-85ac-4340-8f36-5dd2ec5e56ed",
+				"c56fe474-dc64-49d4-9778-ea456be1b4cd",
+				"4919919f-a330-42f1-8b62-11613466cd74",
+				"f7263adf-f073-4a18-b3b1-a7b8b162ac20"
 			]
 		},
 		{
 			"uuid": "d4a1ccb6-2ee0-4cf8-8974-4e4d8fccecf9",
 			"title": "Doing",
 			"tasks": [
-				"4919919f-a330-42f1-8b62-11613466cd74",
-				"c56fe474-dc64-49d4-9778-ea456be1b4cd",
-				"051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
 				"9b18d48a-9ae5-45bf-baaf-7754bf36cd99",
+				"051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
 				"79e7992e-de71-4236-a45a-32eb2cb5d4c0",
-				"de63bc0a-e14c-4df1-b7c1-703792e66cfc",
 				"45f39875-f684-40f9-9caa-7d2564e56b0e",
-				"f7263adf-f073-4a18-b3b1-a7b8b162ac20"
+				"2b9fd5e9-77ee-42df-92f4-45a97c00ff9e",
+				"2da1d7e9-fb12-4e07-a6a6-acd5a9c7b5b1"
 			]
 		}
 	],
@@ -74,51 +77,51 @@
 			"uuid": "c56fe474-dc64-49d4-9778-ea456be1b4cd",
 			"title": "passive actions",
 			"description": "",
-			"category": "f4475b69-8a97-46f2-9d23-a895f849c64e",
+			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
 			"steps": [
 				{
 					"details": "chimera - eating, 2 anims",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "nerd - playing, 2 anims",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "noise - guitar",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "bear - ",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "all - kasotsky kick, 3 anim",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "all - mannrobics, 4 anims",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "all - hadooken",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "all - Mmmph",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "all - /impatient ",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "all - romantic",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "all - update old anims",
-					"done": false
+					"done": true
 				}
 			]
 		},
@@ -135,22 +138,6 @@
 			]
 		},
 		{
-			"uuid": "051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
-			"title": "rotate head into Vector3",
-			"description": "",
-			"category": "95686080-b83c-479d-b691-55683f5acac9",
-			"steps": [
-				{
-					"details": "Нука сходи глянь, что там было сделано, на не трезвую голову",
-					"done": false
-				},
-				{
-					"details": "[eqyz у тебя вышла переделывай",
-					"done": false
-				}
-			]
-		},
-		{
 			"uuid": "5e6dee22-3104-4ac8-a562-52bd23919f5a",
 			"title": "поменять точки позиций",
 			"description": "в место того, чтобы тока `fnat_point.gd` была просто каким-то обстракным не понятным чем-то.\nСделай, чтобы анимации или были абсолютно рандомными, или только одними. Ну или еще лучше, сделай словарь \"страшных\" анимаций, и бери тогда от туда анимации ",
@@ -161,13 +148,6 @@
 					"done": true
 				}
 			]
-		},
-		{
-			"uuid": "79e7992e-de71-4236-a45a-32eb2cb5d4c0",
-			"title": "поменять анимацию скримерам",
-			"description": "я тут в раздумиях,\nделать или 4 разных скримера из первых четырех og частей. Или наверное стоит так и сделать",
-			"category": "95686080-b83c-479d-b691-55683f5acac9",
-			"steps": []
 		},
 		{
 			"uuid": "92b532ea-e596-4a1f-9cff-0255f15857c9",
@@ -209,19 +189,19 @@
 			"uuid": "9b18d48a-9ae5-45bf-baaf-7754bf36cd99",
 			"title": "про предметы",
 			"description": "по лору,\nхимера, она же динозавр с переферийным зрением, так пусть ее предметом будет микрофон, аля издает звуки, таким образом ориентируется в пространстве, почему бы и нет? зачем я пишу этот текст?\n\nшум, ну тут очевидно, электрогитару в руки и в перед\n\nвот с занудой по тяжелее. Дать ей телефон? как-то слишком просто. Может ноут сразу дать? Кстати ака вариант да.\n\nТак, а что с медведем? Просто дать ей большую морковку это слишком просто и тупо. Ладно отложу этот вопрос на потом",
-			"category": "95686080-b83c-479d-b691-55683f5acac9",
+			"category": "c17fabe3-8cee-4704-a9b8-831b695ce75c",
 			"steps": []
 		},
 		{
 			"uuid": "de63bc0a-e14c-4df1-b7c1-703792e66cfc",
 			"title": "когда химера заходит",
 			"description": "",
-			"category": "95686080-b83c-479d-b691-55683f5acac9",
+			"category": "6bca8cab-90d0-46b1-826b-27f66add392f",
 			"steps": []
 		},
 		{
 			"uuid": "45f39875-f684-40f9-9caa-7d2564e56b0e",
-			"title": "когда подходит шум, она в случайный момент может залочится и воспроизводить шум",
+			"title": "ориентир на шумы",
 			"description": "",
 			"category": "95686080-b83c-479d-b691-55683f5acac9",
 			"steps": []
@@ -230,11 +210,11 @@
 			"uuid": "f7263adf-f073-4a18-b3b1-a7b8b162ac20",
 			"title": "New task",
 			"description": "не, просто тупо воспроизвести, а получить словарь, и применить этотсловарь,",
-			"category": "95686080-b83c-479d-b691-55683f5acac9",
+			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
 			"steps": [
 				{
 					"details": "надо кароче переписать систему со звуками",
-					"done": false
+					"done": true
 				}
 			]
 		},
@@ -242,7 +222,51 @@
 			"uuid": "4919919f-a330-42f1-8b62-11613466cd74",
 			"title": "перегнать звуки",
 			"description": "",
-			"category": "f4475b69-8a97-46f2-9d23-a895f849c64e",
+			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
+			"steps": []
+		},
+		{
+			"uuid": "da38b171-c9b1-45bc-863c-d71202c297b6",
+			"title": "шоб типочки ходили",
+			"description": "",
+			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
+			"steps": []
+		},
+		{
+			"uuid": "2b9fd5e9-77ee-42df-92f4-45a97c00ff9e",
+			"title": "эмбиент",
+			"description": "ля башка не барит, кароче сделать так чтобы просто пауза на эмбиантах ставилась",
+			"category": "95686080-b83c-479d-b691-55683f5acac9",
+			"steps": []
+		},
+		{
+			"uuid": "051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
+			"title": "rotate head into Vector3",
+			"description": "",
+			"category": "95686080-b83c-479d-b691-55683f5acac9",
+			"steps": [
+				{
+					"details": "Нука сходи глянь, что там было сделано, на не трезвую голову",
+					"done": false
+				},
+				{
+					"details": "[eqyz у тебя вышла переделывай",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "79e7992e-de71-4236-a45a-32eb2cb5d4c0",
+			"title": "поменять анимацию скримерам",
+			"description": "я тут в раздумиях,\nделать или 4 разных скримера из первых четырех og частей. Или наверное стоит так и сделать",
+			"category": "95686080-b83c-479d-b691-55683f5acac9",
+			"steps": []
+		},
+		{
+			"uuid": "2da1d7e9-fb12-4e07-a6a6-acd5a9c7b5b1",
+			"title": "проблемы с кам интерапшен",
+			"description": "",
+			"category": "95686080-b83c-479d-b691-55683f5acac9",
 			"steps": []
 		}
 	],

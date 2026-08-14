@@ -23,7 +23,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b0gfrwa3qtlnt" path="res://prefabs/mesh/fnat_vent.res" id="21_xiqcb"]
 [ext_resource type="ArrayMesh" uid="uid://heu244g5opm8" path="res://prefabs/mesh/fnat_vent_planes.res" id="22_6fqhm"]
 [ext_resource type="ArrayMesh" uid="uid://0g2tk4a4i76y" path="res://prefabs/mesh/fnat_scp-650b.res" id="23_gchh1"]
-[ext_resource type="ArrayMesh" uid="uid://dwdt42cmj7p0k" path="res://prefabs/mesh/fnat_guitar.res" id="25_8d6dc"]
+[ext_resource type="ArrayMesh" uid="uid://bat27vi7gw3hr" path="res://prefabs/mesh/fnat_guitar.res" id="25_8d6dc"]
 [ext_resource type="ArrayMesh" uid="uid://3mhw2e5frne5" path="res://prefabs/mesh/fnat_steplader.res" id="26_5dwut"]
 [ext_resource type="ArrayMesh" uid="uid://d3lwa3p3d0d2p" path="res://prefabs/mesh/fnat_arm.res" id="27_cvo3b"]
 [ext_resource type="ArrayMesh" uid="uid://dyvtsnuctdg" path="res://prefabs/mesh/fnat_crate_big.res" id="28_ubne7"]
@@ -1528,11 +1528,6 @@ mesh = ExtResource("31_cddya")
 [node name="fnat_cube15" type="MeshInstance3D" parent="." unique_id=1176911730]
 transform = Transform3D(0.9999999, 0, 3.2782555e-07, 0, 1.0000001, 0, -3.2782555e-07, 0, 0.9999999, -20.49999, -7.748604e-07, 19.19999)
 mesh = ExtResource("31_cddya")
-
-[node name="fnat_cup" type="MeshInstance3D" parent="." unique_id=330511375]
-transform = Transform3D(-0.37499398, 0, -0.64950866, 0, 0.74998796, 0, 0.64950866, 0, -0.37499398, 1.0295544, 0.8405676, -1.149931)
-instance_shader_parameters/coloring = Color(0.5882353, 0.6784314, 0.90588236, 1)
-mesh = ExtResource("30_5kp13")
 
 [node name="fnat_onion" type="MeshInstance3D" parent="." unique_id=987817645]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -20.202732, 2.1, 27)

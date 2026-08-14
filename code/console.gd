@@ -15,29 +15,36 @@ func _on_input_text_submitted(new_text: String) -> void:
 	match get_node("/root").get_child(3).name :
 		"main" : # office
 			match comm[0] :
-				#"summon" : print_output("ai {lvl} {name}")
-				"toss" :
+				"h" : 
+					print_output("{t}oss (name)")
+					print_output("{s}kip_night")
+					print_output("{b}attary_full_charge")
+					print_output("{n}ote (0-12)")
+					print_output("{j}umpscare (name)")
+					print_output("{ai} (0-25) (name)")
+					print_output("{an}imatronics")
+					print_output("{q}uit_to_title")
+					print_output("{e}xit_to_screen")
+					print_output("{s}kip{h}our")
+
+				"t" :
 					var anim : fnat_animatronic = get_node("/root/main/" + comm[1])
 					if anim != null : 
-						anim.toss_roll()
+						anim.toss_roll(0)
 						print_output("forsed toss " + anim.name)
 					else : print_output("badgateway -> " + comm[1])
-				"poewer_off" : arc.batary = -9999
-				"flash_off" : arc.user.flashlight_brake()
-				"note" : arc.change_da_note(arc.get_word("note" + comm[1]))
-				"jumpscare" : 
+				"poff" : arc.batary = -9999
+				"foff" : arc.user.flashlight_brake()
+				"s" : arc.time = 999999
+				"b" : arc.batary = 9999
+				"n" : arc.change_da_note(arc.get_word("note" + comm[1]))
+				"j" : 
 					var anim : fnat_animatronic = get_node("/root/main/" + comm[1])
 					if anim != null : anim.jumpscare()
 					else : print_output("Kiss Your Sister. NOW")
-				"anims" : 
+				"an" : 
 					for i in arc.user.anims.size() :
-						#print_output(arc.user.anims[i].name + " " + str(i), "#" + str(Color.hex(arc.user.anims[i].color)))
 						print_output(arc.user.anims[i].name + " " + str(i), "#" + str(arc.user.anims[i].color.to_html()))
-					#print_output("anim_name id")
-					#print_output("chimera 0", "#e74e5f")
-					#print_output("nerd 1", "#e7d08c")
-					#print_output("noise 2", "#96ade7")
-					#print_output("bear 3", "#b9f9b6")
 				"ai" :
 					var lvl : int = int(comm[1])
 					var name : String = str(comm[2])
@@ -46,8 +53,21 @@ func _on_input_text_submitted(new_text: String) -> void:
 					else : 
 						anim.ai_lvl = lvl
 						print_output(name + " now has ai lvl " + str(lvl))
-		"main_menu" :
-			match comm[0] :
+				"q" : 
+					arc.deloadout()
+					SceneManager.change_scene("res://prefabs/misc/main_menu.tscn", {"pattern" : "curtians"}, true)
+					SceneManager.set_title("")
+				"e" : get_tree().quit()
+				"sh" : arc.time += 60
+				"help" :
+					match arc.night.start_night :
+						1 : arc.user.source["call"].stream = load("res://resources/sounds/ambient/calls/" + arc.save.lange + "/console1.ogg")
+						2 : arc.user.source["call"].stream = load("res://resources/sounds/ambient/calls/" + arc.save.lange + "/console2.ogg")
+					arc.user.source["call"].play()
+				"commands" : OS.crash("")
+				"reset" : 
+					arc.save.night = 1
+					arc.retranslate_title()
 				"print" : print_output(new_text.replace("print ", ""))
 				"all_star" :
 					if get_node("/root/main_menu/ui/title/stars/" + str(6)).visible == true : return
@@ -56,8 +76,11 @@ func _on_input_text_submitted(new_text: String) -> void:
 					get_node("/root/main_menu/audio").stream = load("res://resources/sounds/ambient/long/star_four.ogg")
 					get_node("/root/main_menu/audio").play()
 					print_output("gaymode activated!")
-				"help" : print(1) # title
-		_ : OS.crash("4655434B20594F55")
+				"night" : 
+					var night = int(comm[1])
+					if night == 1 or night == 2 or night == 3 or night == 4 or night == 5 :
+						arc.save.night = night
+						arc.retranslate_title()
 	if new_text != "!!" : last_comma = new_text
 	input.text = ""
 	input.release_focus()

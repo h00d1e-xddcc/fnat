@@ -8,7 +8,6 @@
 transform = Transform3D(-0.14330427, -0.9896787, 4.326023e-08, 0, -4.371139e-08, -1, 0.9896787, -0.14330427, 6.264029e-09, 11.436367, 0.9121151, -18.877054)
 script = ExtResource("1_nf8km")
 neighbours = [NodePath("../hall_est")]
-pose = Array[String](["default", "tpose", "engage"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -16,7 +15,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -9)
 script = ExtResource("1_nf8km")
 neighbours = [NodePath("../window_right"), NodePath("../playground"), NodePath("../toilet")]
-pose = Array[String](["lotos", "mrbeast", "peta", "sniper", "dab"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -24,7 +22,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.700001, 0, -0.5)
 script = ExtResource("1_nf8km")
 neighbours = [NodePath("../playground"), NodePath("../window_left"), NodePath("../hall_est"), NodePath("../fire_exit")]
-pose = Array[String](["peta", "mrbeast", "dab"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -32,7 +29,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9000006, 0, -16.7)
 script = ExtResource("1_nf8km")
 neighbours = [NodePath("../window_right"), NodePath("../toilet"), NodePath("../window_right")]
-pose = Array[String](["default", "tpose", "reference"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -40,7 +36,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -8.647738, 0.71250623, -25.095537)
 script = ExtResource("1_nf8km")
 neighbours = [NodePath("../window_right"), NodePath("../window_left"), NodePath("../toilet")]
-pose = Array[String](["tpose", "default"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -48,7 +43,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2000005, 0, -13.500001)
 script = ExtResource("1_nf8km")
 neighbours = [NodePath("../hall_est"), NodePath("../window_left")]
-pose = Array[String](["mrbeast", "tpose", "sniper", "dab"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -56,7 +50,6 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.999999, 0, -19.432827)
 script = ExtResource("1_nf8km")
 neighbours = [NodePath("../parts_and_service"), NodePath("../hall_est")]
-pose = Array[String](["tpose", "default"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
@@ -64,6 +57,5 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -3.900001, 1, -1.3328271)
 script = ExtResource("1_nf8km")
 neighbours = [null, NodePath("../hall_est")]
-pose = Array[String](["lotos", "tpose", "default"])
 occupation = "endo"
 metadata/_custom_type_script = "uid://cktqc128jci3t"

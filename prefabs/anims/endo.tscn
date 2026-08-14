@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="1_4anql"]
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="1_6ekby"]
-[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/images.steamusercontent.png" id="3_stouc"]
+[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/tf2.png" id="3_stouc"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4anql"]
 resource_name = "fnat_endo"

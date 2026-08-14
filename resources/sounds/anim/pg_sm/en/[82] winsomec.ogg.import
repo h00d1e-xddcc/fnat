@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wt3eor6hdo67"
+path="res://.godot/imported/[82] winsomec.ogg-ad05e6bca1eb30e0c5203436954736f3.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pg_sm/en/[82] winsomec.ogg"
+dest_files=["res://.godot/imported/[82] winsomec.ogg-ad05e6bca1eb30e0c5203436954736f3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

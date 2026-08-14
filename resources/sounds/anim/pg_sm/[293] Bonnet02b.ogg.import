@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dgwqe8ycpugbh"
+path="res://.godot/imported/[293] Bonnet02b.ogg-15e1da7b27daf71f0f0c186222a51cb7.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pg_sm/[293] Bonnet02b.ogg"
+dest_files=["res://.godot/imported/[293] Bonnet02b.ogg-15e1da7b27daf71f0f0c186222a51cb7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

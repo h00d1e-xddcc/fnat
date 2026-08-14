@@ -12,17 +12,24 @@ class_name fnat_screen
 @export var sfx : AudioStreamPlayer3D
 @export var noise : Control
 @export var noise_sfx : AudioStreamPlayer3D
+@export var ad : Control
+@export var ad_source : AudioStreamPlayer
 @export var teto_input : Control
 @export var teto_word : String
+@export var hour : int
+@export var adblock : int = 90
+@export var antivuris : int = 90
+@export var cool_down = 3.15
+@export var vissy : Control
 
 func _ready() -> void:
 	arc.loadout()
 	input_event.connect(_on_input_event)
 	noise.visible = false
-	#arc.play_sound("ambient/they_coming", 0, null, 0, 15)
+	vissy.visible = false
 
 func _on_input_event(camera : Camera3D, event : InputEvent, event_position : Vector3, normal : Vector3, shape_idx: int) :
-		if arc.user.state != arc.user.action.pc : return
+		if arc.loss : return
 		var mouse3D = mesh.global_transform.affine_inverse() * event_position
 		var mouse2D = Vector2(mouse3D.x,mouse3D.z)
 		
@@ -34,17 +41,15 @@ func _on_input_event(camera : Camera3D, event : InputEvent, event_position : Vec
 		sub.push_input(event)
 
 func update_text() :
-	#status.text = arc.get_word("ui_usage") + " " + str(arc.usage)
-	#status.text += "\n" + arc.get_word("ui_power") + " " + str(int(arc.batary))
-	#
-	#time.text = str(arc.night.start_night) + " " + arc.get_word("ui_night")
-	#var hour : int = int(arc.time / 60) 
-	var hour : int
-	#if hour == 0 : time.text += "\n12 " + arc.get_word("ui_time_pm")
-	#else : time.text += "\n" + str(hour) + " " + arc.get_word("ui_time_am")
+	status.text = arc.lang.get_word("ui_usage") + " " + str(arc.usage)
+	status.text += "\n" + arc.lang.get_word("ui_power") + " " + str(int(arc.batary))
+	hour = int(arc.time / 60)
+	
+	time.text = str(arc.night.start_night) + " " + arc.lang.get_word("ui_night")
+	time.text += "\n" + str(hour) + " " + arc.lang.get_word("ui_time_am")
 
 func _pressed(extra_arg_0: StringName) -> void:
-	info.text = arc.get_word("ui_cam") + " > " + arc.get_word("room_" + extra_arg_0)
+	info.text = arc.lang.get_word("ui_cam") + " > " + arc.lang.get_word("room_" + extra_arg_0)
 	var new_cam = get_node("/root/main/cams/" + extra_arg_0)
 	if new_cam == arc.user.cam : return
 	arc.user.cam.visible = false
@@ -76,45 +81,49 @@ func _on_cam_pressed() -> void:
 
 func play_uniq_room_sfx() :
 	var room : String = arc.user.cam.name
+	var to_play : String
+	var volume = 0
 	var roll = randi_range(0, 100)
 	match room :
 		"jeffry" :
 			if roll > 70 and arc.room_check(-1, "jeffry") : 
-				play("ambient/jeffry", randf_range(0, arc.sounds["ambient/jeffry"].get_length()))
-		"parts_and_service" :
-			play("ambient/parts_and_service", randf_range(0, arc.sounds["ambient/parts_and_service"].get_length()), -10)
+				to_play = "ambient/room/jeffry"
+		"parts_and_service" :to_play = "ambient/room/parts_and_service"
 		"backstage" :
 			if roll > 80 and arc.room_check(2, "backstage") : 
-				play("ambient/guts", randf_range(0, arc.sounds["ambient/guts"].get_length()))
+				to_play = "ambient/long/guts"
 				return
-			if roll > 60 and arc.room_check(-1 , "backstage") : 
-				play("ambient/backstage1", randf_range(0, arc.sounds["ambient/backstage"].get_length()))
-		"enter" :
-			play("ambient/enter", randf_range(0, arc.sounds["ambient/enter"].get_length()), 10)
+			if roll > 60 and arc.room_check(-1 , "backstage") : to_play = "ambient/room/backstage1"
+		"enter" : 
+			to_play = "ambient/room/enter"
+			volume = -13
 		"main_stage" :
 			if roll > 95 :
-				play("ambient/circus", randf_range(0, arc.sounds["ambient/circus"].get_length()))
+				to_play = "ambient/long/circus"
 				return
-			if roll > 75 : play("ambient/box", randf_range(0, arc.sounds["ambient/box"].get_length()))
-		"ware" : play("ambient/ware", randf_range(0, arc.sounds["ambient/ware"].get_length()))
+			if roll > 75 : to_play = "ambient/long/box"
+		"ware" : to_play = "ambient/room/ware"
 		"kitchen" :
 			if arc.room_check(3, "kitchen") :
-				play("anim/bear/cooking/" + str(randi_range(0,4)), randf_range(0, 3))
+				to_play = "anim/bear/cooking/" + str(randi_range(0,4))
+	if to_play == "" : return
+	arc_event.play_sfx({"path" = to_play, "volume" = volume})
 
-func play(path : String, second : float, vol_degr : int = 0) :
+func play(path : String, vol_degr : int = 0, rand : bool = true) :
 	sfx.stream = arc.sounds[path]
-	sfx.volume_db = arc.volume - vol_degr
-	sfx.play(second)
+	sfx.volume_db = vol_degr
+	if rand :  sfx.play(randi_range(0, sfx.stream.get_length()))
+	else : sfx.play()
 
 func _on_ping_pong_pressed() -> void:
-	arc.button_delay(get_node("sub/ui/scheme/buttons/ping_pong"), PI)
+	arc.button_delay(get_node("sub/ui/scheme/buttons/ping_pong"), cool_down)
 	arc.batary -= 1
 	for i in arc.user.anims.size() :
 		arc.user.anims[i].ping()
 	arc_event.play_sfx({"path" = "user/wait"})
 
 func _on_play_sound_pressed() :
-	arc.button_delay(get_node("sub/ui/scheme/buttons/play_sound"), PI)
+	arc.button_delay(get_node("sub/ui/scheme/buttons/play_sound"), cool_down)
 	arc_event.play_sfx({"path" = str("user/echo" + str(randi_range(0,2)))})
 	arc.batary -= 1
 
@@ -130,20 +139,43 @@ func mute_channel(boolean : bool = false) :
 	sfx.playing = boolean
 
 func teto_word_of_the_day():
-	var rand_word = arc.save.words.pick_random()
+	if arc.user.spot_light.visible == false : return
+	if randi_range(0,1) == 1 : 
+		advestment()
+		return
+	if randi_range(0,100) > antivuris : return
+	var rand_word = arc.night.words.pick_random()
 	var rand_pos : Vector2i = Vector2i(randi_range(0,700), randi_range(0,400))
 	get_node("sub/ui/word_minigame/back/teto_word").position = rand_pos
 	get_node("sub/ui/word_minigame/back/teto_word/word").text = rand_word
 	get_node("sub/ui/word_minigame/back/teto_word/input").placeholder_text = rand_word
 	get_node("sub/ui/word_minigame/back/teto_word/input").text = ""
+	get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/bozo").visible = false
+
 	teto_word = rand_word
 	teto_input.visible = true
 	arc_event.play_sfx({"path" = "anim/virus/teto_word" + str(randi_range(0,2))})
 
-func _on_input_text_changed(new_text: String) -> void:
-	print(1)
-	if new_text == teto_word :
-		teto_input.visible = false
+func advestment(value : int = -1) :
+	if randi_range(0,100) > adblock : return
+	var roll = randi_range(0,27)
+	if arc.save.lange == "ru" and randi_range(0, 100) > 90 :
+		ad.get_node("panel/sprite").texture = load("res://pics/ad/ru/" + str(randi_range(0,5)) + ".jpg")
+	else :
+		ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".jpg")
+		if ad.get_node("panel/sprite").texture == null : ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".webp")
+		if ad.get_node("panel/sprite").texture == null : ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".png")
+	
+	ad_source.stream = load("res://resources/sounds/anim/virus/" + str(randi_range(0,6)) + ".ogg")
+	ad_source.volume_db = randi_range(-8, -1)
+	ad_source.play(1)
+	if ad.get_node("panel/sprite").texture == null :
+		if arc.save.lange == "ru" :
+			ad.get_node("panel/sprite").texture = preload("res://pics/ad/ru/adblock.jpg")
+		else : preload("res://pics/ad/adblock.png")
+		ad_source.stop()
+	ad.get_node("panel/sprite/button").position = Vector2(randi_range(120, 800), randi_range(30, 500))
+	ad.visible = true
 
 #func game_math() :
 	#var power_to_add = 0.0
@@ -176,7 +208,7 @@ func _on_input_text_changed(new_text: String) -> void:
 
 
 func shock(extra_arg_0: StringName) -> void:
-	arc.button_delay(get_node("sub/ui/scheme/shock/" + extra_arg_0), PI)
+	arc.button_delay(get_node("sub/ui/scheme/shock/" + extra_arg_0), cool_down)
 	match  extra_arg_0 :
 		"noise" : 
 			arc.user.anims[1].move()
@@ -191,8 +223,79 @@ func shock(extra_arg_0: StringName) -> void:
 			if arc.user.anims[4].ai_lvl <= 0 : arc.user.anims[4].ai_lvl = 0
 	arc_event.play_sfx({path = "user/shock", type = "3d"})
 
+func _ad_skip() -> void:
+	ad.visible = false
+	ad_source.stop()
 
-func _on_input(new_text: String) -> void:
-	print(1)
-	if new_text == teto_word :
-		teto_input.visible = false
+func summon_vissy() :
+	if vissy.visible == true : return
+	for i in range(17) :
+		get_node("sub/ui/vissy/panel/grid_container/" + str(i)).visible = false
+	get_node("sub/ui/vissy").visible = true
+	get_node("sub/ui/vissy/panel/desc").text = ""
+	get_node("sub/ui/vissy/panel/vissy").texture = load("res://pics/v" + str(randi_range(0,2)) + ".png")
+	var roll0 = randi_range(0,17)
+	var roll1 = randi_range(0,17)
+	if roll1 == roll0 : roll1 = roll0 - 1
+	get_node("sub/ui/vissy/panel/grid_container/" + str(roll0)).visible = true
+	get_node("sub/ui/vissy/panel/grid_container/" + str(roll1)).visible = true
+
+func _vissy(extra_arg_0: int) -> void:
+	match extra_arg_0 :
+		0 : pass
+		1 : antivuris -= 10
+		2 : adblock -= 10
+		3 : arc.batary += randi_range(3,8)
+		4 : arc.user.anims[randi_range(0,4)].ai_lvl -= randi_range(5, 10)
+		5 : 
+			var roll = randi_range(0,4)
+			var ai = arc.user.anims[roll].ai_lvl
+			arc.user.anims[roll].ai_lvl = -1
+			await get_tree().create_timer(60).timeout
+			arc.user.anims[roll].ai_lvl = ai
+		6 :
+			arc.user.flashlight_broke_factor -= 10
+			arc.user.flashlight_loss_factor -= .20
+			if arc.user.flashlight_loss_factor < 0 : arc.user.flashlight_loss_factor = 0
+			if arc.user.flashlight_broke_factor < 0 : arc.user.flashlight_broke_factor = 0
+		7 : 
+			cool_down -= .15
+			if cool_down < .25 : cool_down = .25
+		8 : arc.user.anims[randi_range(0,4)].ai_lvl += randi_range(5, 10)
+		9 : arc.batary += randi_range(3,13)
+		10 :
+			arc.user.flashlight_broke_factor += 10
+			arc.user.flashlight_loss_factor += .20
+			if arc.user.flashlight_loss_factor > 4 : arc.user.flashlight_loss_factor = 4
+			if arc.user.flashlight_broke_factor > 100 : arc.user.flashlight_broke_factor = 100
+		11 : cool_down += .15
+		12 : arc.batary -= randi_range(10,15)
+		13 : OS.crash("еще не сделано")
+		14 : _vissy(randi_range(0,17))
+		15 : OS.crash("еще не сделано")
+		16 : arc.batary -= randi_range(10,20)
+		17 : arc.batary += randi_range(3,7)
+	get_node("sub/ui/vissy").visible = false
+
+func _vhovered(extra_arg_0: int) -> void:
+	var line : String
+	match extra_arg_0 : 
+		0 : line = "v_nothing"
+		1 : line = "v_antivirus"
+		2 : line = "v_adblock"
+		3 : line = "v_power"
+		4 : line = "v_weak"
+		5 : line = "v_disable"
+		6 : line = "v_flash"
+		7 : line = "v_cdd"
+		8 : line = "v_force"
+		9 : line = "v_power"
+		10 : line = "v_flashd"
+		11 : line = "v_cd"
+		12 : line = "v_powerd"
+		13 : line = "v_radar"
+		14 : line = "v_rand"
+		15 : line = "v_event"
+		16 : line = "v_powerd"
+		17 : line = "v_power"
+	get_node("sub/ui/vissy/panel/desc").text = arc.lang.get_word(line)

@@ -17,7 +17,6 @@ transform = Transform3D(-1.0000001, 0, -2.9802326e-08, 0, 1, 0, 2.9802326e-08, 0
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../arcade"), NodePath("../toilet")]
-pose = Array[String](["peta", "default", "tpose"])
 occupation = "chimera"
 
 [node name="hall_west_down" type="Marker3D" parent="." unique_id=1994875570 node_paths=PackedStringArray("neighbours")]
@@ -25,7 +24,6 @@ transform = Transform3D(0.9659261, 0, 0.25881913, 0, 1.0000001, 0, -0.25881913, 
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../stage_view"), NodePath("../downstairs"), NodePath("../backstage"), NodePath("../arcade"), NodePath("../toilet")]
-pose = Array[String](["tpose", "peta", "dab"])
 flag = "door"
 occupation = "chimera"
 
@@ -48,7 +46,6 @@ transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1.0000001, 0, 1.000000
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../jeffry"), NodePath("../toilet")]
-pose = Array[String](["tpose", "peta"])
 flag = "door"
 occupation = "chimera"
 
@@ -73,7 +70,6 @@ transform = Transform3D(-0.7071066, 0, 0.70710695, 0, 1.0000001, 0, -0.70710695,
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../hall_west_up"), NodePath("../playground")]
-pose = Array[String](["look", "engage", "dab", "skeletAction"])
 occupation = "chimera"
 
 [node name="playground" type="Marker3D" parent="." unique_id=4489056 node_paths=PackedStringArray("neighbours")]
@@ -81,7 +77,6 @@ transform = Transform3D(0.86602557, 0, 0.50000006, 0, 1.0000001, 0, -0.50000006,
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../meza"), NodePath("../swim")]
-pose = Array[String](["tpose", "engage", "pootis_pow"])
 flag = "door"
 occupation = "chimera"
 
@@ -105,7 +100,6 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -7.40
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../window_left"), NodePath("../office"), NodePath("../fire_exit")]
-pose = Array[String](["tpose", "reference", "lotos", "pootis_pow", "dab"])
 occupation = "chimera"
 
 [node name="fire_exit" type="Marker3D" parent="." unique_id=138605888 node_paths=PackedStringArray("neighbours")]
@@ -113,7 +107,6 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -6.00
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../window_left"), NodePath("../window_left")]
-pose = Array[String](["tpose"])
 occupation = "chimera"
 
 [node name="window_left" type="Marker3D" parent="." unique_id=1073895199 node_paths=PackedStringArray("neighbours")]
@@ -121,7 +114,6 @@ transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1.0000001, 0, 1.000000
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../office"), NodePath("../fire_exit")]
-pose = Array[String](["mrbeast", "reference", "skeletAction", "sniper", "engage"])
 flag = "window"
 occupation = "chimera"
 
@@ -130,7 +122,6 @@ transform = Transform3D(0, 0, -1.0000001, 0, 1.0000001, 0, 1.0000001, 0, 0, 9.20
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../hall_west_up"), NodePath("../parts_and_service"), NodePath("../ware")]
-pose = Array[String](["engage", "pootis_pow", "default", "timeout"])
 flag = "door"
 occupation = "chimera"
 
@@ -139,7 +130,6 @@ transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1.0000001, 0, 1.000000
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../hall_est_up")]
-pose = Array[String](["tpose", "skeletAction", "pootis_pow", "lotos"])
 flag = "door"
 occupation = "chimera"
 
@@ -148,7 +138,6 @@ transform = Transform3D(-0.8660256, 0, -0.5, 0, 1.0000001, 0, 0.5, 0, -0.8660256
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../hall_est_up")]
-pose = Array[String](["peta", "engage", "dab", "pootis_pow"])
 flag = "door"
 occupation = "chimera"
 
@@ -157,7 +146,6 @@ transform = Transform3D(0.8660255, 0, -0.50000006, 0, 1.0000001, 0, 0.50000006, 
 gizmo_extents = 0.3
 script = ExtResource("1_26xdj")
 neighbours = [NodePath("../jeffry"), NodePath("../stage_view")]
-pose = Array[String](["mrbeast", "reference"])
 flag = "office"
 occupation = "chimera"
 

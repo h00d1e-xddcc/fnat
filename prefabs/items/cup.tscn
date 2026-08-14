@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b544ckfpt6yl8"]
+
+[ext_resource type="Script" uid="uid://c20fq5x3jcd24" path="res://code/interact.gd" id="1_8mkhh"]
+[ext_resource type="ArrayMesh" uid="uid://dag3q37snls7e" path="res://prefabs/mesh/fnat_cup.res" id="2_dc4o6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3osw"]
+size = Vector3(0.12, 0.303, 0.14)
+
+[node name="cup" type="StaticBody3D" unique_id=716141233]
+transform = Transform3D(-0.7141354, 0, -0.70000756, 0, 1, 0, 0.70000756, 0, -0.7141354, 0, 0, 0)
+script = ExtResource("1_8mkhh")
+absolute_cd = 0.456
+to_play = "ambient/short/item/cup"
+shake_scale = 1.5699999999999998
+jump = 0.05
+volume = -5
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="." unique_id=31642027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.068669796, 0)
+shape = SubResource("BoxShape3D_p3osw")
+
+[node name="fnat_cup" type="MeshInstance3D" parent="." unique_id=2013612030]
+transform = Transform3D(0.81217504, 0, -2.4204702e-08, 0, 0.81217504, 0, 2.4204702e-08, 0, 0.81217504, 0, 0, 0)
+instance_shader_parameters/coloring = Color(0.5882353, 0.6784314, 0.90588236, 1)
+mesh = ExtResource("2_dc4o6")

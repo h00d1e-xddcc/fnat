@@ -41,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 12.0
 }]
@@ -71,11 +71,11 @@ texture_filter = 1
 script = ExtResource("1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2102172264]
-position = Vector2(-200, 0)
+position = Vector2(-51.353043, 0)
 rotation = -1.57079
 scale = Vector2(2, 2)
 sprite_frames = SubResource("6")
-frame_progress = 0.99938226
+frame_progress = 0.999852
 
 [node name="Timer" type="Timer" parent="." unique_id=1003522164]
 one_shot = true

@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://co5fnl16y5p22" path="res://pics/bootscreen.png" id="3_i4vt5"]
 [ext_resource type="Texture2D" uid="uid://bsk45r67qn7g2" path="res://pics/bolt.png" id="4_5u5yk"]
 [ext_resource type="Texture2D" uid="uid://dkq8euhd5kv2s" path="res://pics/479.png" id="4_g6d76"]
+[ext_resource type="Texture2D" uid="uid://c4ya6amsxhux5" path="res://pics/ad/25.png" id="5_qdm3c"]
+[ext_resource type="Texture2D" uid="uid://dbesgd7bs2oci" path="res://pics/v1.png" id="7_b1k8q"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mhwow"]
 
@@ -40,6 +42,16 @@ outline_color = Color(0, 0, 0, 1)
 default_font = ExtResource("1_8bix8")
 default_font_size = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djwkd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p3osw"]
+font = ExtResource("1_8bix8")
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1k8q"]
+font = ExtResource("1_8bix8")
+font_size = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67nhv"]
 bg_color = Color(0.9882353, 0.98039216, 0.9882353, 1)
 
@@ -52,6 +64,13 @@ bg_color = Color(0.011764706, 0.003921569, 0.019607844, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_67nhv"]
 font = ExtResource("1_8bix8")
 font_color = Color(0.011764706, 0.003921569, 0.019607844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3osw"]
+bg_color = Color(0, 0, 0, 0.6)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="Gradient" id="Gradient_5u5yk"]
 colors = PackedColorArray(0.15686275, 0.039215688, 0.15686275, 1, 0.5647059, 0.8784314, 0.69411767, 1)
@@ -670,7 +689,204 @@ theme_override_font_sizes/font_size = 32
 text = "трата 1.75
 заряд 57"
 
+[node name="vissy" type="Control" parent="." unique_id=1866427165]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="Panel" parent="vissy" unique_id=1242655619]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -232.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_djwkd")
+
+[node name="vissy" type="TextureRect" parent="vissy/panel" unique_id=10089851]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 2.0000076
+offset_right = 177.0
+offset_bottom = 235.0
+rotation = 0.2617994
+scale = Vector2(1.22, 1.22)
+texture = ExtResource("7_b1k8q")
+expand_mode = 1
+
+[node name="title" type="Label" parent="vissy/panel" unique_id=1501955666]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -258.0
+offset_top = 8.0
+offset_right = -6.0
+offset_bottom = 22.0
+grow_horizontal = 0
+text = "Тебе что-то нужно?"
+label_settings = SubResource("LabelSettings_p3osw")
+
+[node name="desc" type="Label" parent="vissy/panel" unique_id=447457902]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -223.0
+offset_top = 32.0
+offset_right = -11.0
+offset_bottom = 82.0
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_b1k8q")
+autowrap_mode = 2
+
+[node name="grid_container" type="GridContainer" parent="vissy/panel" unique_id=570067852]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -4.0
+offset_right = 177.5
+offset_bottom = 496.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="0" type="Button" parent="vissy/panel/grid_container" unique_id=142403607]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "ничего"
+
+[node name="1" type="Button" parent="vissy/panel/grid_container" unique_id=1974582947]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "антивирус"
+
+[node name="2" type="Button" parent="vissy/panel/grid_container" unique_id=473409348]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "блок рекламы"
+
+[node name="3" type="Button" parent="vissy/panel/grid_container" unique_id=655105353]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "+8 энергии"
+
+[node name="4" type="Button" parent="vissy/panel/grid_container" unique_id=1234067607]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "ослабление"
+
+[node name="5" type="Button" parent="vissy/panel/grid_container" unique_id=897884055]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "выключение"
+
+[node name="6" type="Button" parent="vissy/panel/grid_container" unique_id=655930037]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "фонарик+"
+
+[node name="10" type="Button" parent="vissy/panel/grid_container" unique_id=1893565286]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "фонарик-"
+
+[node name="7" type="Button" parent="vissy/panel/grid_container" unique_id=1106197995]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "откат-"
+
+[node name="11" type="Button" parent="vissy/panel/grid_container" unique_id=1757473467]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "откат+"
+
+[node name="12" type="Button" parent="vissy/panel/grid_container" unique_id=1235857531]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "-7 энергии"
+
+[node name="16" type="Button" parent="vissy/panel/grid_container" unique_id=1325678116]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "-11 энергии"
+
+[node name="17" type="Button" parent="vissy/panel/grid_container" unique_id=169811449]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "+20 энергии"
+
+[node name="13" type="Button" parent="vissy/panel/grid_container" unique_id=1862657134]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "радар"
+
+[node name="14" type="Button" parent="vissy/panel/grid_container" unique_id=1715357719]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "случайно"
+
+[node name="15" type="Button" parent="vissy/panel/grid_container" unique_id=835167062]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "событие"
+
+[node name="8" type="Button" parent="vissy/panel/grid_container" unique_id=1786221277]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "усиление"
+
+[node name="9" type="Button" parent="vissy/panel/grid_container" unique_id=864913023]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+text = "+13 энергии"
+
 [node name="word_minigame" type="Control" parent="." unique_id=834981706]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -736,6 +952,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="teto_left" type="TextureRect" parent="word_minigame/back/teto_word" unique_id=961759595]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -753,6 +970,7 @@ texture = ExtResource("3_5u5yk")
 expand_mode = 1
 
 [node name="teto_right" type="TextureRect" parent="word_minigame/back/teto_word" unique_id=1128914805]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -797,6 +1015,58 @@ you lose 1 power"
 label_settings = SubResource("LabelSettings_67nhv")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ad" type="Control" parent="." unique_id=79966692]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="Panel" parent="ad" unique_id=1662742956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sprite" type="TextureRect" parent="ad/panel" unique_id=854699236]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_qdm3c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="button" type="Button" parent="ad/panel/sprite" unique_id=1282203278]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 552.0
+offset_right = 846.0
+offset_bottom = 582.0
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_p3osw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p3osw")
+text = "
+"
 
 [node name="booting" type="TextureRect" parent="." unique_id=1400849281]
 visible = false

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dftf4ec432txd"
+path="res://.godot/imported/[297] giggle02.ogg-555f019dd554027abd7d8b325c69e42f.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pg_sm/[297] giggle02.ogg"
+dest_files=["res://.godot/imported/[297] giggle02.ogg-555f019dd554027abd7d8b325c69e42f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

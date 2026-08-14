@@ -3,8 +3,8 @@
 [ext_resource type="ArrayMesh" uid="uid://cp1vubtlfleot" path="res://prefabs/mesh/fnat_table_1_3.res" id="1_1ooh3"]
 [ext_resource type="ArrayMesh" uid="uid://1ib2fk1d3cj3" path="res://prefabs/mesh/fnat_chair.res" id="2_88nsa"]
 [ext_resource type="ArrayMesh" uid="uid://dqf1cfkconl1r" path="res://prefabs/mesh/fnat_light.res" id="3_88nsa"]
-[ext_resource type="ArrayMesh" uid="uid://b4jnxsbpptkxe" path="res://prefabs/mesh/fnat_cup.res" id="4_fnf2g"]
-[ext_resource type="ArrayMesh" uid="uid://ymedem8sfpbv" path="res://prefabs/mesh/fnat_hat.res" id="5_smqtf"]
+[ext_resource type="ArrayMesh" uid="uid://dag3q37snls7e" path="res://prefabs/mesh/fnat_cup.res" id="4_fnf2g"]
+[ext_resource type="ArrayMesh" uid="uid://rr2aigpa02r5" path="res://prefabs/mesh/fnat_hat.res" id="5_smqtf"]
 
 [node name="party_table" type="MeshInstance3D" unique_id=150319818]
 transform = Transform3D(1.4932748, 0, 0, 0, 1.7267036, 0, 0, 0, 1.4932748, 0, 0, 0)

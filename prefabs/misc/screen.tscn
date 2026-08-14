@@ -1,29 +1,22 @@
 [gd_scene format=3 uid="uid://c70gr3sxaisry"]
 
 [ext_resource type="Script" uid="uid://2ajjnaepr1td" path="res://code/screen.gd" id="1_86wwx"]
+[ext_resource type="Material" uid="uid://dat50s7vktk4" path="res://resources/materials/screen.tres" id="2_dgndv"]
 [ext_resource type="PackedScene" uid="uid://dlne2diiv70gw" path="res://prefabs/misc/ui.tscn" id="2_y2f56"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_03q50"]
 size = Vector3(0.766, 0.06, 0.46)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ev6ek"]
-viewport_path = NodePath("sub")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2f56"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ev6ek")
-texture_filter = 0
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_bia8q"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_y2f56")
+material = ExtResource("2_dgndv")
 size = Vector2(0.766, 0.46)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lx5rw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dgndv"]
 
 [sub_resource type="CameraTexture" id="CameraTexture_dgndv"]
 
-[node name="screen" type="StaticBody3D" unique_id=1479514998 node_paths=PackedStringArray("status", "time", "info", "sub", "mesh", "cam", "scheme", "booting", "sfx", "noise", "noise_sfx")]
+[node name="screen" type="StaticBody3D" unique_id=1479514998 node_paths=PackedStringArray("status", "time", "info", "sub", "mesh", "cam", "scheme", "booting", "sfx", "noise", "noise_sfx", "ad", "ad_source", "teto_input", "vissy")]
 script = ExtResource("1_86wwx")
 status = NodePath("sub/ui/status")
 time = NodePath("sub/ui/time")
@@ -36,6 +29,10 @@ booting = NodePath("sub/ui/booting")
 sfx = NodePath("sfx")
 noise = NodePath("sub/ui/cam/noise")
 noise_sfx = NodePath("noise")
+ad = NodePath("sub/ui/ad")
+ad_source = NodePath("ad_source")
+teto_input = NodePath("sub/ui/word_minigame/back/teto_word/input")
+vissy = NodePath("sub/ui/vissy")
 
 [node name="collision" type="CollisionShape3D" parent="." unique_id=1015772746]
 transform = Transform3D(0.99999994, -2.9802322e-08, -1.3322676e-15, -1.4901163e-08, 0.99999994, 3.6879621e-31, 3.5527137e-15, -2.1316282e-14, 1, 0, -0.029000003, 0)
@@ -49,13 +46,15 @@ mesh = SubResource("PlaneMesh_bia8q")
 
 [node name="noise" type="AudioStreamPlayer3D" parent="." unique_id=743127527]
 
+[node name="ad_source" type="AudioStreamPlayer" parent="." unique_id=1677765273]
+
 [node name="sub" type="SubViewport" parent="." unique_id=874640317]
 size = Vector2i(1152, 648)
 
 [node name="ui" parent="sub" unique_id=927469561 instance=ExtResource("2_y2f56")]
 
 [node name="cam" parent="sub/ui" index="1" unique_id=1858130358]
-texture = SubResource("ViewportTexture_lx5rw")
+texture = SubResource("ViewportTexture_dgndv")
 
 [node name="noise" parent="sub/ui/cam" index="0" unique_id=1283423652]
 visible = true
@@ -63,8 +62,8 @@ visible = true
 [node name="map" parent="sub/ui/scheme" parent_id_path=PackedInt32Array(927469561, 1092765403) index="3" unique_id=2014552017]
 texture = SubResource("CameraTexture_dgndv")
 
-[node name="input" parent="sub/ui/word_minigame/back/teto_word" parent_id_path=PackedInt32Array(927469561, 587035667) index="0" unique_id=541610182]
-editable = false
+[node name="12" parent="sub/ui/vissy/panel/grid_container" parent_id_path=PackedInt32Array(927469561, 570067852) index="10" unique_id=1235857531]
+text = "-15 энергии"
 
 [connection signal="pressed" from="sub/ui/scheme/shock/chimera" to="." method="shock" binds= [&"chimera"]]
 [connection signal="pressed" from="sub/ui/scheme/shock/noise" to="." method="shock" binds= [&"noise"]]
@@ -87,6 +86,42 @@ editable = false
 [connection signal="pressed" from="sub/ui/scheme/jeffry" to="." method="_pressed" binds= [&"jeffry"]]
 [connection signal="pressed" from="sub/ui/label/cam" to="." method="_on_cam_pressed"]
 [connection signal="pressed" from="sub/ui/label/scheme" to="." method="_on_scheme_pressed"]
-[connection signal="text_changed" from="sub/ui/word_minigame/back/teto_word/input" to="." method="_on_input"]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/0" to="." method="_vhovered" binds= [0]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/0" to="." method="_vissy" binds= [0]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/1" to="." method="_vhovered" binds= [1]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/1" to="." method="_vissy" binds= [1]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/2" to="." method="_vhovered" binds= [2]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/2" to="." method="_vissy" binds= [2]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/3" to="." method="_vhovered" binds= [3]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/3" to="." method="_vissy" binds= [3]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/4" to="." method="_vhovered" binds= [4]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/4" to="." method="_vissy" binds= [4]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/5" to="." method="_vhovered" binds= [5]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/5" to="." method="_vissy" binds= [5]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/6" to="." method="_vhovered" binds= [6]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/6" to="." method="_vissy" binds= [6]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/10" to="." method="_vhovered" binds= [10]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/10" to="." method="_vissy" binds= [10]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/7" to="." method="_vhovered" binds= [7]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/7" to="." method="_vissy" binds= [7]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/11" to="." method="_vhovered" binds= [11]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/11" to="." method="_vissy" binds= [11]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/12" to="." method="_vhovered" binds= [12]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/12" to="." method="_vissy" binds= [12]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/16" to="." method="_vhovered" binds= [16]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/16" to="." method="_vissy" binds= [16]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/17" to="." method="_vhovered" binds= [17]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/17" to="." method="_vissy" binds= [17]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/13" to="." method="_vhovered" binds= [13]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/13" to="." method="_vissy" binds= [13]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/14" to="." method="_vhovered" binds= [14]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/14" to="." method="_vissy" binds= [14]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/15" to="." method="_vhovered" binds= [15]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/15" to="." method="_vissy" binds= [15]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/8" to="." method="_vhovered" binds= [8]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/8" to="." method="_vissy" binds= [8]]
+[connection signal="mouse_entered" from="sub/ui/vissy/panel/grid_container/9" to="." method="_vhovered" binds= [9]]
+[connection signal="pressed" from="sub/ui/vissy/panel/grid_container/9" to="." method="_vissy" binds= [9]]
+[connection signal="pressed" from="sub/ui/ad/panel/sprite/button" to="." method="_ad_skip"]
 
 [editable path="sub/ui"]

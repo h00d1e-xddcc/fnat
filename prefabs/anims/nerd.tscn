@@ -3,13 +3,12 @@
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="1_vs4jv"]
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="2_1ng0l"]
 [ext_resource type="ArrayMesh" uid="uid://dcykx76f6pa5v" path="res://prefabs/mesh/fnat__smile.res" id="2_5tnxi"]
-[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/images.steamusercontent.png" id="3_ln0tm"]
+[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/tf2.png" id="3_ln0tm"]
 [ext_resource type="ArrayMesh" uid="uid://dfvsfc2igur8l" path="res://prefabs/mesh/fnat_noteboot.res" id="4_sk67h"]
-[ext_resource type="Texture2D" uid="uid://dsgkdjsv8y5jq" path="res://pics/pc.png" id="5_d16ju"]
 
-[sub_resource type="Skin" id="Skin_166pa"]
+[sub_resource type="Skin" id="Skin_p4rjj"]
 resource_name = "Skin"
-bind_count = 21
+bind_count = 20
 bind/0/name = &"leg.L"
 bind/0/bone = -1
 bind/0/pose = Transform3D(-0.0013445689, -0.024650745, 0.9996952, -0.054447874, -0.9982114, -0.024687385, 0.9985156, -0.054464493, -2.0023434e-08, 0.14561136, 1.1815497, -0.055553768)
@@ -70,11 +69,8 @@ bind/18/pose = Transform3D(-0.8983746, 0.4392085, 1.0483403e-06, -0.43920505, -0
 bind/19/name = &"big_finger.R"
 bind/19/bone = -1
 bind/19/pose = Transform3D(-0.8706363, 0.49190918, 1.0496199e-06, -0.49190512, -0.87064654, -7.139822e-07, 2.2242987e-06, -1.2567277e-06, 1, -0.86943996, 0.77164435, 0.12000222)
-bind/20/name = &"neutral_bone"
-bind/20/bone = -1
-bind/20/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_nm1sk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mxhkq"]
 resource_name = "fnat_akita"
 _surfaces = [{
 "aabb": AABB(-0.41116786, 0.0013553351, -0.29037413, 0.8223357, 2.4287698, 0.30702987),
@@ -94,7 +90,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pdy7o"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_pvso1"]
 resource_name = "fnat_akita_acc"
 _surfaces = [{
 "aabb": AABB(-0.5176027, 0.77311057, -0.23810962, 0.50988907, 1.7470834, 0.22661774),
@@ -114,7 +110,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Animation" id="Animation_5h7va"]
+[sub_resource type="Animation" id="Animation_jpmo5"]
 resource_name = "absolute"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -307,7 +303,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.4004625e-08, 1.9346894e-08, -0.029777475, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_atbhi"]
+[sub_resource type="Animation" id="Animation_5h7va"]
 resource_name = "dab"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -500,7 +496,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.4281935e-08, 1.00378985e-08, -0.029777488, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_14rju"]
+[sub_resource type="Animation" id="Animation_atbhi"]
 resource_name = "default"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -693,7 +689,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.4004646e-08, 1.9346983e-08, -0.029777477, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_joqmf"]
+[sub_resource type="Animation" id="Animation_14rju"]
 resource_name = "engage"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -886,7 +882,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.767279e-08, 2.1319744e-08, -0.029777475, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_ryv41"]
+[sub_resource type="Animation" id="Animation_joqmf"]
 resource_name = "guitar0"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -1079,7 +1075,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -6.743278e-08, 2.101469e-08, -0.029777471, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_4oy1a"]
+[sub_resource type="Animation" id="Animation_ryv41"]
 resource_name = "guitar1"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -1272,7 +1268,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -8.156282e-08, 1.5845215e-08, -0.02977748, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_njaaf"]
+[sub_resource type="Animation" id="Animation_4oy1a"]
 resource_name = "imp"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -1465,7 +1461,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -0.12375356, -0.048943907, -0.020019092, 0.990903)
 
-[sub_resource type="Animation" id="Animation_fyg61"]
+[sub_resource type="Animation" id="Animation_njaaf"]
 resource_name = "kas0"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -1658,7 +1654,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.57555e-08, 2.3126102e-08, -0.029777482, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_d03gp"]
+[sub_resource type="Animation" id="Animation_fyg61"]
 resource_name = "kas1"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -1851,7 +1847,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -8.9176496e-08, 1.048162e-08, -0.02977746, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_npv4v"]
+[sub_resource type="Animation" id="Animation_d03gp"]
 resource_name = "kas2"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -2044,7 +2040,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -6.771798e-08, 2.7079466e-08, -0.029777495, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_hgxaf"]
+[sub_resource type="Animation" id="Animation_npv4v"]
 resource_name = "kas3"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -2237,7 +2233,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -5.5838008e-08, 1.9271672e-08, -0.02977747, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_s26x4"]
+[sub_resource type="Animation" id="Animation_hgxaf"]
 resource_name = "look"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -2430,7 +2426,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -6.630775e-08, 2.7503326e-08, -0.029777471, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_be06s"]
+[sub_resource type="Animation" id="Animation_s26x4"]
 resource_name = "lotos"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -2623,7 +2619,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.4281935e-08, 1.00379e-08, -0.029777452, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_idax5"]
+[sub_resource type="Animation" id="Animation_be06s"]
 resource_name = "mannrobic0"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -2816,7 +2812,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.745093e-08, 2.8767023e-08, -0.029777493, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_onx35"]
+[sub_resource type="Animation" id="Animation_idax5"]
 resource_name = "mannrobic1"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -3009,7 +3005,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.854824e-08, 2.3209301e-08, -0.02977747, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_u74lt"]
+[sub_resource type="Animation" id="Animation_onx35"]
 resource_name = "mannrobic2"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -3202,7 +3198,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -0.35288674, -0.1614294, 0.16820537, 0.9061559)
 
-[sub_resource type="Animation" id="Animation_mgj4d"]
+[sub_resource type="Animation" id="Animation_u74lt"]
 resource_name = "mannrobic3"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -3395,7 +3391,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -0.6553954, 0.12160674, 0.036318902, 0.7445466)
 
-[sub_resource type="Animation" id="Animation_bo405"]
+[sub_resource type="Animation" id="Animation_mgj4d"]
 resource_name = "mrbeast"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -3588,7 +3584,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -0.12618521, -0.023651596, -0.024070403, 0.99143267)
 
-[sub_resource type="Animation" id="Animation_xupsy"]
+[sub_resource type="Animation" id="Animation_bo405"]
 resource_name = "pc"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -3781,7 +3777,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -0.2556407, 0.011179849, 0.12658587, 0.95838356)
 
-[sub_resource type="Animation" id="Animation_15ac0"]
+[sub_resource type="Animation" id="Animation_xupsy"]
 resource_name = "peta"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -3974,7 +3970,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.959007e-08, 1.9513392e-08, -0.029777475, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_v08g2"]
+[sub_resource type="Animation" id="Animation_15ac0"]
 resource_name = "pootis_pow"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -4167,7 +4163,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.1621876e-08, 2.1139487e-08, -0.029777475, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_2201n"]
+[sub_resource type="Animation" id="Animation_v08g2"]
 resource_name = "reference"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -4360,7 +4356,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -0.14630729, -0.15735315, 0.014572943, 0.9765356)
 
-[sub_resource type="Animation" id="Animation_lx4l6"]
+[sub_resource type="Animation" id="Animation_2201n"]
 resource_name = "romantic"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -4553,7 +4549,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.236466e-08, 1.1844254e-08, -0.02977748, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_fllhl"]
+[sub_resource type="Animation" id="Animation_lx4l6"]
 resource_name = "sit"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -4746,7 +4742,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -6.302197e-08, 2.3445565e-08, -0.02977747, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_ty3ci"]
+[sub_resource type="Animation" id="Animation_fllhl"]
 resource_name = "sniper"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -4939,7 +4935,7 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.4004674e-08, 1.934699e-08, -0.029777471, 0.99955666)
 
-[sub_resource type="Animation" id="Animation_gvsne"]
+[sub_resource type="Animation" id="Animation_ty3ci"]
 resource_name = "tpose"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -5132,45 +5128,56 @@ tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, -7.400468e-08, 1.9346858e-08, -0.029777477, 0.99955666)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_g7ysh"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvsne"]
 _data = {
-&"absolute": SubResource("Animation_5h7va"),
-&"dab": SubResource("Animation_atbhi"),
-&"default": SubResource("Animation_14rju"),
-&"engage": SubResource("Animation_joqmf"),
-&"guitar0": SubResource("Animation_ryv41"),
-&"guitar1": SubResource("Animation_4oy1a"),
-&"imp": SubResource("Animation_njaaf"),
-&"kas0": SubResource("Animation_fyg61"),
-&"kas1": SubResource("Animation_d03gp"),
-&"kas2": SubResource("Animation_npv4v"),
-&"kas3": SubResource("Animation_hgxaf"),
-&"look": SubResource("Animation_s26x4"),
-&"lotos": SubResource("Animation_be06s"),
-&"mannrobic0": SubResource("Animation_idax5"),
-&"mannrobic1": SubResource("Animation_onx35"),
-&"mannrobic2": SubResource("Animation_u74lt"),
-&"mannrobic3": SubResource("Animation_mgj4d"),
-&"mrbeast": SubResource("Animation_bo405"),
-&"pc": SubResource("Animation_xupsy"),
-&"peta": SubResource("Animation_15ac0"),
-&"pootis_pow": SubResource("Animation_v08g2"),
-&"reference": SubResource("Animation_2201n"),
-&"romantic": SubResource("Animation_lx4l6"),
-&"sit": SubResource("Animation_fllhl"),
-&"sniper": SubResource("Animation_ty3ci"),
-&"tpose": SubResource("Animation_gvsne")
+&"absolute": SubResource("Animation_jpmo5"),
+&"dab": SubResource("Animation_5h7va"),
+&"default": SubResource("Animation_atbhi"),
+&"engage": SubResource("Animation_14rju"),
+&"guitar0": SubResource("Animation_joqmf"),
+&"guitar1": SubResource("Animation_ryv41"),
+&"imp": SubResource("Animation_4oy1a"),
+&"kas0": SubResource("Animation_njaaf"),
+&"kas1": SubResource("Animation_fyg61"),
+&"kas2": SubResource("Animation_d03gp"),
+&"kas3": SubResource("Animation_npv4v"),
+&"look": SubResource("Animation_hgxaf"),
+&"lotos": SubResource("Animation_s26x4"),
+&"mannrobic0": SubResource("Animation_be06s"),
+&"mannrobic1": SubResource("Animation_idax5"),
+&"mannrobic2": SubResource("Animation_onx35"),
+&"mannrobic3": SubResource("Animation_u74lt"),
+&"mrbeast": SubResource("Animation_mgj4d"),
+&"pc": SubResource("Animation_bo405"),
+&"peta": SubResource("Animation_xupsy"),
+&"pootis_pow": SubResource("Animation_15ac0"),
+&"reference": SubResource("Animation_v08g2"),
+&"romantic": SubResource("Animation_2201n"),
+&"sit": SubResource("Animation_lx4l6"),
+&"sniper": SubResource("Animation_fllhl"),
+&"tpose": SubResource("Animation_ty3ci")
 }
 
-[node name="nerd" type="Node3D" unique_id=421923076]
+[node name="nerd" type="Node3D" unique_id=421923076 node_paths=PackedStringArray("animator")]
 script = ExtResource("2_1ng0l")
 color = Color(0.90588236, 0.8156863, 0.54901963, 1)
+animator = NodePath("fnat/AnimationPlayer")
 pose_default = Array[String](["default", "lotos", "peta", "look", "dab"])
 pose_hunting = Array[String](["engage", "tpose", "skeletAction", "mrbeast"])
 
-[node name="skelet" type="Node3D" parent="." unique_id=680107258]
+[node name="fr" type="Sprite3D" parent="." unique_id=387507944]
+transform = Transform3D(0.329, 0, 0, 0, 0.329, 0, 0, 0, 0.329, 0, 2.8746886, 0)
+visible = false
+billboard = 2
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_ln0tm")
 
-[node name="Skeleton3D" type="Skeleton3D" parent="skelet" unique_id=241258941]
+[node name="fnat" type="Node3D" parent="." unique_id=114588315]
+
+[node name="skelet" type="Node3D" parent="fnat" unique_id=1169901230]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="fnat/skelet" unique_id=239580956]
 bones/0/name = "leg.L"
 bones/0/parent = -1
 bones/0/rest = Transform3D(-0.0013445616, -0.054447897, 0.9985158, -0.024650738, -0.9982115, -0.054464493, 0.99969524, -0.024687376, -1.1920929e-07, 0.12, 1.1800001, -0.116397604)
@@ -5311,47 +5318,27 @@ bones/19/enabled = true
 bones/19/position = Vector3(2.3210774e-08, 0.05784306, 2.328079e-09)
 bones/19/rotation = Quaternion(-7.428192e-08, 1.0037899e-08, -0.02977745, 0.99955654)
 bones/19/scale = Vector3(0.99999994, 0.9999999, 1)
-bones/20/name = "neutral_bone"
-bones/20/parent = -1
-bones/20/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-bones/20/enabled = true
-bones/20/position = Vector3(0, 0, 0)
-bones/20/rotation = Quaternion(-0.70710677, 0, 0, 0.70710677)
-bones/20/scale = Vector3(1, 1, 1)
 
-[node name="face" type="MeshInstance3D" parent="skelet/Skeleton3D" unique_id=752203019]
+[node name="face" type="MeshInstance3D" parent="fnat/skelet/Skeleton3D" unique_id=1141669]
+instance_shader_parameters/coloring = Color(0.90588236, 0.8156863, 0.54901963, 1)
 mesh = ExtResource("2_5tnxi")
-skin = SubResource("Skin_166pa")
+skin = SubResource("Skin_p4rjj")
 skeleton = NodePath("..")
 
-[node name="akita" type="MeshInstance3D" parent="skelet/Skeleton3D" unique_id=1344801378]
-mesh = SubResource("ArrayMesh_nm1sk")
-skin = SubResource("Skin_166pa")
+[node name="akita" type="MeshInstance3D" parent="fnat/skelet/Skeleton3D" unique_id=236396337]
+mesh = SubResource("ArrayMesh_mxhkq")
+skin = SubResource("Skin_p4rjj")
 skeleton = NodePath("..")
 
-[node name="akita_acc" type="MeshInstance3D" parent="skelet/Skeleton3D" unique_id=1027386690]
-mesh = SubResource("ArrayMesh_pdy7o")
-skin = SubResource("Skin_166pa")
+[node name="akita_acc" type="MeshInstance3D" parent="fnat/skelet/Skeleton3D" unique_id=295197519]
+mesh = SubResource("ArrayMesh_pvso1")
+skin = SubResource("Skin_p4rjj")
 skeleton = NodePath("..")
 
-[node name="notebook" type="MeshInstance3D" parent="skelet/Skeleton3D" unique_id=1439991819]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.27193278, -0.8)
+[node name="notebook" type="MeshInstance3D" parent="fnat/skelet/Skeleton3D" unique_id=1485892689]
 mesh = ExtResource("4_sk67h")
-skin = SubResource("Skin_166pa")
+skin = SubResource("Skin_p4rjj")
 skeleton = NodePath("..")
 
-[node name="sprite_3d" type="Sprite3D" parent="skelet/Skeleton3D/notebook" unique_id=2008042671]
-transform = Transform3D(0.028909795, 9.1353164e-10, -1.04597e-10, -8.5689306e-10, 0.03002305, -0.006966392, -9.811019e-11, 0.006966392, 0.03002305, 2.8073543e-10, 0.21400008, 0.0032112598)
-flip_h = true
-texture = ExtResource("5_d16ju")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=75581621]
-libraries/ = SubResource("AnimationLibrary_g7ysh")
-
-[node name="fr" type="Sprite3D" parent="." unique_id=387507944]
-transform = Transform3D(0.329, 0, 0, 0, 0.329, 0, 0, 0, 0.329, 0, 2.8746886, 0)
-visible = false
-billboard = 2
-shaded = true
-texture_filter = 0
-texture = ExtResource("3_ln0tm")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fnat" unique_id=1914267769]
+libraries/ = SubResource("AnimationLibrary_gvsne")

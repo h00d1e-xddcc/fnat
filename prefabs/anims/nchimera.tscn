@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="1_8rt2g"]
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="1_xw8ai"]
-[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/images.steamusercontent.png" id="3_c1loy"]
+[ext_resource type="Texture2D" uid="uid://de576sulcxsxq" path="res://pics/tf2.png" id="3_c1loy"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_u0cha"]
 resource_name = "fnat__nsmmile"
@@ -5186,7 +5186,8 @@ size = Vector3(1, 2.5, 1)
 script = ExtResource("1_xw8ai")
 color = Color(0.23921569, 0.22352941, 0.29411766, 1)
 animator = NodePath("AnimationPlayer")
-pose_default = Array[String](["mannrobic2", "absolute", "lotos", "guitar0"])
+pose_default = Array[String](["mannrobic2", "absolute", "lotos", "guitar0", ""])
+pose_hunting = Array[String](["mannrobic2", "absolute", "lotos", "guitar0", "tpose"])
 
 [node name="skelet" type="Node3D" parent="." unique_id=969563960]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bemcl1rqpeqty"]
+[gd_scene format=3 uid="uid://bemcl1rqpeqty"]
 
 [ext_resource type="Script" uid="uid://b671wepab3eng" path="res://addons/kanban_tasks/view/start/start.gd" id="1_fkeby"]
 
@@ -9,7 +9,7 @@ font_size = 22
 font_size = 20
 font_color = Color(1, 1, 1, 0.384314)
 
-[node name="Start" type="Control"]
+[node name="Start" type="Control" unique_id=1626368550]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fkeby")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1229622460]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,74 +26,74 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=2059421991]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer" unique_id=1404211283]
 layout_mode = 2
 theme_override_constants/separation = 11
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer" unique_id=1521480261]
 layout_mode = 2
 theme_override_constants/separation = -10
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1355889028]
 layout_mode = 2
 text = "Kanban Tasks"
 label_settings = SubResource("LabelSettings_0i4nn")
 
-[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=981443944]
 layout_mode = 2
 text = "Todo Manager"
 label_settings = SubResource("LabelSettings_5febo")
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer" unique_id=1494650859]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1724827442]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="CreateBoard" type="LinkButton" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="CreateBoard" type="LinkButton" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=649917636]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Create Board"
 underline = 2
 
-[node name="OpenBoard" type="LinkButton" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="OpenBoard" type="LinkButton" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1356546265]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Open Board"
 underline = 2
 
-[node name="VSeparator" type="VSeparator" parent="CenterContainer/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="CenterContainer/HBoxContainer" unique_id=1192255158]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer" unique_id=1556462489]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer2" unique_id=1089641211]
 layout_mode = 2
 text = "Recent Boards"
 
-[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2" unique_id=1086453738]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="RecentBoardHolder" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2/MarginContainer2"]
+[node name="RecentBoardHolder" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2/MarginContainer2" unique_id=784487394]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="DeleteFromRecent" type="ConfirmationDialog" parent="."]
+[node name="DeleteFromRecent" type="ConfirmationDialog" parent="." unique_id=1148180141]
 unique_name_in_owner = true
 title = "Board not found"
 size = Vector2i(388, 106)

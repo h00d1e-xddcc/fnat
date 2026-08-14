@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brx21jqfoiia2" path="res://code/the_end.gd" id="1_61rlb"]
 [ext_resource type="ArrayMesh" uid="uid://bgrimssfhfpg3" path="res://prefabs/mesh/fnat_item_cloks.res" id="2_b0xhl"]
-[ext_resource type="AudioStream" uid="uid://ctrt4y6atqind" path="res://resources/sounds/user/Clock.ogg" id="3_iyxkc"]
+[ext_resource type="AudioStream" uid="uid://6ywj62txb6pp" path="res://resources/sounds/user/Clock.ogg" id="3_iyxkc"]
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="4_iyxkc"]
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="5_cbddy"]
 [ext_resource type="Script" uid="uid://cktqc128jci3t" path="res://code/path_node.gd" id="6_cbddy"]

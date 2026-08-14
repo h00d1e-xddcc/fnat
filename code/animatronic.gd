@@ -1,14 +1,12 @@
 extends Node3D
 class_name fnat_animatronic
 
-enum mind {IDLE, WALKING, HUNTING}
-# idle - стоять на месте без дела, аля играть на гитаре или в аркады
-# walking - идти куда-то, с конкретной целью, или без
-# hunting - атака на пользователя
-#???
+enum behavior_type {DIFF, TIME, DEMO}
+# diff - chimera
+# time - nchimera
+# demo - all in title screen
 
-
-@export var mood : mind
+@export var mood : behavior_type
 @export var current_point : node_path
 @export var ai_lvl : int = 0
 @export var color : Color
@@ -35,48 +33,56 @@ enum mind {IDLE, WALKING, HUNTING}
 signal in_office
 
 func jumpscare() :
-	while arc.user.state == arc.user.action.hide : 
-		return
-	arc.is_can_pause = false
+	in_office.disconnect(jumpscare)
 	for i in arc.user.anims.size() :
-		arc.user.anims[i].ai_lvl = 0
+		arc.user.anims[i].ai_lvl = -1
+	#while arc.user.state == arc.user.action.hide : 
+		#return
+	arc.is_can_pause = false
 	await get_tree().create_timer(2.57).timeout
 	arc.user.blink(.15)
 	await get_tree().create_timer(.2).timeout
 	arc.user.blink(.15)
 	await get_tree().create_timer(.257).timeout
 	arc.user.blink(.3)
+	arc.loss = true
+	arc.user.mute()
 	animator.play("mannrobic2")
-	arc.user.state = arc.user.action.loss
+	arc.user.change_state(4)
 	arc.user.flash_light.visible = false
 	get_node("/root/main/office/user/omni").visible = true
 	set_face(face_scream)
-	#var direction = (marker.global_position - arc.user.global_position).normalized()
-	#global_position = arc.user.global_transform.basis.z.dot(direction)
-	#position = Vector3(-2.75,-1,-18.15)
-	#look_at(arc.user.global_position)
-	#rotation.x = 0
-	#rotation.z = 0
-	#reparent(arc.user)
-	#position = arc.user.basis.x
-	#var tween = create_tween()
-	#tween.tween_property(self, "position", Vector3(0,-2.2,-.64), .420)
-	#rotation_degrees = Vector3(0,180, 0)
+	global_position = arc.user.global_position + (-arc.user.global_transform.basis.z * 1)
+	global_position.y -= 2
+	look_at(arc.user.global_position)
+	rotation.x = 0
+	rotation.z = 0
 	arc_event.play_sfx({"path" = "anim/" + name + "/scream"})
 	#if arc.user.spot_light.visible == true : arc.user.spotlight()
 	arc.user.mute()
-	await get_tree().create_timer(3.9).timeout
-	arc.user.blink(9999999)
-	print("anim/" + name + "/" + arc.lang.get_lange() + "/" + str(randi_range(0,9)))
+	#await get_tree().create_timer(1).timeout
+	#arc.user.blink(99)
+	arc.user.shake_pos(.03, 2.56)
+	await get_tree().create_timer(1.56).timeout
+	arc.user.blink(9999)
+	await get_tree().create_timer(1.41).timeout
 	arc.deloadout()
+	var time : int
+	match name :
+		"bear", "endo" : time = randi_range(0,4)
+		_ : time = randi_range(0,9)
 	if talk : 
-		await  get_tree().create_timer(await arc_event.play_sfx({"path" = "anim/" + name + "/" + arc.save.lange + "/" + str(randi_range(0,9))}) + 2.57).timeout
+		await  get_tree().create_timer(await arc_event.play_sfx({"path" = "anim/" + name + "/" + arc.save.lange + "/" + str(time), "volume" = 3}) + 2.57).timeout
 	else : await get_tree().create_timer(2.57).timeout
-	SceneManager.change_scene("res://prefabs/misc/main_menu.tscn", {"pattern" : "curtians"})
+	arc.deads += 1
+	arc.save.deads = arc.deads
+	SceneManager.set_title("")
+	SceneManager.change_scene("res://prefabs/misc/main_menu.tscn", {"pattern" : "curtians"}, true)
 
 func move() :
 	arc.screen.interupt_cam()
 	var move_to = current_point.get_random()
+	print(name)
 	if move_to.name == "office" and arc.room_check(-1, "office") == true : return
 	if move_to.occupation != name : 
 		print(name)
@@ -87,12 +93,12 @@ func move() :
 		"office" :
 			arc.user.flashlight_brake()
 			visible = false
-			if arc.user.flash_light.visible == true : arc.play_sound("user/error")
-			if current_point.name == "office_vent" : arc.play_sound("/anim/vent_quiet" + str(randi_range(0,1)))
-			else : arc.play_sound("anim/chimera/knock")
+			if arc.user.flash_light.visible == true : arc_event.play_sfx({"path" = "user/flashlight_die", "volume" = -3})
+			if current_point.name == "office_vent" : arc_event.play_sfx({"path" = "/anim/vent_quiet" + str(randi_range(0,1)), "volume" = -randi_range(-12, 0)})
+			else : arc_event.play_sfx({"path" = "anim/chimera/knock" , "volume" = -randi_range(-12, 6)})
 			await get_tree().create_timer(2.57).timeout
 			#rotate_head()
-			arc.play_sound("anim/"+ name + "/move")
+			arc_event.play_sfx({"path" = "anim/"+ name + "/move", "volume" = -randi_range(-12, 6)})
 			animator.play(move_to.get_pose())
 			arc.user.blink(.257)
 			global_position = move_to.global_position
@@ -100,21 +106,17 @@ func move() :
 			visible = true
 			current_point = move_to
 			return
-		"door" :
-			arc_event.play_sfx({"path" = "anim/door_move" + str(randi_range(0,2))})
+		"door" : arc_event.play_sfx({"path" = "anim/door_move" + str(randi_range(0,2)), "pos" = global_position, "type" = "3d"})
 
-		"vent" :
-			arc.play_sound("anim/vent_quiet" + str(randi_range(0,1)), 0, self)
-
+		"vent" : arc_event.play_sfx({"path" = "anim/vent_quiet", "pos" = global_position, "type" = "3d" })
 		"window":
 			#rotate_head()
 			arc.user.blink(.3)
-			arc_event.play_sfx({"path" = "anim/tapglass", "volume" = -4})
+			arc_event.play_sfx({"path" = "anim/tapglass", "volume" = -randi_range(-6, 6)})
 
 	match current_point.name :
 		"office" :
 			hunger = 0
-			mood = mind.WALKING
 			arc.user.mental_sickness += 40
 			arc.user.blink(.350)
 			#rotate_head(Vector3.ONE)
@@ -124,6 +126,7 @@ func move() :
 				"noise" : arc.play2D_sound("anim/vent_quiet" + str(randi_range(0,1)), 2)
 		"kitchen" :
 			if name == "nerd" and move_to.name == "fire_exit" and arc.user.anims[3].is_lock == true:
+				arc_event.rotate_kitchen_door()
 				arc.user.anims[3].is_lock = false
 				arc_event.play_sound("anim/nerd/lockpick",0, arc.user.anims[3])
 		"window":
@@ -134,13 +137,13 @@ func move() :
 	match name :
 		"noise" :
 			noise.playing = false
-			if anim_to_play == "default" :
-				animator.play("guitar")
-			else :
-				animator.play(anim_to_play)
-			var roll : int = randi_range(0, 100)
-			if roll > 80 : arc.play_sound("anim/noise/bass/fingering", 0, self, 0, 13)
-			else : arc.play_sound("anim/noise/moved", 0, self, 7)
+			#if anim_to_play == "default" :
+				#animator.play("guitar")
+			#else :
+				#animator.play(anim_to_play)
+			#var roll : int = randi_range(0, 100)
+			#if roll > 80 : arc.play_sound("anim/noise/bass/fingering", 0, self, 0, 13)
+			#else : arc.play_sound("anim/noise/moved", 0, self, 7)
 		_ : 
 			animator.play(anim_to_play)
 
@@ -151,35 +154,45 @@ func move() :
 	#else : arc.play_sound("anim/" + name + "/moved", 0, self, 0, 0)
 	else : arc_event.play_sfx({"path" = "anim/" + name + "/moved" , "type" = "3d", "node" = str(self.get_path())})
 
-func toss_roll() :
+func toss_roll(force : int = 0) :
 	if ai_lvl == -1 : return
-	if randi_range(0,25) < ai_lvl : return
-	#if ai_lvl == -1 or randi_range(1,25) < ai_lvl : return
-	if is_lock : 
-		if name == "noise" and randi_range(0, 100) >= 85:
-			noise.playing = false
-			is_lock = false
-			#move()
-		return
-	else : 
-		match name :
-			#"noise" :
-				#var roll = randi_range(0, 100)
-				#if roll >= 96:
-					#if roll % 2 == 0 : 
-						##arc.play_external(noise, "anim/noise/bass/it_is_sad_day", 15, randf_range(0, 7))
-					#else : arc.play_external(noise, "anim/noise/bass/вещественное_доказательсво", 17, randf_range(0, 7))
-					#is_lock = true
-			"nchimera" :
-				if hunger > 100 : return
-				var nc = get_node("/root/main/path/nchimera")
-				hunger = 100
-				current_point = nc.get_child(randi_range(0, 8))
-				global_position = current_point.global_position
-				rotation = current_point.rotation
-				arc_event.play_sfx({"path" = "anim/nchimera/" + str(randi_range(0,3)), "volume" = -12})
-			"virus" : arc.screen.teto_word_of_the_day()
-			#_ : move()
+	if force <= ai_lvl :
+		if is_lock : 
+			if name == "noise" and randi_range(0, 100) >= 85:
+				noise.playing = false
+				is_lock = false
+				#move()
+			return
+		else : 
+			match name :
+				#"noise" :
+					#var roll = randi_range(0, 100)
+					#if roll >= 96:
+						#if roll % 2 == 0 : 
+							#arc.play_external(noise, "anim/noise/bass/it_is_sad_day", 15, randf_range(0, 7))
+						#else : arc.play_external(noise, "anim/noise/bass/вещественное_доказательсво", 17, randf_range(0, 7))
+						#is_lock = true
+				"nchimera" :
+					arc.user.blink(.257)
+					if current_point.flag == "office" : return
+					var nc = get_node("/root/main/path/nchimera")
+					hunger = 100
+					current_point = nc.get_child(randi_range(0, 8))
+					global_position = current_point.global_position
+					rotation = current_point.rotation
+					arc_event.play_sfx({"path" = "anim/nchimera/" + str(randi_range(0,3)), "volume" = randi_range(-15, -8)})
+					#rotate_head()
+				"gnoise" :
+					arc.user.blink(.257)
+					if current_point.flag == "office" : return
+					var gn = get_node("/root/main/path/gnoise")
+					hunger = 100
+					current_point = gn.get_child(randi_range(0, 5))
+					global_position = current_point.global_position
+					rotation = current_point.rotation
+				"virus" : arc.screen.teto_word_of_the_day()
+				"vissy" : arc.screen.summon_vissy()
+				_ : move()
 
 func ping() :
 	var marker : MeshInstance3D = preload("res://prefabs/ping.tscn").instantiate()
@@ -195,7 +208,7 @@ func ping() :
 			break
 
 func go_back() :
-	current_point = get_node("/root/main/path_" + name).get_child(0)
+	current_point = get_node("/root/main/path/" + name).get_child(0)
 	animator.play(current_point.get_pose())
 	global_position = current_point.global_position
 	rotation = current_point.rotation
@@ -204,56 +217,50 @@ func set_face(face : String) :
 	if face == "" : return
 	get_node("skelet/Skeleton3D/face").mesh = load ("res://prefabs/mesh/fnat__" + face + ".res")
 
-#func walking() :
-	#mood = mind.WALKING
-	#while mood == mind.WALKING :
-		#await get_tree().create_timer(randf_range(.75, 2.57)).timeout
-		#arc.play_sound("anim/chemera/step/" + str(randi_range(0,5)), 0, self, 0, 10)
+func rotate_head() :
+	var head_position = get_node("skelet/Skeleton3D").get_bone_global_pose(7).origin
+	var direction = (arc.user.global_position - head_position).normalized()
+	#direction.z = 0
+	direction.x = 0
+	get_node("skelet/Skeleton3D").set_bone_pose_rotation(7, quaternion.from_euler(direction))
 
 func friendly_marker(boolean : bool = false) :
 	get_node("fr").visible = boolean
 
 func poof() :
+	if ai_lvl == -1 : return
+	arc.user.blink(.256)
 	current_point = get_node("/root/main/path/" + name + "/diff")
 	global_position = current_point.global_position
 	rotation = current_point.rotation
 
 func _ready() -> void:
+	if mood == behavior_type.DEMO : return
 	in_office.connect(jumpscare)
 	var roll = randi_range(0,100)
-	match name :
+	#match name :
 		#persone.CHIMERA :
 			#if roll > 70 : current_point = get_node("/root/main/path_chimera/hunting/stage")
 			#else : current_point = get_node("/root/main/path_chimera/walking/stage")
-		"noise" :
-			if roll >= 95 and is_static == false :
-				if roll % 2 == 0 : 
-					arc.play_external(noise, "anim/noise/bass/it_is_sad_day", 15, randf_range(0, 7))
-				else : arc.play_external(noise, "anim/noise/bass/вещественное_доказательсво", 17, randf_range(0, 7))
-				is_lock = true
-	if is_static == false :
-		while true :
-			await get_tree().create_timer(randf_range(4,25)).timeout
-			toss_roll()
+		#"noise" :
+			#if roll >= 95 and is_static == false :
+				#if roll % 2 == 0 : 
+					#arc.play_external(noise, "anim/noise/bass/it_is_sad_day", 15, randf_range(0, 7))
+				#else : arc.play_external(noise, "anim/noise/bass/вещественное_доказательсво", 17, randf_range(0, 7))
+				#is_lock = true
 
-#func rotate_head(point : Vector3 = Vector3.ZERO) : 
-	#var bone = get_node("skelet/Skeleton3D").find_bone("head")
-	#var pose = get_node("skelet/Skeleton3D").get_bone_pose_rotation(bone)
-	#match point :
-		#Vector3.ZERO :
-			#get_node("skelet/Skeleton3D").set_bone_pose_rotation(bone,Quaternion.from_euler(arc.user.global_position))
-		#Vector3.ONE : bone.rotation = Vector3.ZERO
-		#_ : bone.look_at(point)
+	while true :
+		await get_tree().create_timer(randf_range(4,25)).timeout
+		toss_roll(randi_range(1,25))
 
 func _process(delta: float) -> void:
-	if is_lock == true : return
+	if is_lock == true or mood == behavior_type.DEMO: return
 	if current_point.flag == "office" :
 		match name :
 			"chimera" :
 				var last_state = arc.user.state
 				if arc.user.state != last_state or arc.user.to_rotate != 0.0 or arc.user.flash_light.visible :
 					emit_signal("in_office")
-					in_office.disconnect(jumpscare)
 
 			"nerd" :
 				emit_signal("in_office")
@@ -272,5 +279,9 @@ func _process(delta: float) -> void:
 			"nchimera" :
 				if hunger >= 175: 
 					emit_signal("in_office")
-					in_office.disconnect(jumpscare)
+				else : hunger += 5 * delta
+
+			"gnoise" :
+				if hunger >= 140: 
+					poof()
 				else : hunger += 5 * delta

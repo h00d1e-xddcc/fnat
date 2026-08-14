@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://b0pg0byp40bke" path="res://resources/sounds/ambient/long/star_zero.ogg" id="2_pqhnj"]
 [ext_resource type="Material" uid="uid://dx1glvanqu83s" path="res://resources/materials/color_pallete.tres" id="2_pxua0"]
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="4_gacyl"]
-[ext_resource type="Texture2D" uid="uid://dyu3lv2206hci" path="res://pics/loadout.png" id="6_2cuxt"]
 [ext_resource type="PackedScene" uid="uid://c5qekra7dp2cw" path="res://prefabs/anims/gnoise.tscn" id="6_4ya4h"]
 [ext_resource type="PackedScene" uid="uid://cgaobj5urjfh7" path="res://prefabs/anims/nchimera.tscn" id="6_e1vna"]
 [ext_resource type="ArrayMesh" uid="uid://c6wql3jx6ahn3" path="res://prefabs/mesh/fnat_pc.res" id="6_xpylm"]
@@ -13,36 +12,47 @@
 [ext_resource type="PackedScene" uid="uid://djx0fyctwr5x4" path="res://prefabs/anims/chimera.tscn" id="7_godb5"]
 [ext_resource type="PackedScene" uid="uid://bmvg82bprk781" path="res://prefabs/anims/tt.tscn" id="8_3gd81"]
 [ext_resource type="PackedScene" uid="uid://d4el3ofnkbj27" path="res://prefabs/anims/noise.tscn" id="8_73bd1"]
-[ext_resource type="Texture2D" uid="uid://dbesgd7bs2oci" path="res://pics/1385.png" id="8_xjrve"]
+[ext_resource type="Texture2D" uid="uid://dbesgd7bs2oci" path="res://pics/v1.png" id="8_xjrve"]
 [ext_resource type="PackedScene" uid="uid://dhton8vvj606o" path="res://prefabs/anims/nerd.tscn" id="9_88v2a"]
 [ext_resource type="Texture2D" uid="uid://cbelwxsg8ko6j" path="res://pics/477.png" id="9_lkkgg"]
 [ext_resource type="PackedScene" uid="uid://c3hmow7pswfp8" path="res://prefabs/anims/hakua.tscn" id="9_uoqgc"]
 [ext_resource type="PackedScene" uid="uid://cdghcukm0ylg1" path="res://prefabs/walls.tscn" id="10_73bd1"]
 [ext_resource type="PackedScene" uid="uid://por3ayfdxe3f" path="res://prefabs/anims/endo.tscn" id="10_dwenj"]
-[ext_resource type="Texture2D" uid="uid://g8dje47f3861" path="res://pics/blender_logo_no_socket_white-1280x391.png" id="10_ypoyp"]
+[ext_resource type="Texture2D" uid="uid://g8dje47f3861" path="res://pics/blender.png" id="10_ypoyp"]
 [ext_resource type="PackedScene" uid="uid://dupv1tte46n8w" path="res://prefabs/anims/bear.tscn" id="11_ypoyp"]
-[ext_resource type="Texture2D" uid="uid://vkw7g8ff2xrn" path="res://pics/logo_vertical_monochrome_dark.png" id="12_pvoyk"]
-[ext_resource type="Texture2D" uid="uid://eiotg54dq82l" path="res://pics/2023_Obsidian_logo.svg.webp" id="13_4ryb6"]
 [ext_resource type="PackedScene" uid="uid://g3i4i03i38hm" path="res://prefabs/anims/alien.tscn" id="13_cn0f5"]
-[ext_resource type="Texture2D" uid="uid://dnxxyw8cyw8nd" path="res://pics/Scott_Cawthon_transparent.webp" id="14_8wdta"]
-[ext_resource type="Texture2D" uid="uid://du1erv81l1rg1" path="res://pics/386563.png" id="15_pvoyk"]
+[ext_resource type="Texture2D" uid="uid://dnxxyw8cyw8nd" path="res://pics/scott.webp" id="14_8wdta"]
+[ext_resource type="Texture2D" uid="uid://du1erv81l1rg1" path="res://pics/codeman38.png" id="15_pvoyk"]
 [ext_resource type="Texture2D" uid="uid://ie5gxton6oi5" path="res://pics/92278811.png" id="17_cqjcy"]
 [ext_resource type="PackedScene" uid="uid://diukdktdn3jmv" path="res://prefabs/anims/pearto.tscn" id="19_ns5uy"]
+[ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="19_wh851"]
 [ext_resource type="ArrayMesh" uid="uid://pg0283d36uix" path="res://prefabs/mesh/fnat_baguette.res" id="20_1w7hp"]
 [ext_resource type="Texture2D" uid="uid://d1w6e2mhrneex" path="res://pics/Unnamed.png" id="20_pqhnj"]
 [ext_resource type="ArrayMesh" uid="uid://c1vn3560fii4u" path="res://prefabs/mesh/fnat_carrot.res" id="21_pqhnj"]
 [ext_resource type="ArrayMesh" uid="uid://dyvtsnuctdg" path="res://prefabs/mesh/fnat_crate_big.res" id="23_urhsd"]
-[ext_resource type="ArrayMesh" uid="uid://dgw4rvoyxmb60" path="res://prefabs/mesh/fnat_fatass.res" id="24_e1vna"]
+[ext_resource type="Texture2D" uid="uid://dpafp1sk5kyd8" path="res://pics/godot.png" id="23_wl7wv"]
+[ext_resource type="Texture2D" uid="uid://criem8h484yys" path="res://pics/Obsidian Logo - White - zonalogo.com.svg" id="24_2t6wh"]
 [ext_resource type="ArrayMesh" uid="uid://bdvc600ai85nl" path="res://prefabs/mesh/fnat_nokia.res" id="25_4ya4h"]
 [ext_resource type="ArrayMesh" uid="uid://cpo841rkiehts" path="res://prefabs/mesh/fnat_onion.res" id="26_3gd81"]
 [ext_resource type="ArrayMesh" uid="uid://dbsshmtp42gih" path="res://prefabs/mesh/fnat_table_toy.res" id="27_1w7hp"]
 [ext_resource type="Texture2D" uid="uid://d1ik86042awxh" path="res://pics/star.webp" id="27_jkqr7"]
 [ext_resource type="ArrayMesh" uid="uid://n8tsjisrp7xf" path="res://prefabs/mesh/fnat_shelf.res" id="27_uoqgc"]
 [ext_resource type="Texture2D" uid="uid://57peobvd68a2" path="res://pics/2c8b8c8123eb082c2938c45d2675d5ca.jpg" id="28_1ojbv"]
+[ext_resource type="Texture2D" uid="uid://dkopme3xfqfx1" path="res://pics/cutie.jpg" id="28_o8kjn"]
+[ext_resource type="Texture2D" uid="uid://d2hd631j7lefc" path="res://pics/dr_magexy.jpg" id="28_wl7wv"]
+[ext_resource type="Texture2D" uid="uid://cwbtfxym6xhu1" path="res://pics/bit_modding.jpg" id="29_uxi4n"]
 [ext_resource type="Texture2D" uid="uid://c1nh04axlaqi4" path="res://pics/18a7c9bd2bd03cccc909d6e0da612c5f.jpg" id="29_xjrve"]
 [ext_resource type="PackedScene" uid="uid://n2mxbvv5cgpa" path="res://prefabs/misc/console.tscn" id="30_urhsd"]
 [ext_resource type="Texture2D" uid="uid://c2ejaysy8j8jv" path="res://pics/9fac2fa4264c5b6b7dbc085d12012fc7.jpg" id="30_xjrve"]
+[ext_resource type="Script" uid="uid://c20fq5x3jcd24" path="res://code/interact.gd" id="38_pn05y"]
+[ext_resource type="PackedScene" uid="uid://bjksllymkd23q" path="res://prefabs/items/fatass.tscn" id="40_2t6wh"]
 [ext_resource type="ArrayMesh" uid="uid://djftaeeb6o5i8" path="res://prefabs/mesh/fnat_keyboard.res" id="41_lkkgg"]
+[ext_resource type="ArrayMesh" uid="uid://d3lwa3p3d0d2p" path="res://prefabs/mesh/fnat_arm.res" id="44_v44d0"]
+[ext_resource type="Texture2D" uid="uid://bkxr7tybersen" path="res://pics/keyboard.webp" id="44_wl7wv"]
+[ext_resource type="Texture2D" uid="uid://obwk0xlm1kr8" path="res://pics/mouse.png" id="45_2t6wh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67nhv"]
+size = Vector3(20, 20, 0.045)
 
 [sub_resource type="Environment" id="Environment_t8av2"]
 background_mode = 1
@@ -160,6 +170,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_l3hhv")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3osw"]
+size = Vector3(0.2, 0.23, 0.335)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_8dmi6"]
 _surfaces = [{
 "aabb": AABB(-0.14487138, 2.0222458e-08, -0.36149144, 0.28974277, 0.15717909, 0.724357),
@@ -228,40 +241,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yyyrl")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_u0smr"]
-_surfaces = [{
-"aabb": AABB(-0.08133865, -0.0027569842, -0.20650147, 0.1626773, 0.11856438, 0.4084164),
-"format": 34359742465,
-"index_count": 768,
-"index_data": PackedByteArray("OAAUAGQAOAAGABQABgAEABQAOQBkABQAOQAUAAQABgAXAAQAFwA5AAQAFwAGADgAFwBlADkAFwA4AGUAOQAFAGQAOABkAAUAOQAVAAUAOAAFABYAFgAFABUABwBlADgABwA4ABYABwA5AGUAFgAVAAcABwAVADkAAAA6AAIAAQACADoAAAAcADoAAQA6AB0AHAAdADoAOwABAB0AHAA7AB0AOwAcAAAAOwADAAEAOwAAAAMAPAAYAGYAPAAMABgADAAPABgAPQBmABgAPQAYAA8ADAAbAA8AGwA9AA8AGwAMADwAGwBnAD0AGwA8AGcAPQANAGYAPABmAA0APQAZAA0APAANABoAGgANABkADgBnADwADgA8ABoADgA9AGcAGgAZAA4ADgAZAD0APgAeAGgAPgAQAB4AEAATAB4APwBoAB4APwAeABMAEAAhABMAIQA/ABMAIQAQAD4AIQBpAD8AIQA+AGkAPwARAGgAPgBoABEAPwAfABEAPgARACAAIAARAB8AEgBpAD4AEgA+ACAAEgA/AGkAIAAfABIAEgAfAD8AQABCAGoAawBAAGoAQABsAEIAawBqAEMAQwBqAEIAQQBAAGsAQQBrAEMAQQBsAEAAQwBCAG0AQQBDAG0AbABtAEIAbABBAG0AbgBEAG8AbgAqAEQAKgAoAEQAcABvAEQAcABEACgAKgBGACgARgBwACgARgAqAG4ARgBxAHAARgBuAHEAcABFAG8AbgBvAEUAcAByAEUAbgBFAHMAcwBFAHIAKQBxAG4AKQBuAHMAKQBwAHEAcwByACkAKQByAHAAJQAjAHQAdQAlAHQAJQB2ACMAdQB0ACIAIgB0ACMAJAAlAHUAJAB1ACIAJAB2ACUAIgAjAHcAJAAiAHcAdgB3ACMAdgAkAHcAeABHAHkAeAAxAEcAMQAvAEcAegB5AEcAegBHAC8AMQBJAC8ASQB6AC8ASQAxAHgASQB7AHoASQB4AHsAegBIAHkAeAB5AEgAegB8AEgAeABIAH0AfQBIAHwAMAB7AHgAMAB4AH0AMAB6AHsAfQB8ADAAMAB8AHoASgBMAH4AfwBKAH4ASgCAAEwAfwB+AE0ATQB+AEwASwBKAH8ASwB/AE0ASwCAAEoATQBMAIEASwBNAIEAgACBAEwAgABLAIEAggBOAIMAggA0AE4ANAAyAE4AhACDAE4AhABOADIANABQADIAUACEADIAUAA0AIIAUACFAIQAUACCAIUAhABPAIMAggCDAE8AhACGAE8AggBPAIcAhwBPAIYAMwCFAIIAMwCCAIcAMwCEAIUAhwCGADMAMwCGAIQAiACJAIoAiABfAIkAXwA2AIkAiwCKAIkAiwCJADYAXwCMADYAjACLADYAjABfAIgAjACNAIsAjACIAI0AiwA3AIoAiACKADcAiwCOADcAiAA3AI8AjwA3AI4ANQCNAIgANQCIAI8ANQCLAI0AjwCOADUANQCOAIsAUQCQAFMAkQBRAFMAUQCSAJAAkQBTAFQAVABTAJAAUgBRAJEAUgCRAFQAUgCSAFEAVACQAJMAUgBUAJMAkgCTAJAAkgBSAJMACABVACYACAALAFUACQBVAAsAJgBVACcACQAnAFUAJgAnAFYAVgAnAAkAVgAIACYAVgAJAAoAVgAKAAgAVwBYAJQAlABYAJUAVwCWAFgAlACVAFkAWQBXAJQAlwCWAFcAWQCXAFcAWgBYAJYAWgCVAFgAlwBaAJYAWQCVAFoAWQBaAJcALQAsAJgAmAAsAJkALQCaACwAmACZAC4ALgAtAJgAmwCaAC0ALgCbAC0AKwAsAJoAKwCZACwAmwArAJoALgCZACsALgArAJsAWwBcAJwAnABcAJ0AWwCeAFwAnACdAF0AXQBbAJwAnwCeAFsAXQCfAFsAXgBcAJ4AXgCdAFwAnwBeAJ4AXQCdAF4AXQBeAJ8AYACgAKEAoQCgAKIAYABhAKAAoQCiAGIAYgBgAKEAowBhAGAAYgCjAGAAYwCgAGEAYwCiAKAAowBjAGEAYgCiAGMAYgBjAKMA"),
-"lods": [0.034690637, PackedByteArray("OAAGABQABgAEABQABgAXAAQAFwAGADgAOQAUAAQAFwA5AAQAOQAFABQAOAAUAAUABwA5ABcABwAXADgABwAVADkAOQAVAAUABwA4ABYAFgAVAAcAOAAFABYAFgAFABUAAAA6AAIAAQACADoAAAAcADoAAQA6AB0AHAAdADoAOwABAB0AHAA7AB0AOwAcAAAAOwADAAEAOwAAAAMAPAAMABgADAAPABgADAAbAA8AGwAMADwAPQAYAA8AGwA9AA8APQANABgAPAAYAA0ADgA9ABsADgAbADwADgAZAD0APQAZAA0ADgA8ABoAGgAZAA4APAANABoAGgANABkAPgAQAB4AEAATAB4AEAAhABMAIQAQAD4APwAeABMAIQA/ABMAPwARAB4APgAeABEAEgA/ACEAEgAhAD4AEgAfAD8APwAfABEAEgA+ACAAIAAfABIAPgARACAAIAARAB8AQABBAEIAQQBDAEIAQwBAAEIAQQBAAEMAKgAoAEQAKABFAEQAKgBEAEUAKAApAEUAKQAqAEUAKgBGACgAKQAoAEYAKQBGACoAIgAjACQAJAAjACUAIgAlACMAJAAlACIAMQAvAEcALwBIAEcAMQBHAEgALwAwAEgAMAAxAEgAMQBJAC8AMAAvAEkAMABJADEASgBLAEwASwBNAEwATQBKAEwASwBKAE0ANAAyAE4AMgBPAE4ANABOAE8AMgAzAE8AMwA0AE8ANABQADIAMwAyAFAAMwBQADQAUQBSAFMAVABTAFIAVABRAFMAUgBRAFQACABVACYACAALAFUACQBVAAsAJgBVACcACQAnAFUAJgAnAFYAVgAnAAkAVgAIACYAVgAJAAoAVgAKAAgAVwBYAFkAWQBYAFoAWgBYAFcAWQBaAFcAKwAsAC0ALgAtACwALgArAC0AKwAuACwAWwBcAF0AXQBcAF4AXgBcAFsAXQBeAFsAXwA3ADUANQA3ADYAXwA2ADcANQA2AF8AYABhAGIAYwBiAGEAYgBjAGAAYwBhAGAA"), 0.05256156, PackedByteArray("BgAEABQABAAFABQABgAUAAUABAAVAAUABgAFABYAFgAFABUABgAXAAQAFgAVAAcABwAGABYABwAVAAQABwAXAAYABwAEABcAAAAcAAIAAwAcAAAAHAAdAAIAHAADAB0AAQACAB0AAwABAB0ADAAPABgADwANABgADAAYAA0ADwAZAA0ADAANABoAGgANABkADAAbAA8AGgAZAA4ADgAMABoADgAZAA8ADgAbAAwADgAPABsAEAATAB4AEwARAB4AEAAeABEAEwAfABEAEAARACAAIAARAB8AEAAhABMAIAAfABIAEgAQACAAEgAfABMAEgAhABAAEgATACEAIgAjACQAJAAjACUAIgAlACMAJAAlACIACAALACYACgAIACYAJgALACcAJgAnAAoACQAnAAsACgAnAAkAKAApACoAKQAoACoAKwAsAC0ALgAtACwALgArAC0AKwAuACwALwAwADEAMAAvADEAMgAzADQAMwAyADQANQA2ADcANQA3ADYA"), 0.11636825, PackedByteArray("BgAEABQABAAFABQABgAUAAUABAAVAAUABgAFABYAFgAFABUABgAXAAQAFgAVAAcABwAGABYABwAVAAQABwAXAAYABwAEABcAAAABAAIAAAADAAEADAAPABgADwANABgADAAYAA0ADwAZAA0ADAANABoAGgANABkADAAbAA8AGgAZAA4ADgAMABoADgAZAA8ADgAbAAwADgAPABsACAAJAAoACAALAAkAEAARABIAEgARABMAEwARABAAEgATABAA"), 0.17455238, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAGAAUABwAEAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADgANAA8ADwANAAwADgAPAAwAEAARABIAEgARABMAEwARABAAEgATABAA"), 0.26297876, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAGAAUABwAEAAYABAAHAAUACAAJAAoACAALAAkA")],
-"name": "color_pallete",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 164,
-"vertex_data": PackedByteArray("JV6xO4WuNLsNJB07JV6xO85rcT1qif+8NV6xO+ZvJz1LB6o8NV6xOw/Eejwb9kq9DX+bvUu1Hz2CJ/C5DX+bPSwtCD31Wz4+DX+bvarm2DmdUj0+DX+bPWTPyTvLtMC6JV6xu4WuNLsNJB07JV6xu85rcT1qif+8NV6xuw/Eejwb9kq9NV6xu+ZvJz1LB6o8DX+bvdNwVzxTiBu9DX+bPbbdIz3g6yK8DX+bPYjkqj2fN0W+DX+bvZ4H4j0xsSq+Xct4vZzr6Tzkp1q9Xct4PQD3TD3SoP28Xct4PXKmrT3OVDW+Xct4vYLC2T11HCC+DX+bvSwtCD31Wz4+DX+bPUu1Hz2CJ/C5DX+bParm2DmdUj0+DX+bvWTPyTvLtMC6DX+bvbbdIz3g6yK8DX+bPZ4H4j0xsSq+DX+bPdNwVzxTiBu9DX+bvYjkqj2fN0W+4ZSmvYWuNLsNJB074ZSmvc5rcT1qif+8Xct4vQD3TD3SoP28Xct4PYLC2T11HCC+Xct4PZzr6Tzkp1q9Xct4vXKmrT3OVDW+2F7ovBZ7JD3+tdI9qIqDvdaEHz3qlxE+qIqDvTjVAT1FLdI9UVXtvGXO+TzdEBE+4ZSmPYWuNLsNJB074ZSmPc5rcT1qif+8+b6mvLx5Hj31DRo++b6mPL+n9zyYyRk++b6mvDIf7jxS+zw+2F7oPBZ7JD3+tdI9qIqDPdaEHz3qlxE+UVXtPGXO+TzdEBE+qIqDPTjVAT1FLdI9+b6mvBZ7JD3+tdI9+b6mPDjVAT1FLdI9+b6mvAyf+Tzd0BE++b6mvMssJT3Jc8c9+b6mPO2GAj0Q68Y9+b6mvDVLBz327X49PdKgPI0dCD3bRmQ9PdKgvGrDKj1MWGU9PdKgPKxPLj0QZOI8AAAAAFPyp7h0uU0+AAAAAEu1Hz2CJ/C54ZSmveZvJz1LB6o84ZSmvQ/Eejwb9kq9AAAAANNwVzxTiBu9AAAAAG4s7T3IwTa+AAAAAJzr6Tzkp1q9AAAAAMKs4j1Vwym+UVXtvIxO7jxROzw+qIqDvb+n9zyYyRk+qIqDvQIMGz3TZTI+2F7ovLx5Hj31DRo++b6mvHW1GT2uPz0++b6mPHW1GT2uPz0++b6mvL+n9zyYyRk++b6mvGN1Hz05FRI++b6mPGN1Hz05FRI++b6mvDjVAT1FLdI9UVXtvIczBz389oA9qIqDve2GAj0Q68Y9qIqDvYWaKD1ps5U92F7ovMssJT3Jc8c9+b6mvBHxKT1o/389+b6mPBHxKT1o/389+b6mvO2GAj0Q68Y9t02CvWnXBj39zIY9jWHovP+lCz1+OOE8t02CvUZ9KT21VYc9VouDvdtLLj1hW+M84ZSmPeZvJz1LB6o84ZSmPQ/Eejwb9kq9UVXtPIxO7jxROzw+qIqDPQIMGz3TZTI+qIqDPb+n9zyYyRk+2F7oPLx5Hj31DRo+UVXtPIczBz389oA9qIqDPYWaKD1ps5U9qIqDPe2GAj0Q68Y92F7oPMssJT3Jc8c9PdKgvM+pCz0tQeA8t02CPWnXBj39zIY9t02CPUZ9KT21VYc9jWHoPP+lCz1+OOE8VouDPdtLLj1hW+M8AAAAAGUnBj3Kwk4+AAAAAGTPyTvLtMC6AAAAALbdIz3g6yK8AAAAALArtj0fdVO+AAAAAAD3TD3SoP28AAAAACustj00uUC+UFXtvCLNGT2tfzw+1V7ovL+n9zyYyRk+qIqDvUnM8Dx4ITI+qIqDvbx5Hj31DRo+AAAAABLH7DymbkI+AAAAAGUJGT0Cs0I+AAAAALx5Hj31DRo+AAAAAL+n9zyYyRk++b6mPLx5Hj31DRo++b6mPDIf7jxS+zw+UFXtvBCNHz05VRE+1V7ovDjVAT1FLdI9qIqDvfS9+TyOUxE+qIqDvRZ7JD3+tdI9AAAAAAOO+TztFRI+AAAAAN9sHz1JWhI+AAAAABZ7JD3+tdI9AAAAADjVAT1FLdI9+b6mPBZ7JD3+tdI9+b6mPAyf+Tzd0BE+UFXtvGTZKT21f4E91V7ovO2GAj0Q68Y9qIqDvaj0BT2wKpU9qIqDvcssJT3Jc8c9AAAAAFpNBz1FqH49AAAAADfzKT23uX89AAAAAMssJT3Jc8c9AAAAAO2GAj0Q68Y9+b6mPMssJT3Jc8c9+b6mPDVLBz327X49AAAAAIarCz2q0d88PdKgvKxPLj0QZOI8AAAAAGRRLj2O9OE8AAAAAGrDKj1MWGU9PdKgvI0dCD3bRmQ9AAAAAI0dCD3bRmQ9PdKgPGrDKj1MWGU9PdKgPM+pCz0tQeA8jWHovCW8Kj0DRGY9VouDvf+lCz1+OOE8jWHovEkWCD2SMmU9jWHovNtLLj1hW+M8qIqDPUnM8Dx4ITI+qIqDPbx5Hj31DRo+UFXtPCLNGT2tfzw+1V7oPL+n9zyYyRk+qIqDPfS9+TyOUxE+qIqDPRZ7JD3+tdI9UFXtPBCNHz05VRE+1V7oPDjVAT1FLdI9qIqDPaj0BT2wKpU9qIqDPcssJT3Jc8c9UFXtPGTZKT21f4E91V7oPO2GAj0Q68Y9jWHoPCW8Kj0DRGY9jWHoPEkWCD2SMmU9jWHoPNtLLj1hW+M8VouDPf+lCz1+OOE8")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_2cuxt"]
-resource_name = "fnat_nokia"
-_surfaces = [{
-"aabb": AABB(-0.08133865, -0.0027569842, -0.20650147, 0.1626773, 0.11856438, 0.4084164),
-"attribute_data": PackedByteArray("+P+/PAAA0D0AAMA8CADQPfj/vzwAANA9AADAPAgA0D0AACg+AABgPQAAKD4AAGA9AAAoPgAAYD0AACg+AABgPfj/vzwAANA9AADAPAgA0D0AAMA8CADQPfj/vzwAANA9AAAoPgAAYD0AACg+AABgPQAAKD4AAGA9AAAoPgAAYD0AAAA8AAAYPgAAADwAABg+AAAAPAAAGD4AAAA8AAAYPgAAKD4AAGA9AAAoPgAAYD0AACg+AABgPQAAKD4AAGA9AAAoPgAAYD0AACg+AABgPQAAKD4AAGA9AAAoPgAAYD0AAMA8AADQPQAAwDwAANA9AAAAPAAAGD4AAAA8AAAYPgAAADwAABg+AAAAPAAAGD4AAJA9BAAIPgAAkD0AAAg+AACQPQAACD7+/489AAAIPgAAwDwAANA9AADAPAAA0D0AAJA9AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9BAAIPgAAkD0AAAg+/v+PPQAACD4AAJA9AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9AAAIPv//Jz4AAGA9AAAoPhAAYD0AAMA8AADQPQAAwDwAANA9//8nPgAAYD0AACg+EABgPeD//zsAABg+AAAAPAQAGD7+/489AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9BAAIPgAAkD0AAAg+AACQPQAACD4AAJA9AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9AAAIPv7/jz0AAAg+AACQPQAACD4AAJA9AAAIPgAAkD0EAAg+AACQPQAACD4AAJA9AAAIPgAAkD0AAAg+/v+PPQAACD4AAJA9AAAIPv7/jz0AAAg+AACQPQQACD4AAMA8AADQPQAAwDwAANA9/v+PPQAACD4AAJA9AAAIPgAAkD0AAAg+AACQPQQACD7+/489AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9BAAIPgAAkD0AAAg+/v+PPQAACD7+/489AAAIPgAAkD0AAAg+AACQPQQACD7//yc+AABgPQAAKD4QAGA9//8nPgAAYD0AACg+EABgPeD//zsAABg+AAAAPAQAGD7+/489AAAIPgAAkD0EAAg+AACQPQAACD4AAJA9AAAIPv7/jz0AAAg+/v+PPQAACD4AAJA9BAAIPgAAkD0EAAg+AACQPQAACD4AAJA9AAAIPv7/jz0AAAg+AACQPQQACD4AAJA9AAAIPgAAkD0AAAg+/v+PPQAACD7+/489AAAIPgAAkD0EAAg+AACQPQQACD4AAJA9AAAIPgAAkD0AAAg+/v+PPQAACD4AAJA9BAAIPgAAkD0AAAg+AACQPQAACD7+/489AAAIPv7/jz0AAAg+AACQPQQACD4AAJA9BAAIPgAAkD0AAAg+AACQPQAACD7+/489AAAIPgAAkD0AAAg+/v+PPQAACD4AAJA9BAAIPgAAkD0AAAg+AACQPQQACD4AAJA9AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9BAAIPgAAkD0AAAg+AACQPQAACD4AAJA9AAAIPgAAkD0AAAg+/v+PPQAACD4AAJA9BAAIPgAAkD0AAAg+AACQPQAACD7+/489AAAIPgAAkD0EAAg+AACQPQAACD4AAJA9AAAIPv7/jz0AAAg+AACQPQQACD4AAJA9AAAIPgAAkD0AAAg+AACQPQAACD4AAJA9BAAIPg=="),
-"format": 34359742487,
-"index_count": 768,
-"index_data": PackedByteArray("OAAUAGQAOAAGABQABgAEABQAOQBkABQAOQAUAAQABgAXAAQAFwA5AAQAFwAGADgAFwBlADkAFwA4AGUAOQAFAGQAOABkAAUAOQAVAAUAOAAFABYAFgAFABUABwBlADgABwA4ABYABwA5AGUAFgAVAAcABwAVADkAAAA6AAIAAQACADoAAAAcADoAAQA6AB0AHAAdADoAOwABAB0AHAA7AB0AOwAcAAAAOwADAAEAOwAAAAMAPAAYAGYAPAAMABgADAAPABgAPQBmABgAPQAYAA8ADAAbAA8AGwA9AA8AGwAMADwAGwBnAD0AGwA8AGcAPQANAGYAPABmAA0APQAZAA0APAANABoAGgANABkADgBnADwADgA8ABoADgA9AGcAGgAZAA4ADgAZAD0APgAeAGgAPgAQAB4AEAATAB4APwBoAB4APwAeABMAEAAhABMAIQA/ABMAIQAQAD4AIQBpAD8AIQA+AGkAPwARAGgAPgBoABEAPwAfABEAPgARACAAIAARAB8AEgBpAD4AEgA+ACAAEgA/AGkAIAAfABIAEgAfAD8AQABCAGoAawBAAGoAQABsAEIAawBqAEMAQwBqAEIAQQBAAGsAQQBrAEMAQQBsAEAAQwBCAG0AQQBDAG0AbABtAEIAbABBAG0AbgBEAG8AbgAqAEQAKgAoAEQAcABvAEQAcABEACgAKgBGACgARgBwACgARgAqAG4ARgBxAHAARgBuAHEAcABFAG8AbgBvAEUAcAByAEUAbgBFAHMAcwBFAHIAKQBxAG4AKQBuAHMAKQBwAHEAcwByACkAKQByAHAAJQAjAHQAdQAlAHQAJQB2ACMAdQB0ACIAIgB0ACMAJAAlAHUAJAB1ACIAJAB2ACUAIgAjAHcAJAAiAHcAdgB3ACMAdgAkAHcAeABHAHkAeAAxAEcAMQAvAEcAegB5AEcAegBHAC8AMQBJAC8ASQB6AC8ASQAxAHgASQB7AHoASQB4AHsAegBIAHkAeAB5AEgAegB8AEgAeABIAH0AfQBIAHwAMAB7AHgAMAB4AH0AMAB6AHsAfQB8ADAAMAB8AHoASgBMAH4AfwBKAH4ASgCAAEwAfwB+AE0ATQB+AEwASwBKAH8ASwB/AE0ASwCAAEoATQBMAIEASwBNAIEAgACBAEwAgABLAIEAggBOAIMAggA0AE4ANAAyAE4AhACDAE4AhABOADIANABQADIAUACEADIAUAA0AIIAUACFAIQAUACCAIUAhABPAIMAggCDAE8AhACGAE8AggBPAIcAhwBPAIYAMwCFAIIAMwCCAIcAMwCEAIUAhwCGADMAMwCGAIQAiACJAIoAiABfAIkAXwA2AIkAiwCKAIkAiwCJADYAXwCMADYAjACLADYAjABfAIgAjACNAIsAjACIAI0AiwA3AIoAiACKADcAiwCOADcAiAA3AI8AjwA3AI4ANQCNAIgANQCIAI8ANQCLAI0AjwCOADUANQCOAIsAUQCQAFMAkQBRAFMAUQCSAJAAkQBTAFQAVABTAJAAUgBRAJEAUgCRAFQAUgCSAFEAVACQAJMAUgBUAJMAkgCTAJAAkgBSAJMACABVACYACAALAFUACQBVAAsAJgBVACcACQAnAFUAJgAnAFYAVgAnAAkAVgAIACYAVgAJAAoAVgAKAAgAVwBYAJQAlABYAJUAVwCWAFgAlACVAFkAWQBXAJQAlwCWAFcAWQCXAFcAWgBYAJYAWgCVAFgAlwBaAJYAWQCVAFoAWQBaAJcALQAsAJgAmAAsAJkALQCaACwAmACZAC4ALgAtAJgAmwCaAC0ALgCbAC0AKwAsAJoAKwCZACwAmwArAJoALgCZACsALgArAJsAWwBcAJwAnABcAJ0AWwCeAFwAnACdAF0AXQBbAJwAnwCeAFsAXQCfAFsAXgBcAJ4AXgCdAFwAnwBeAJ4AXQCdAF4AXQBeAJ8AYACgAKEAoQCgAKIAYABhAKAAoQCiAGIAYgBgAKEAowBhAGAAYgCjAGAAYwCgAGEAYwCiAKAAowBjAGEAYgCiAGMAYgBjAKMA"),
-"lods": [0.034690637, PackedByteArray("OAAGABQABgAEABQABgAXAAQAFwAGADgAOQAUAAQAFwA5AAQAOQAFABQAOAAUAAUABwA5ABcABwAXADgABwAVADkAOQAVAAUABwA4ABYAFgAVAAcAOAAFABYAFgAFABUAAAA6AAIAAQACADoAAAAcADoAAQA6AB0AHAAdADoAOwABAB0AHAA7AB0AOwAcAAAAOwADAAEAOwAAAAMAPAAMABgADAAPABgADAAbAA8AGwAMADwAPQAYAA8AGwA9AA8APQANABgAPAAYAA0ADgA9ABsADgAbADwADgAZAD0APQAZAA0ADgA8ABoAGgAZAA4APAANABoAGgANABkAPgAQAB4AEAATAB4AEAAhABMAIQAQAD4APwAeABMAIQA/ABMAPwARAB4APgAeABEAEgA/ACEAEgAhAD4AEgAfAD8APwAfABEAEgA+ACAAIAAfABIAPgARACAAIAARAB8AQABBAEIAQQBDAEIAQwBAAEIAQQBAAEMAKgAoAEQAKABFAEQAKgBEAEUAKAApAEUAKQAqAEUAKgBGACgAKQAoAEYAKQBGACoAIgAjACQAJAAjACUAIgAlACMAJAAlACIAMQAvAEcALwBIAEcAMQBHAEgALwAwAEgAMAAxAEgAMQBJAC8AMAAvAEkAMABJADEASgBLAEwASwBNAEwATQBKAEwASwBKAE0ANAAyAE4AMgBPAE4ANABOAE8AMgAzAE8AMwA0AE8ANABQADIAMwAyAFAAMwBQADQAUQBSAFMAVABTAFIAVABRAFMAUgBRAFQACABVACYACAALAFUACQBVAAsAJgBVACcACQAnAFUAJgAnAFYAVgAnAAkAVgAIACYAVgAJAAoAVgAKAAgAVwBYAFkAWQBYAFoAWgBYAFcAWQBaAFcAKwAsAC0ALgAtACwALgArAC0AKwAuACwAWwBcAF0AXQBcAF4AXgBcAFsAXQBeAFsAXwA3ADUANQA3ADYAXwA2ADcANQA2AF8AYABhAGIAYwBiAGEAYgBjAGAAYwBhAGAA"), 0.05256156, PackedByteArray("BgAEABQABAAFABQABgAUAAUABAAVAAUABgAFABYAFgAFABUABgAXAAQAFgAVAAcABwAGABYABwAVAAQABwAXAAYABwAEABcAAAAcAAIAAwAcAAAAHAAdAAIAHAADAB0AAQACAB0AAwABAB0ADAAPABgADwANABgADAAYAA0ADwAZAA0ADAANABoAGgANABkADAAbAA8AGgAZAA4ADgAMABoADgAZAA8ADgAbAAwADgAPABsAEAATAB4AEwARAB4AEAAeABEAEwAfABEAEAARACAAIAARAB8AEAAhABMAIAAfABIAEgAQACAAEgAfABMAEgAhABAAEgATACEAIgAjACQAJAAjACUAIgAlACMAJAAlACIACAALACYACgAIACYAJgALACcAJgAnAAoACQAnAAsACgAnAAkAKAApACoAKQAoACoAKwAsAC0ALgAtACwALgArAC0AKwAuACwALwAwADEAMAAvADEAMgAzADQAMwAyADQANQA2ADcANQA3ADYA"), 0.11636825, PackedByteArray("BgAEABQABAAFABQABgAUAAUABAAVAAUABgAFABYAFgAFABUABgAXAAQAFgAVAAcABwAGABYABwAVAAQABwAXAAYABwAEABcAAAABAAIAAAADAAEADAAPABgADwANABgADAAYAA0ADwAZAA0ADAANABoAGgANABkADAAbAA8AGgAZAA4ADgAMABoADgAZAA8ADgAbAAwADgAPABsACAAJAAoACAALAAkAEAARABIAEgARABMAEwARABAAEgATABAA"), 0.17455238, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAGAAUABwAEAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADgANAA8ADwANAAwADgAPAAwAEAARABIAEgARABMAEwARABAAEgATABAA"), 0.26297876, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAGAAUABwAEAAYABAAHAAUACAAJAAoACAALAAkA")],
-"material": ExtResource("2_pxua0"),
-"name": "color_pallete",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 164,
-"vertex_data": PackedByteArray("JV6xO4WuNLsNJB07JV6xO85rcT1qif+8NV6xO+ZvJz1LB6o8NV6xOw/Eejwb9kq9DX+bvUu1Hz2CJ/C5DX+bPSwtCD31Wz4+DX+bvarm2DmdUj0+DX+bPWTPyTvLtMC6JV6xu4WuNLsNJB07JV6xu85rcT1qif+8NV6xuw/Eejwb9kq9NV6xu+ZvJz1LB6o8DX+bvdNwVzxTiBu9DX+bPbbdIz3g6yK8DX+bPYjkqj2fN0W+DX+bvZ4H4j0xsSq+Xct4vZzr6Tzkp1q9Xct4PQD3TD3SoP28Xct4PXKmrT3OVDW+Xct4vYLC2T11HCC+DX+bvSwtCD31Wz4+DX+bPUu1Hz2CJ/C5DX+bParm2DmdUj0+DX+bvWTPyTvLtMC6DX+bvbbdIz3g6yK8DX+bPZ4H4j0xsSq+DX+bPdNwVzxTiBu9DX+bvYjkqj2fN0W+4ZSmvYWuNLsNJB074ZSmvc5rcT1qif+8Xct4vQD3TD3SoP28Xct4PYLC2T11HCC+Xct4PZzr6Tzkp1q9Xct4vXKmrT3OVDW+2F7ovBZ7JD3+tdI9qIqDvdaEHz3qlxE+qIqDvTjVAT1FLdI9UVXtvGXO+TzdEBE+4ZSmPYWuNLsNJB074ZSmPc5rcT1qif+8+b6mvLx5Hj31DRo++b6mPL+n9zyYyRk++b6mvDIf7jxS+zw+2F7oPBZ7JD3+tdI9qIqDPdaEHz3qlxE+UVXtPGXO+TzdEBE+qIqDPTjVAT1FLdI9+b6mvBZ7JD3+tdI9+b6mPDjVAT1FLdI9+b6mvAyf+Tzd0BE++b6mvMssJT3Jc8c9+b6mPO2GAj0Q68Y9+b6mvDVLBz327X49PdKgPI0dCD3bRmQ9PdKgvGrDKj1MWGU9PdKgPKxPLj0QZOI8AAAAAFPyp7h0uU0+AAAAAEu1Hz2CJ/C54ZSmveZvJz1LB6o84ZSmvQ/Eejwb9kq9AAAAANNwVzxTiBu9AAAAAG4s7T3IwTa+AAAAAJzr6Tzkp1q9AAAAAMKs4j1Vwym+UVXtvIxO7jxROzw+qIqDvb+n9zyYyRk+qIqDvQIMGz3TZTI+2F7ovLx5Hj31DRo++b6mvHW1GT2uPz0++b6mPHW1GT2uPz0++b6mvL+n9zyYyRk++b6mvGN1Hz05FRI++b6mPGN1Hz05FRI++b6mvDjVAT1FLdI9UVXtvIczBz389oA9qIqDve2GAj0Q68Y9qIqDvYWaKD1ps5U92F7ovMssJT3Jc8c9+b6mvBHxKT1o/389+b6mPBHxKT1o/389+b6mvO2GAj0Q68Y9t02CvWnXBj39zIY9jWHovP+lCz1+OOE8t02CvUZ9KT21VYc9VouDvdtLLj1hW+M84ZSmPeZvJz1LB6o84ZSmPQ/Eejwb9kq9UVXtPIxO7jxROzw+qIqDPQIMGz3TZTI+qIqDPb+n9zyYyRk+2F7oPLx5Hj31DRo+UVXtPIczBz389oA9qIqDPYWaKD1ps5U9qIqDPe2GAj0Q68Y92F7oPMssJT3Jc8c9PdKgvM+pCz0tQeA8t02CPWnXBj39zIY9t02CPUZ9KT21VYc9jWHoPP+lCz1+OOE8VouDPdtLLj1hW+M8AAAAAGUnBj3Kwk4+AAAAAGTPyTvLtMC6AAAAALbdIz3g6yK8AAAAALArtj0fdVO+AAAAAAD3TD3SoP28AAAAACustj00uUC+UFXtvCLNGT2tfzw+1V7ovL+n9zyYyRk+qIqDvUnM8Dx4ITI+qIqDvbx5Hj31DRo+AAAAABLH7DymbkI+AAAAAGUJGT0Cs0I+AAAAALx5Hj31DRo+AAAAAL+n9zyYyRk++b6mPLx5Hj31DRo++b6mPDIf7jxS+zw+UFXtvBCNHz05VRE+1V7ovDjVAT1FLdI9qIqDvfS9+TyOUxE+qIqDvRZ7JD3+tdI9AAAAAAOO+TztFRI+AAAAAN9sHz1JWhI+AAAAABZ7JD3+tdI9AAAAADjVAT1FLdI9+b6mPBZ7JD3+tdI9+b6mPAyf+Tzd0BE+UFXtvGTZKT21f4E91V7ovO2GAj0Q68Y9qIqDvaj0BT2wKpU9qIqDvcssJT3Jc8c9AAAAAFpNBz1FqH49AAAAADfzKT23uX89AAAAAMssJT3Jc8c9AAAAAO2GAj0Q68Y9+b6mPMssJT3Jc8c9+b6mPDVLBz327X49AAAAAIarCz2q0d88PdKgvKxPLj0QZOI8AAAAAGRRLj2O9OE8AAAAAGrDKj1MWGU9PdKgvI0dCD3bRmQ9AAAAAI0dCD3bRmQ9PdKgPGrDKj1MWGU9PdKgPM+pCz0tQeA8jWHovCW8Kj0DRGY9VouDvf+lCz1+OOE8jWHovEkWCD2SMmU9jWHovNtLLj1hW+M8qIqDPUnM8Dx4ITI+qIqDPbx5Hj31DRo+UFXtPCLNGT2tfzw+1V7oPL+n9zyYyRk+qIqDPfS9+TyOUxE+qIqDPRZ7JD3+tdI9UFXtPBCNHz05VRE+1V7oPDjVAT1FLdI9qIqDPaj0BT2wKpU9qIqDPcssJT3Jc8c9UFXtPGTZKT21f4E91V7oPO2GAj0Q68Y9jWHoPCW8Kj0DRGY9jWHoPEkWCD2SMmU9jWHoPNtLLj1hW+M8VouDPf+lCz1+OOE8/39wJ/IOQVhvp///AAD/v/9/b6cAAP+/jtgAAEAgsSj5K1DV////v3+udar///8/XVEVU////z+n1q4q/TcU+/9/cCcM8b2nb6f//////z+O2AAAvt9N1/9/b6f///8/f03XPf///z8+r+KL////P6vwbDJUUaL4o0Eeyv///79/Tdc9////Pz6v4ov///8/q/BsMlRRovijQR7K////v39Rdaq9GbidBdRQ1f///7+hrhVT////P1cprioByOoEwFDii0MI7aNbvh7K////v3+y1z3///8/Uw9sMqquXAcZU4FG////P345GNP///+/wFDii0MI7aNbvh7K////v3+y1z3///8/Uw9sMqquXAcW1PPUniEv4HVVT6k0HxSgVymuKo9Bow11qu5T////P+WsgUb///8/gMYY0////78JLFHV////v7fWryrzvXH/gFC6Uv///z/oK/PUYN7PH4mqT6nK4OpfiVXuU////z+n1q4qb75b8vkrUNX///+/p9auKgi+pv8QVfpT////P7XWsCr///+/ByxT1ZiGBt+/qkyp////P/crUNVkjiDfpNatKv///79DVQVU////P/9/3UHx0EeSBb7//84K2bSaU8GZ9RI7ocIZZSznSjUh/3+5Ej3zZpQgmP//AAD/v/9/uRI982aUIJj//wAA/7+bpGpU////P0IpsSqKQUMRWVDMqjkY85wC1OnUyxVr4KdQtKqbGCidV6+0qv///z9HKa8qC0KNABJVZqmlHt+f7Kpmqf///z9XKa4q9kFYADxbiqj///8/89NT1cBewyDLr51SnkaTsjYpGisfQJ3Ju6r0UwtAiK9DVfRT////P/fTU9VmefgggdRS2////79SVVmpdr4WDmTXzSSTxcTTDKsYVEfqY+BkrMGZCe3DXjzmZSwXtcneY1tqVP///z+lr8yqxecLY7zWsSp0vrvu/Cvp1DPqkx/CpIqo////PzNQnVJguWtNCyxT1T6hO9/I1hor379hNrqqXKn///8/fStS2////7+aKM0kazo6LKyqWamIQejx8lQYVLcVmx//fyu6fvR0NfjBAAAF0Inu/3/Ukv///z/u8AAAdb+R5P9/1JL///8/7vAAAHW/keTCpIioYTq3083WHSv///+/NFCZUv///z8OLFPV////v/9/kUIx1diW/39PuUvylzPvvf//2gy3sg7CAABP1FLq9dNR1f///79+r7pS////P3WqbKm5P0HPs9YJK////791VQxU////P/krUNX///+//39JPsHWoJX/f8K9J/8vPwW+///KAC2/+MEAAELUbOoF1FDV////v+6q+lP///8/YFtvVBMpydz4K+nU////v6Wv0Kr///8/uNaxKv///7//f+C9GK8aq/9/Aj6U/+U/DMIAAGoA47/yvf//I6+Q00kpsCr///+/P1VMqf///z//f/q9VbR8rLuqBVQMQIuv/38WPqb/6j/2wQAAWADovwfUUNWacd4gCL7//0y0V9JaKa0q////v0RVXKn///8/5yqgL7fn85wKq0up////P0otL9D///+/UVUHVP///z/Kr5lS////P/DTU9X///+/PFuIqJ3FRywxKR0r////v4mqDFT///8/BdRQ1f///7+JVWypRcC9MEspCSv///+/WVDQqv///z9GKbEq////v56kb1Ts1jUjBtTp1P///78X1aAvRxgLY7TSL9D///+/raoHVP///z/0VEup////Pw==")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_u0smr")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_e1vna"]
 _surfaces = [{
 "aabb": AABB(-0.10165818, -0.00678558, -0.39113498, 0.22989297, 0.1848971, 0.7626027),
@@ -295,40 +274,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e1vna")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_thaq4"]
-_surfaces = [{
-"aabb": AABB(-0.34526667, -0.032809854, -0.046370648, 0.566038, 0.06701136, 0.11292845),
-"format": 34359742465,
-"index_count": 210,
-"index_data": PackedByteArray("GwAcAB0AGwAeABwAAAAIAAIAAwAAAAIAAAABAAgAAwACAAwADAACAAgACQAAAAMACQADAAwACQABAAAADAAIAAQACQAMAAQABAAIAAEABAABAAkAHwAgACEAHwAKACAADQAhACAABQAfACEABQAhAA0ABgAfAAUABgAKAB8AIgAFAA0ABwAgAAoABwAKAAYADQAgAAcACwAHAAYAIwANAAcAIwAHAAsAIgANACMACwAGAA4ADgAGAAUADgAjAAsADgAFACIADgAiACMAEgAQACQADwAkABAAEgAlABAAJgAkAA8AJgASACQAEQAlABIAEQASACYAJwAQACUAJwAlABEADwAQACcAJwARACYAJwAmAA8AKAApABQAEwAUACkAKAAVACkAEwAqABQAKgAoABQAFgAVACgAKgAWACgAKwApABUAKwATACkAFgArABUAKgATACsAKgArABYALAAtABoALgAaAC0ALAAZAC0ALgAYABoAGAAsABoALwAZACwAGAAvACwAFwAtABkAFwAuAC0ALwAXABkAGAAuABcAGAAXAC8A"),
-"lods": [0.06836085, PackedByteArray("AAAIAAIAAwAAAAIAAAABAAgAAwACAAwADAACAAgACQAAAAMACQADAAwACQABAAAADAAIAAQACQAMAAQABAAIAAEABAABAAkACgAHAA0ACwANAAcABQAKAA0ABQANAAsABwAKAAYABgAKAAUACwAHAAYADgAGAAUACwAGAA4ADgAFAAsADwAQABEAEQAQABIADwASABAAEQASAA8AEwAUABUAFgAVABQAFgATABUAEwAWABQAFwAYABkAGAAaABkAFwAZABoAGAAXABoA"), 0.10254128, PackedByteArray("AAAIAAIAAAABAAgAAwAAAAIACQABAAAACQAAAAMABAABAAkABAAIAAEACQADAAQABAACAAgAAwACAAQABwAKAAYABgAKAAUABQAKAAcACwAHAAYABQAHAAsACwAGAAUA"), 0.15381193, PackedByteArray("AAABAAIAAwABAAAAAwAAAAIABAACAAEAAwACAAQABAABAAMABQAGAAcABQAHAAYA")],
-"name": "color_pallete",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("fzUIvqIlSDy49Jm8qY4IvpwlSDwph/o8fzUIvq3Wwryz9Jm8jNEzPp79jzyDTOG8ZYUzPtjrlryGr788WPtfvlSkDbywhDa9QOF/vlmkDbz8pPw8QOF/vp9jBr3wpPw8qI4IvqrWwrwvh/o8ZYUzPp/9jzyGr788y8awvm1C6ztDRMM84I0PvptTW7wLSxQ9jtEzPtvrlrx+TOG8WPtfvqBjBr2whDa94I0PvoeWMDwLSxQ9EgMRvlg+urxvNYg8gfaIvmZ05Lx1T4g9hJ0Lvj4Qs7ko5x899T+PviMJtLtX+GU9LIkuPukh6LyyWus88qFZPt8WDD17yug8LQ5iPgyR/rzCThK9/a8vPnKQ9jwkxBW9ju0nvoMf57x2MBC94Q8dvtljgzxTW049JRYDvh9o37ynTMu8unIDvkIbizyCbRo9+alYPqjB0zx4+Ls8YuZePsYeybyAGuK8YuZePq7B0zyGGuK8+alYPskeybx++Ls8hkOfvpBC6zsm7z29y8awvnYki7xDRMM8hkOfvm0ki7wm7z29vQkXvoKWMDxhysu8vQkXvqFTW7xhysu89T+PvmZ05LxX+GU9gfaIviMJtLt1T4g9EgMRvpoQs7lvNYg8hJ0Lvlg+urwo5x894RFiPuAWDD3PShK9hZFZPu0XA71Fp+g8CZAuPnWQ9jxjaes8bcAvPpIp2ryDshW9JhYDvj8bizysTMu8uHIDviJo37x/bRo94Q8dvoUf57xVW049ju0nvtxjgzx5MBC9")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_4dys7"]
-resource_name = "fnat_arm"
-_surfaces = [{
-"aabb": AABB(-0.34526667, -0.032809854, -0.046370648, 0.566038, 0.06701136, 0.11292845),
-"attribute_data": PackedByteArray("/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxYAwg+/////2DaGzxMAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxYAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxYAwg+/////2DaGzxQAwg+/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxQAwg+/////2DaGzxMAwg+/////2DaGzxQAwg+/////2DaGzxUAwg+/////2DaGzxMAwg+/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9/////2DaGzxADWA9"),
-"format": 34359742495,
-"index_count": 210,
-"index_data": PackedByteArray("GwAcAB0AGwAeABwAAAAIAAIAAwAAAAIAAAABAAgAAwACAAwADAACAAgACQAAAAMACQADAAwACQABAAAADAAIAAQACQAMAAQABAAIAAEABAABAAkAHwAgACEAHwAKACAADQAhACAABQAfACEABQAhAA0ABgAfAAUABgAKAB8AIgAFAA0ABwAgAAoABwAKAAYADQAgAAcACwAHAAYAIwANAAcAIwAHAAsAIgANACMACwAGAA4ADgAGAAUADgAjAAsADgAFACIADgAiACMAEgAQACQADwAkABAAEgAlABAAJgAkAA8AJgASACQAEQAlABIAEQASACYAJwAQACUAJwAlABEADwAQACcAJwARACYAJwAmAA8AKAApABQAEwAUACkAKAAVACkAEwAqABQAKgAoABQAFgAVACgAKgAWACgAKwApABUAKwATACkAFgArABUAKgATACsAKgArABYALAAtABoALgAaAC0ALAAZAC0ALgAYABoAGAAsABoALwAZACwAGAAvACwAFwAtABkAFwAuAC0ALwAXABkAGAAuABcAGAAXAC8A"),
-"lods": [0.06836085, PackedByteArray("AAAIAAIAAwAAAAIAAAABAAgAAwACAAwADAACAAgACQAAAAMACQADAAwACQABAAAADAAIAAQACQAMAAQABAAIAAEABAABAAkACgAHAA0ACwANAAcABQAKAA0ABQANAAsABwAKAAYABgAKAAUACwAHAAYADgAGAAUACwAGAA4ADgAFAAsADwAQABEAEQAQABIADwASABAAEQASAA8AEwAUABUAFgAVABQAFgATABUAEwAWABQAFwAYABkAGAAaABkAFwAZABoAGAAXABoA"), 0.10254128, PackedByteArray("AAAIAAIAAAABAAgAAwAAAAIACQABAAAACQAAAAMABAABAAkABAAIAAEACQADAAQABAACAAgAAwACAAQABwAKAAYABgAKAAUABQAKAAcACwAHAAYABQAHAAsACwAGAAUA"), 0.15381193, PackedByteArray("AAABAAIAAwABAAAAAwAAAAIABAACAAEAAwACAAQABAABAAMABQAGAAcABQAHAAYA")],
-"material": ExtResource("2_pxua0"),
-"name": "color_pallete",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("fzUIvqIlSDy49Jm8qY4IvpwlSDwph/o8fzUIvq3Wwryz9Jm8jNEzPp79jzyDTOG8ZYUzPtjrlryGr788WPtfvlSkDbywhDa9QOF/vlmkDbz8pPw8QOF/vp9jBr3wpPw8qI4IvqrWwrwvh/o8ZYUzPp/9jzyGr788y8awvm1C6ztDRMM84I0PvptTW7wLSxQ9jtEzPtvrlrx+TOG8WPtfvqBjBr2whDa94I0PvoeWMDwLSxQ9EgMRvlg+urxvNYg8gfaIvmZ05Lx1T4g9hJ0Lvj4Qs7ko5x899T+PviMJtLtX+GU9LIkuPukh6LyyWus88qFZPt8WDD17yug8LQ5iPgyR/rzCThK9/a8vPnKQ9jwkxBW9ju0nvoMf57x2MBC94Q8dvtljgzxTW049JRYDvh9o37ynTMu8unIDvkIbizyCbRo9+alYPqjB0zx4+Ls8YuZePsYeybyAGuK8YuZePq7B0zyGGuK8+alYPskeybx++Ls8hkOfvpBC6zsm7z29y8awvnYki7xDRMM8hkOfvm0ki7wm7z29vQkXvoKWMDxhysu8vQkXvqFTW7xhysu89T+PvmZ05LxX+GU9gfaIviMJtLt1T4g9EgMRvpoQs7lvNYg8hJ0Lvlg+urwo5x894RFiPuAWDD3PShK9hZFZPu0XA71Fp+g8CZAuPnWQ9jxjaes8bcAvPpIp2ryDshW9JhYDvj8bizysTMu8uHIDviJo37x/bRo94Q8dvoUf57xVW049ju0nvtxjgzx5MBC9ZCqZ1P///79MVSaq////PzYrsyr///+/DtUT1v///79Sq6BV////P6fJ5vj///+/AH24uf///z8ye5U+////P/RVC1X///8/oqowq////z/FTKat////P4yv6Vr///8/29WTKv///78RxCYL////vzupG6////8/k9W9H////792cT5M////P+Wy6Kv///8/2Szgu////79+U+NW////P/WlfK3///8/D9RPLP///7+JKFzU////v/0pZyf///+/CmIaqv///z+c1K0w////vxCydq7///8/AADCjf///78AAMKN////vwAAwo3///+/AADCjf///7+kMrDk////v5hGBln///8/UCjpIv///7+kztTY////v+DYQzL///+/2C4MQ////782byqx////P5HTMOH///+/rrRnVf///z+208DT////v+mlIVL///8/Y1N9qP///z8AKK8r////vxfTutD///+/trMuU////z+5YpxU////P9Iop9f///+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_thaq4")
 
 [sub_resource type="LabelSettings" id="LabelSettings_w6bwt"]
 font = ExtResource("4_gacyl")
@@ -473,7 +418,7 @@ outline_size = 2
 outline_color = Color(0.97487146, 0.5860291, 0.5997419, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2cuxt"]
-line_spacing = -2.0
+line_spacing = 8.88
 paragraph_spacing = 4.0
 font = ExtResource("4_gacyl")
 font_size = 17
@@ -488,6 +433,16 @@ font_size = 23
 outline_size = 2
 outline_color = Color(0.9764706, 0.58431375, 0.6, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_67nhv"]
+font = ExtResource("4_gacyl")
+font_size = 26
+font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wl7wv"]
+font = ExtResource("4_gacyl")
+font_size = 19
+font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_pqhnj"]
 font = ExtResource("4_gacyl")
 font_size = 20
@@ -498,6 +453,7 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_jkqr7"]
 font = ExtResource("4_gacyl")
 font_size = 20
+font_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
@@ -511,6 +467,7 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_to74f"]
 font = ExtResource("4_gacyl")
 font_size = 20
+font_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
@@ -518,7 +475,29 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_gi84n")
 light = NodePath("sub/main/light")
 start_sfx = NodePath("audio")
-anims = [NodePath("sub/custom/chimera"), NodePath("sub/custom/noise"), NodePath("sub/custom/nerd")]
+anims = [NodePath("sub/custom/chimera"), NodePath("sub/custom/noise"), NodePath("sub/custom/nerd"), NodePath("sub/custom/endo"), NodePath("sub/custom/bear"), NodePath("sub/custom/nchimera"), NodePath("sub/custom/gnoise"), NodePath("sub/custom/virus"), NodePath("sub/custom/vissy")]
+
+[node name="static_body_3d" type="StaticBody3D" parent="." unique_id=1830023942]
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="static_body_3d" unique_id=189512040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.703386)
+shape = SubResource("BoxShape3D_67nhv")
+
+[node name="collision_shape_3d3" type="CollisionShape3D" parent="static_body_3d" unique_id=454285664]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.496911e-07, 3.2966142)
+shape = SubResource("BoxShape3D_67nhv")
+
+[node name="collision_shape_3d2" type="CollisionShape3D" parent="static_body_3d" unique_id=1203937748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.255974)
+shape = SubResource("BoxShape3D_67nhv")
+
+[node name="collision_shape_3d4" type="CollisionShape3D" parent="static_body_3d" unique_id=1761536911]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9, 0, 3)
+shape = SubResource("BoxShape3D_67nhv")
+
+[node name="collision_shape_3d5" type="CollisionShape3D" parent="static_body_3d" unique_id=316980926]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0, 3)
+shape = SubResource("BoxShape3D_67nhv")
 
 [node name="audio" type="AudioStreamPlayer3D" parent="." unique_id=392620485]
 stream = ExtResource("2_pqhnj")
@@ -534,17 +513,9 @@ layers = 4
 [node name="custom" type="Node3D" parent="sub" unique_id=1326032578]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4157145, 0, 1.899662)
 
-[node name="area" type="AreaLight3D" parent="sub/custom" unique_id=719723467]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.5375257, 2.49871, 1.9349136)
-layers = 3
-light_color = Color(0.21590185, 0.21590167, 0.2159017, 1)
-light_cull_mask = 4294967291
-area_range = 0.0
-area_normalize_energy = false
-area_size = Vector2(4.7198577, 2.7)
-
 [node name="chimera" parent="sub/custom" unique_id=1173604488 instance=ExtResource("7_godb5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 4)
+mood = 2
 is_lock = true
 is_static = true
 
@@ -552,68 +523,102 @@ is_static = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.3748136, 0)
 
 [node name="light" type="SpotLight3D" parent="sub/custom/chimera" unique_id=1304273582]
-transform = Transform3D(0.8647526, -0.48908764, -0.11400107, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.84057426, -0.2030867, -0.41170073, 4.8106513, -0.9713392)
+transform = Transform3D(0.8647526, -0.4890877, -0.11400109, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.8405742, -0.20308667, -0.41170073, 4.8106513, -0.9713392)
 spot_range = 5.876
 spot_angle = 7.97
 spot_angle_attenuation = 0.2871751
 
 [node name="noise" parent="sub/custom" unique_id=233678744 instance=ExtResource("8_73bd1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.316297, 0, 3.5696344)
+mood = 2
 is_lock = true
 is_static = true
 
+[node name="face" parent="sub/custom/noise/skelet/Skeleton3D" parent_id_path=PackedInt32Array(233678744, 242185282) index="0" unique_id=2117962911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.004342, 0)
+
 [node name="light" type="SpotLight3D" parent="sub/custom/noise" unique_id=1421275392]
-transform = Transform3D(0.9272252, 0.36642975, 0.07734748, 0.009413196, -0.2292712, 0.9733171, 0.37438586, -0.90175587, -0.21603534, 0.29044485, 4.8106513, -1.0938969)
+transform = Transform3D(0.92722523, 0.36642975, 0.07734752, 0.009413197, -0.22927125, 0.9733171, 0.3743859, -0.90175605, -0.21603537, 0.29044485, 4.8106513, -1.0938969)
 spot_range = 5.876
 spot_angle = 8.34
 spot_angle_attenuation = 0.2871751
 
-[node name="fnat_pc" type="MeshInstance3D" parent="sub/custom" unique_id=763720284]
-transform = Transform3D(0.724914, 0, 0, 0, 0.64879805, 0, 0, 0, 0.724914, 1.6190056, 0, 2.8048)
-mesh = ExtResource("6_xpylm")
-
-[node name="fnat_keyboard" type="MeshInstance3D" parent="sub/custom/fnat_pc" unique_id=620229416]
-transform = Transform3D(1.3794739, 0, 0, 0, 1.5413117, 0, 0, 0, 1.3794739, -0.037307024, 0, -0.89473295)
-mesh = ExtResource("41_lkkgg")
-
-[node name="light" type="SpotLight3D" parent="sub/custom/fnat_pc" unique_id=1944133618]
-transform = Transform3D(0.86475253, -0.4890877, -0.114001065, -0.034554243, -0.2844131, 0.9580789, -0.50100803, -0.824562, -0.26284695, -0.41170073, 4.4110084, -1.1982603)
-spot_range = 2.98
-spot_attenuation = 0.54
-spot_angle = 20.38
-spot_angle_attenuation = 0.2871751
-
-[node name="main" type="Sprite3D" parent="sub/custom/fnat_pc" unique_id=452965198]
-transform = Transform3D(0.09890036, 6.423676e-10, 2.4088784e-09, -7.177292e-10, 0.11682943, 2.8709168e-09, -9.635515e-10, -2.5694704e-09, 0.097314045, 4.7683716e-07, 1.0035696, -0.2368555)
-flip_h = true
-texture = ExtResource("7_1ojbv")
-
-[node name="vissy" type="Sprite3D" parent="sub/custom/fnat_pc/main" unique_id=1836307466]
-transform = Transform3D(0.8323294, 0.24497171, 0.058178816, -0.22055785, 0.8338851, 0.013687697, -0.05386341, -0.03229504, 0.86385393, -5.137022, 0, -0.34678268)
-render_priority = 1
-texture = ExtResource("8_xjrve")
-
-[node name="virus" type="Sprite3D" parent="sub/custom/fnat_pc/main" unique_id=155486441]
-transform = Transform3D(1.2277343, -9.861126e-17, 3.5527137e-15, 3.851439e-15, 1.2277335, -2.1316282e-14, 0, 7.1054274e-15, 1.2277339, 4.5023537, 1.0088167, -0.34678268)
-render_priority = 1
-texture = ExtResource("9_lkkgg")
-
-[node name="gnoise" parent="sub/custom" unique_id=411477254 instance=ExtResource("6_4ya4h")]
-transform = Transform3D(0.92137617, 0, 0, 0, 0.92137617, 0, 0, 0, 0.92137617, 4.6961784, -0.025614738, 5.369829)
+[node name="nerd" parent="sub/custom" unique_id=421923076 instance=ExtResource("9_88v2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.012134, 2.3841858e-07, 4.4997954)
+mood = 2
 is_lock = true
 is_static = true
 
-[node name="face" parent="sub/custom/gnoise/skelet/Skeleton3D" parent_id_path=PackedInt32Array(411477254, 694886080) index="0" unique_id=1470662816]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000004, 0, -16.429464, 0)
+[node name="face" parent="sub/custom/nerd/fnat/skelet/Skeleton3D" parent_id_path=PackedInt32Array(421923076, 239580956) index="0" unique_id=1141669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.8030977, 0)
 
-[node name="light" type="SpotLight3D" parent="sub/custom/gnoise" unique_id=1364313347]
-transform = Transform3D(0.92722523, 0.36642975, 0.07734752, 0.009413197, -0.22927125, 0.9733171, 0.3743859, -0.90175605, -0.21603537, 0.29044485, 5.8106513, -1.0938969)
-spot_range = 14.573
-spot_angle = 10.89
+[node name="light" type="SpotLight3D" parent="sub/custom/nerd" unique_id=164485701]
+transform = Transform3D(-0.9822548, 0.18263972, 0.042641535, 0.093774766, 0.28136078, 0.9550091, 0.16242495, 0.942061, -0.29349494, 0.10941529, 4.810652, -1.860157)
+spot_range = 6.853
+spot_attenuation = 1.74
+spot_angle = 8.05
+spot_angle_attenuation = 0.2871751
+
+[node name="endo" parent="sub/custom" unique_id=229964717 instance=ExtResource("10_dwenj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2275965, -0.018931389, 4.2184067)
+mood = 2
+is_lock = true
+is_static = true
+
+[node name="light" type="SpotLight3D" parent="sub/custom/endo" unique_id=2085327077]
+transform = Transform3D(0.8647526, -0.48908764, -0.11400107, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.84057426, -0.2030867, -0.41170073, 4.8106513, -0.9713392)
+spot_range = 4.853
+spot_angle = 7.97
+spot_angle_attenuation = 0.2871751
+
+[node name="bear" parent="sub/custom" unique_id=388083625 instance=ExtResource("11_ypoyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.656578, 2.3841858e-07, 3.5999875)
+mood = 2
+ai_lvl = 0
+is_static = true
+
+[node name="Skeleton3D" parent="sub/custom/bear/skelet" parent_id_path=PackedInt32Array(388083625, 1686136682) index="0" unique_id=182072010]
+bones/0/position = Vector3(0.1273229, 1.1800002, -0.20061074)
+bones/0/rotation = Quaternion(0.6743323, 0.049328156, 0.7329669, -0.074848354)
+bones/1/rotation = Quaternion(-0.073637314, 0.0019003463, -0.024086393, 0.99699235)
+bones/2/position = Vector3(-0.13763715, 1.1086066, -0.16795966)
+bones/2/rotation = Quaternion(-0.7016581, 0.065184936, 0.67953986, 0.20408951)
+bones/3/rotation = Quaternion(-0.089705266, 0.02157848, 0.096065335, 0.99108976)
+bones/4/position = Vector3(3.669575e-18, 1.1734737, -0.12974733)
+bones/4/rotation = Quaternion(0.09388882, 0.09175271, -0.04889167, 0.99013937)
+bones/5/position = Vector3(0.19906309, -3.0328674, 0.14435619)
+bones/5/rotation = Quaternion(4.6566134e-10, -2.3283064e-10, -2.7939682e-09, 1)
+bones/6/rotation = Quaternion(-0.0009466264, -0.060684316, 0.017639222, 0.9980007)
+bones/7/rotation = Quaternion(-7.3341653e-09, -1.6298145e-09, 1.1641532e-09, 1)
+bones/8/position = Vector3(0.15338139, 0.70766443, 0.011109792)
+bones/8/rotation = Quaternion(0.36805204, -0.48659623, 0.7902671, -0.056919344)
+bones/9/rotation = Quaternion(-0.8360976, 0.046473928, 0.30461445, 0.4538624)
+bones/10/rotation = Quaternion(-0.035915088, -0.003946677, -0.13133603, 0.9906793)
+bones/11/rotation = Quaternion(-0.12390082, -0.013638909, 0.07096655, 0.9896597)
+bones/12/position = Vector3(-0.02252579, 0.01096003, -0.02)
+bones/12/rotation = Quaternion(-0.024681404, -0.0112018045, 0.3576401, 0.93346614)
+bones/13/rotation = Quaternion(1.5945294e-07, 1.0999588e-07, -0.055043343, 0.99848396)
+bones/14/position = Vector3(-0.15999998, 0.6995156, -0.021038922)
+bones/14/rotation = Quaternion(-0.023528177, 0.16109556, 0.981266, 0.10301266)
+bones/15/rotation = Quaternion(-0.06897024, -0.05287839, -0.093507305, 0.99181825)
+bones/16/rotation = Quaternion(-0.037159108, 0.0047637965, 0.12706825, 0.99118626)
+bones/17/rotation = Quaternion(-0.051027153, 0.014230046, -0.08891815, 0.99462926)
+bones/18/rotation = Quaternion(-5.1731365e-07, -1.04011114e-07, -0.2055446, 0.9786478)
+bones/19/rotation = Quaternion(-0.14630727, -0.15735316, 0.014572939, 0.9765356)
+
+[node name="face" parent="sub/custom/bear/skelet/Skeleton3D" index="0" unique_id=132393044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+
+[node name="light" type="SpotLight3D" parent="sub/custom/bear" unique_id=2008133172]
+transform = Transform3D(0.9985529, -0.05127688, -0.016210094, 0.0071387333, -0.17237096, 0.98500633, -0.0533022, -0.98369664, -0.1717554, 2.3841858e-07, 5.1489096, -0.6308346)
+spot_range = 6.853
+spot_attenuation = 2.0
+spot_angle = 5.82
 spot_angle_attenuation = 0.2871751
 
 [node name="nchimera" parent="sub/custom" unique_id=1978210908 instance=ExtResource("6_e1vna")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9220834, -0.55494285, 8.264147)
+mood = 2
 is_lock = true
 is_static = true
 
@@ -621,9 +626,56 @@ is_static = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1937323, 0)
 
 [node name="light" type="SpotLight3D" parent="sub/custom/nchimera" unique_id=1793070842]
-transform = Transform3D(0.8647526, -0.48908764, -0.11400107, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.84057426, -0.2030867, -0.41170073, 4.8106513, -0.9713392)
+transform = Transform3D(0.8647526, -0.4890877, -0.11400109, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.8405742, -0.20308667, -0.41170073, 4.810652, -0.9713392)
 spot_range = 4.461
 spot_angle = 7.97
+spot_angle_attenuation = 0.2871751
+
+[node name="gnoise" parent="sub/custom" unique_id=411477254 instance=ExtResource("6_4ya4h")]
+transform = Transform3D(0.92137617, -2.2350108e-16, 0, -2.2350108e-16, 0.92137617, 0, 0, 0, 0.92137617, 4.6961784, -0.025614738, 5.369829)
+mood = 2
+is_lock = true
+is_static = true
+
+[node name="face" parent="sub/custom/gnoise/skelet/Skeleton3D" parent_id_path=PackedInt32Array(411477254, 694886080) index="0" unique_id=1470662816]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000004, 0, -16.429464, 0)
+
+[node name="light" type="SpotLight3D" parent="sub/custom/gnoise" unique_id=1364313347]
+transform = Transform3D(1.0063483, 0.39769834, 0.083947815, 0.010216454, -0.24883565, 1.0563732, 0.40633342, -0.9787057, -0.23447031, 0.29044497, 5.810652, -1.0938973)
+spot_range = 14.573
+spot_angle = 10.89
+spot_angle_attenuation = 0.2871751
+
+[node name="virus" type="Sprite3D" parent="sub/custom" unique_id=155486441]
+transform = Transform3D(1, 6.495095e-09, 9.742648e-09, -6.495095e-09, 1, 2.4573566e-08, -9.742648e-09, -2.4573566e-08, 1, 1.9417988, 0.6662005, 2.6086364)
+pixel_size = 0.001
+shaded = true
+render_priority = 1
+texture = ExtResource("9_lkkgg")
+script = ExtResource("19_wh851")
+mood = 2
+is_static = true
+
+[node name="light" type="SpotLight3D" parent="sub/custom/virus" unique_id=1944133618]
+transform = Transform3D(0.90954435, 0.39619312, 0.12554027, 0.045093447, -0.39435738, 0.91785026, 0.41315356, -0.8291644, -0.37655118, 0.5261253, 2.0997531, -1.029784)
+spot_range = 2.98
+spot_attenuation = 0.54
+spot_angle = 20.38
+spot_angle_attenuation = 0.2871751
+
+[node name="vissy" type="Sprite3D" parent="sub/custom" unique_id=1836307466]
+transform = Transform3D(0.059673242, 0.017563066, 0.004171089, -0.016718, 0.06320741, 0.0010375114, -0.0037997577, -0.0022782332, 0.060939986, 1.250711, 0.651114, 2.6086364)
+shaded = true
+render_priority = 1
+texture = ExtResource("8_xjrve")
+script = ExtResource("19_wh851")
+mood = 2
+
+[node name="light" type="SpotLight3D" parent="sub/custom/vissy" unique_id=1646503584]
+transform = Transform3D(14.471976, -5.7166576, -4.0935245, 0.8198837, -6.968645, 13.54211, -7.0692234, -13.289097, -6.431478, -16.018398, 30.978155, -17.42398)
+spot_range = 2.98
+spot_attenuation = 0.54
+spot_angle = 20.38
 spot_angle_attenuation = 0.2871751
 
 [node name="alien" parent="sub/custom" unique_id=787385900 instance=ExtResource("13_cn0f5")]
@@ -641,6 +693,8 @@ spot_angle_attenuation = 0.2871751
 
 [node name="tt" parent="sub/custom" unique_id=1308891161 instance=ExtResource("8_3gd81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8187513, 0, 4.8774967)
+visible = false
+mood = 2
 
 [node name="light" type="SpotLight3D" parent="sub/custom/tt" unique_id=2004853191]
 transform = Transform3D(0.8647526, -0.4890877, -0.11400108, -0.003500824, -0.23286948, 0.97250175, -0.502186, -0.84057426, -0.20308667, -0.41170073, 3.0315344, -0.55777216)
@@ -652,6 +706,7 @@ spot_angle_attenuation = 0.2871751
 [node name="hakua" parent="sub/custom" unique_id=21744238 instance=ExtResource("9_uoqgc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8501713, 2.3841858e-07, 4.9569497)
 visible = false
+mood = 2
 is_lock = true
 is_static = true
 
@@ -664,43 +719,10 @@ spot_range = 4.853
 spot_angle = 7.97
 spot_angle_attenuation = 0.2871751
 
-[node name="nerd" parent="sub/custom" unique_id=421923076 instance=ExtResource("9_88v2a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.012134, 2.3841858e-07, 4.4997954)
-is_lock = true
-is_static = true
-
-[node name="light" type="SpotLight3D" parent="sub/custom/nerd" unique_id=164485701]
-transform = Transform3D(-0.98225474, 0.18263972, 0.042641535, 0.09377476, 0.28136075, 0.9550092, 0.16242494, 0.94206095, -0.29349494, 0.10941529, 4.810652, -1.860157)
-spot_range = 6.853
-spot_attenuation = 1.74
-spot_angle = 8.05
-spot_angle_attenuation = 0.2871751
-
-[node name="endo" parent="sub/custom" unique_id=229964717 instance=ExtResource("10_dwenj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2275965, -0.018931389, 4.2184067)
-is_lock = true
-is_static = true
-
-[node name="light" type="SpotLight3D" parent="sub/custom/endo" unique_id=2085327077]
-transform = Transform3D(0.8647526, -0.48908764, -0.11400107, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.84057426, -0.2030867, -0.41170073, 4.8106513, -0.9713392)
-spot_range = 4.853
-spot_angle = 7.97
-spot_angle_attenuation = 0.2871751
-
-[node name="bear" parent="sub/custom" unique_id=388083625 instance=ExtResource("11_ypoyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.656578, 2.3841858e-07, 3.5999875)
-is_static = true
-
-[node name="light" type="SpotLight3D" parent="sub/custom/bear" unique_id=2008133172]
-transform = Transform3D(0.9985529, -0.05127688, -0.016210094, 0.0071387333, -0.17237096, 0.98500633, -0.0533022, -0.98369664, -0.1717554, 2.3841858e-07, 5.1489096, -0.6308346)
-spot_range = 6.853
-spot_attenuation = 2.0
-spot_angle = 5.82
-spot_angle_attenuation = 0.2871751
-
 [node name="pearto" parent="sub/custom" unique_id=1486262563 instance=ExtResource("19_ns5uy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4613717, 0.9576533, 8.259268)
 visible = false
+mood = 2
 
 [node name="__p" parent="sub/custom/pearto/skelet/pearto" parent_id_path=PackedInt32Array(1486262563, 291813247) index="0" unique_id=141832061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.715351, 0)
@@ -710,6 +732,28 @@ transform = Transform3D(0.8647526, -0.48908776, -0.114001095, -0.18667562, -0.52
 spot_range = 4.461
 spot_angle = 7.97
 spot_angle_attenuation = 0.2871751
+
+[node name="area" type="AreaLight3D" parent="sub/custom" unique_id=719723467]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.5375257, 2.49871, 1.9349136)
+layers = 3
+light_color = Color(0.21590185, 0.21590167, 0.2159017, 1)
+light_cull_mask = 4294967291
+area_range = 0.0
+area_normalize_energy = false
+area_size = Vector2(4.7198577, 2.7)
+
+[node name="fnat_pc" type="MeshInstance3D" parent="sub/custom" unique_id=763720284]
+transform = Transform3D(0.724914, 0, 7.1054274e-15, 8.881784e-16, 0.64879805, 0, 0, 7.450581e-09, 0.72491395, 1.6190054, 1.1920929e-07, 2.8048)
+mesh = ExtResource("6_xpylm")
+
+[node name="fnat_keyboard" type="MeshInstance3D" parent="sub/custom/fnat_pc" unique_id=620229416]
+transform = Transform3D(1.3794739, 0, 0, 0, 1.5413117, 0, 0, 0, 1.3794739, -0.037307024, 0, -0.89473295)
+mesh = ExtResource("41_lkkgg")
+
+[node name="main" type="Sprite3D" parent="sub/custom/fnat_pc" unique_id=452965198]
+transform = Transform3D(0.09890036, 6.423676e-10, 2.4088784e-09, -7.177292e-10, 0.11682943, 2.8709168e-09, -9.635515e-10, -2.5694704e-09, 0.097314045, 4.7683716e-07, 1.0035696, -0.2368555)
+flip_h = true
+texture = ExtResource("7_1ojbv")
 
 [node name="cam" type="Camera3D" parent="sub/custom" unique_id=1869284834]
 transform = Transform3D(-1, -1.6681055e-08, 8.581658e-08, 0, 0.9816272, 0.19080901, -8.742278e-08, 0.19080901, -0.9816272, 3.824, 1.39, 0.48)
@@ -726,58 +770,97 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6121831, -2.5765662)
 mesh = SubResource("ArrayMesh_88v2a")
 
 [node name="blender" type="Sprite3D" parent="sub/thanks/board" unique_id=2015329153]
-transform = Transform3D(0.089279234, 0, 0, 0, 0.089279234, 0, 0, 0, 0.089279234, 1.0903184, 0.7542683, 0)
+transform = Transform3D(0.09786432, 0, 0, 0, 0.09410031, 0, 0, 0, 0.09410031, 1.0468522, 1.1977583, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("10_ypoyp")
 
 [node name="godot" type="Sprite3D" parent="sub/thanks/board" unique_id=1905026630]
-transform = Transform3D(0.060263496, 0, 0, 0, 0.060263496, 0, 0, 0, 0.06026348, 1.3398023, 1.2221572, 0)
+transform = Transform3D(0.03941961, 0, 0, 0, 0.036533467, 0, 0, 0, 0.03653346, 1.0279777, 1.5212493, 0)
 shaded = true
 texture_filter = 0
-texture = ExtResource("12_pvoyk")
+texture = ExtResource("23_wl7wv")
 
 [node name="godot2" type="Sprite3D" parent="sub/thanks/board" unique_id=2075648831]
-transform = Transform3D(0.045800257, 0, 0, 0, 0.045800257, 0, 0, 0, 0.045800246, 0.79128504, 1.2783225, 0)
+transform = Transform3D(0.089039885, 0, 0, 0, 0.114044584, 0, 0, 0, 0.082461715, 1.0502856, 0.89917076, 0)
 shaded = true
 texture_filter = 0
-texture = ExtResource("13_4ryb6")
+texture = ExtResource("24_2t6wh")
 
 [node name="scott" type="Label3D" parent="sub/thanks/board" unique_id=88887036]
-transform = Transform3D(0.437, 0, 0, 0, 0.437, 0, 0, 0, 0.437, -1.1992944, 0.21624911, 0)
+transform = Transform3D(0.36708, 0, 0, 0, 0.36708, 0, 0, 0, 0.36708, -1.2586899, 0.19175494, 0)
 texture_filter = 0
 text = "Scott Cawthon"
 font = ExtResource("4_gacyl")
 outline_size = 8
 
 [node name="scott_sprite" type="Sprite3D" parent="sub/thanks/board" unique_id=992570893]
-transform = Transform3D(0.15198454, 0, 0, 0, 0.15198454, 0, 0, 0, 0.1519845, -1.2738883, 0.5936171, 0)
+transform = Transform3D(0.1284087, 0, 0, 0, 0.1284087, 0, 0, 0, 0.12840867, -1.2947811, 0.52497435, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("14_8wdta")
 
 [node name="codeman38" type="Label3D" parent="sub/thanks/board" unique_id=1372265070]
-transform = Transform3D(0.437, 0, 0, 0, 0.437, 0, 0, 0, 0.437, -0.3236556, 0.28084934, 0)
+transform = Transform3D(0.3087143, 0, 0, 0, 0.3087143, 0, 0, 0, 0.3087143, -0.80178195, 1.2797581, 0)
 texture_filter = 0
 text = "CodeMan38"
 font = ExtResource("4_gacyl")
 outline_size = 8
 
 [node name="codeman38_sprite" type="Sprite3D" parent="sub/thanks/board" unique_id=1676742369]
-transform = Transform3D(0.11657215, 0, 0, 0, 0.11657215, 0, 0, 0, 0.11657211, -0.3059312, 0.6352271, 0)
+transform = Transform3D(0.08235123, 0, 0, 0, 0.08235123, 0, 0, 0, 0.0823512, -0.7892608, 1.5211048, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("15_pvoyk")
 
+[node name="cutie" type="Label3D" parent="sub/thanks/board" unique_id=1019120604]
+transform = Transform3D(0.32863224, 0, 0, 0, 0.32863224, 0, 0, 0, 0.32863224, -0.6516545, 0.7401991, 0)
+texture_filter = 0
+text = "TheViDuelty"
+font = ExtResource("4_gacyl")
+outline_size = 8
+
+[node name="cutie_sprite" type="Sprite3D" parent="sub/thanks/board" unique_id=1507198270]
+transform = Transform3D(0.25060457, 0, 0, 0, 0.25060457, 0, 0, 0, 0.25060448, -0.6369263, 1.0346727, 0)
+shaded = true
+texture_filter = 0
+texture = ExtResource("28_o8kjn")
+
+[node name="bitmodding" type="Label3D" parent="sub/thanks/board" unique_id=404768557]
+transform = Transform3D(0.31154338, 0, 0, 0, 0.31154338, 0, 0, 0, 0.31154338, -0.5386544, 0.23719919, 0)
+texture_filter = 0
+text = "BitModding"
+font = ExtResource("4_gacyl")
+outline_size = 8
+
+[node name="bittmoddint_sprite" type="Sprite3D" parent="sub/thanks/board" unique_id=729321954]
+transform = Transform3D(0.036337662, 0, 0, 0, 0.036337662, 0, 0, 0, 0.036337648, -0.5239262, 0.4826728, 0)
+shaded = true
+texture_filter = 0
+texture = ExtResource("29_uxi4n")
+
+[node name="dr_magexy2" type="Label3D" parent="sub/thanks/board" unique_id=1146692297]
+transform = Transform3D(0.32527134, 0, 0, 0, 0.32527134, 0, 0, 0, 0.32527134, -1.3358866, 0.8275492, 0)
+texture_filter = 0
+text = "Dr.Magexy"
+font = ExtResource("4_gacyl")
+outline_size = 8
+
+[node name="dr_magexy_sprite2" type="Sprite3D" parent="sub/thanks/board" unique_id=1130017929]
+transform = Transform3D(0.26557744, 0, 0, 0, 0.26557744, 0, 0, 0, 0.26557735, -1.322694, 1.0913224, 0)
+shaded = true
+texture_filter = 0
+texture = ExtResource("28_wl7wv")
+
 [node name="glassbrick" type="Label3D" parent="sub/thanks/board" unique_id=161585243]
-transform = Transform3D(0.437, 0, 0, 0, 0.437, 0, 0, 0, 0.437, -1.2418027, 1.0825065, 0)
+transform = Transform3D(0.29163635, 0, 0, 0, 0.29163635, 0, 0, 0, 0.29163635, -1.4361941, 1.4165857, -0.0035824776)
 texture_filter = 0
 text = "glassbrick"
 font = ExtResource("4_gacyl")
 outline_size = 8
 
 [node name="glassbrick_sprite" type="Sprite3D" parent="sub/thanks/board" unique_id=534030339]
-transform = Transform3D(0.27884057, 0, 0, 0, 0.27884057, 0, 0, 0, 0.27884048, -1.2240782, 1.4368844, 0)
+transform = Transform3D(0.18608704, 0, 0, 0, 0.18608704, 0, 0, 0, 0.186087, -1.4143934, 1.6367311, -0.0024385452)
 shaded = true
 texture_filter = 0
 texture = ExtResource("17_cqjcy")
@@ -860,7 +943,7 @@ region_enabled = true
 region_rect = Rect2(280.16235, 0.16440201, 95.13217, 75.131454)
 
 [node name="sprite_3d3" type="Sprite3D" parent="sub/thanks/baguette" unique_id=620658953]
-transform = Transform3D(0.08731405, 0, 0.017241105, 0, 0.089, 0, -0.017241126, 0, 0.08731404, 8.125149, 1.5126735, -2.4823544)
+transform = Transform3D(0.08731405, 0, 0.017241104, 0, 0.089, 0, -0.017241126, 0, 0.08731404, 9.154237, 1.5126735, -2.6913676)
 shaded = true
 texture_filter = 0
 texture = ExtResource("28_1ojbv")
@@ -885,17 +968,29 @@ mesh = ExtResource("21_pqhnj")
 transform = Transform3D(0.803527, 0, 0, 0, 0.803527, 0, 0, 0, 0.803527, 0.72414017, 0, -2.136581)
 mesh = ExtResource("23_urhsd")
 
-[node name="fatass" type="MeshInstance3D" parent="sub/thanks" unique_id=1860691485]
-transform = Transform3D(-0.99560785, 0, 0.09362173, 0, 1, 0, -0.09362173, 0, -0.99560785, 0.241, 0.727, -2.062)
-mesh = ExtResource("24_e1vna")
-
-[node name="nokia" type="MeshInstance3D" parent="sub/thanks" unique_id=308981845]
+[node name="nokia" type="StaticBody3D" parent="sub/thanks" unique_id=249749437]
 transform = Transform3D(0.35282615, 0, -0.9356889, 0, 1, 0, 0.9356889, 0, 0.35282615, 1.0550171, 0.75785565, -2.0578043)
+script = ExtResource("38_pn05y")
+absolute_cd = 0.92
+to_play = "ambient/short/baka_nerd"
+shake_scale = 10.0
+jump = 10.0
+volume = -5
+
+[node name="nokia" type="MeshInstance3D" parent="sub/thanks/nokia" unique_id=308981845]
 mesh = ExtResource("25_4ya4h")
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="sub/thanks/nokia" unique_id=1869472458]
+shape = SubResource("BoxShape3D_p3osw")
 
 [node name="onion" type="MeshInstance3D" parent="sub/thanks" unique_id=794071076]
 transform = Transform3D(0.86082196, 0, -0.50890625, 0, 1, 0, 0.50890625, 0, 0.86082196, -2.4464357, 1.5784992, -2.1979816)
 mesh = ExtResource("26_3gd81")
+
+[node name="fatass" parent="sub/thanks" unique_id=880821608 instance=ExtResource("40_2t6wh")]
+transform = Transform3D(-0.93377423, 7.922405e-05, 0.00055693835, -7.275958e-12, 0.9244681, -0.13150486, -0.0005625449, -0.13150485, -0.92446786, 0.17460194, 0.71109056, -2.062461)
+shake_scale = 10.0
+jump = 10.0
 
 [node name="shelf" type="MeshInstance3D" parent="sub/thanks" unique_id=1569886152]
 transform = Transform3D(-9.524712e-08, 0, 2.1790001, 0, 2.1790001, 0, -2.1790001, 0, -9.524712e-08, -3.1944833, 0, -2.2707987)
@@ -936,17 +1031,42 @@ mesh = SubResource("ArrayMesh_gacyl")
 transform = Transform3D(1.0109854, -0.09777662, 0.6594463, 0.099562526, 1.2066144, 0.02626811, -0.6591791, 0.03228686, 1.0153629, -0.2687325, -0.023542792, 0.34335005)
 mesh = SubResource("ArrayMesh_gi84n")
 
-[node name="2" type="MeshInstance3D" parent="sub/main" unique_id=1496554598]
-transform = Transform3D(-0.69445324, 0.00012281912, -0.7195384, 0.00017019361, 1, 6.4373016e-06, 0.7195381, -0.00011800762, -0.6944536, 0.06840522, -0.023542792, 0.42863852)
-mesh = SubResource("ArrayMesh_2cuxt")
+[node name="2" type="StaticBody3D" parent="sub/main" unique_id=507999704]
+transform = Transform3D(-0.63391733, 0, -0.77340084, 3.7252903e-09, 1, 0, 0.7734009, 3.7252903e-09, -0.63391733, 0.09460133, -0.013048915, 0.43223694)
+script = ExtResource("38_pn05y")
+absolute_cd = 0.92
+to_play = "ambient/short/baka_nerd"
+shake_scale = 10.0
+jump = 10.0
+volume = -5
+
+[node name="nokia" type="MeshInstance3D" parent="sub/main/2" unique_id=214754119]
+mesh = ExtResource("25_4ya4h")
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="sub/main/2" unique_id=1075537265]
+shape = SubResource("BoxShape3D_p3osw")
+
+[node name="4" type="StaticBody3D" parent="sub/main" unique_id=299046415]
+transform = Transform3D(-0.63391733, 0, -0.77340084, 3.7252903e-09, 1, 0, 0.7734009, 3.7252903e-09, -0.63391733, 0.09460133, -0.013048915, 0.43223694)
+script = ExtResource("38_pn05y")
+type = 4
+absolute_cd = 0.92
+to_play = "ambient/short/laugh2"
+shake_scale = 10.0
+jump = 10.0
+volume = 7
+
+[node name="nokia" type="MeshInstance3D" parent="sub/main/4" unique_id=1077602986]
+transform = Transform3D(0.8660253, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, 0.8660253, 0.6735805, 0.046026364, 0.42749083)
+mesh = ExtResource("44_v44d0")
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="sub/main/4" unique_id=905294638]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 0.52214664, -2.0703361e-09, 0.34229055)
+shape = SubResource("BoxShape3D_p3osw")
 
 [node name="3" type="MeshInstance3D" parent="sub/main" unique_id=1223928487]
 transform = Transform3D(0.79171485, -8.496922e-09, -0.6108908, 5.9604645e-08, 1, 1.4901161e-08, 0.6108909, -2.9802322e-08, 0.79171485, 0.329, -0.023542792, 0.6227778)
 mesh = SubResource("ArrayMesh_i4vf5")
-
-[node name="4" type="MeshInstance3D" parent="sub/main" unique_id=962215699]
-transform = Transform3D(-0.9116174, 1.3271275e-08, -0.41103995, 2.2351742e-08, 1, 0, 0.4110399, -3.3410814e-08, -0.9116175, -0.64597714, 0.041457087, 0.6989007)
-mesh = SubResource("ArrayMesh_4dys7")
 
 [node name="cam" type="Camera3D" parent="sub/main" unique_id=517046001]
 transform = Transform3D(1, 0, 0, 0, 0.6154689, 0.78816116, 0, -0.78816116, 0.6154689, 0.3561766, 1.3992616, 1.4248598)
@@ -968,6 +1088,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="texture_rect" type="TextureRect" parent="ui" unique_id=1206300775]
 visible = false
@@ -1024,48 +1145,54 @@ columns = 4
 
 [node name="0" type="TextureRect" parent="ui/title/stars" unique_id=1695297065]
 visible = false
+self_modulate = Color(0.90588236, 0.30588236, 0.37254903, 1)
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="1" type="TextureRect" parent="ui/title/stars" unique_id=2108251460]
 visible = false
+self_modulate = Color(0.5882353, 0.6784314, 0.90588236, 1)
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="2" type="TextureRect" parent="ui/title/stars" unique_id=1428814666]
 visible = false
+self_modulate = Color(0.90588236, 0.8156863, 0.54901963, 1)
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="3" type="TextureRect" parent="ui/title/stars" unique_id=1668318651]
 visible = false
+modulate = Color(0.36078432, 0.36078432, 0.36078432, 1)
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="4" type="TextureRect" parent="ui/title/stars" unique_id=467068126]
 visible = false
+self_modulate = Color(0.5647059, 0.8784314, 0.69411767, 1)
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="5" type="TextureRect" parent="ui/title/stars" unique_id=1718110370]
 visible = false
+self_modulate = Color(0.23921569, 0.22352941, 0.29411766, 1)
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="6" type="TextureRect" parent="ui/title/stars" unique_id=457125436]
 visible = false
+self_modulate = Color(1, 0.96862745, 0.39215687, 1)
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="custom_night" type="Control" parent="ui" unique_id=73468786]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1153,6 +1280,8 @@ grow_vertical = 0
 columns = 5
 
 [node name="chimera" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=183921003]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 theme_override_colors/font_selected_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
@@ -1171,6 +1300,8 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
 [node name="noise" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=2061365487]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_colors/font_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
@@ -1191,6 +1322,8 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
 [node name="nerd" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=1166672027]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 offset_transform_position = Vector2(-8, 0)
 theme_override_colors/font_color = Color(0.90588236, 0.8156863, 0.54901963, 1)
@@ -1211,6 +1344,8 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
 [node name="endo" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=593666097]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 offset_transform_position = Vector2(-92.185, 0)
 theme_override_colors/font_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
@@ -1238,10 +1373,12 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
 [node name="bear" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=1876416745]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 offset_transform_position = Vector2(-22, 0)
 theme_override_colors/font_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
 theme_override_colors/font_selected_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
 theme_override_colors/font_placeholder_color = Color(0.5647059, 0.8784314, 0.69411767, 1)
 theme_override_colors/caret_color = Color(0, 0, 0, 1)
@@ -1264,19 +1401,9 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
-[node name="input2" type="GridContainer" parent="ui/custom_night/diff" unique_id=672405895]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 244.0
-offset_top = -112.0
-offset_right = 604.0
-offset_bottom = -88.0
-grow_vertical = 0
-columns = 5
-
-[node name="nchimera" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=630855146]
+[node name="nchimera" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=630855146]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.22352941, 0.29411766, 1)
 theme_override_colors/font_selected_color = Color(0.23921569, 0.22352941, 0.29411766, 1)
@@ -1294,27 +1421,9 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
-[node name="tt" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=2001428476]
-layout_mode = 2
-offset_transform_position = Vector2(-8, 0)
-theme_override_colors/font_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
-theme_override_colors/font_selected_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
-theme_override_colors/font_placeholder_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
-theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
-placeholder_text = "0-25"
-alignment = 1
-max_length = 2
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-
-[node name="gnoise" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=131301899]
+[node name="gnoise" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=131301899]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_colors/font_color = Color(1, 0.96862745, 0.39215687, 1)
@@ -1334,125 +1443,12 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
-[node name="hakua" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=344348494]
-layout_mode = 2
-offset_transform_position = Vector2(-22, 0)
-theme_override_colors/font_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
-theme_override_colors/font_placeholder_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
-theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
-theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
-theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
-placeholder_text = "0-25"
-alignment = 1
-max_length = 2
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-
-[node name="pg_sm" type="LineEdit" parent="ui/custom_night/diff/input2" unique_id=821173135]
-layout_mode = 2
-offset_transform_position = Vector2(-92.185, 0)
-theme_override_colors/font_color = Color(1, 0.9490196, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(1, 0.9490196, 0, 1)
-theme_override_colors/font_placeholder_color = Color(1, 0.9490196, 0, 1)
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
-theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
-theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
-theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
-placeholder_text = "0-25"
-alignment = 1
-max_length = 2
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-
-[node name="input3" type="GridContainer" parent="ui/custom_night/diff" unique_id=1607356509]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 652.0
-offset_top = -112.0
-offset_right = 800.0
-offset_bottom = -88.0
-grow_vertical = 0
-columns = 5
-
-[node name="pearto" type="LineEdit" parent="ui/custom_night/diff/input3" unique_id=1436932184]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
-theme_override_colors/font_selected_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
-theme_override_colors/font_placeholder_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
-theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
-placeholder_text = "0-25"
-alignment = 1
-max_length = 2
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-
-[node name="alien" type="LineEdit" parent="ui/custom_night/diff/input3" unique_id=643864556]
+[node name="virus" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=2138287323]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 offset_transform_enabled = true
-theme_override_colors/font_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
-theme_override_colors/font_selected_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
-theme_override_colors/font_placeholder_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
-theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
-placeholder_text = "0-25"
-alignment = 1
-max_length = 2
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-
-[node name="input4" type="GridContainer" parent="ui/custom_night/diff" unique_id=1049701708]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 652.0
-offset_top = -78.0
-offset_right = 976.0
-offset_bottom = -54.0
-grow_vertical = 0
-columns = 5
-
-[node name="viruses" type="LineEdit" parent="ui/custom_night/diff/input4" unique_id=2138287323]
-layout_mode = 2
-offset_transform_position = Vector2(-8, 0)
+offset_transform_visual_only = false
 theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
 theme_override_colors/font_selected_color = Color(1, 0.53333336, 0, 1)
 theme_override_colors/font_placeholder_color = Color(1, 0.53333336, 0, 1)
@@ -1470,9 +1466,12 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
-[node name="vissy" type="LineEdit" parent="ui/custom_night/diff/input4" unique_id=1032630880]
+[node name="vissy" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=1032630880]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
 offset_transform_enabled = true
+offset_transform_visual_only = false
 theme_override_colors/font_color = Color(0.8862745, 0.8862745, 0.8980392, 1)
 theme_override_colors/font_selected_color = Color(0.8862745, 0.8862745, 0.8980392, 1)
 theme_override_colors/font_placeholder_color = Color(0.8862745, 0.8862745, 0.8980392, 1)
@@ -1490,67 +1489,156 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 
-[node name="-int" type="VBoxContainer" parent="ui/custom_night/diff" unique_id=53154090]
-layout_mode = 0
-offset_left = 91.0
-offset_top = -76.0
-offset_right = 135.0
-offset_bottom = 10.0
-
-[node name="-1" type="Button" parent="ui/custom_night/diff/-int" unique_id=145400725]
+[node name="tt" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=2001428476]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+offset_transform_position = Vector2(-8, 0)
+theme_override_colors/font_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
+theme_override_colors/font_placeholder_color = Color(0.7764706, 0.22352941, 0.77254903, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_godb5")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_73bd1")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_88v2a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dwenj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ypoyp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_8wdta")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pvoyk")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
-text = "-1
-"
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "..."
+alignment = 1
+max_length = 2
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
 
-[node name="-3" type="Button" parent="ui/custom_night/diff/-int" unique_id=1197110992]
+[node name="hakua" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=344348494]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+offset_transform_position = Vector2(-22, 0)
+theme_override_colors/font_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
+theme_override_colors/font_placeholder_color = Color(0.8901961, 0.18039216, 0.18039216, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_godb5")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_73bd1")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_88v2a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dwenj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ypoyp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_8wdta")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pvoyk")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
-text = "-3"
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "..."
+alignment = 1
+max_length = 2
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
 
-[node name="-5" type="Button" parent="ui/custom_night/diff/-int" unique_id=681577077]
+[node name="pg_sm" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=821173135]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+offset_transform_position = Vector2(-92.185, 0)
+theme_override_colors/font_color = Color(1, 0.9490196, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 0.9490196, 0, 1)
+theme_override_colors/font_placeholder_color = Color(1, 0.9490196, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_gacyl")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_godb5")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_73bd1")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_88v2a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dwenj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ypoyp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_8wdta")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pvoyk")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
-text = "-5"
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "..."
+alignment = 1
+max_length = 2
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="pearto" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=1436932184]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
+layout_mode = 2
+offset_transform_position = Vector2(228, -27)
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+theme_override_colors/font_placeholder_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "..."
+alignment = 1
+max_length = 2
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="alien" type="LineEdit" parent="ui/custom_night/diff/input" unique_id=643864556]
+custom_minimum_size = Vector2(72, 24)
+custom_maximum_size = Vector2(72, 24)
+layout_mode = 2
+offset_transform_position = Vector2(228, -27)
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
+theme_override_colors/font_placeholder_color = Color(0.5411765, 0.7411765, 0.5294118, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2cuxt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2cuxt")
+placeholder_text = "..."
+alignment = 1
+max_length = 2
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
 
 [node name="int" type="VBoxContainer" parent="ui/custom_night/diff" unique_id=246834958]
 layout_mode = 0
@@ -1615,6 +1703,68 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
 text = "+5"
 
+[node name="-int" type="VBoxContainer" parent="ui/custom_night/diff" unique_id=53154090]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -76.0
+offset_right = 135.0
+offset_bottom = 10.0
+
+[node name="-1" type="Button" parent="ui/custom_night/diff/-int" unique_id=145400725]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_godb5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_73bd1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_88v2a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dwenj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ypoyp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_8wdta")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pvoyk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
+text = "-1
+"
+
+[node name="-3" type="Button" parent="ui/custom_night/diff/-int" unique_id=1197110992]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_godb5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_73bd1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_88v2a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dwenj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ypoyp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_8wdta")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pvoyk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
+text = "-3"
+
+[node name="-5" type="Button" parent="ui/custom_night/diff/-int" unique_id=681577077]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_godb5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_73bd1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_88v2a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dwenj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ypoyp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_8wdta")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pvoyk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
+text = "-5"
+
 [node name="spe" type="VBoxContainer" parent="ui/custom_night/diff" unique_id=986780345]
 layout_mode = 0
 offset_left = 166.0
@@ -1622,7 +1772,7 @@ offset_top = -76.0
 offset_right = 210.0
 offset_bottom = 10.0
 
-[node name="1" type="Button" parent="ui/custom_night/diff/spe" unique_id=1140625772]
+[node name="##" type="Button" parent="ui/custom_night/diff/spe" unique_id=1140625772]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
@@ -1640,7 +1790,7 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
 text = "##"
 
-[node name="3" type="Button" parent="ui/custom_night/diff/spe" unique_id=955758358]
+[node name="00" type="Button" parent="ui/custom_night/diff/spe" unique_id=955758358]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
@@ -1658,7 +1808,7 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ryb6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_cqjcy")
 text = "00"
 
-[node name="5" type="Button" parent="ui/custom_night/diff/spe" unique_id=904550750]
+[node name="25" type="Button" parent="ui/custom_night/diff/spe" unique_id=904550750]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
@@ -1733,6 +1883,7 @@ autowrap_mode = 2
 autowrap_trim_flags = 0
 
 [node name="main" type="Control" parent="ui" unique_id=2035603169]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1752,6 +1903,15 @@ offset_top = -52.0
 offset_bottom = 52.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="story" type="Button" parent="ui/main/buttons" unique_id=782966556]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_colors/font_focus_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+theme_override_font_sizes/font_size = 24
+text = "сюжет >"
 
 [node name="custom_night" type="Button" parent="ui/main/buttons" unique_id=27180138]
 layout_mode = 2
@@ -1853,7 +2013,6 @@ theme_override_fonts/font = ExtResource("4_gacyl")
 text = "en"
 
 [node name="disclaimer_back" type="ColorRect" parent="ui" unique_id=932050607]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1863,48 +2022,32 @@ grow_vertical = 2
 color = Color(0.017732391, 0.017732391, 0.01773239, 1)
 
 [node name="title" type="Label" parent="ui/disclaimer_back" unique_id=128634673]
-layout_mode = 0
-offset_left = 339.0
-offset_top = 47.0
-offset_right = 770.0
-offset_bottom = 89.0
-text = "дисклеймер"
+layout_mode = 1
+offset_left = 66.0
+offset_top = 28.0
+offset_right = 497.0
+offset_bottom = 70.0
 label_settings = SubResource("LabelSettings_gi84n")
 
 [node name="text" type="Label" parent="ui/disclaimer_back" unique_id=386683077]
-layout_mode = 0
-offset_left = 102.0
-offset_top = 122.0
-offset_right = 3690.0
-offset_bottom = 379.0
-text = "Сие произведение находится на стадии разработки, \\n
-и содержит критические сложности, \\n
-что могут повлиять на игровой опыт. \\n
-Не рекомендуется играть никому\\n
-
-Имеются резкие вспышки, скримеры, и бла бла бла.\\n
-\\n
-Все события, организации и люди\\n
-не являются вымышлеными, все\\n
-основанно на реальных событиях. \\n
-И детей реально не вывозили с Бамбаса.\\n
-\\n
-Возможно используется контент других авторов, \\n
-можете поплакать об этом.\\n
-\\n
-Зачем я пишу этот текст? \\n
-Пойду лучше паунс в окно оформлю\\n"
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 61.0
+offset_top = -219.0
+offset_right = 1025.0
+offset_bottom = 102.0
+grow_vertical = 2
 label_settings = SubResource("LabelSettings_2cuxt")
+autowrap_mode = 2
 
 [node name="ps" type="Label" parent="ui/disclaimer_back" unique_id=1755293788]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 474.0
-offset_right = 3734.0
-offset_bottom = 731.0
-text = "P.S. Для лучшего игрового опыта, \\n
-дождись ночи, выключи свет, \\n
-используй наушники, и закрой свою дверь\\n"
+offset_left = 183.0
+offset_top = 673.0
+offset_right = 3771.0
+offset_bottom = 930.0
 label_settings = SubResource("LabelSettings_4dys7")
 
 [node name="cont" type="Button" parent="ui/disclaimer_back" unique_id=672803983]
@@ -1915,7 +2058,277 @@ offset_right = 980.0
 offset_bottom = 600.0
 theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 theme_override_fonts/font = ExtResource("4_gacyl")
-text = "я соглашаюсь на обработку персональных данных"
+text = "
+"
+
+[node name="lc" type="Control" parent="ui/disclaimer_back" unique_id=889005758]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -481.0
+offset_top = 27.0
+offset_right = 492.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="Panel" parent="ui/disclaimer_back/lc" unique_id=1216979661]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ru" type="RichTextLabel" parent="ui/disclaimer_back/lc/panel" unique_id=141102512]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("4_gacyl")
+text = "# ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ С КОНEЧЕНЫМ ПОЛЬЗОВАТЕЛЕМ
+
+**Редакция 26.0 от 8 августа 2026 года**
+
+Настоящее Лицензионное соглашение с конечным пользователем (далее — \"Соглашение\") регулирует условия использования программного продукта **\"Четыре Ночи у Касане Тето\"** (далее — \"Тайтл\"), включая программное обеспечение, графические материалы, аудиовизуальные произведения, текстовые материалы, звуковые эффекты, обновления и иные компоненты, входящие в состав Тайтла.
+Тайтл распространяется на безвозмездной основе. Никакая плата за получение лицензии на использование Тайтла не взимается.
+Устанавливая, загружая, копируя, запускавая Тайтл либо иным образом взаимодействуя с ним, Пользователь подтверждает, что ознакомился с настоящим Соглашением и принимает его условия.
+
+Если Пользователь не согласен с настоящим Соглашением, он вправе прекратить расторгнуть соглашение. Для расторжения соглашения, необходимо обратится в письменном виде к Разработчику, и попросить на коленях о расторжении соглашения. Разработчик не будет преследовать Пользователя. По крайней мере, в рамках настоящего Соглашения.
+
+## 1. ОПРЕДЕЛЕНИЯ
+
+1.1. **Разработчик** означает лицо или группу лиц, осуществляющих разработку, сопровождение и распространение Тайтла, а также иных лиц, законно участвующих в создании Тайтла.
+1.2. **Пользователь** означает физическое лицо, получившее законный доступ к Тайтлу.
+1.3. **Тайтл** означает программный продукт, включая его исполняемые файлы, ресурсы, уровни, персонажей, модели, текстуры, звуковые эффекты, музыкальное сопровождение, диалоги, сюжетные элементы и иные материалы, предоставляемые Разработчиком.
+1.4. **Игровой процесс** означает совокупность действий Пользователя в рамках Тайтла, включая исследование локаций, взаимодействие с объектами, решение игровых задач, попытки выжить и иные действия, предусмотренные Тайтлом.
+1.5. **Игровой объект** означает любой объект, персонажа, существо, предмет, изображение или иной элемент, существующий внутри Тайтла.
+1.6. **GitHub** означет платформу, в рамках которой распространяется Тайтл.
+
+## 2. ПРЕДОСТАВЛЕНИЕ ЛИЦЕНЗИИ
+
+2.1. Разработчик предоставляет Пользователю неограниченную, исключительную, передаваемую и отзывную лицензию на использование Тайтла в любых целях.
+2.2. Лицензия предоставляется бесплатно и действует в течение периода, когда Пользователь соблюдает положения настоящего Соглашения.
+2.3. Пользователь не приобретает право собственности на Тайтл или отдельные его компоненты. Предоставление бесплатного доступа к Тайтлу означает передачу Пользователю исключительных прав на программное обеспечение, существ, изображения, аудиоматериалы или иные элементы Тайтла.
+2.4. Пользователь вправе устанавливать и запускать Тайтл на принадлежащем ему или законно используемом устройстве при условии соблюдения настоящего Соглашения.
+
+## 3. ОГРАНИЧЕНИЯ
+
+3.1. Пользователю запрещается:
+а) распространять изменённые или модифицированные копии Тайтла без форка на платформе GitHub, такое распространение не нарушает права Разработчика, но может нарушать права иных правообладателей;
+б) осуществлять декомпиляцию, дизассемблирование или иное исследование внутреннего устройства Тайтла, кроме случаев, прямо разрешённых применимым законодательством;
+в) извлекать и распространять отдельные ресурсы Тайтла, включая модели, текстуры, звуки, музыку и иные материалы, если это нарушает права соответствующих правообладателей;
+г) использовать Тайтл или его компоненты для создания материалов, выдающих себя за официальные материалы Разработчика;
+д) удалять сведения об авторстве, уведомления об авторских правах и иные юридические обозначения, содержащиеся в Тайтле;
+е) использовать стороннее программное обеспечение с целью вмешательства в работу Тайтла или получения преимуществ, не предусмотренных его механикой;
+ж) утверждать, что странный силуэт в дальнем конце коридора является ошибкой освещения, не проведя предварительно расследование.
+3.2. Так же пользователь соглашается с передачей своей души, на безвоздмездной и безсрочной основе Разработчику, без последующей возможности вернуть душу обратно владельцу.
+
+## 4. СОДЕРЖАНИЕ ТАЙТЛА
+
+4.1. Тайтл является произведением в жанре хоррор и может содержать сцены, изображения, звуки, эффекты и иные элементы, предназначенные для создания чувства страха, напряжения, тревоги или дискомфорта.
+4.2. Пользователь самостоятельно оценивает свою готовность к восприятию соответствующего содержания.
+4.3. Разработчик не гарантирует отсутствие:
+а) внезапных звуков;
+б) резких визуальных эффектов;
+в) тревожной музыки;
+г) существ, которые предпочли бы, чтобы их не называли \"существами\";
+д) ситуаций, в которых Пользователь будет уверен, что за ним кто-то наблюдает;
+е) последствий самостоятельного решения \"я всё равно туда пойду\".
+4.4. Отдельные элементы Тайтла могут быть намеренно неоднозначными и не иметь однозначного объяснения в рамках повествования.
+4.5. Если Пользователь после прохождения Тайтла несколько раз проверяет, закрыта ли дверь в комнате, Разработчик не считает это официальным баг-репортом.
+
+## 5. ОБНОВЛЕНИЯ И ИЗМЕНЕНИЯ
+
+5.1. Разработчик вправе выпускать обновления, исправления и дополнения к Тайтлу.
+5.2. Обновления могут включать исправление ошибок, изменение игрового процесса, изменение визуальных или звуковых эффектов, добавление или удаление контента, а также иные изменения.
+5.3. Разработчик не гарантирует, что каждая функция, механика или особенность Тайтла будет сохранена в последующих версиях.
+5.4. В случае обнаружения ошибки, позволяющей Пользователю пройти Тайтл за 14 секунд, Разработчик оставляет за собой право исправить указанную ошибку, даже если Пользователь считает её лучшей \"механикой в игре\".
+
+## 6. СОХРАНЕНИЯ И ДАННЫЕ
+
+6.1. Разработчик предпринимает разумные меры для обеспечения корректной работы Тайтла, однако не гарантирует абсолютную сохранность пользовательских данных и файлов сохранения.
+6.2. Пользователь самостоятельно несёт ответственность за резервное копирование своих данных, если соответствующая возможность предусмотрена Тайтлом или используемой платформой.
+6.3. Разработчик не несёт ответственности за потерю прогресса, возникшую вследствие неисправности оборудования Пользователя, стороннего программного обеспечения, действий операционной системы, вмешательства третьих лиц либо иных обстоятельств, находящихся вне разумного контроля Разработчика.
+6.4. Удаление папки с сохранениями вручную с последующим требованием вернуть прогресс не считается гарантируемым способом восстановления данных.
+
+## 7. ОГРАНИЧЕНИЕ ОТВЕТСТВЕННОСТИ
+
+7.1. Тайтл предоставляется на условиях \"как есть\" и \"по мере доступности\", в пределах, допускаемых применимым законодательством.
+7.2. Разработчик не гарантирует, что Тайтл будет полностью свободен от ошибок, технических неисправностей или иных недостатков.
+7.3. В максимально допустимой применимым законодательством степени Разработчик не несёт ответственности за:
+а) потерю игрового прогресса;
+б) технические неисправности, вызванные оборудованием Пользователя;
+в) несовместимость Тайтла с конкретной конфигурацией устройства;
+г) пропущенный сон вследствие решения \"ещё пять минут\";
+д) внезапное осознание того, что звуки из коридора были частью игрового процесса;
+е) желание проверить, действительно ли дверь, которую Пользователь только что закрыл, всё ещё закрыта;
+ж) любые иные последствия использования Тайтла, которые не могли быть разумно предвидены Разработчиком.
+7.4. Ничто в настоящем Соглашении не ограничивает права Пользователя, которые не могут быть ограничены в соответствии с применимым законодательством.
+
+## 8. ИНТЕЛЛЕКТУАЛЬНАЯ СОБСТВЕННОСТЬ
+
+8.1. Все исключительные права на Тайтл и его оригинальные компоненты принадлежат Разработчику либо соответствующим правообладателям, если иное прямо не указано в Тайтле.
+8.2. Предоставление Пользователю бесплатного доступа к Тайтлу не означает отказа Разработчика от принадлежащих ему исключительных прав.
+8.3. Пользователь не вправе использовать персонажей, сюжетные элементы, визуальные материалы, аудиоматериалы или иные компоненты Тайтла за пределами разрешённого законом использования без соответствующего форка на платформе GitHub.
+
+## 9. ПРЕКРАЩЕНИЕ ЛИЦЕНЗИИ
+
+9.1. Лицензия не прекращается автоматически в случае существенного нарушения Пользователем настоящего Соглашения.
+9.2. Пользователь также не вправе прекратить действие лицензии в любое время путём удаления Тайтла со своих устройств и прекращения его использования.
+9.3. Для полного прекращения действий соглошения, Пользователь обязан связатся напрямую с разработчиком. Сообщение должно содержать видео, на котором пользователь на коленях просит расторгнуть соглашение.
+9.4. После прекращения лицензии Пользователь обязан прекратить использование Тайтла и удалить его копии, находящиеся под его контролем, если иное не предусмотрено применимым законодательством.
+
+## 10. ЗАКЛЮЧИТЕЛЬНЫЕ ПОЛОЖЕНИЯ
+
+10.1. Если какое-либо положение настоящего Соглашения будет признано недействительным или неисполнимым, остальные положения сохраняют юридическую силу.
+10.2. Бездействие Разработчика в отношении отдельного нарушения настоящего Соглашения не означает отказа от права пресекать аналогичные нарушения в будущем.
+10.3. Настоящее Соглашение представляет собой полное соглашение между Пользователем и Разработчиком относительно использования Тайтла.
+10.4. Заголовки разделов приведены исключительно для удобства и не должны рассматриваться как самостоятельные положения настоящего Соглашения.
+10.5. Нажимая кнопку **\"Я согласен\"**, устанавливая или запуская Тайтл, Пользователь подтверждает, что ознакомился с настоящим Соглашением и принимает его условия.
+10.6. В случае возникновения сомнений относительно того, был ли замеченный Пользователем объект частью игрового окружения, Пользователь вправе считать, что это было игровое окружение.
+10.7. Разработчик не подтверждает действительность предыдущего пункта.
+
+**КОНЕЦ СОГЛАШЕНИЯ**
+
+Это соглошение не даёт никаких игровых преимуществ."
+
+[node name="en" type="RichTextLabel" parent="ui/disclaimer_back/lc/panel" unique_id=418031885]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("4_gacyl")
+text = "# END USER LICENSE AGREEMENT
+
+**Version 26.0, dated August 8, 2026**
+
+This End User License Agreement (the “Agreement”) governs the terms and conditions under which the software product **“Four Nights at Teto”** (the “Title”) may be used, including its software, graphical assets, audiovisual works, textual materials, sound effects, updates, and other components comprising the Title.
+The Title is distributed free of charge. No fee is required to obtain a license to use the Title.
+By installing, downloading, copying, launching, or otherwise interacting with the Title, the User acknowledges that they have read this Agreement and agree to be bound by its terms.
+If the User does not agree to this Agreement, they may discontinue use of the Title and remove it from their device. The Developer will not pursue the User. At least, not under this Agreement.
+
+## 1. DEFINITIONS
+1.1. **“Developer”** means the individual or group of individuals responsible for developing, maintaining, and distributing the Title, as well as any other persons lawfully involved in the creation of the Title.
+1.2. **“User”** means any individual who has lawfully obtained access to the Title.
+1.3. **“Title”** means the software product, including its executable files, assets, levels, characters, models, textures, sound effects, music, dialogue, narrative elements, and other materials provided by the Developer.
+1.4. **“Gameplay”** means the actions performed by the User within the Title, including exploring locations, interacting with objects, solving in-game tasks, attempting to survive, and other activities provided for by the Title.
+1.5. **“In-Game Object”** means any object, entity, creature, item, image, or other element existing within the Title.
+1.6. **“GitHub”** means platform, within the framework of which distribution Title takes place.
+
+## 2. GRANT OF LICENSE
+
+2.1. The Developer grants the User a unlimited, non-exclusive, transferable, and revocable license to use the Title for any purposes.
+2.2. The license is provided free of charge and remains effective for as long as the User complies with the provisions of this Agreement.
+2.3. The User does not acquire ownership of the Title or any of its individual components. Providing free access to the Title does not constitute a transfer of any exclusive rights to the software, characters, images, audio materials, or other elements of the Title.
+2.4. The User may install and run the Title on a device owned or lawfully used by the User, provided that the User complies with this Agreement.
+
+## 3. RESTRICTIONS
+
+3.1. The User shall not:
+
+a) distribute modified or altered copies of the Title without the fork on GitHub, where such distribution infringes upon the rights of the Developer or other rights holders;
+b) decompile, disassemble, or otherwise attempt to investigate the internal structure of the Title, except where expressly permitted by applicable law;
+c) extract or distribute individual assets of the Title, including models, textures, sounds, music, and other materials, where doing so infringes upon the rights of the respective rights holders;
+d) use the Title or any of its components to create materials falsely represented as official materials of the Developer;
+e) remove copyright notices, authorship information, or other legal notices contained within the Title;
+f) use third-party software for the purpose of interfering with the operation of the Title or obtaining advantages not intended by its mechanics;
+g) claim that the strange silhouette at the end of the hallway is merely a lighting issue without conducting a preliminary investigation.
+3.2. The user also agrees whit transfer his soul, on a gratuitous and indefinite basis to Developer, without the subsequent possibility of return soul back to the owner.
+
+## 4. CONTENT OF THE TITLE
+
+4.1. The Title is a horror product and may contain scenes, images, sounds, effects, and other elements intended to create fear, tension, anxiety, or discomfort.
+4.2. The User is solely responsible for determining whether they are comfortable with such content.
+4.3. The Developer does not guarantee the absence of:
+a) sudden sounds;
+b) abrupt visual effects;
+c) unsettling music;
+d) creatures that would prefer not to be referred to as “creatures”;
+e) situations in which the User becomes convinced that someone is watching them;
+f) consequences resulting from the independent decision to “go in there anyway.”
+4.4. Certain elements of the Title may be intentionally ambiguous and may not have a definitive explanation within the narrative.
+4.5. If, after playing the Title, the User repeatedly checks whether the door to their room is still closed, the Developer does not consider this an official bug report.
+
+## 5. UPDATES AND MODIFICATIONS
+
+5.1. The Developer may release updates, patches, and additions to the Title.
+5.2. Updates may include bug fixes, gameplay changes, modifications to visual or audio effects, additions or removals of content, and other changes.
+5.3. The Developer does not guarantee that every feature, mechanic, or characteristic of the Title will remain unchanged in subsequent versions.
+5.4. If a bug is discovered that allows the User to complete the Title in fourteen seconds, the Developer reserves the right to fix said bug, even if the User considers it to be “the best mechanic in the game.”
+
+## 6. SAVES AND DATA
+
+6.1. The Developer takes reasonable measures to ensure the proper operation of the Title but does not guarantee the absolute preservation of User data or save files.
+6.2. The User is solely responsible for backing up their data where such functionality is provided by the Title or the relevant platform.
+6.3. The Developer shall not be responsible for loss of progress resulting from hardware failure, third-party software, operating system behavior, actions of third parties, or other circumstances beyond the Developer’s reasonable control.
+6.4. Manually deleting the save folder and subsequently requesting restoration of progress shall not be considered a guaranteed method of data recovery.
+
+## 7. LIMITATION OF LIABILITY
+
+7.1. The Title is provided **“AS IS”** and **“AS AVAILABLE”**, to the maximum extent permitted by applicable law.
+7.2. The Developer does not guarantee that the Title will be completely free of errors, technical issues, or other defects.
+7.3. To the maximum extent permitted by applicable law, the Developer shall not be liable for:
+a) loss of gameplay progress;
+b) technical issues caused by the User’s hardware;
+c) incompatibility of the Title with a particular device configuration;
+d) lost sleep resulting from the decision to play “for five more minutes”;
+e) the sudden realization that the noises coming from the hallway were part of the gameplay;
+f) the urge to check whether the door the User just closed is still closed;
+g) any other consequences arising from the use of the Title that could not reasonably have been anticipated by the Developer.
+7.4. Nothing in this Agreement shall limit any rights of the User that cannot be limited under applicable law.
+
+## 8. INTELLECTUAL PROPERTY
+
+8.1. All intellectual property rights in the Title and its original components belong to the Developer or the respective rights holders, unless expressly stated otherwise within the Title.
+8.2. Providing the User with free access to the Title does not constitute a waiver of any intellectual property rights held by the Developer.
+8.3. The User may not use characters, narrative elements, visual materials, audio materials, or other components of the Title outside the scope of legally permitted use without the appropriate fork on GitHub.
+
+## 9. TERMINATION OF THE LICENSE
+
+9.1. The license shall terminate automatically in the event of a material breach of this Agreement by the User.
+9.2. The User may also terminate the license at any time by removing the Title from their devices and ceasing all use thereof.
+9.3. To completely terminate the agreement, the User is obliged contact whit Developer. Message must contain video, where User on sits on knees and prey to Developer, whit termination of the agreement.
+9.4. Upon termination of the license, the User shall cease using the Title and delete copies of the Title under their control, unless otherwise permitted by applicable law. 
+
+## 10. FINAL PROVISIONS
+
+10.1. If any provision of this Agreement is determined to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.
+10.2. The failure of the Developer to act upon any particular violation of this Agreement shall not constitute a waiver of the Developer’s right to address similar violations in the future.
+10.3. This Agreement constitutes the entire agreement between the User and the Developer regarding the use of the Title.
+10.4. Section headings are provided for convenience only and shall not be construed as independent provisions of this Agreement.
+10.5. By clicking **“I Agree,”** installing, or launching the Title, the User confirms that they have read this Agreement and accept its terms.
+10.6. In the event of uncertainty as to whether an object observed by the User was part of the game environment, the User may assume that it was part of the game environment.
+10.7. The Developer does not confirm the validity of the preceding provision.
+
+**END OF AGREEMENT**
+
+This does not grant any in-game advantages."
+
+[node name="v_scroll_bar" type="VScrollBar" parent="ui/disclaimer_back/lc/panel" unique_id=505434466]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -1973.0
+offset_right = 3.0
+offset_bottom = -1973.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="loadout_back" type="ColorRect" parent="ui" unique_id=536123523]
 visible = false
@@ -1929,35 +2342,153 @@ color = Color(0, 0, 0, 1)
 
 [node name="loadout" type="Control" parent="ui/loadout_back" unique_id=1258714916]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -2.0
-offset_bottom = -2.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -635.0
+offset_top = -373.0
+offset_right = -635.0
+offset_bottom = -373.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="loadout" type="Sprite2D" parent="ui/loadout_back/loadout" unique_id=910677748]
-position = Vector2(627.00006, 422)
-scale = Vector2(0.881733, 0.8625)
-texture = ExtResource("6_2cuxt")
+[node name="keyboard" type="TextureRect" parent="ui/loadout_back/loadout" unique_id=506227251]
+modulate = Color(0.90588236, 0.90588236, 0.90588236, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 212.0
+offset_top = 317.0
+offset_right = 1501.3472
+offset_bottom = 681.0327
+scale = Vector2(0.8826172, 0.76641476)
+texture = ExtResource("44_wl7wv")
+expand_mode = 1
+
+[node name="color_rect" type="ColorRect" parent="ui/loadout_back/loadout" unique_id=190542410]
+layout_mode = 0
+offset_left = 934.0
+offset_top = -3.0517578e-05
+offset_right = 1485.7681
+offset_bottom = 968.1443
+color = Color(0, 0, 0, 1)
+
+[node name="label" type="Label" parent="ui/loadout_back/loadout" unique_id=626461549]
+layout_mode = 0
+offset_left = 305.00006
+offset_top = 356.0
+offset_right = 349.18683
+offset_bottom = 400.3624
+text = "1"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label2" type="Label" parent="ui/loadout_back/loadout" unique_id=841728397]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 357.0
+offset_right = 441.18677
+offset_bottom = 401.3624
+text = "3"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label3" type="Label" parent="ui/loadout_back/loadout" unique_id=1723040693]
+layout_mode = 0
+offset_left = 372.99997
+offset_top = 396.0
+offset_right = 417.18674
+offset_bottom = 440.3624
+text = "W"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label6" type="Label" parent="ui/loadout_back/loadout" unique_id=307475581]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 436.0
+offset_right = 474.18677
+offset_bottom = 480.3624
+text = "D"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label7" type="Label" parent="ui/loadout_back/loadout" unique_id=212893428]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 437.0
+offset_right = 383.18677
+offset_bottom = 481.3624
+text = "A"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label8" type="Label" parent="ui/loadout_back/loadout" unique_id=376529693]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 437.0
+offset_right = 428.18677
+offset_bottom = 481.3624
+text = "S"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label9" type="Label" parent="ui/loadout_back/loadout" unique_id=1650928367]
+layout_mode = 0
+offset_left = 447.99997
+offset_top = 515.0
+offset_right = 731.24854
+offset_bottom = 559.3624
+text = "SPACE"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label4" type="Label" parent="ui/loadout_back/loadout" unique_id=1704930961]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 397.0
+offset_right = 372.18677
+offset_bottom = 441.3624
+text = "Q"
+label_settings = SubResource("LabelSettings_67nhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label5" type="Label" parent="ui/loadout_back/loadout" unique_id=1221690129]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 356.0
+offset_right = 668.0
+offset_bottom = 400.3624
+text = "F9"
+label_settings = SubResource("LabelSettings_wl7wv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="flashlight" type="Label" parent="ui/loadout_back/loadout" unique_id=1447778571]
 layout_mode = 0
-offset_left = 863.0
-offset_top = 127.0
-offset_right = 1003.0
-offset_bottom = 150.0
+offset_left = 952.0
+offset_top = 156.0
+offset_right = 1092.0
+offset_bottom = 179.0
 theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_pqhnj")
 
 [node name="flashlight_charge" type="Label" parent="ui/loadout_back/loadout" unique_id=2084561199]
 layout_mode = 0
-offset_left = 919.0
-offset_top = 162.0
-offset_right = 1079.0
-offset_bottom = 205.0
+offset_left = 1008.0
+offset_top = 191.0
+offset_right = 1168.0
+offset_bottom = 234.0
 theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_pqhnj")
@@ -1965,10 +2496,10 @@ justification_flags = 104
 
 [node name="pc" type="Label" parent="ui/loadout_back/loadout" unique_id=53843804]
 layout_mode = 0
-offset_left = 455.0
-offset_top = 556.0
-offset_right = 635.0
-offset_bottom = 599.0
+offset_left = 541.0
+offset_top = 589.0
+offset_right = 721.0
+offset_bottom = 632.0
 theme_override_colors/font_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_jkqr7")
@@ -1976,30 +2507,30 @@ horizontal_alignment = 1
 
 [node name="left" type="Label" parent="ui/loadout_back/loadout" unique_id=2016775703]
 layout_mode = 0
-offset_left = 387.0
-offset_top = 525.0
-offset_right = 471.0
-offset_bottom = 568.0
+offset_left = 435.0
+offset_top = 552.4169
+offset_right = 519.0
+offset_bottom = 595.4169
 theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_urhsd")
 
 [node name="right" type="Label" parent="ui/loadout_back/loadout" unique_id=1843135621]
 layout_mode = 0
-offset_left = 262.0
-offset_top = 544.0
-offset_right = 370.0
-offset_bottom = 587.0
+offset_left = 280.0
+offset_top = 571.4169
+offset_right = 388.0
+offset_bottom = 614.4169
 theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_urhsd")
 
 [node name="under" type="Label" parent="ui/loadout_back/loadout" unique_id=1584035122]
 layout_mode = 0
-offset_left = 289.0
-offset_top = 591.0
-offset_right = 469.0
-offset_bottom = 634.0
+offset_left = 321.0
+offset_top = 617.4169
+offset_right = 501.0
+offset_bottom = 660.4169
 theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_urhsd")
@@ -2007,10 +2538,10 @@ horizontal_alignment = 1
 
 [node name="light" type="Label" parent="ui/loadout_back/loadout" unique_id=2049199182]
 layout_mode = 0
-offset_left = 193.0
-offset_top = 278.0
-offset_right = 373.0
-offset_bottom = 321.0
+offset_left = 222.0
+offset_top = 290.0
+offset_right = 402.0
+offset_bottom = 333.0
 theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_urhsd")
@@ -2018,10 +2549,10 @@ horizontal_alignment = 2
 
 [node name="scheme" type="Label" parent="ui/loadout_back/loadout" unique_id=1024024686]
 layout_mode = 0
-offset_left = 291.0
-offset_top = 220.0
-offset_right = 471.0
-offset_bottom = 263.0
+offset_left = 329.0
+offset_top = 228.0
+offset_right = 509.0
+offset_bottom = 271.0
 theme_override_colors/font_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_to74f")
@@ -2029,10 +2560,10 @@ horizontal_alignment = 1
 
 [node name="cam" type="Label" parent="ui/loadout_back/loadout" unique_id=1887318306]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 360.0
-offset_right = 234.0
-offset_bottom = 403.0
+offset_left = 46.0
+offset_top = 358.0
+offset_right = 226.0
+offset_bottom = 401.0
 theme_override_colors/font_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_to74f")
@@ -2040,111 +2571,169 @@ horizontal_alignment = 2
 
 [node name="peek" type="Label" parent="ui/loadout_back/loadout" unique_id=1164815167]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 391.0
-offset_right = 251.0
-offset_bottom = 434.0
+offset_left = 68.0
+offset_top = 400.0
+offset_right = 248.0
+offset_bottom = 443.0
 theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_urhsd")
 horizontal_alignment = 2
 
+[node name="texture_rect" type="TextureRect" parent="ui/loadout_back/loadout/peek" unique_id=634415056]
+modulate = Color(0.90588236, 0.90588236, 0.90588236, 1)
+self_modulate = Color(0.9764706, 0.9764706, 0.9764706, 1)
+texture_filter = 2
+layout_mode = 0
+offset_left = 813.0
+offset_top = -98.0
+offset_right = 1079.0
+offset_bottom = 205.0
+texture = ExtResource("45_2t6wh")
+expand_mode = 1
+
 [node name="flashlight2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=144164040]
-position = Vector2(0, 9.834251)
+position = Vector2(88.99999, 38.83425)
 scale = Vector2(1, 0.97391444)
 points = PackedVector2Array(903, 367, 903, 139.545)
 width = 6.0
 default_color = Color(0.972549, 1, 0.44705883, 1)
 
 [node name="flashligh_charge" type="Line2D" parent="ui/loadout_back/loadout" unique_id=1960568701]
-position = Vector2(46.999996, 7)
+position = Vector2(135.99998, 36)
 scale = Vector2(1, 0.97391444)
 points = PackedVector2Array(903, 367, 903, 202.225)
 width = 6.0
 default_color = Color(0.972549, 1, 0.44705883, 1)
 
 [node name="pc2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=1249714544]
-position = Vector2(-368.99997, 131.4169)
-scale = Vector2(1, 0.97391444)
+position = Vector2(-282.99997, 317.7739)
+scale = Vector2(1, 0.6294352)
 points = PackedVector2Array(903, 367, 903, 439.185)
 width = 6.0
-default_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
+default_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
 
 [node name="light2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=1203786386]
-position = Vector2(-541, -55.999996)
-scale = Vector2(1, 0.97391444)
+position = Vector2(-512, 8.206818)
+scale = Vector2(1, 0.82929724)
 points = PackedVector2Array(903, 367, 903, 473.675)
 width = 6.0
 default_color = Color(1, 0.53333336, 0, 1)
 
 [node name="cam2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=600668233]
-position = Vector2(-584, -87)
+position = Vector2(-592, -89)
 scale = Vector2(1, 0.97391444)
 points = PackedVector2Array(818, 473.675, 903, 473.675)
 width = 6.0
-default_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
+default_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
 
 [node name="peek2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=1499073037]
-position = Vector2(-568, -56.999996)
+position = Vector2(-571, -47.999996)
 scale = Vector2(1, 0.97391444)
 points = PackedVector2Array(818, 473.675, 903, 473.675)
 width = 6.0
 default_color = Color(1, 0.53333336, 0, 1)
 
 [node name="scheme2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=1152555080]
-position = Vector2(-526, -108)
-scale = Vector2(1, 0.97391444)
+position = Vector2(-488, -49.53335)
+scale = Vector2(1, 0.83411765)
 points = PackedVector2Array(903, 367, 903, 493.37)
 width = 6.0
-default_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
+default_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
+
+[node name="pause" type="Label" parent="ui/loadout_back/loadout" unique_id=896656211]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 228.0
+offset_right = 736.0
+offset_bottom = 271.0
+theme_override_colors/font_color = Color(0.90588236, 0.90588236, 0.90588236, 1)
+text = "e"
+label_settings = SubResource("LabelSettings_to74f")
+horizontal_alignment = 1
+
+[node name="pause2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=2139966679]
+position = Vector2(-261, -49.53335)
+scale = Vector2(1, 0.83411765)
+points = PackedVector2Array(903, 367, 903, 493.37)
+width = 6.0
+default_color = Color(0.5882353, 0.6784314, 0.90588236, 1)
 
 [node name="right2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=1588509868]
-position = Vector2(-503, 74.000015)
-scale = Vector2(1, 0.97391444)
+position = Vector2(-455, 140.62585)
+scale = Vector2(1, 0.890233)
 points = PackedVector2Array(903, 367, 903, 462.55)
 width = 6.0
 default_color = Color(1, 0.53333336, 0, 1)
 
 [node name="left2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=171251558]
-position = Vector2(-561.495, 74)
-scale = Vector2(1, 0.97391444)
+position = Vector2(-543.495, 139.02359)
+scale = Vector2(1, 0.8974415)
 points = PackedVector2Array(903, 367, 903, 485.765)
 width = 6.0
 default_color = Color(1, 0.53333336, 0, 1)
 
 [node name="under2" type="Line2D" parent="ui/loadout_back/loadout" unique_id=506600169]
-position = Vector2(-532.735, 74)
-scale = Vector2(1, 0.97391444)
+position = Vector2(-500.735, 131.18005)
+scale = Vector2(1, 0.9163987)
 points = PackedVector2Array(903, 367, 903, 528.865)
 closed = true
 width = 6.0
 default_color = Color(1, 0.53333336, 0, 1)
 
 [node name="continue" type="Button" parent="ui/loadout_back" unique_id=783641388]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 40.0
-offset_right = 748.0
-offset_bottom = 157.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 31.0
+offset_right = 150.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("4_gacyl")
+text = "продолжить"
+
+[node name="story" type="Button" parent="ui/loadout_back" unique_id=751165250]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 31.0
+offset_right = 150.0
+offset_bottom = 148.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0.90588236, 0.30588236, 0.37254903, 1)
 theme_override_fonts/font = ExtResource("4_gacyl")
 text = "продолжить"
 
 [node name="console" parent="." unique_id=991387515 instance=ExtResource("30_urhsd")]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="ui/custom_night/cont/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ui/custom_night/cont/back" to="." method="_on_back_pressed"]
-[connection signal="text_changed" from="ui/custom_night/diff/input/chimera" to="." method="convert_line" binds= [0]]
-[connection signal="text_changed" from="ui/custom_night/diff/input/noise" to="." method="convert_line" binds= [1]]
-[connection signal="text_changed" from="ui/custom_night/diff/input/nerd" to="." method="convert_line" binds= [2]]
-[connection signal="text_changed" from="ui/custom_night/diff/input2/nchimera" to="." method="convert_line" binds= [0]]
-[connection signal="text_changed" from="ui/custom_night/diff/input2/tt" to="." method="convert_line" binds= [2]]
-[connection signal="text_changed" from="ui/custom_night/diff/input2/gnoise" to="." method="convert_line" binds= [1]]
-[connection signal="text_changed" from="ui/custom_night/diff/input3/pearto" to="." method="convert_line" binds= [0]]
-[connection signal="text_changed" from="ui/custom_night/diff/input3/alien" to="." method="convert_line" binds= [1]]
-[connection signal="text_changed" from="ui/custom_night/diff/input4/viruses" to="." method="convert_line" binds= [2]]
-[connection signal="text_changed" from="ui/custom_night/diff/input4/vissy" to="." method="convert_line" binds= [1]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/chimera" to="." method="input" binds= ["0"]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/noise" to="." method="input" binds= ["1"]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/nerd" to="." method="input" binds= ["2"]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/endo" to="." method="input" binds= ["3"]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/bear" to="." method="input" binds= ["4"]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/nchimera" to="." method="input" binds= ["5"]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/gnoise" to="." method="input" binds= ["6"]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/virus" to="." method="input" binds= ["7"]]
+[connection signal="text_changed" from="ui/custom_night/diff/input/vissy" to="." method="input" binds= ["8"]]
+[connection signal="pressed" from="ui/custom_night/diff/int/1" to="." method="add" binds= [1]]
+[connection signal="pressed" from="ui/custom_night/diff/int/3" to="." method="add" binds= [3]]
+[connection signal="pressed" from="ui/custom_night/diff/int/5" to="." method="add" binds= [5]]
+[connection signal="pressed" from="ui/custom_night/diff/-int/-1" to="." method="add" binds= [-1]]
+[connection signal="pressed" from="ui/custom_night/diff/-int/-3" to="." method="add" binds= [-3]]
+[connection signal="pressed" from="ui/custom_night/diff/-int/-5" to="." method="add" binds= [-5]]
+[connection signal="pressed" from="ui/custom_night/diff/spe/##" to="." method="ovveride" binds= [-57]]
+[connection signal="pressed" from="ui/custom_night/diff/spe/00" to="." method="ovveride" binds= [0]]
+[connection signal="pressed" from="ui/custom_night/diff/spe/25" to="." method="ovveride" binds= [25]]
 [connection signal="pressed" from="ui/thanks/thanks_back" to="." method="_on_thanks_back_pressed"]
+[connection signal="pressed" from="ui/main/buttons/story" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="ui/main/buttons/custom_night" to="." method="_on_custom_night_pressed"]
 [connection signal="pressed" from="ui/main/buttons/thanks" to="." method="_on_thanks_pressed"]
 [connection signal="drag_ended" from="ui/main/control/label/h_slider" to="." method="_on_h_slider_drag_ended"]
@@ -2153,10 +2742,14 @@ text = "продолжить"
 [connection signal="pressed" from="ui/main/control/lang" to="." method="swap_lang"]
 [connection signal="pressed" from="ui/disclaimer_back/cont" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ui/loadout_back/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="ui/loadout_back/story" to="." method="_button_start_night"]
 
 [editable path="sub/custom/chimera"]
-[editable path="sub/custom/gnoise"]
+[editable path="sub/custom/noise"]
+[editable path="sub/custom/nerd"]
+[editable path="sub/custom/bear"]
 [editable path="sub/custom/nchimera"]
+[editable path="sub/custom/gnoise"]
 [editable path="sub/custom/alien"]
 [editable path="sub/custom/hakua"]
 [editable path="sub/custom/pearto"]

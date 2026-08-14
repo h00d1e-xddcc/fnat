@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0aiv8bpag031"
+path="res://.godot/imported/[65] mememe.ogg-517b0b603a66d41b978c5d151de389ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pg_sm/en/[65] mememe.ogg"
+dest_files=["res://.godot/imported/[65] mememe.ogg-517b0b603a66d41b978c5d151de389ee.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="fnat_night" format=3 uid="uid://bs45qku0yat5c"]
+
+[ext_resource type="Script" uid="uid://bbbvwvgyoyx18" path="res://code/night.gd" id="1_gi5jq"]
+
+[resource]
+script = ExtResource("1_gi5jq")
+is_static_diffucult = false
+is_can_random_event = false
+start_night = 6
+metadata/_custom_type_script = "uid://bbbvwvgyoyx18"

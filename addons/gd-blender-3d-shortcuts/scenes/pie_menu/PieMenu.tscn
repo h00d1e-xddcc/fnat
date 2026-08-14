@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://h0bknamdm5xo"]
 
-[sub_resource type="Resource" id="Resource_twl2p"]
-metadata/__load_path__ = "res://addons/gd-blender-3d-shortcuts/scenes/pie_menu/PieMenu.gd"
-
-[node name="PieMenu" type="Control"]
+[node name="PieMenu" type="Control" unique_id=782204761]
 visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource("Resource_twl2p")
+grow_horizontal = 2
+grow_vertical = 2

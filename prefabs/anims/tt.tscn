@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmvg82bprk781"]
 
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="1_kj8hq"]
-[ext_resource type="ArrayMesh" uid="uid://boc4dshhrqyg3" path="res://prefabs/mesh/fnat_tt_smile.res" id="2_srxjj"]
+[ext_resource type="ArrayMesh" uid="uid://dds8mbiwgxevl" path="res://prefabs/mesh/fnat_tt_smile.res" id="2_srxjj"]
 
 [node name="tt" type="Node3D" unique_id=1308891161]
 script = ExtResource("1_kj8hq")

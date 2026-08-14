@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwd07am6xqufj"
+path="res://.godot/imported/[142] Foxy1.ogg-7058ef2d9cfe90c4fc77816be3a719c0.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/pg_sm/en/[142] Foxy1.ogg"
+dest_files=["res://.godot/imported/[142] Foxy1.ogg-7058ef2d9cfe90c4fc77816be3a719c0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
