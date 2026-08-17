@@ -8,7 +8,6 @@ extends Node3D
 @export var time : float
 @export var batary : float = 57.9
 @export var lang : fnat_lange
-@export var volume : int = 15
 @export var diff : Array[int] = [0,0,0,0,0,0,0,0,0]
 @export var rand_event : bool
 @export var rand_pg : bool
@@ -20,6 +19,7 @@ extends Node3D
 @export var save : fnat_save
 @export var deads : int
 @export var loss : bool = false
+@export var iddqd : bool
 
 signal out_of_power
 signal second_pass
@@ -52,7 +52,6 @@ func loadout() -> void:
 		await get_tree().create_timer(1).timeout
 		emit_signal("second_pass")
 
-
 func deloadout() :
 	arc_event.connect_all()
 	user = null
@@ -70,7 +69,11 @@ func pass_time() :
 			arc.user.anims[i].ai_lvl = 0
 		arc.user.process_mode = Node.PROCESS_MODE_DISABLED
 		await get_tree().create_timer(.257).timeout
+		arc.loss = true
 		SceneManager.set_title("")
+		if arc.night.true_night : 
+			arc.save.night += 1
+			arc.save_settings()
 		SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"}, true )
 	arc.screen.update_text()
 	batary -= 1 * usage * .075
@@ -135,11 +138,11 @@ func pause() :
 
 func run_out_power() :
 	out_of_power.disconnect(run_out_power)
-	user.audios["fan"].playing = false
-	user.audios["spot"].playing = false
+	user.source["fan"].playing = false
+	user.source["spot"].playing = false
 	user.spot_light.visible = false
 	screen.visible = false
-	arc_event.play_sfx({"type" = "2d", "path" = "user/pause_error"})
+	arc_event.play_sfx({"type" = "2d", "path" = "user/power_down", "volume" = -7})
 
 func add_word(id : String, word : String) :
 	lang.dictionary[id] = word 
@@ -170,9 +173,9 @@ func retranslate_title() :
 	get_node("/root/main_menu/ui/main/buttons/thanks").text = lang.get_word("ui_thanks")
 	get_node("/root/main_menu/ui/thanks/label").text = lang.get_word("ui_thanks_text")
 	get_node("/root/main_menu/ui/thanks/thanks_back").text = lang.get_word("ui_back")
-	get_node("/root/main_menu/ui/main/control/label").text = lang.get_word("ui_volume")
-	get_node("/root/main_menu/ui/main/control/v_box_container/v-sync").text = lang.get_word("ui_v-sync")
-	get_node("/root/main_menu/ui/main/control/v_box_container/full-screen").text = lang.get_word("ui_fullscreen")
+	#get_node("/root/main_menu/ui/main/control/label").text = lang.get_word("ui_volume")
+	get_node("/root/main_menu/ui/build/control/v_box_container/v-sync").text = lang.get_word("ui_v-sync")
+	get_node("/root/main_menu/ui/build/control/v_box_container/full-screen").text = lang.get_word("ui_fullscreen")
 	get_node("/root/main_menu/ui/custom_night/cont/start").text = lang.get_word("ui_cont")
 	get_node("/root/main_menu/ui/custom_night/cont/p_s_").text = lang.get_word("p.s.")
 	get_node("/root/main_menu/ui/custom_night/cont/back").text = lang.get_word("ui_back")
@@ -194,8 +197,13 @@ func retranslate_title() :
 	get_node("/root/main_menu/ui/loadout_back/loadout/pause").text = lang.get_word("ui_pause")
 	get_node("/root/main_menu/ui/loadout_back/loadout/cam").text = lang.get_word("ui_cam")
 	get_node("/root/main_menu/ui/loadout_back/loadout/peek").text = lang.get_word("ui_peek")
+	get_node("/root/main_menu/ui/main/buttons/settings").text = lang.get_word("ui_build")
 	
 	get_node("/root/main_menu/sub/thanks/da_rules/label").text = lang.get_word("da_rules")
 	get_node("/root/main_menu/sub/thanks/board/thanks").text = lang.get_word("ui_thanks")
 	get_node("/root/main_menu/sub/thanks/board/ad").text = lang.get_word("thanks_ad")
+	
+	get_node("/root/main_menu/ui/build/warning").text = lang.get_word("ui_warn")
+	get_node("/root/main_menu/ui/build/control/v_box_container/option_button").set_item_text(0, lang.get_word("ui_voice"))
+	
 	

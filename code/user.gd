@@ -54,10 +54,12 @@ func _process(delta):
 					if flash_light_charge > 0 :
 						get_node("/root/main/nchimera").hunger -= 85 * delta * (flash_light_charge / 50)
 						if get_node("/root/main/nchimera").hunger <= 0:
-							arc.user.blink(.31)
+							blink(.31)
 							get_node("/root/main/nchimera").poof()
 				"gnoise" :
-					get_node("/root/main/gnoise").emit_signal("in_office")
+					if get_node("/root/main/gnoise").hunger > 100 :
+						get_node("/root/main/gnoise").emit_signal("in_office")
+					elif flash_light_charge > 0 : flashlight_brake()
 				_: 
 					if Input.is_action_just_pressed("light") and result.collider is fnat_interact_object : result.collider.touch()
 			flash_light.look_at(result.position)
@@ -142,14 +144,12 @@ func recharge() :
 	arc_event.play_sfx({"path" = "user/flashlight_charge", "volume" = -3})
 
 func flashlight_brake() :
+	arc.user.flash_light.visible = false
 	arc.user.flash_light_charge = 0
 	arc_event.play_sfx({"path" = "user/flashlight_die", "volume" = -3})
 
 func cancel_call() :
-	var node = get_node("/root/arc/user_call_" + arc.lang.get_lange())
-	if node != null : 
-		node.queue_free()
-		arc_event.play_sfx({"path" = "user/math_correct"})
+	source["call"].stop()
 
 func shake_pos(inten : float = .02, dur : float = .25) :
 	if is_shaking : return
@@ -230,7 +230,7 @@ func _on_right_trigger_mouse_entered() -> void:
 
 func _input(event) :
 	#if event.is_action_pressed("ui_cancel") : get_tree().quit()
-	if state != action.pc : return
+	if state != action.pc or spot_light.visible == false: return
 
 	if Input.is_action_just_pressed("light") and interaction :
 		interaction = null
@@ -242,23 +242,24 @@ func _input(event) :
 		set_physics_process(false)
 
 	if arc.screen.teto_input.visible == true and event is InputEventKey and event.pressed:
+		var line = get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/input")
+		var text = char(event.unicode)
 		if event.unicode != 0 :
-			var line = get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/input")
-			var text = char(event.unicode)
 			if text == " " : return
 			line.text += str(text)
 			if line.text == "gimmestar" :
 				arc.save.stars[5] = true
 				arc.save_settings()
+				arc_event.popup(preload("res://pics/479.png"), arc.lang.get_word("p_star"), arc.lang.get_word("p_cho"))
 			if line.text == arc.screen.teto_word :
 				arc.screen.teto_input.visible = false
 
-			if line.text.length() == 10 :
-				line.text = ""
-				line.visible = true
-				arc.batary -= 1
-				get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/bozo").visible = true
-				arc_event.play_sfx({"path" = "user/fish_miss"})
+		if event.keycode == KEY_BACKSPACE or line.text.length() == 18 :
+			line.text = ""
+			line.visible = true
+			arc.batary -= 1
+			get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/bozo").visible = true
+			arc_event.play_sfx({"path" = "user/fish_miss"})
 
 func blink(time : float = 0) :
 	blink_screen.visible = true
@@ -290,7 +291,7 @@ func _ready() -> void:
 	var joke_dead : String = ""
 	var to_play : String = ""
 	match arc.night.start_night :
-		0 : to_play = "ambient/calls/" + arc.save.lange + "/night0"
+		0 : to_play = "ambient/short/noise"
 		1 : 
 			match arc.save.night1_deads :
 				1 : joke_dead = "ambient/calls/" + arc.save.lange + "/first"
@@ -322,6 +323,6 @@ func _ready() -> void:
 		await get_tree().create_timer(source["call"].stream.get_length() + .257).timeout
 	source["call"].stream = load("res://resources/sounds/" + to_play + ".ogg")
 	source["call"].play()
-
+	
 	#arc_event.play_sfx({"type" = "2d", "path" = "ambient/calls/" + arc.save.lange + arc.night.resource_name})
 	#if randi_range(0,100 > 90) : arc_event.play_some_event("long")

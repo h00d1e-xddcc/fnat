@@ -96,7 +96,7 @@ func play_uniq_room_sfx() :
 			if roll > 60 and arc.room_check(-1 , "backstage") : to_play = "ambient/room/backstage1"
 		"enter" : 
 			to_play = "ambient/room/enter"
-			volume = -13
+			volume = -18
 		"main_stage" :
 			if roll > 95 :
 				to_play = "ambient/long/circus"
@@ -107,10 +107,11 @@ func play_uniq_room_sfx() :
 			if arc.room_check(3, "kitchen") :
 				to_play = "anim/bear/cooking/" + str(randi_range(0,4))
 	if to_play == "" : return
-	arc_event.play_sfx({"path" = to_play, "volume" = volume})
+	volume -= - arc.save.volume
+	play(to_play, volume)
 
 func play(path : String, vol_degr : int = 0, rand : bool = true) :
-	sfx.stream = arc.sounds[path]
+	sfx.stream = load("res://resources/sounds/" + path + ".ogg")
 	sfx.volume_db = vol_degr
 	if rand :  sfx.play(randi_range(0, sfx.stream.get_length()))
 	else : sfx.play()
@@ -158,16 +159,19 @@ func teto_word_of_the_day():
 
 func advestment(value : int = -1) :
 	if randi_range(0,100) > adblock : return
-	var roll = randi_range(0,27)
+	var roll = randi_range(0,109)
+	if value != -1 : roll = value
 	if arc.save.lange == "ru" and randi_range(0, 100) > 90 :
-		ad.get_node("panel/sprite").texture = load("res://pics/ad/ru/" + str(randi_range(0,5)) + ".jpg")
+		ad.get_node("panel/sprite").texture = load("res://pics/ad/ru/" + str(randi_range(0,7)) + ".jpg")
 	else :
 		ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".jpg")
 		if ad.get_node("panel/sprite").texture == null : ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".webp")
 		if ad.get_node("panel/sprite").texture == null : ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".png")
-	
-	ad_source.stream = load("res://resources/sounds/anim/virus/" + str(randi_range(0,6)) + ".ogg")
-	ad_source.volume_db = randi_range(-8, -1)
+
+	var roll_audio = str(randi_range(0,12))
+	ad_source.stream = load("res://resources/sounds/anim/virus/" + roll_audio + ".ogg")
+	if roll_audio == "9" : ad_source.volume_db = randi_range(-25, -18)
+	else : ad_source.volume_db = randi_range(-8, -1)
 	ad_source.play(1)
 	if ad.get_node("panel/sprite").texture == null :
 		if arc.save.lange == "ru" :
@@ -247,12 +251,7 @@ func _vissy(extra_arg_0: int) -> void:
 		2 : adblock -= 10
 		3 : arc.batary += randi_range(3,8)
 		4 : arc.user.anims[randi_range(0,4)].ai_lvl -= randi_range(5, 10)
-		5 : 
-			var roll = randi_range(0,4)
-			var ai = arc.user.anims[roll].ai_lvl
-			arc.user.anims[roll].ai_lvl = -1
-			await get_tree().create_timer(60).timeout
-			arc.user.anims[roll].ai_lvl = ai
+		5 : arc_event.rand_temp_disable()
 		6 :
 			arc.user.flashlight_broke_factor -= 10
 			arc.user.flashlight_loss_factor -= .20
@@ -270,9 +269,9 @@ func _vissy(extra_arg_0: int) -> void:
 			if arc.user.flashlight_broke_factor > 100 : arc.user.flashlight_broke_factor = 100
 		11 : cool_down += .15
 		12 : arc.batary -= randi_range(10,15)
-		13 : OS.crash("еще не сделано")
+		13 : pass
 		14 : _vissy(randi_range(0,17))
-		15 : OS.crash("еще не сделано")
+		15 : pass
 		16 : arc.batary -= randi_range(10,20)
 		17 : arc.batary += randi_range(3,7)
 	get_node("sub/ui/vissy").visible = false

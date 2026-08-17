@@ -33,6 +33,7 @@ enum behavior_type {DIFF, TIME, DEMO}
 signal in_office
 
 func jumpscare() :
+	if arc.iddqd : return
 	in_office.disconnect(jumpscare)
 	for i in arc.user.anims.size() :
 		arc.user.anims[i].ai_lvl = -1
@@ -51,7 +52,7 @@ func jumpscare() :
 	arc.user.change_state(4)
 	arc.user.flash_light.visible = false
 	get_node("/root/main/office/user/omni").visible = true
-	set_face(face_scream)
+	set_face("rage")
 	global_position = arc.user.global_position + (-arc.user.global_transform.basis.z * 1)
 	global_position.y -= 2
 	look_at(arc.user.global_position)
@@ -68,14 +69,24 @@ func jumpscare() :
 	await get_tree().create_timer(1.41).timeout
 	arc.deloadout()
 	var time : int
-	match name :
-		"bear", "endo" : time = randi_range(0,4)
-		_ : time = randi_range(0,9)
-	if talk : 
-		await  get_tree().create_timer(await arc_event.play_sfx({"path" = "anim/" + name + "/" + arc.save.lange + "/" + str(time), "volume" = 3}) + 2.57).timeout
-	else : await get_tree().create_timer(2.57).timeout
-	arc.deads += 1
-	arc.save.deads = arc.deads
+	match arc.save.voiceover :
+		1 :
+			match name :
+				"bear", "endo" : time = randi_range(0,4)
+				_ : time = randi_range(0,9)
+			if talk : await  get_tree().create_timer(await arc_event.play_sfx({"path" = "anim/" + name + "/en/" + str(time), "volume" = 3}) + 2.57).timeout
+
+		2 :
+			match name :
+				"bear", "endo" : time = randi_range(0,4)
+				_ : time = randi_range(0,9)
+			if talk : await  get_tree().create_timer(await arc_event.play_sfx({"path" = "anim/" + name + "/ru/" + str(time), "volume" = 3}) + 2.57).timeout
+	await get_tree().create_timer(2.57).timeout
+	match  arc.night.start_night :
+		1 : arc.save.night1_deads += 1
+		2 : arc.save.night1_deads += 1
+		6 : arc.save.night1_deads += 1
+	arc.save_settings()
 	SceneManager.set_title("")
 	SceneManager.change_scene("res://prefabs/misc/main_menu.tscn", {"pattern" : "curtians"}, true)
 
@@ -99,6 +110,7 @@ func move() :
 			await get_tree().create_timer(2.57).timeout
 			#rotate_head()
 			arc_event.play_sfx({"path" = "anim/"+ name + "/move", "volume" = -randi_range(-12, 6)})
+			hunger = 100
 			animator.play(move_to.get_pose())
 			arc.user.blink(.257)
 			global_position = move_to.global_position
@@ -173,23 +185,25 @@ func toss_roll(force : int = 0) :
 						#else : arc.play_external(noise, "anim/noise/bass/вещественное_доказательсво", 17, randf_range(0, 7))
 						#is_lock = true
 				"nchimera" :
-					arc.user.blink(.257)
-					if current_point.flag == "office" : return
-					var nc = get_node("/root/main/path/nchimera")
-					hunger = 100
-					current_point = nc.get_child(randi_range(0, 8))
-					global_position = current_point.global_position
-					rotation = current_point.rotation
-					arc_event.play_sfx({"path" = "anim/nchimera/" + str(randi_range(0,3)), "volume" = randi_range(-15, -8)})
-					#rotate_head()
+					if randi_range(0,100) > 80 - ai_lvl : 
+						if current_point.flag == "office" : return
+						arc.user.blink(.257)
+						var nc = get_node("/root/main/path/nchimera")
+						hunger = 100
+						current_point = nc.get_child(randi_range(0, 8))
+						global_position = current_point.global_position
+						rotation = current_point.rotation
+						arc_event.play_sfx({"path" = "anim/nchimera/" + str(randi_range(0,3)), "volume" = randi_range(-15, -8)})
+						#rotate_head()
 				"gnoise" :
-					arc.user.blink(.257)
-					if current_point.flag == "office" : return
-					var gn = get_node("/root/main/path/gnoise")
-					hunger = 100
-					current_point = gn.get_child(randi_range(0, 5))
-					global_position = current_point.global_position
-					rotation = current_point.rotation
+					if randi_range(0,100) > 80 - ai_lvl : 
+						if current_point.flag == "office" : return
+						arc.user.blink(.257)
+						var gn = get_node("/root/main/path/gnoise")
+						hunger = 80
+						current_point = gn.get_child(randi_range(0, 5))
+						global_position = current_point.global_position
+						rotation = current_point.rotation
 				"virus" : arc.screen.teto_word_of_the_day()
 				"vissy" : arc.screen.summon_vissy()
 				_ : move()
@@ -270,6 +284,9 @@ func _process(delta: float) -> void:
 				if arc.user.spot_light.visible == false:
 					emit_signal("in_office")
 					in_office.disconnect(jumpscare)
+				if hunger >= 140: 
+					poof()
+				else : hunger += 5 * delta
 
 			"bear" :
 				if arc.user.state != arc.user.action.hide and arc.user.spot_light.visible == false :

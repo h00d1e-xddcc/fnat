@@ -886,7 +886,6 @@ theme_override_fonts/font = ExtResource("1_8bix8")
 text = "+13 энергии"
 
 [node name="word_minigame" type="Control" parent="." unique_id=834981706]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -941,7 +940,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yrs8n")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_2kba4")
 placeholder_text = "#####"
 alignment = 1
-max_length = 12
+max_length = 18
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false

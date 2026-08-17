@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dhef0j0xu7tew"]
+
+[ext_resource type="Texture2D" uid="uid://bbt5ts06oyjmv" path="res://pics/popup.png" id="1_x6faw"]
+[ext_resource type="Texture2D" uid="uid://cbe2gwbq8mixn" path="res://pics/fatass.png" id="2_olhww"]
+[ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="3_4xafu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_67nhv"]
+font = ExtResource("3_4xafu")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_x6faw"]
+font = ExtResource("3_4xafu")
+font_size = 7
+
+[node name="popup" type="TextureRect" unique_id=1236309352]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = 2.0
+offset_right = 0.00024414063
+offset_bottom = 83.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_visual_only = false
+texture = ExtResource("1_x6faw")
+expand_mode = 1
+
+[node name="image" type="TextureRect" parent="." unique_id=1297985612]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -35.0
+offset_right = 74.0
+offset_bottom = 29.0
+grow_vertical = 2
+texture = ExtResource("2_olhww")
+expand_mode = 1
+
+[node name="title" type="Label" parent="." unique_id=875737703]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -178.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = 29.0
+grow_horizontal = 0
+text = "Star obtained"
+label_settings = SubResource("LabelSettings_67nhv")
+autowrap_mode = 1
+
+[node name="descr" type="Label" parent="." unique_id=774174287]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -179.00024
+offset_top = -44.0
+offset_right = -10.000244
+offset_bottom = 3.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Put some long description, to take this space,and fill void into my heart"
+label_settings = SubResource("LabelSettings_x6faw")
+autowrap_mode = 2

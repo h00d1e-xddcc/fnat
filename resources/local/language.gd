@@ -34,7 +34,7 @@ func retranslate_screen() :
 	arc.get_node("/root/main/office/screen/sub/ui/ad/panel/sprite/button").text = get_word("ui_cont")
 	
 	arc.get_node("/root/main/office/screen/sub/ui/vissy/panel/grid_container/0").text = get_word("vb_nothing")
-	arc.get_node("/root/main/office/screen/sub/ui/vissy/panel/grid_container/1").text = get_word("vb_antiviru")
+	arc.get_node("/root/main/office/screen/sub/ui/vissy/panel/grid_container/1").text = get_word("vb_antivirud")
 	arc.get_node("/root/main/office/screen/sub/ui/vissy/panel/grid_container/2").text = get_word("vb_adblock")
 	arc.get_node("/root/main/office/screen/sub/ui/vissy/panel/grid_container/3").text = get_word("vb_power")
 	arc.get_node("/root/main/office/screen/sub/ui/vissy/panel/grid_container/4").text = get_word("vb_weak")

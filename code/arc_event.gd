@@ -61,6 +61,7 @@ func play_sfx(d : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, 
 			return 0
 
 	sfx.volume_db = dict.get("volume", 15)
+	sfx.volume_db -= - arc.save.volume
 	sfx.stream = audio
 	sfx.name = dict["path"]
 	sfx.finished.connect(func() : sfx.queue_free())
@@ -77,7 +78,8 @@ func play_some_event(event : String) :
 	match event :
 		#"long" :
 		"start" :
-			var roll = randi_range(0,15)
+			var roll = randi_range(0,13)
+			var amplify_vol = randi_range(-7,7)
 			match roll :
 				0 : 
 					dict["path"] = "ambient/short/dog" 
@@ -113,7 +115,8 @@ func play_some_event(event : String) :
 					dict["path"] = "ambient/short/fire_alarm" 
 					dict["volume"] = -24
 				_: arc.user.blink(randf_range(0.15, 2.56))
-				
+			dict["volume"] += amplify_vol
+
 		"mental":
 			var roll = randi_range(0,6)
 			dict["volume"] = randi_range(-20, -6)
@@ -125,20 +128,26 @@ func play_some_event(event : String) :
 				4 : dict["path"] = "anim/" + arc.user.anims[randi_range(0,4)].name + "/moved"
 				5 : dict["path"] = "anim/it/breath" + str(randi_range(0,1))
 
+	dict.volume -= arc.save.volume
 	arc_event.play_sfx(dict)
 
 func play_random():
 	if arc.loss : return
 	while true :
+		if arc.loss == true : break
 		await get_tree().create_timer(randi_range(10, 50)).timeout
 		if arc.loss == true : break
 		play_some_event("start")
+		if randi_range(0,100) > 80 : 
+			await get_tree().create_timer(3,10).timeout
+			play_some_event("start")
 
 func step_hour() :
 	if arc.loss : return
 	while true :
 		if arc.loss == true : break
 		await get_tree().create_timer(60).timeout
+		if arc.loss == true : break
 		arc_event.emit_signal("_passed_hour")
 
 func set_up_ambient() :
@@ -156,9 +165,11 @@ func set_up_ambient() :
 		arc.user.source["amb"].stream = preload("res://resources/sounds/ambient/long/start/2.ogg")
 		arc.user.source["whitout"].stream = preload("res://resources/sounds/ambient/long/whitout/2.ogg")
 
+	arc.user.source["amb"].volume_db -= arc.save.volume
 	arc.user.source["amb"].play(randi_range(0,7))
 	arc.user.source["whitout"].play(randi_range(0,7))
 	arc.user.source["whitout"].volume_db = -5
+	arc.user.source["whitout"].volume_db -= arc.save.volume
 	arc.user.source["whitout"].stream_paused = true
 
 func hour_passed() :
@@ -170,7 +181,14 @@ func hour_passed() :
 		7 : arc_event.emit_signal("_last_hour")
 
 func half_night() :
-	arc_event.play_sfx({"path" = "anim/nerd/rage" + str(randi_range(0, 4)), "volume" = -12})
+	arc_event.play_sfx({"path" = "anim/nerd/rage" + str(randi_range(0, 4)), "volume" = -10})
+
+func rand_temp_disable() :
+	var roll = randi_range(0,4)
+	var ai = arc.user.anims[roll].ai_lvl
+	arc.user.anims[roll].ai_lvl = -1
+	await get_tree().create_timer(60).timeout
+	arc.user.anims[roll].ai_lvl = ai
 
 func last_hour() :
 	var hiest_diff : int
@@ -196,6 +214,26 @@ func free_bear() :
 	arc_event.play_sfx({"path" = "anim/door_brake", "volume" = -3})
 	get_node("/root/main/bear").is_lock = false
 	get_node("/root/main/bear").move()
+
+func popup(texture : Texture, title : String, descr : String) :
+	var popup = preload("res://prefabs/misc/popup.tscn").instantiate()
+	popup.get_node("image").texture = texture
+	popup.get_node("title").text = title
+	popup.get_node("descr").text = descr
+	get_node("/root").add_child(popup)
+	arc_event.play_sfx({"path" = "user/popup"})
+
+	var tween = create_tween()
+	var old_pos = popup.position
+	tween.tween_property(popup, "position", old_pos + Vector2(0, -85), .15)
+	tween.play()
+	await get_tree().create_timer(7).timeout
+	var tween1 = create_tween()
+	tween1.tween_property(popup, "position", old_pos, .23)
+	tween1.play()
+	await get_tree().create_timer(3).timeout
+	popup.queue_free()
+
 #func summin_nir()
 
 #func summon_rin()

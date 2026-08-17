@@ -50,9 +50,7 @@
 				"9b18d48a-9ae5-45bf-baaf-7754bf36cd99",
 				"051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
 				"79e7992e-de71-4236-a45a-32eb2cb5d4c0",
-				"45f39875-f684-40f9-9caa-7d2564e56b0e",
-				"2b9fd5e9-77ee-42df-92f4-45a97c00ff9e",
-				"2da1d7e9-fb12-4e07-a6a6-acd5a9c7b5b1"
+				"45f39875-f684-40f9-9caa-7d2564e56b0e"
 			]
 		}
 	],
@@ -263,7 +261,7 @@
 			"steps": []
 		},
 		{
-			"uuid": "2da1d7e9-fb12-4e07-a6a6-acd5a9c7b5b1",
+			"uuid": "87474110-5be6-4e53-ab10-73fe4b8d53a8",
 			"title": "проблемы с кам интерапшен",
 			"description": "",
 			"category": "95686080-b83c-479d-b691-55683f5acac9",

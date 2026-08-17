@@ -16,5 +16,6 @@ viruses = 8
 vissy = 8
 is_can_be_more_difficult = true
 is_can_random_event = false
+start_night = 2
 start_time = 2
 metadata/_custom_type_script = "uid://bbbvwvgyoyx18"

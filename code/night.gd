@@ -34,6 +34,6 @@ class_name fnat_night
 @export var start_time : int = 0
 @export var phone_call_path : String
 
-@export var words : Array[String] = ["bamboozled", "holyday", "face", "manjaro", "pearto", "tetomato", "color", "pipe", "poteto", "ritual", "pride", "ragebait", "you_moma", "america", "france", "chicken_jokey", "turbulence", "motomoto", "ancient", "dune", "chad", "peter_griffin", "pls_do_not_the_car", "fortnight", "nuclear", "throne", "open_suse", "sunflower", "monday", "siegessaule", "perturabo", "mann", "g13", "2fort"]
+@export var words : Array[String] = ["bamboozled", "holyday", "face", "manjaro", "pearto", "tetomato", "color", "pipe", "poteto", "ritual", "pride", "ragebait", "you_moma", "america", "france", "baka", "turbulence", "motomoto", "ancient", "dune", "chad", "peter", "niger_river", "amazon_river", "niagara_fall", "barracuda", "mala_tokmachka", "basok", "truffle", "karane_tato", "hatrune_mika", "karane_mikas", "hard_drive", "fortnight", "nuclear", "throne", "kubuntu", "sun", "monday", "heavy", "temporal", "perturabo", "mann", "g13", "2fort", "57", "257", "rotate", "boy_next_door", "hat_in_time", "bon_voyage", "bird", "#*&?#!@", "manhole"]
 # to add some words in `Teto Word Of The Day`, just add some words in array, like there. Avoid letters `w,s` and `Spacebar`
 # для добавления слов в `Слово Тето Сегодня` просто добавь слова в массив, прямо как там. Избегать букв `ц, ы` и пробела

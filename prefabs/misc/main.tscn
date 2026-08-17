@@ -3436,6 +3436,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i0rp1")
 
+[sub_resource type="BoxMesh" id="BoxMesh_lshpl"]
+size = Vector3(1.0897071, 1, 1)
+
 [node name="main" type="Node3D" unique_id=764712191]
 
 [node name="world" type="WorldEnvironment" parent="." unique_id=1628393471]
@@ -3591,8 +3594,7 @@ anims = [NodePath("../../chimera"), NodePath("../../noise"), NodePath("../../ner
 blink_screen = NodePath("../triggers/blink")
 
 [node name="light" type="SpotLight3D" parent="office/user" unique_id=2021600175]
-shadow_enabled = true
-spot_range = 500.0
+spot_range = 20.0
 spot_attenuation = 0.3
 spot_angle = 15.0
 spot_angle_attenuation = 1.6137046
@@ -3791,6 +3793,20 @@ instance_shader_parameters/albedo = Color(0.84313726, 0.9607843, 0.84313726, 1)
 instance_shader_parameters/em = 1.0
 mesh = ExtResource("27_m2w8r")
 
+[node name="fnat_starts7" type="MeshInstance3D" parent="office/decor" unique_id=1497404631]
+transform = Transform3D(-8.658534e-09, -0.19808418, 8.658534e-09, -0.0189391, 9.446722e-09, 0.1971767, -0.19717671, 7.791011e-09, -0.018939098, -8.985489, 1.9866927, -12.195135)
+material_override = ExtResource("26_noam4")
+instance_shader_parameters/albedo = Color(0.84313726, 0.9607843, 0.84313726, 1)
+instance_shader_parameters/em = 1.0
+mesh = ExtResource("27_m2w8r")
+
+[node name="fnat_starts8" type="MeshInstance3D" parent="office/decor" unique_id=77892453]
+transform = Transform3D(-8.6585334e-09, -0.19808418, 8.658534e-09, 0.033707373, -1.0005647e-08, -0.19519515, 0.19519515, -7.0588513e-09, 0.03370737, -8.985489, 1.485208, -8.564802)
+material_override = ExtResource("26_noam4")
+instance_shader_parameters/albedo = Color(0.84313726, 0.9607843, 0.84313726, 1)
+instance_shader_parameters/em = 1.0
+mesh = ExtResource("27_m2w8r")
+
 [node name="cup" parent="office/decor" unique_id=716141233 instance=ExtResource("39_lshpl")]
 transform = Transform3D(-0.71413535, 0, -0.7000076, 0, 1, 0, 0.7000076, 0, -0.71413535, -2.4960976, 0.84056795, -17.723127)
 volume = -14
@@ -3836,7 +3852,6 @@ script = ExtResource("22_8fcx1")
 absolute_cd = 0.72
 to_play = "ambient/short/item/hemlet"
 shake_scale = 1.5699999999999998
-jump = 0.05
 volume = -5
 
 [node name="collision_shape_3d" type="CollisionShape3D" parent="office/decor/pipes" unique_id=223731284]
@@ -3849,7 +3864,6 @@ script = ExtResource("22_8fcx1")
 absolute_cd = 0.456
 to_play = "ambient/short/item/default"
 shake_scale = 1.5699999999999998
-jump = 0.05
 volume = -5
 
 [node name="fnat_basket" type="MeshInstance3D" parent="office/decor/basket2" unique_id=461473149]
@@ -4027,6 +4041,7 @@ size = 50.0
 
 [node name="bear" type="Node3D" parent="path" unique_id=368272810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -20)
+visible = false
 
 [node name="kitchen" type="Marker3D" parent="path/bear" unique_id=760898227 node_paths=PackedStringArray("neighbours")]
 script = ExtResource("43_adtnr")
@@ -4093,7 +4108,7 @@ occupation = "bear"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
 [node name="office" type="Marker3D" parent="path/bear" unique_id=620488637 node_paths=PackedStringArray("neighbours")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.300001, 0, 2.7000008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.300001, 0, 3.168766)
 script = ExtResource("43_adtnr")
 neighbours = [NodePath("../kitchen"), NodePath("../playground")]
 flag = "office"
@@ -4112,7 +4127,7 @@ occupation = "nchimera"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
 [node name="office2" type="Marker3D" parent="path/nchimera" unique_id=1126033601 node_paths=PackedStringArray("neighbours")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.24529, -0.42431813, 2.3662052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.086319, -0.42431813, 2.1952133)
 script = ExtResource("43_adtnr")
 neighbours = [null, null]
 flag = "office"
@@ -4190,7 +4205,7 @@ metadata/_custom_type_script = "uid://cktqc128jci3t"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -20)
 
 [node name="office0" type="Marker3D" parent="path/gnoise" unique_id=1414441632 node_paths=PackedStringArray("neighbours")]
-transform = Transform3D(0.49074125, 0, 0.8713055, 0, 1, 0, -0.8713055, 0, 0.49074125, 12.539071, 2.3841858e-07, 1.6141815)
+transform = Transform3D(0.022924036, 0, 0.99973726, 0, 1, 0, -0.99973726, 0, 0.022924036, 12.358351, 3.5762787e-07, 1.6845455)
 script = ExtResource("43_adtnr")
 neighbours = [null, null]
 flag = "office"
@@ -4206,7 +4221,7 @@ occupation = "gnoise"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
 [node name="office2" type="Marker3D" parent="path/gnoise" unique_id=1109638935 node_paths=PackedStringArray("neighbours")]
-transform = Transform3D(0.84742945, 0, 0.5309081, 0, 1, 0, -0.5309081, 0, 0.84742945, 12.6054, -0.46023044, 3.0060177)
+transform = Transform3D(0.84742945, 0, 0.5309081, 0, 1, 0, -0.5309081, 0, 0.84742945, 12.37281, -0.46023044, 1.764185)
 script = ExtResource("43_adtnr")
 neighbours = [null, null]
 flag = "office"
@@ -4215,7 +4230,7 @@ pose = "lotos"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
 [node name="office3" type="Marker3D" parent="path/gnoise" unique_id=16353522 node_paths=PackedStringArray("neighbours")]
-transform = Transform3D(0.49999997, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.49999997, 8.974004, -1.1622906e-06, 0.10932541)
+transform = Transform3D(-0.8346444, 0, -0.5507891, 0, 1, 0, 0.5507891, 0, -0.8346444, 8.974004, -1.1622906e-06, 0.10932541)
 script = ExtResource("43_adtnr")
 neighbours = [null, null]
 flag = "office"
@@ -4223,21 +4238,13 @@ occupation = "gnoise"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
 [node name="office4" type="Marker3D" parent="path/gnoise" unique_id=405834569 node_paths=PackedStringArray("neighbours")]
-transform = Transform3D(0.8898649, 0, 0.45622388, 0, 1, 0, -0.45622388, 0, 0.8898649, 9.360834, -0.35215974, 2.9234924)
+transform = Transform3D(0.90961105, 0, -0.41546088, 0, 1, 0, 0.41546088, 0, 0.90961105, 9.574933, -0.35215962, 2.9352608)
 script = ExtResource("43_adtnr")
 neighbours = [null, null]
 flag = "office"
 occupation = "gnoise"
 is_random = true
 pose = "romantic"
-metadata/_custom_type_script = "uid://cktqc128jci3t"
-
-[node name="office5" type="Marker3D" parent="path/gnoise" unique_id=502539643 node_paths=PackedStringArray("neighbours")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.319914, -0.34171146, 0.3463173)
-script = ExtResource("43_adtnr")
-neighbours = [null, null]
-flag = "office"
-occupation = "gnoise"
 metadata/_custom_type_script = "uid://cktqc128jci3t"
 
 [node name="diff" type="Marker3D" parent="path/gnoise" unique_id=1833065336 node_paths=PackedStringArray("neighbours")]
@@ -4316,6 +4323,7 @@ transform = Transform3D(-0.49999997, -8.742278e-08, -0.86602545, 4.371139e-08, -
 mesh = ExtResource("27_862xv")
 
 [node name="noise" type="Node3D" parent="path" unique_id=1884691848]
+visible = false
 
 [node name="stage" type="Marker3D" parent="path/noise" unique_id=235420073 node_paths=PackedStringArray("neighbours")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.600001, 0.5500001, 14.3)
@@ -4491,6 +4499,7 @@ occupation = "noise"
 
 [node name="chimera" type="Node3D" parent="path" unique_id=276972064]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+visible = false
 
 [node name="stage" type="Marker3D" parent="path/chimera" unique_id=1662934073 node_paths=PackedStringArray("neighbours")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -14.726278, 0.54963773, 14.645458)
@@ -4639,6 +4648,7 @@ occupation = "chimera"
 [node name="hunting" type="Node3D" parent="path/chimera" unique_id=1846158915]
 
 [node name="nerd" type="Node3D" parent="path" unique_id=585619140]
+visible = false
 
 [node name="arcade" type="Marker3D" parent="path/nerd" unique_id=1022318393 node_paths=PackedStringArray("neighbours")]
 transform = Transform3D(0.8660255, 0, 0.50000006, 0, 1.0000001, 0, -0.50000006, 0, 0.8660255, -24.635006, -5.960465e-08, 7.993003)
@@ -4775,7 +4785,7 @@ current_point = NodePath("../path/chimera/stage")
 talk = true
 
 [node name="nchimera" parent="." unique_id=1978210908 node_paths=PackedStringArray("current_point") instance=ExtResource("27_8c3lo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76, -1.025, -28.463655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76, -1.025, -31.763826)
 mood = 1
 current_point = NodePath("../path/nchimera/diff")
 is_static = true
@@ -4815,6 +4825,7 @@ skin = SubResource("Skin_d50or")
 skeleton = NodePath("..")
 
 [node name="_smile2" type="MeshInstance3D" parent="bear" unique_id=902705469]
+visible = false
 instance_shader_parameters/coloring = Color(0.5647059, 0.8784314, 0.69411767, 1)
 mesh = SubResource("ArrayMesh_aqdix")
 skin = SubResource("Skin_d50or")
@@ -5015,12 +5026,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -17)
 [node name="door" parent="estab/door4" parent_id_path=PackedInt32Array(18833205, 221236343) index="0" unique_id=1848363557]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.00573, 0, -1, 0, -4.371139e-08, 0, 0, -0.35726547)
 
+[node name="fnat_star_wall3" parent="estab" index="111" unique_id=728395748]
+transform = Transform3D(-0.17766075, -9.589345e-10, -0.007312621, 0.007312621, -2.3297394e-08, -0.17766075, 0, -0.17781118, 2.331712e-08, 3.2305927, 1.1126525, 5.9766836)
+
 [node name="fnat_cube_008" type="MeshInstance3D" parent="estab/ware/decor" parent_id_path=PackedInt32Array(18833205, 1770904808) index="5" unique_id=1646434965]
 transform = Transform3D(-5.7611608e-08, 0, 1.318, 0, 1.318, 0, -6.4251714, 0, -2.8085316e-07, -11.653017, 0, -18.024033)
 mesh = ExtResource("41_lshpl")
 
 [node name="mesh_instance_3d" parent="estab/vents" parent_id_path=PackedInt32Array(18833205, 238697401) index="0" unique_id=2086083061]
-transform = Transform3D(4.8272624, 0, 0, 0, 1, 0, 0, 0, 1, 2.8735049, 0, -18.349998)
+transform = Transform3D(4.8272624, 0, 0, 0, 1, 0, 0, 0, 1, 2.670538, 0, -18.349998)
+mesh = SubResource("BoxMesh_lshpl")
 
 [node name="fnat_guitar" parent="estab/fnat_kasane_hair" parent_id_path=PackedInt32Array(18833205, 1405282273) index="0" unique_id=626135974]
 transform = Transform3D(0.60687035, 0, 1.0511299, 0, 1.2137405, 0, -1.0511299, 0, 0.60687035, 1.2857199, -3.2085605, -0.31726646)
@@ -5152,6 +5167,7 @@ mesh = ExtResource("36_iwq5g")
 [editable path="office/decor/cup4"]
 [editable path="estab"]
 [editable path="estab/door4"]
+[editable path="estab/door6"]
 [editable path="estab/fnat_carefuel"]
 [editable path="estab/fnat_carefuel5"]
 [editable path="estab/fnat_carefuel2"]
