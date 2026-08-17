@@ -34,34 +34,34 @@
 Имена кликабельны
 
 [Scott Cawthon - автор идеи](http://youtube.com/@animdude)
+http://
+
+[Waygetter Electronics - да](http://waygetter.com/index.html)
 
 
-[Waygetter Electronics - да](waygetter.com/index.html)
+[Valve - звуки и хорошие игры]([http://youtube.com/@Valve/videos)
 
 
-[Valve - звуки и хорошие игры]([youtube.com/@Valve/videos)
+[Glassbric - менеджер сцен](http://github.com/glass-brick)
 
 
-[Glassbric - менеджер сцен](github.com/glass-brick)
+[BitModding - клевая озвучка](http://m.vk.ru/bitmodding)
 
 
-[BitModding - клевая озвучка](m.vk.ru/bitmodding)
-
-
-[DrMagexy - клевый тип](youtube.com/@DrMagexy)
+[DrMagexy - клевый тип](http://youtube.com/@DrMagexy)
 
 
 Вещественное доказательсво - клевый кавер
 
-[TheViDuelty - you are cute :3](youtube.com/@TheViDuelty)
+[TheViDuelty - you are cute :3](http://youtube.com/@TheViDuelty)
 
-[CodeMan38 - клевый шрифт](github.com/codeman38)
+[CodeMan38 - клевый шрифт](http://github.com/codeman38)
 
-[Blender Foundation - 3D пакет для работы с моделями](blender.org/)
+[Blender Foundation - 3D пакет для работы с моделями](http://blender.org/)
 
-[Godot Foundation - среда разработки](godotengine.org/)
+[Godot Foundation - среда разработки](http://godotengine.org/)
 
-[Dynalist Inc. - двигатель прогресса](obsidian.md)
+[Dynalist Inc. - двигатель прогресса](http://obsidian.md)
 
 Каждый, так или иначе внес вклад в развитие проекта. 
 Пускай даже и не зная этого. И скорее всего, даже не узнает
@@ -94,27 +94,27 @@ You can install last build in `Releses` tab, in middle-right side of the site. A
 # Thanks
 Name are clickable
 
-[Scott Cawthon - idea autor](youtube.com/@animdude)
+[Scott Cawthon - idea autor](http://youtube.com/@animdude)
 
-[Waygetter Electronics - yes](waygetter.com/index.html)
+[Waygetter Electronics - yes](http://waygetter.com/index.html)
 
-[Valve - cool sonds and games]([youtube.com/@Valve/videos)
+[Valve - cool sonds and games]([http://youtube.com/@Valve/videos)
 
-[Glassbric - scene manager](github.com/glass-brick)
+[Glassbric - scene manager](http://github.com/glass-brick)
 
-[BitModding - russian voiceover](m.vk.ru/bitmodding)
+[BitModding - russian voiceover](http://m.vk.ru/bitmodding)
 
-[DrMagexy - cool dude](youtube.com/@DrMagexy)
+[DrMagexy - cool dude](http://youtube.com/@DrMagexy)
 
-[TheViDuelty - you are cute :3](youtube.com/@TheViDuelty)
+[TheViDuelty - you are cute :3](http://youtube.com/@TheViDuelty)
 
-[CodeMan38 - cool font](github.com/codeman38)
+[CodeMan38 - cool font](http://github.com/codeman38)
 
-[Blender Foundation - 3D software for modeling](blender.org/)
+[Blender Foundation - 3D software for modeling](http://blender.org/)
 
-[Godot Foundation - #made_whit_godot](godotengine.org/)
+[Godot Foundation - #made_whit_godot](http://godotengine.org/)
 
-[Dynalist Inc. - note on steroids](obsidian.md)
+[Dynalist Inc. - note on steroids](http://obsidian.md)
 
 All of you, everyone made some contribution in project,
 But more likey, don't know about this. And won't find out. 
