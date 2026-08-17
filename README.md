@@ -33,7 +33,7 @@
 # Хотелось бы вырозить благодарность,
 Имена кликабельны
 
-[Scott Cawthon - автор идеи](youtube.com/@animdude)
+[Scott Cawthon - автор идеи](http://youtube.com/@animdude)
 
 
 [Waygetter Electronics - да](waygetter.com/index.html)
