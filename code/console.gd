@@ -27,7 +27,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 			print_output("{s}kip{h}our - skip hour")
 			print_output("{pr}int (message) - print()")
 			print_output("{i}ddqd - 'TODAY I'M A GOOOD'")
-			print_output("{po}pup - steam")
+			print_output("{popup} - steam")
 			print_output("{reset} - reset all data")
 			print_output("{night} (1-2)  - set story night")
 
@@ -46,7 +46,9 @@ func _on_input_text_submitted(new_text: String) -> void:
 			var anim : fnat_animatronic = get_node("/root/main/" + comm[1])
 			if anim != null : anim.jumpscare()
 			else : print_output("Kiss Your Sister. NOW")
-		"i" : arc.iddqd = !arc.iddqd
+		"i" : 
+			arc.iddqd = !arc.iddqd
+			print_output("godemode is " + str(arc.iddqd))
 		"an" : 
 			if arc.user == null : return
 			for i in arc.user.anims.size() :
@@ -67,13 +69,15 @@ func _on_input_text_submitted(new_text: String) -> void:
 		"e" : get_tree().quit()
 		"sh" : arc.time += 60
 		"ad" : arc.screen.advestment()
-		"popup" : arc_event.popup(preload("res://pics/479.png"), "KYS", "Kiss Your Sister")
+		"popup" : arc_event.popup(preload("res://pics/vi6.svg"), "KYS", "Kiss Your Sister", true)
 		"help" :
 			match arc.night.start_night :
 				1 : arc.user.source["call"].stream = load("res://resources/sounds/ambient/calls/" + arc.save.lange + "/console1.ogg")
 				2 : arc.user.source["call"].stream = load("res://resources/sounds/ambient/calls/" + arc.save.lange + "/console2.ogg")
 			arc.user.source["call"].play()
 		"commands" : OS.crash("")
+		"boobs", "tits", "bobs", "pussy", "hamburger", "titties", "scrumpe", "titos" : 
+			arc_event.popup(preload("res://pics/vi3.svg"), "NO " + comm[0], "GO FUCK YOURSELF", true)
 		"reset" : 
 			if FileAccess.file_exists("user://fnat.tres") : 
 				print(OS.move_to_trash(ProjectSettings.globalize_path("user://fnat.tres")))
@@ -93,6 +97,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 			if night == 1 or night == 2 :
 				arc.save.night = night
 				arc.retranslate_title()
+		_ : print_output(new_text + ": command not found")
 	if new_text != "!!" : last_comma = new_text
 	input.text = ""
 	input.release_focus()

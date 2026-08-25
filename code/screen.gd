@@ -159,19 +159,19 @@ func teto_word_of_the_day():
 
 func advestment(value : int = -1) :
 	if randi_range(0,100) > adblock : return
-	var roll = randi_range(0,109)
+	var roll = randi_range(0,117)
 	if value != -1 : roll = value
-	if arc.save.lange == "ru" and randi_range(0, 100) > 90 :
-		ad.get_node("panel/sprite").texture = load("res://pics/ad/ru/" + str(randi_range(0,7)) + ".jpg")
+	if arc.save.lange == "ru" and randi_range(0, 100) > 85 :
+		ad.get_node("panel/sprite").texture = load("res://pics/ad/ru/" + str(randi_range(0,15)) + ".jpg")
 	else :
 		ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".jpg")
 		if ad.get_node("panel/sprite").texture == null : ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".webp")
 		if ad.get_node("panel/sprite").texture == null : ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".png")
 
-	var roll_audio = str(randi_range(0,12))
+	var roll_audio = str(randi_range(0,14))
 	ad_source.stream = load("res://resources/sounds/anim/virus/" + roll_audio + ".ogg")
-	if roll_audio == "9" : ad_source.volume_db = randi_range(-25, -18)
-	else : ad_source.volume_db = randi_range(-8, -1)
+	if roll_audio == "9" : ad_source.volume_db = randi_range(-30, -25)
+	else : ad_source.volume_db = randi_range(-17, -10)
 	ad_source.play(1)
 	if ad.get_node("panel/sprite").texture == null :
 		if arc.save.lange == "ru" :

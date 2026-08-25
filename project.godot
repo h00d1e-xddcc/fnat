@@ -52,6 +52,7 @@ folder_colors={
 "res://pics/": "green",
 "res://prefabs/": "purple",
 "res://resources/": "red",
+"res://resources/item/": "yellow",
 "res://resources/materials/": "blue",
 "res://resources/sounds/": "gray",
 "res://resources/sounds/ambient/calls/": "purple",
@@ -67,6 +68,7 @@ folder_colors={
 "res://resources/sounds/anim/pearto/": "teal",
 "res://resources/sounds/anim/pg_sm/": "orange",
 "res://resources/sounds/anim/tt/": "purple",
+"res://resources/sounds/sort/": "red",
 "res://resources/sounds/user/": "orange",
 "res://resources/themes/": "teal"
 }

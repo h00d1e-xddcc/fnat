@@ -23,13 +23,13 @@
 [ext_resource type="ArrayMesh" uid="uid://b0gfrwa3qtlnt" path="res://prefabs/mesh/fnat_vent.res" id="21_xiqcb"]
 [ext_resource type="ArrayMesh" uid="uid://heu244g5opm8" path="res://prefabs/mesh/fnat_vent_planes.res" id="22_6fqhm"]
 [ext_resource type="ArrayMesh" uid="uid://0g2tk4a4i76y" path="res://prefabs/mesh/fnat_scp-650b.res" id="23_gchh1"]
-[ext_resource type="ArrayMesh" uid="uid://bat27vi7gw3hr" path="res://prefabs/mesh/fnat_guitar.res" id="25_8d6dc"]
+[ext_resource type="ArrayMesh" uid="uid://dwdt42cmj7p0k" path="res://prefabs/mesh/fnat_guitar.res" id="25_8d6dc"]
 [ext_resource type="ArrayMesh" uid="uid://3mhw2e5frne5" path="res://prefabs/mesh/fnat_steplader.res" id="26_5dwut"]
 [ext_resource type="ArrayMesh" uid="uid://d3lwa3p3d0d2p" path="res://prefabs/mesh/fnat_arm.res" id="27_cvo3b"]
 [ext_resource type="ArrayMesh" uid="uid://dyvtsnuctdg" path="res://prefabs/mesh/fnat_crate_big.res" id="28_ubne7"]
 [ext_resource type="ArrayMesh" uid="uid://dhait1hagqoy8" path="res://prefabs/mesh/fnat_pipe_blank.res" id="29_dolcn"]
+[ext_resource type="ArrayMesh" uid="uid://2d34wagvbtay" path="res://prefabs/mesh/fnat_arcade.res" id="29_gpmlw"]
 [ext_resource type="ArrayMesh" uid="uid://dag3q37snls7e" path="res://prefabs/mesh/fnat_cup.res" id="30_5kp13"]
-[ext_resource type="ArrayMesh" uid="uid://bjd5cywdctl0e" path="res://prefabs/mesh/fnat_Cube.res" id="31_cddya"]
 [ext_resource type="ArrayMesh" uid="uid://cpo841rkiehts" path="res://prefabs/mesh/fnat_onion.res" id="32_f5jj1"]
 [ext_resource type="ArrayMesh" uid="uid://dpgr73wip8mwq" path="res://prefabs/mesh/fnat_banch.res" id="33_aobgy"]
 [ext_resource type="ArrayMesh" uid="uid://pg0283d36uix" path="res://prefabs/mesh/fnat_baguette.res" id="34_2e3ey"]
@@ -1471,63 +1471,63 @@ mesh = ExtResource("29_dolcn")
 
 [node name="fnat_cube" type="MeshInstance3D" parent="." unique_id=778457464]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -25.599997, -1.7881393e-07, 26.9)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube2" type="MeshInstance3D" parent="." unique_id=1182631120]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -24.500002, -3.5762787e-07, 26.900002)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube3" type="MeshInstance3D" parent="." unique_id=1425295674]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -22.134998, -5.364418e-07, 26.899994)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube5" type="MeshInstance3D" parent="." unique_id=879664231]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -23.364996, -5.364418e-07, 26.899992)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube4" type="MeshInstance3D" parent="." unique_id=912924298]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -20.202728, -5.364418e-07, 26.899992)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube6" type="MeshInstance3D" parent="." unique_id=403692566]
 transform = Transform3D(-0.9999999, 0, -1.7881393e-07, 0, 1.0000001, 0, 1.7881393e-07, 0, -0.9999999, -20.639997, -3.5762787e-07, 20.49999)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube7" type="MeshInstance3D" parent="." unique_id=699418720]
 transform = Transform3D(-0.9999999, 0, -1.7881393e-07, 0, 1.0000001, 0, 1.7881393e-07, 0, -0.9999999, -21.739992, -5.364418e-07, 20.499987)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube8" type="MeshInstance3D" parent="." unique_id=1367113371]
 transform = Transform3D(-0.9999999, 0, -1.7881393e-07, 0, 1.0000001, 0, 1.7881393e-07, 0, -0.9999999, -24.339994, -5.364418e-07, 20.499992)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube9" type="MeshInstance3D" parent="." unique_id=2069657769]
 transform = Transform3D(-0.9999999, 0, -1.7881393e-07, 0, 1.0000001, 0, 1.7881393e-07, 0, -0.9999999, -23.139996, -5.9604645e-07, 20.499998)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube10" type="MeshInstance3D" parent="." unique_id=2001997248]
 transform = Transform3D(-0.9999999, 0, -1.7881393e-07, 0, 1.0000001, 0, 1.7881393e-07, 0, -0.9999999, -25.739996, -5.9604645e-07, 20.499994)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube11" type="MeshInstance3D" parent="." unique_id=1332973469]
 transform = Transform3D(0.9999999, 0, 3.2782555e-07, 0, 1.0000001, 0, -3.2782555e-07, 0, 0.9999999, -25.599993, -5.364418e-07, 19.199987)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube12" type="MeshInstance3D" parent="." unique_id=727368965]
 transform = Transform3D(0.9999999, 0, 3.2782555e-07, 0, 1.0000001, 0, -3.2782555e-07, 0, 0.9999999, -24.499992, -7.1525574e-07, 19.199995)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube13" type="MeshInstance3D" parent="." unique_id=2070952549]
 transform = Transform3D(0.9999999, 0, 3.2782555e-07, 0, 1.0000001, 0, -3.2782555e-07, 0, 0.9999999, -21.899992, -7.1525574e-07, 19.19999)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube14" type="MeshInstance3D" parent="." unique_id=2134878952]
 transform = Transform3D(0.9999999, 0, 3.2782555e-07, 0, 1.0000001, 0, -3.2782555e-07, 0, 0.9999999, -23.099995, -7.748604e-07, 19.199986)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_cube15" type="MeshInstance3D" parent="." unique_id=1176911730]
 transform = Transform3D(0.9999999, 0, 3.2782555e-07, 0, 1.0000001, 0, -3.2782555e-07, 0, 0.9999999, -20.49999, -7.748604e-07, 19.19999)
-mesh = ExtResource("31_cddya")
+mesh = ExtResource("29_gpmlw")
 
 [node name="fnat_onion" type="MeshInstance3D" parent="." unique_id=987817645]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -20.202732, 2.1, 27)

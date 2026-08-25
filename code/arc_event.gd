@@ -60,7 +60,7 @@ func play_sfx(d : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, 
 			print("crash, " + dict["path"])
 			return 0
 
-	sfx.volume_db = dict.get("volume", 15)
+	sfx.volume_db = dict.get("volume", 0)
 	sfx.volume_db -= - arc.save.volume
 	sfx.stream = audio
 	sfx.name = dict["path"]
@@ -152,6 +152,9 @@ func step_hour() :
 
 func set_up_ambient() :
 	var hiest_diff : int
+	arc.user.source["fan"].volume_db = arc.save.volume
+	arc.user.source["spot"].volume_db = arc.save.volume
+
 	for i in arc.night.diff.size() :
 		if arc.night.diff[i] > i : hiest_diff = arc.night.diff[i]
 	print(hiest_diff)
@@ -165,12 +168,15 @@ func set_up_ambient() :
 		arc.user.source["amb"].stream = preload("res://resources/sounds/ambient/long/start/2.ogg")
 		arc.user.source["whitout"].stream = preload("res://resources/sounds/ambient/long/whitout/2.ogg")
 
-	arc.user.source["amb"].volume_db -= arc.save.volume
+	arc.user.source["amb"].volume_db = arc.save.volume
 	arc.user.source["amb"].play(randi_range(0,7))
 	arc.user.source["whitout"].play(randi_range(0,7))
-	arc.user.source["whitout"].volume_db = -5
-	arc.user.source["whitout"].volume_db -= arc.save.volume
+	arc.user.source["whitout"].volume_db = arc.save.volume - 10
 	arc.user.source["whitout"].stream_paused = true
+	arc.user.source["fan"].play()
+	arc.user.source["spot"].play()
+	arc.user.source["call"].volume_db = arc.save.volume
+	
 
 func hour_passed() :
 	if arc.loss  : return
@@ -215,9 +221,10 @@ func free_bear() :
 	get_node("/root/main/bear").is_lock = false
 	get_node("/root/main/bear").move()
 
-func popup(texture : Texture, title : String, descr : String) :
+func popup(texture : Texture, title : String, descr : String, background : bool = false) :
 	var popup = preload("res://prefabs/misc/popup.tscn").instantiate()
 	popup.get_node("image").texture = texture
+	popup.get_node("background").visible = background
 	popup.get_node("title").text = title
 	popup.get_node("descr").text = descr
 	get_node("/root").add_child(popup)
@@ -225,7 +232,7 @@ func popup(texture : Texture, title : String, descr : String) :
 
 	var tween = create_tween()
 	var old_pos = popup.position
-	tween.tween_property(popup, "position", old_pos + Vector2(0, -85), .15)
+	tween.tween_property(popup, "position", old_pos + Vector2(0, -83), .15)
 	tween.play()
 	await get_tree().create_timer(7).timeout
 	var tween1 = create_tween()

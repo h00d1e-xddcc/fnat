@@ -173,7 +173,7 @@ func retranslate_title() :
 	get_node("/root/main_menu/ui/main/buttons/thanks").text = lang.get_word("ui_thanks")
 	get_node("/root/main_menu/ui/thanks/label").text = lang.get_word("ui_thanks_text")
 	get_node("/root/main_menu/ui/thanks/thanks_back").text = lang.get_word("ui_back")
-	#get_node("/root/main_menu/ui/main/control/label").text = lang.get_word("ui_volume")
+	get_node("/root/main_menu/ui/build/control/v_box_container/label").text = lang.get_word("ui_volume")
 	get_node("/root/main_menu/ui/build/control/v_box_container/v-sync").text = lang.get_word("ui_v-sync")
 	get_node("/root/main_menu/ui/build/control/v_box_container/full-screen").text = lang.get_word("ui_fullscreen")
 	get_node("/root/main_menu/ui/custom_night/cont/start").text = lang.get_word("ui_cont")

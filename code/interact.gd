@@ -1,7 +1,7 @@
 extends Node3D
 class_name  fnat_interact_object
 
-enum interact_type {TOUCH, SWICH, BUTTON, PATH, ARM}
+enum interact_type {TOUCH, SWICH, BUTTON, PATH, ARM, DOOR, ITEM}
 
 @export var type : interact_type
 @export var absolute_cd : float
@@ -16,6 +16,7 @@ enum interact_type {TOUCH, SWICH, BUTTON, PATH, ARM}
 @export var funny_bool : bool
 @export var return_to_old_pos : bool = true
 @export var sound : bool = true
+@export var item : fnat_item
 
 func _ready() -> void:
 	current_cd = absolute_cd
@@ -46,6 +47,9 @@ func touch() :
 					arc.save.stars[4] = true
 					arc.save_settings()
 					arc_event.popup(preload("res://pics/fatass.png"), arc.lang.get_word("p_star"), arc.lang.get_word("p_fat"))
+		interact_type.DOOR :
+			arc.user.door_to()
+		interact_type.ITEM : arc.user.item_swap(item)
 
 		interact_type.ARM :
 			arc_event.play_sfx({"path" = to_play, "volume" = volume})

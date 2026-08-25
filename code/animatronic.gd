@@ -52,7 +52,7 @@ func jumpscare() :
 	arc.user.change_state(4)
 	arc.user.flash_light.visible = false
 	get_node("/root/main/office/user/omni").visible = true
-	set_face("rage")
+	set_face("_rage")
 	global_position = arc.user.global_position + (-arc.user.global_transform.basis.z * 1)
 	global_position.y -= 2
 	look_at(arc.user.global_position)
@@ -134,8 +134,8 @@ func move() :
 			#rotate_head(Vector3.ONE)
 			match name :
 				"chimera", "bear", "nerd" :
-					arc.play2D_sound("anim/door_move" + str(randi_range(0,2)), 2)
-				"noise" : arc.play2D_sound("anim/vent_quiet" + str(randi_range(0,1)), 2)
+					arc_event.play_sfx({"path" = "anim/door_move" + str(randi_range(0,2))})
+				"noise" : arc_event.play_sfx({"path" = "anim/vent_quiet" + str(randi_range(0,1))})
 		"kitchen" :
 			if name == "nerd" and move_to.name == "fire_exit" and arc.user.anims[3].is_lock == true:
 				arc_event.rotate_kitchen_door()
@@ -186,7 +186,7 @@ func toss_roll(force : int = 0) :
 						#is_lock = true
 				"nchimera" :
 					if randi_range(0,100) > 80 - ai_lvl : 
-						if current_point.flag == "office" : return
+						if current_point.flag == "office" or arc.user.item_head.resource_path.get_file().get_basename() == "foil_hat" : return
 						arc.user.blink(.257)
 						var nc = get_node("/root/main/path/nchimera")
 						hunger = 100
@@ -197,7 +197,7 @@ func toss_roll(force : int = 0) :
 						#rotate_head()
 				"gnoise" :
 					if randi_range(0,100) > 80 - ai_lvl : 
-						if current_point.flag == "office" : return
+						if current_point.flag == "office" or arc.user.item_head.resource_path.get_file().get_basename() == "foil_hat" : return
 						arc.user.blink(.257)
 						var gn = get_node("/root/main/path/gnoise")
 						hunger = 80

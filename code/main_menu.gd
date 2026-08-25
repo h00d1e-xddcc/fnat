@@ -10,7 +10,7 @@ class_name main
 func _ready() -> void:
 	if FileAccess.file_exists("user://fnat.tres") : 
 		arc.save = ResourceLoader.load("user://fnat.tres") as fnat_save
-		if arc.save.ver != "26.0.1" : 
+		if arc.save.ver != "26.0.2" : 
 			OS.move_to_trash(ProjectSettings.globalize_path("user://fnat.tres"))
 			OS.crash("")
 		arc.lang = load("res://resources/local/" + arc.save.lange + ".tres")
@@ -18,8 +18,8 @@ func _ready() -> void:
 			arc.lang = preload("res://resources/local/en.tres")
 			arc.retranslate_title()
 			get_node("ui/disclaimer_back/lc/panel/en" ).visible = true
+		$ui/build/control/lang.text = arc.save.lange
 		if arc.save.fullscreen : get_window().mode = Window.MODE_FULLSCREEN
-		else : get_window().mode = Window.MODE_WINDOWED
 
 		if arc.save.vsync : DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 		else : DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
@@ -41,7 +41,7 @@ func _ready() -> void:
 		arc.save.stars = [false, false, false, false, false, false, false]
 		arc.save.night = 1
 		arc.save.volume = -15
-		arc.save.ver = "26.0.1"
+		arc.save.ver = "26.0.2"
 		arc.save.night1_deads = 0
 		arc.save.night2_deads = 0
 		arc.save.night6_deads = 0
@@ -58,6 +58,8 @@ func _ready() -> void:
 	get_node("ui/build").visible = false
 	get_node("ui/thanks").visible = false
 	get_node("ui/main").visible = true
+	get_node("/root/main_menu/audio").volume_db = arc.save.volume - 10
+	$ui/build/control/v_box_container/label/h_slider.value = arc.save.volume
 	for i in arc.save.stars.size() :
 		get_node("ui/title/stars/" + str(i)).visible = arc.save.stars[i]
 	change_state("main")
@@ -188,7 +190,7 @@ func _on_custom_night_pressed() -> void:
 	get_node("ui/custom_night").visible = true
 	change_state("custom")
 	get_node("/root/main_menu/audio").stream = preload("res://resources/sounds/ambient/long/custom.ogg")
-	get_node("/root/main_menu/audio").volume_db = arc.save.volume
+	get_node("/root/main_menu/audio").volume_db = arc.save.volume - 15
 	get_node("/root/main_menu/audio").play(randi_range(0,7))
 
 func _on_back_pressed() -> void:

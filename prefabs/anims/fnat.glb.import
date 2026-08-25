@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/fnat.glb-b05feb0cc33df2c1a787e9940d7bf640.scn
 
 [params]
 
-nodes/root_type="Node"
+nodes/root_type="Node3D"
 nodes/root_name="g13"
 nodes/root_script=null
 mesh_library/use_node_names_as_mesh_names=false

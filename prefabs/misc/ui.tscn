@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://dlne2diiv70gw"]
 
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="1_8bix8"]
-[ext_resource type="Texture2D" uid="uid://cbelwxsg8ko6j" path="res://pics/477.png" id="3_5u5yk"]
 [ext_resource type="Texture2D" uid="uid://co5fnl16y5p22" path="res://pics/bootscreen.png" id="3_i4vt5"]
 [ext_resource type="Texture2D" uid="uid://bsk45r67qn7g2" path="res://pics/bolt.png" id="4_5u5yk"]
-[ext_resource type="Texture2D" uid="uid://dkq8euhd5kv2s" path="res://pics/479.png" id="4_g6d76"]
+[ext_resource type="Texture2D" uid="uid://choqqn7jq20a4" path="res://pics/vi0.svg" id="4_qdm3c"]
 [ext_resource type="Texture2D" uid="uid://c4ya6amsxhux5" path="res://pics/ad/25.png" id="5_qdm3c"]
 [ext_resource type="Texture2D" uid="uid://dbesgd7bs2oci" path="res://pics/v1.png" id="7_b1k8q"]
 
@@ -959,13 +958,13 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -150.0
-offset_top = -93.0
-offset_bottom = 53.5
+offset_top = -86.0
+offset_bottom = 60.5
 grow_horizontal = 0
 grow_vertical = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(-39, 0)
-texture = ExtResource("3_5u5yk")
+texture = ExtResource("4_qdm3c")
 expand_mode = 1
 
 [node name="teto_right" type="TextureRect" parent="word_minigame/back/teto_word" unique_id=1128914805]
@@ -974,13 +973,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -93.0
+offset_top = -86.0
 offset_right = 150.0
-offset_bottom = 53.5
+offset_bottom = 60.5
 grow_vertical = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(39, 0)
-texture = ExtResource("4_g6d76")
+texture = ExtResource("4_qdm3c")
 expand_mode = 1
 flip_h = true
 

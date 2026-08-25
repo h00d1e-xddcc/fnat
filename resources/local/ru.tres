@@ -89,7 +89,7 @@ dictionary = Dictionary[String, String]({
 "ui_title": "Четыре Ночи\\n У\\nКасане\\n Teтo",
 "ui_usage": "трата",
 "ui_v-sync": "вер-синхр",
-"ui_voice": "озвучка",
+"ui_voice": "озвучка (нет)",
 "ui_volume": "звк",
 "ui_warn": "Озвучка была добавлена чисто по приколу,\\nИ была взята из Ultimate Custom Night,\\nРусская озвучка была взята у BitModding,\\nТак же озвучивавшую UCN.\\n",
 "v_adblock": "улучшает блок. рекламы",

@@ -8,18 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://c5qekra7dp2cw" path="res://prefabs/anims/gnoise.tscn" id="6_4ya4h"]
 [ext_resource type="PackedScene" uid="uid://cgaobj5urjfh7" path="res://prefabs/anims/nchimera.tscn" id="6_e1vna"]
 [ext_resource type="ArrayMesh" uid="uid://c6wql3jx6ahn3" path="res://prefabs/mesh/fnat_pc.res" id="6_xpylm"]
-[ext_resource type="Texture2D" uid="uid://dsgkdjsv8y5jq" path="res://pics/pc.png" id="7_1ojbv"]
 [ext_resource type="PackedScene" uid="uid://djx0fyctwr5x4" path="res://prefabs/anims/chimera.tscn" id="7_godb5"]
 [ext_resource type="PackedScene" uid="uid://bmvg82bprk781" path="res://prefabs/anims/tt.tscn" id="8_3gd81"]
 [ext_resource type="PackedScene" uid="uid://d4el3ofnkbj27" path="res://prefabs/anims/noise.tscn" id="8_73bd1"]
-[ext_resource type="Texture2D" uid="uid://dbesgd7bs2oci" path="res://pics/v1.png" id="8_xjrve"]
 [ext_resource type="PackedScene" uid="uid://dhton8vvj606o" path="res://prefabs/anims/nerd.tscn" id="9_88v2a"]
-[ext_resource type="Texture2D" uid="uid://cbelwxsg8ko6j" path="res://pics/477.png" id="9_lkkgg"]
 [ext_resource type="PackedScene" uid="uid://c3hmow7pswfp8" path="res://prefabs/anims/hakua.tscn" id="9_uoqgc"]
 [ext_resource type="PackedScene" uid="uid://cdghcukm0ylg1" path="res://prefabs/walls.tscn" id="10_73bd1"]
 [ext_resource type="PackedScene" uid="uid://por3ayfdxe3f" path="res://prefabs/anims/endo.tscn" id="10_dwenj"]
 [ext_resource type="Texture2D" uid="uid://g8dje47f3861" path="res://pics/blender.png" id="10_ypoyp"]
+[ext_resource type="Texture2D" uid="uid://choqqn7jq20a4" path="res://pics/vi0.svg" id="11_a4j7j"]
 [ext_resource type="PackedScene" uid="uid://dupv1tte46n8w" path="res://prefabs/anims/bear.tscn" id="11_ypoyp"]
+[ext_resource type="Texture2D" uid="uid://yw0m2edvegte" path="res://pics/1_.png" id="13_a4j7j"]
 [ext_resource type="PackedScene" uid="uid://g3i4i03i38hm" path="res://prefabs/anims/alien.tscn" id="13_cn0f5"]
 [ext_resource type="Texture2D" uid="uid://dnxxyw8cyw8nd" path="res://pics/scott.webp" id="14_8wdta"]
 [ext_resource type="Texture2D" uid="uid://du1erv81l1rg1" path="res://pics/codeman38.png" id="15_pvoyk"]
@@ -65,6 +64,12 @@ size = Vector3(20, 20, 0.045)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_67nhv"]
 size = Vector3(30, 20, 0.045)
+
+[sub_resource type="Gradient" id="Gradient_6lqgs"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fnmbc"]
+gradient = SubResource("Gradient_6lqgs")
 
 [sub_resource type="Environment" id="Environment_t8av2"]
 background_mode = 1
@@ -901,11 +906,12 @@ spot_angle = 10.89
 spot_angle_attenuation = 0.2871751
 
 [node name="virus" type="Sprite3D" parent="sub/custom" unique_id=155486441]
-transform = Transform3D(1, 6.495095e-09, 9.742648e-09, -6.495095e-09, 1, 2.4573566e-08, -9.742648e-09, -2.4573566e-08, 1, 1.9417988, 0.6662005, 2.6086364)
-pixel_size = 0.001
+transform = Transform3D(1, 6.495095e-09, 9.742648e-09, -6.495095e-09, 1, 2.4573566e-08, -9.742648e-09, -2.4573566e-08, 1, 1.9417988, 0.69463974, 2.6086364)
+pixel_size = 0.017
 shaded = true
+texture_filter = 0
 render_priority = 1
-texture = ExtResource("9_lkkgg")
+texture = ExtResource("11_a4j7j")
 script = ExtResource("19_wh851")
 mood = 2
 is_static = true
@@ -918,18 +924,20 @@ spot_angle = 20.38
 spot_angle_attenuation = 0.2871751
 
 [node name="vissy" type="Sprite3D" parent="sub/custom" unique_id=1836307466]
-transform = Transform3D(0.059673242, 0.017563066, 0.004171089, -0.016718, 0.06320741, 0.0010375114, -0.0037997577, -0.0022782332, 0.060939986, 1.250711, 0.651114, 2.6086364)
+transform = Transform3D(0.06208724, 0, 0, 0, 0.06564167, 0, 0, 0, 0.061091375, 1.250711, 0.651114, 2.6086364)
+pixel_size = 0.025
 shaded = true
+texture_filter = 1
 render_priority = 1
-texture = ExtResource("8_xjrve")
+texture = ExtResource("13_a4j7j")
 script = ExtResource("19_wh851")
 mood = 2
 
 [node name="light" type="SpotLight3D" parent="sub/custom/vissy" unique_id=1646503584]
-transform = Transform3D(14.471976, -5.7166576, -4.0935245, 0.8198837, -6.968645, 13.54211, -7.0692234, -13.289097, -6.431478, -16.018398, 30.978155, -17.42398)
+transform = Transform3D(13.577049, -5.572027, -6.637711, 3.2139144, -7.547094, 12.839255, -8.0881815, -13.03212, -5.709984, -16.018398, 30.978155, -17.42398)
 spot_range = 2.98
-spot_attenuation = 0.54
-spot_angle = 20.38
+spot_attenuation = -0.6
+spot_angle = 12.15
 spot_angle_attenuation = 0.2871751
 
 [node name="alien" parent="sub/custom" unique_id=787385900 instance=ExtResource("13_cn0f5")]
@@ -1005,9 +1013,10 @@ transform = Transform3D(1.3794739, 0, 0, 0, 1.5413117, 0, 0, 0, 1.3794739, -0.03
 mesh = ExtResource("41_lkkgg")
 
 [node name="main" type="Sprite3D" parent="sub/custom/fnat_pc" unique_id=452965198]
-transform = Transform3D(0.09890036, 6.423676e-10, 2.4088784e-09, -7.177292e-10, 0.11682943, 2.8709168e-09, -9.635515e-10, -2.5694704e-09, 0.097314045, 4.7683716e-07, 1.0035696, -0.2368555)
+transform = Transform3D(0.01045, 2.524355e-29, 4.5651603e-16, -6.160312e-19, 1.79, 8.8817837e-16, 6.3315197e-27, -1.7763568e-15, 1.035, 4.7683716e-07, 1.0035696, -0.22444057)
 flip_h = true
-texture = ExtResource("7_1ojbv")
+pixel_size = 0.7171819
+texture = SubResource("GradientTexture1D_fnmbc")
 
 [node name="cam" type="Camera3D" parent="sub/custom" unique_id=1869284834]
 transform = Transform3D(-1, -1.6681055e-08, 8.581658e-08, 0, 0.9816272, 0.19080901, -8.742278e-08, 0.19080901, -0.9816272, 3.824, 1.39, 0.48)
@@ -1290,6 +1299,8 @@ transform = Transform3D(-0.63391733, 0, -0.77340084, 3.7252903e-09, 1, 0, 0.7734
 script = ExtResource("38_pn05y")
 absolute_cd = 0.92
 to_play = "ambient/short/baka_nerd"
+shake_scale = 10.0
+jump = 0.1
 volume = -7
 
 [node name="nokia" type="MeshInstance3D" parent="sub/main/2" unique_id=214754119]
@@ -1502,7 +1513,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 80.0
 grow_vertical = 0
-text = "v26.0.1 - demo edition, first day patch"
+text = "v26.0.2 - demo edition, light & screwdriver"
 label_settings = SubResource("LabelSettings_w6bwt")
 vertical_alignment = 2
 
@@ -1588,7 +1599,6 @@ layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="custom_night" type="Control" parent="ui" unique_id=73468786]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2337,6 +2347,7 @@ theme_override_font_sizes/font_size = 24
 text = "на стройку"
 
 [node name="build" type="Control" parent="ui" unique_id=1062397149]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2569,7 +2580,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 12
 theme_override_fonts/normal_font = ExtResource("4_gacyl")
-text = "# ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ С КОНEЧЕНЫМ ПОЛЬЗОВАТЕЛЕМ
+text = "# ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ С КОНЧЕНЫМ ПОЛЬЗОВАТЕЛЕМ
 
 **Редакция 26.0 от 8 августа 2026 года**
 

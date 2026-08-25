@@ -1,7 +1,7 @@
 extends Camera3D
 class_name fnat_user
 
-enum action {sit, hide, peek, pc, back, loss}
+enum action {sit, hide, peek, pc, back, loss, window}
 
 @export var state : action
 @export var to_rotate : float
@@ -18,9 +18,14 @@ enum action {sit, hide, peek, pc, back, loss}
 @export var running_out_batary : bool
 @export var anims : Array[fnat_animatronic]
 @export var mental_sickness : float
+@export var mental_sickness_factor : float
 @export var blink_screen : Node
 @export var is_shaking : bool
 var interaction
+
+@export var item_right : fnat_item
+@export var item_left : fnat_item
+@export var item_head : fnat_item
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause") : arc.pause()
@@ -28,7 +33,7 @@ func _process(delta):
 	input()
 	if to_rotate != 0 :
 		match state :
-			action.sit, action.hide:
+			action.sit, action.hide, action.window:
 				rotation.y = lerp(rotation.y, rotation.y + to_rotate, delta * 1.57)
 			action.pc :
 				if arc.screen.cam.visible == true:
@@ -38,8 +43,15 @@ func _process(delta):
 					if cam.rotation_degrees.y < cam.max : cam.rotation_degrees.y = cam.max
 
 	if state != action.pc : 
-		flash_light.visible = Input.is_action_pressed("light")
-		if flash_light.visible :
+		match item_right.resource_path.get_file().get_basename() :
+			"light", "light_big" : 
+				if arc.user.flash_light_charge < 0 : arc.user.flash_light.visible = false
+				else : 
+					flash_light.visible = Input.is_action_pressed("light")
+					flash_light_charge -= delta * flashlight_loss_factor
+					flash_light.light_energy = flash_light_charge / 100
+			_ : if flash_light.visible : flash_light.visible = false
+		if Input.is_action_pressed("light") :
 			var mouse_pos = get_viewport().get_mouse_position()
 			var ray_origin = project_ray_origin(mouse_pos)
 			var ray_direction = project_ray_normal(mouse_pos)
@@ -48,30 +60,35 @@ func _process(delta):
 			ray_origin,
 			ray_origin + ray_direction * ray_length)
 			var result = get_world_3d().direct_space_state.intersect_ray(query)
+			if arc.user.flash_light.visible : flash_light.look_at(result.position)
 			#print(result.collider.name)
 			match result.collider.name :
 				"nchimera" : 
 					if flash_light_charge > 0 :
-						get_node("/root/main/nchimera").hunger -= 85 * delta * (flash_light_charge / 50)
-						if get_node("/root/main/nchimera").hunger <= 0:
+						match item_right.resource_path.get_file().get_basename() :
+							"flash" : get_node("/root/main/nchimera").hunger -= 60 * delta * (flash_light_charge / 50)
+							"flash_big" : get_node("/root/main/nchimera").hunger -= 100 * delta * (flash_light_charge / 50)
+						if get_node("/root/main/nchimera").hunger <= 0 :
 							blink(.31)
 							get_node("/root/main/nchimera").poof()
 				"gnoise" :
 					if get_node("/root/main/gnoise").hunger > 100 :
 						get_node("/root/main/gnoise").emit_signal("in_office")
 					elif flash_light_charge > 0 : flashlight_brake()
+				"noise" :
+					if flash_light_charge > 0 :
+						match item_right.resource_path.get_file().get_basename() :
+							"flash" : get_node("/root/main/noise").hunger += 25 * delta * (flash_light_charge / 50)
+							"flash_big" : get_node("/root/main/noise").hunger += 75 * delta * (flash_light_charge / 50)
 				_: 
 					if Input.is_action_just_pressed("light") and result.collider is fnat_interact_object : result.collider.touch()
-			flash_light.look_at(result.position)
-			flash_light_charge -= delta * flashlight_loss_factor
-			flash_light.light_energy = flash_light_charge / 100
 
 	if spot_light.visible == true :
 		fan_rotor.rotation_degrees.y += 1000 * delta
 		if fan_rotor.rotation_degrees.y > 57000: fan_rotor.rotation_degrees.y = 0
-		mental_sickness += .75 * delta
+		mental_sickness += .75 * delta * mental_sickness_factor
 	else : 
-		mental_sickness += 1.75 * delta
+		mental_sickness += 1.75 * delta * mental_sickness_factor
 
 	if mental_sickness >= 40 :
 		arc_event.play_some_event("mental")
@@ -88,7 +105,7 @@ func input() :
 
 	if Input.is_action_just_pressed("recharge") : recharge()
 	
-	if state == action.hide : return
+	if state == action.hide or state == action.window : return
 	
 	if Input.is_action_just_pressed("cancel") : cancel_call()
 	if Input.is_action_just_pressed("pc") : change_state(3)
@@ -169,6 +186,13 @@ func shake_pos(inten : float = .02, dur : float = .25) :
 func change_state(numba : int = 0) :
 	if state == action.loss : return
 	match numba :
+		5 : 
+			state = action.window
+			position = Vector3(-3.75, 1.765, -14.362)
+			rotation_degrees.y = -175
+			rotation_degrees.x = 0
+			rotation_degrees.z = 0
+			to_rotate = 0
 		4 : # loss
 			state = action.loss
 			arc.fatass.position = Vector3(-2.23, .865, -17.834)
@@ -250,7 +274,7 @@ func _input(event) :
 			if line.text == "gimmestar" :
 				arc.save.stars[5] = true
 				arc.save_settings()
-				arc_event.popup(preload("res://pics/479.png"), arc.lang.get_word("p_star"), arc.lang.get_word("p_cho"))
+				arc_event.popup(preload("res://pics/vi0.svg"), arc.lang.get_word("p_star"), arc.lang.get_word("p_cho"), true)
 			if line.text == arc.screen.teto_word :
 				arc.screen.teto_input.visible = false
 
@@ -258,6 +282,8 @@ func _input(event) :
 			line.text = ""
 			line.visible = true
 			arc.batary -= 1
+			arc.screen.teto_input.get_node("back/teto_word/teto_right").texture = load("res://pics/vi" + str(randi_range(0,8)) + ".svg")
+			arc.screen.teto_input.get_node("back/teto_word/teto_left").texture = load("res://pics/vi" + str(randi_range(0,8)) + ".svg")
 			get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/bozo").visible = true
 			arc_event.play_sfx({"path" = "user/fish_miss"})
 
@@ -270,12 +296,79 @@ func blink(time : float = 0) :
 	var roll = randi_range(0,100)
 	if roll > 90 : blink(0.13)
 
+func door_to() :
+	if state == action.window : return
+	blink(2.57)
+	change_state(5)
+
 func mute() :
 	source["fan"].stream_paused = true
 	source["spot"].stream_paused = true
 	source["amb"].stream_paused = true
 	source["whitout"].stream_paused = true
 	arc.screen.ad_source.stream_paused = true
+
+func item_swap(to_swap : fnat_item) :
+	var item = to_swap.resource_path.get_file().get_basename()
+	print(item)
+	match to_swap.item_type : # TYPE_OF_SWAPED_ITEM
+
+		to_swap.TYPE_OF_ITEM.RIGHT :
+			if item_right == to_swap : return
+			match item_right.resource_path.get_file().get_basename() :
+				"light" : # TAKE_OFF
+					$"../decor/light".visible = true
+					arc.user.flash_light.visible = false
+				"light_big" :
+					$"../decor/light_big".visible = true
+					arc.user.flash_light.visible = false
+
+			match item : # EQUIP
+				"light" :
+					arc.user.flash_light_charge = 0
+					arc.user.flashlight_loss_factor = 2
+					arc.user.flash_light.spot_range = 20
+					arc.user.flash_light.spot_attenuation = .3
+					arc.user.flash_light.spot_angle = 15
+					arc.user.flash_light.spot_angle_attenuation = .8
+					$"../decor/light".visible = false
+				"light_big" :
+					arc.user.flash_light_charge = 0
+					arc.user.flashlight_loss_factor = 4
+					arc.user.flash_light.spot_range = 40
+					arc.user.flash_light.spot_attenuation = .6
+					arc.user.flash_light.spot_angle = 30
+					arc.user.flash_light.spot_angle_attenuation = .4
+					$"../decor/light_big".visible = false
+			item_right = to_swap
+
+
+		to_swap.TYPE_OF_ITEM.HEAD : # take_off
+			if item_head == to_swap : return
+			match item_head.resource_path.get_file().get_basename() :
+				"goggles" :
+					arc.world.environment.background_color = Color("000000")
+					$"../decor/goggles".visible = true
+					mental_sickness_factor = 1
+					arc_event.play_sfx({"path" = "user/goggles_off"})
+				"foil_hat" :
+					arc.usage += .57
+					$"../decor/foil_hat".visible = true
+					mental_sickness_factor = 1
+					arc_event.play_sfx({"path" = "ambient/short/item/paper"})
+
+			match item : #equip
+				"goggles" :
+					arc.world.environment.background_color = Color("00c400")
+					$"../decor/goggles".visible = false
+					mental_sickness_factor = .75
+					arc_event.play_sfx({"path" = "user/goggles"})
+				"foil_hat" :
+					arc.usage -= .57
+					$"../decor/foil_hat".visible = false
+					mental_sickness_factor = .5
+					arc_event.play_sfx({"path" = "ambient/short/item/hemlet"})
+			item_head = to_swap
 
 func _ready() -> void:
 	change_state()
@@ -286,7 +379,7 @@ func _ready() -> void:
 	arc_event.play_random()
 	await get_tree().create_timer(3.1).timeout
 	arc.is_can_pause = true
-	await get_tree().create_timer(await arc_event.play_sfx({"path" = "ambient/calls/" + str(randi_range(0,2)), "volume" = 0 }) + 2.57).timeout
+	await get_tree().create_timer(await arc_event.play_sfx({"path" = "ambient/calls/" + str(randi_range(0,2)) }) + 2.57).timeout
 
 	var joke_dead : String = ""
 	var to_play : String = ""
@@ -315,13 +408,16 @@ func _ready() -> void:
 				6 : joke_dead = "ambient/calls/" + arc.save.lange + "/void"
 				7 : joke_dead = "ambient/calls/" + arc.save.lange + "/wait"
 			source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
+			source["call"].volume_db = arc.save.volume
 			source["call"].play()
 			return
 	if joke_dead != "" and to_play != "" :
 		source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
+		source["call"].volume_db = arc.save.volume
 		source["call"].play()
 		await get_tree().create_timer(source["call"].stream.get_length() + .257).timeout
 	source["call"].stream = load("res://resources/sounds/" + to_play + ".ogg")
+	source["call"].volume_db = arc.save.volume
 	source["call"].play()
 	
 	#arc_event.play_sfx({"type" = "2d", "path" = "ambient/calls/" + arc.save.lange + arc.night.resource_name})

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="fnat_item" format=3 uid="uid://451vdrmdonh"]
+
+[ext_resource type="Script" uid="uid://dw2cn81r7e200" path="res://code/resource_item.gd" id="1_fjb8w"]
+
+[resource]
+script = ExtResource("1_fjb8w")
+item_type = 1
+metadata/_custom_type_script = "uid://dw2cn81r7e200"
