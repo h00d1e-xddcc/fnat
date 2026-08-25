@@ -24,7 +24,7 @@
 Установить последний билд, можно во вкладке `Releases`, с правого боку по середине, и нажать на тест с синим `.exe`
 
 
-[Ну или можно просто нажать на этот текст](https://github.com/h00d1e-xddcc/fnat/releases/download/26.0_before_first_day_patch/fnat_x86_64.exe)
+[Ну или можно просто нажать на этот текст](https://github.com/h00d1e-xddcc/fnat/releases/download/26.0.1/fnat_x86_64.exe)
 
 ## Обратный отчет
 
@@ -89,7 +89,7 @@ If some interested,
 # Installing
 You can install last build in `Releses` tab, in middle-right side of the site. And just press on the blue text, whit blue `fnat_x86_64.exe`
 
-[Or you can just press on this text](https://github.com/h00d1e-xddcc/fnat/releases/download/26.0_before_first_day_patch/fnat_x86_64.exe)
+[Or you can just press on this text](https://github.com/h00d1e-xddcc/fnat/releases/download/26.0.1/fnat_x86_64.exe)
 
 # Thanks
 Name are clickable
