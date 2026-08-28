@@ -119,7 +119,7 @@ func input() :
 	if Input.is_action_just_pressed("cam") and state == action.pc : arc.screen._on_cam_pressed()
 
 func spotlight() :
-	if is_booting or arc.batary < 0 : 
+	if is_booting or arc.batary <= 0 : 
 		arc_event.play_sfx({"path" = "user/error"})
 		return
 	if spot_light.visible == true :
@@ -149,16 +149,16 @@ func spotlight() :
 		is_booting = false
 
 func recharge() :
-	#anims[0].jumpscare() ля вот такими костылями мне преходилось пользоватся
-	if randi_range(0,100) > flashlight_broke_factor :
-		flashlight_brake()
-		return
-	if arc.user.flash_light_charge >= 90: 
-		arc.user.flash_light_charge = 100
-		arc_event.play_sfx({"path" = "user/flashlight_full", "sec" = .28})
-		return
-	arc.user.flash_light_charge += randf_range(7, 20)
-	arc_event.play_sfx({"path" = "user/flashlight_charge", "volume" = -3})
+	if arc.user.item_right.resource_path.get_file().get_basename() == "light" or arc.user.item_right.resource_path.get_file().get_basename() == "light_big" : 
+		if randi_range(0,100) > flashlight_broke_factor :
+			flashlight_brake()
+			return
+		if arc.user.flash_light_charge >= 90: 
+			arc.user.flash_light_charge = 100
+			arc_event.play_sfx({"path" = "user/flashlight_full", "sec" = .28})
+			return
+		arc.user.flash_light_charge += randf_range(7, 20)
+		arc_event.play_sfx({"path" = "user/flashlight_charge", "volume" = -3})
 
 func flashlight_brake() :
 	arc.user.flash_light.visible = false

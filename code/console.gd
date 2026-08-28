@@ -69,7 +69,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 		"e" : get_tree().quit()
 		"sh" : arc.time += 60
 		"ad" : arc.screen.advestment()
-		"popup" : arc_event.popup(preload("res://pics/vi6.svg"), "KYS", "Kiss Your Sister", true)
+		"popup" : arc_event.popup(preload("res://pics/vi6.svg"), "KYS", "Kiss Your Sister. NOW!", true)
 		"help" :
 			match arc.night.start_night :
 				1 : arc.user.source["call"].stream = load("res://resources/sounds/ambient/calls/" + arc.save.lange + "/console1.ogg")
@@ -97,9 +97,11 @@ func _on_input_text_submitted(new_text: String) -> void:
 			if night == 1 or night == 2 :
 				arc.save.night = night
 				arc.retranslate_title()
-		_ : print_output(new_text + ": command not found")
+		_ : 
+			if new_text == "!!" : pass
+			else : print_output(new_text + ": command not found")
 	if new_text != "!!" : last_comma = new_text
-	input.text = ""
+	input.text = "" # how this think works?
 	input.release_focus()
 
 func _ready() -> void:

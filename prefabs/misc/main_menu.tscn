@@ -1599,6 +1599,7 @@ layout_mode = 2
 texture = ExtResource("27_jkqr7")
 
 [node name="custom_night" type="Control" parent="ui" unique_id=73468786]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2347,7 +2348,6 @@ theme_override_font_sizes/font_size = 24
 text = "на стройку"
 
 [node name="build" type="Control" parent="ui" unique_id=1062397149]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

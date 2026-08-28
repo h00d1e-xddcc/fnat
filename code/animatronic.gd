@@ -149,8 +149,19 @@ func move() :
 	match name :
 		"noise" :
 			noise.playing = false
-			#if anim_to_play == "default" :
-				#animator.play("guitar")
+			if global_position.distance_to(arc.user.global_position) < 20 :
+				if noise.playing : pass
+				else : # yandere
+					noise.stream = load("res://resources/sounds/anim/noise/random/" + str(randi_range(0,6)))
+					arc.usage += .57
+					noise.volume_db = arc.save.volume - randi_range(-12,3)
+					noise.play(randi_range(0,5))
+			else : 
+				if noise.playing == false : pass
+				else : 
+					arc.usage += .57
+					noise.stop()
+			if anim_to_play == "default" : animator.play("guitar") #wha is this?
 			#else :
 				#animator.play(anim_to_play)
 			#var roll : int = randi_range(0, 100)

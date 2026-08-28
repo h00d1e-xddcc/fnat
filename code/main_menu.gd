@@ -190,7 +190,7 @@ func _on_custom_night_pressed() -> void:
 	get_node("ui/custom_night").visible = true
 	change_state("custom")
 	get_node("/root/main_menu/audio").stream = preload("res://resources/sounds/ambient/long/custom.ogg")
-	get_node("/root/main_menu/audio").volume_db = arc.save.volume - 15
+	get_node("/root/main_menu/audio").volume_db = arc.save.volume - 10
 	get_node("/root/main_menu/audio").play(randi_range(0,7))
 
 func _on_back_pressed() -> void:

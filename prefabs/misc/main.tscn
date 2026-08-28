@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://djx0fyctwr5x4" path="res://prefabs/anims/chimera.tscn" id="20_l1unm"]
 [ext_resource type="PackedScene" uid="uid://bjksllymkd23q" path="res://prefabs/items/fatass.tscn" id="20_lshpl"]
 [ext_resource type="PackedScene" uid="uid://d4el3ofnkbj27" path="res://prefabs/anims/noise.tscn" id="20_pfkic"]
-[ext_resource type="ArrayMesh" uid="uid://bat27vi7gw3hr" path="res://prefabs/mesh/fnat_guitar.res" id="21_rgv7v"]
+[ext_resource type="ArrayMesh" uid="uid://dwdt42cmj7p0k" path="res://prefabs/mesh/fnat_guitar.res" id="21_rgv7v"]
 [ext_resource type="Script" uid="uid://c20fq5x3jcd24" path="res://code/interact.gd" id="22_8fcx1"]
 [ext_resource type="PackedScene" uid="uid://c5qekra7dp2cw" path="res://prefabs/anims/gnoise.tscn" id="22_adtnr"]
 [ext_resource type="ArrayMesh" uid="uid://bphfdrc13xm5t" path="res://prefabs/mesh/fnat_crutnain.res" id="22_l1unm"]
@@ -51,7 +51,10 @@
 [ext_resource type="ArrayMesh" uid="uid://d2pfqnbbv77rv" path="res://prefabs/mesh/fnat_crutnain_clip.res" id="36_iwq5g"]
 [ext_resource type="ArrayMesh" uid="uid://dhait1hagqoy8" path="res://prefabs/mesh/fnat_pipe_blank.res" id="36_pfkic"]
 [ext_resource type="ArrayMesh" uid="uid://chv84jgxv6kvn" path="res://prefabs/mesh/fnat_cube.res" id="37_8c3lo"]
+[ext_resource type="ArrayMesh" uid="uid://dgc65d0hghu37" path="res://prefabs/mesh/fnat_trans.res" id="37_fraed"]
+[ext_resource type="ArrayMesh" uid="uid://dxosuy36lsa3d" path="res://prefabs/mesh/fnat_trans_mirror.res" id="38_pbfbh"]
 [ext_resource type="PackedScene" uid="uid://b544ckfpt6yl8" path="res://prefabs/items/cup.tscn" id="39_lshpl"]
+[ext_resource type="ArrayMesh" uid="uid://dh2jkx3j2n5a4" path="res://prefabs/mesh/fnat_trans_button.res" id="39_pbfbh"]
 [ext_resource type="ArrayMesh" uid="uid://c0ugnulnnvfm" path="res://prefabs/mesh/fnat_Cube_006.res" id="41_lshpl"]
 [ext_resource type="PackedScene" uid="uid://dhton8vvj606o" path="res://prefabs/anims/nerd.tscn" id="42_8c3lo"]
 [ext_resource type="Script" uid="uid://cktqc128jci3t" path="res://code/path_node.gd" id="43_adtnr"]
@@ -63,24 +66,24 @@ background_mode = 1
 background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 0.21
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_m0pf1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pbfbh"]
 viewport_path = NodePath("sub")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_up0va"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p80bv"]
 resource_local_to_scene = true
 shading_mode = 0
 diffuse_mode = 3
-albedo_texture = SubResource("ViewportTexture_m0pf1")
+albedo_texture = SubResource("ViewportTexture_pbfbh")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_fraed"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_s8arb"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_up0va")
+material = SubResource("StandardMaterial3D_p80bv")
 size = Vector2(1, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pbfbh"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_4ypcs"]
 viewport_path = NodePath("../../../../cams")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_p80bv"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ljske"]
 viewport_path = NodePath("../../../minimap")
 
 [sub_resource type="Resource" id="Resource_g5sym"]
@@ -367,6 +370,9 @@ size = Vector3(0.3137268, 0.32534027, 0.61031246)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_67nhv"]
 size = Vector3(0.5985718, 2.652832, 0.2841797)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0vcn1"]
+size = Vector3(0.05, 0.05, 0.1)
 
 [sub_resource type="Shader" id="Shader_l72lq"]
 code = "shader_type canvas_item;
@@ -3605,14 +3611,14 @@ teto_input = NodePath("sub/ui/word_minigame")
 
 [node name="mesh" parent="office/screen" index="1" unique_id=630072916]
 transform = Transform3D(0.76, -1.4901161e-08, -4.440892e-16, 0, 0.999, 0, 8.881784e-16, -3.5527137e-15, 0.46, 0.002, 0, -0.002)
-mesh = SubResource("PlaneMesh_fraed")
+mesh = SubResource("PlaneMesh_s8arb")
 
 [node name="cam" parent="office/screen/sub/ui" parent_id_path=PackedInt32Array(1479514998, 927469561) index="1" unique_id=1858130358]
 texture_filter = 1
-texture = SubResource("ViewportTexture_pbfbh")
+texture = SubResource("ViewportTexture_4ypcs")
 
 [node name="map" parent="office/screen/sub/ui/scheme" parent_id_path=PackedInt32Array(1479514998, 927469561, 1092765403) index="3" unique_id=2014552017]
-texture = SubResource("ViewportTexture_p80bv")
+texture = SubResource("ViewportTexture_ljske")
 
 [node name="user" type="Camera3D" parent="office" unique_id=204078772 node_paths=PackedStringArray("flash_light", "spot_light", "cast", "source", "cam", "fan_rotor", "anims", "blink_screen")]
 process_mode = 3
@@ -3674,6 +3680,9 @@ autoplay = true
 autoplay = true
 
 [node name="call" type="AudioStreamPlayer" parent="office/user" unique_id=556357149]
+autoplay = true
+
+[node name="staring" type="AudioStreamPlayer" parent="office/user" unique_id=1219638495]
 autoplay = true
 
 [node name="spolight" type="SpotLight3D" parent="office" unique_id=1533404669]
@@ -4094,6 +4103,25 @@ mesh = ExtResource("21_rgv7v")
 [node name="collider" type="CollisionShape3D" parent="office/decor/guitar" unique_id=1047865615]
 transform = Transform3D(1, -1.4901161e-08, 0, 0, 0.99999976, 0, -2.9802322e-08, 4.4703484e-08, 1, 0.015049934, 0.8264184, -0.5561533)
 shape = SubResource("BoxShape3D_67nhv")
+
+[node name="fnat_trans" type="MeshInstance3D" parent="office/decor" unique_id=1377526915]
+transform = Transform3D(1.688, 0, 0, 0, 1.688, 0, 0, 0, 1.688, -2.6774187, 1.2014927, -19.79058)
+mesh = ExtResource("37_fraed")
+
+[node name="fnat_trans_mirror" type="MeshInstance3D" parent="office/decor/fnat_trans" unique_id=993273943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060528994, -0.068338156, 0.0157547)
+mesh = ExtResource("38_pbfbh")
+
+[node name="fnat_trans_button" type="MeshInstance3D" parent="office/decor/fnat_trans" unique_id=1414974878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020945072, 0.043613672, -0.035560608)
+mesh = ExtResource("39_pbfbh")
+
+[node name="static_body_3d" type="StaticBody3D" parent="office/decor/fnat_trans/fnat_trans_button" unique_id=1634143044]
+script = ExtResource("22_8fcx1")
+type = 1
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="office/decor/fnat_trans/fnat_trans_button/static_body_3d" unique_id=1620720843]
+shape = SubResource("BoxShape3D_0vcn1")
 
 [node name="triggers" type="CanvasLayer" parent="office" unique_id=1895659640]
 
@@ -4934,6 +4962,24 @@ transform = Transform3D(-0.14330427, -0.9896787, 4.9524257e-08, -4.371139e-08, -
 current_point = NodePath("../path/endo/parts_and_service")
 talk = true
 
+[node name="Skeleton3D" parent="endo/skelet" parent_id_path=PackedInt32Array(229964717, 1229580226) index="0" unique_id=148731874]
+bones/5/position = Vector3(0, -0.3504845, -0.50000006)
+bones/8/position = Vector3(0.15999998, 0.6995156, -0.021038994)
+bones/8/rotation = Quaternion(0.00039147146, -0.0054760547, 0.9974322, -0.07140724)
+bones/9/rotation = Quaternion(0.04282378, 0.0024400004, 0.07625927, 0.99616504)
+bones/10/rotation = Quaternion(-0.03715911, -0.0047637946, -0.12706824, 0.99118626)
+bones/11/rotation = Quaternion(-0.12390082, -0.01363892, 0.07096654, 0.9896597)
+bones/12/position = Vector3(-0.022525646, 0.010959875, -0.020000044)
+bones/12/rotation = Quaternion(-6.912814e-07, -2.3636519e-08, 0.28774673, 0.9577066)
+bones/13/rotation = Quaternion(1.4663922e-07, 1.1443318e-07, -0.055043336, 0.99848396)
+bones/14/position = Vector3(-0.15999998, 0.6995156, -0.021038994)
+bones/14/rotation = Quaternion(-0.00039147146, -0.0054760547, 0.9974322, 0.07140724)
+bones/15/rotation = Quaternion(0.04282378, -0.0024400004, -0.07625927, 0.99616504)
+bones/16/rotation = Quaternion(-0.03715911, 0.0047637946, 0.12706824, 0.99118626)
+bones/17/rotation = Quaternion(-0.12390082, 0.01363892, -0.07096654, 0.9896597)
+bones/18/rotation = Quaternion(-5.164479e-07, -1.0895116e-07, -0.2055446, 0.9786478)
+bones/19/rotation = Quaternion(-7.400463e-08, 1.9346981e-08, -0.029777475, 0.99955654)
+
 [node name="gnoise" parent="." unique_id=411477254 node_paths=PackedStringArray("current_point") instance=ExtResource("22_adtnr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8214352, 0, -33.661007)
 mood = 1
@@ -5305,6 +5351,7 @@ mesh = ExtResource("36_iwq5g")
 [editable path="office/decor/cup6"]
 [editable path="office/decor/cup7"]
 [editable path="office/decor/cup4"]
+[editable path="endo"]
 [editable path="estab"]
 [editable path="estab/door4"]
 [editable path="estab/door6"]

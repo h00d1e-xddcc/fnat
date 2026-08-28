@@ -50,7 +50,7 @@ func play_sfx(d : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, 
 		"3d" : 
 			sfx = AudioStreamPlayer3D.new()
 			sfx.max_distance = dict.get("max_distance", 0)
-			sfx.reparent(arc)
+			arc.add_child(sfx)
 			sfx.global_position = dict["pos"]
 			sfx.attenuation_filter_db = -10
 			sfx.unit_size = 1

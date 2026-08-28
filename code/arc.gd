@@ -20,6 +20,7 @@ extends Node3D
 @export var deads : int
 @export var loss : bool = false
 @export var iddqd : bool
+@export var is_can_add_power : bool = true
 
 signal out_of_power
 signal second_pass
@@ -61,6 +62,21 @@ func deloadout() :
 	out_of_power.disconnect(run_out_power)
 	second_pass.disconnect(pass_time)
 
+func roll_batary() :
+	if is_can_add_power == false : 
+		arc_event.play_sfx({"path" = "user/power_error", "volume" = 0})
+		return
+	is_can_add_power = false
+	if randf() < arc.batary / 100 :
+		if arc.batary <= 0 : run_back_power()
+		else : arc.batary = 0
+	else :
+		arc.batary += randi_range(10, 30)
+		arc_event.play_sfx({"path" = "user/power_add", "volume" = 15})
+
+	await get_tree().create_timer(7, false, false, false).timeout
+	is_can_add_power = true
+
 func pass_time() :
 	time += 1
 	if time >= 480 : 
@@ -76,8 +92,8 @@ func pass_time() :
 			arc.save_settings()
 		SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"}, true )
 	arc.screen.update_text()
-	batary -= 1 * usage * .075
-	if batary < 0 : emit_signal("out_of_power")
+	if batary <= 0 : emit_signal("out_of_power")
+	else : batary -= 1 * usage * .075
 
 func button_delay(button : Button, waiting : float) :
 	var old_string = button.text
@@ -138,11 +154,21 @@ func pause() :
 
 func run_out_power() :
 	out_of_power.disconnect(run_out_power)
-	user.source["fan"].playing = false
-	user.source["spot"].playing = false
-	user.spot_light.visible = false
-	screen.visible = false
+	if arc.user.spot_light.visible :
+		arc.user.source["fan"].stream_paused = true
+		arc.user.source["spot"].stream_paused = true
+		arc.user.source["amb"].stream_paused = true
+		arc.screen.ad_source.stream_paused = true
+		arc.user.source["whitout"].stream_paused = false
+		arc.screen.mute_channel()
+		arc.user.spot_light.visible = false
+		arc.screen.visible = false
+		arc.usage -= 1.75
 	arc_event.play_sfx({"type" = "2d", "path" = "user/power_down", "volume" = -7})
+
+func run_back_power() :
+	out_of_power.connect(run_out_power)
+	arc.usage = 0
 
 func add_word(id : String, word : String) :
 	lang.dictionary[id] = word 
@@ -176,6 +202,8 @@ func retranslate_title() :
 	get_node("/root/main_menu/ui/build/control/v_box_container/label").text = lang.get_word("ui_volume")
 	get_node("/root/main_menu/ui/build/control/v_box_container/v-sync").text = lang.get_word("ui_v-sync")
 	get_node("/root/main_menu/ui/build/control/v_box_container/full-screen").text = lang.get_word("ui_fullscreen")
+	get_node("/root/main_menu/ui/build/control/lang").text = arc.save.lange
+	get_node("/root/main_menu/ui/build/cont/back").text = lang.get_word("ui_back")
 	get_node("/root/main_menu/ui/custom_night/cont/start").text = lang.get_word("ui_cont")
 	get_node("/root/main_menu/ui/custom_night/cont/p_s_").text = lang.get_word("p.s.")
 	get_node("/root/main_menu/ui/custom_night/cont/back").text = lang.get_word("ui_back")

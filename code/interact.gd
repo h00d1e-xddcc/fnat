@@ -50,6 +50,7 @@ func touch() :
 		interact_type.DOOR :
 			arc.user.door_to()
 		interact_type.ITEM : arc.user.item_swap(item)
+		interact_type.SWICH : arc.roll_batary()
 
 		interact_type.ARM :
 			arc_event.play_sfx({"path" = to_play, "volume" = volume})

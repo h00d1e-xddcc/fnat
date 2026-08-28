@@ -33,24 +33,15 @@
 			"tasks": [
 				"5267621c-4d3d-48e4-aa4e-2c5028d98c87",
 				"de63bc0a-e14c-4df1-b7c1-703792e66cfc",
-				"42ed4fc0-4729-4c2b-a719-624ef4c7b35a",
-				"92b532ea-e596-4a1f-9cff-0255f15857c9",
-				"da38b171-c9b1-45bc-863c-d71202c297b6",
-				"5e6dee22-3104-4ac8-a562-52bd23919f5a",
-				"d2cc32d8-85ac-4340-8f36-5dd2ec5e56ed",
-				"c56fe474-dc64-49d4-9778-ea456be1b4cd",
-				"4919919f-a330-42f1-8b62-11613466cd74",
-				"f7263adf-f073-4a18-b3b1-a7b8b162ac20"
+				"42ed4fc0-4729-4c2b-a719-624ef4c7b35a"
 			]
 		},
 		{
 			"uuid": "d4a1ccb6-2ee0-4cf8-8974-4e4d8fccecf9",
 			"title": "Doing",
 			"tasks": [
-				"9b18d48a-9ae5-45bf-baaf-7754bf36cd99",
-				"051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
-				"79e7992e-de71-4236-a45a-32eb2cb5d4c0",
-				"45f39875-f684-40f9-9caa-7d2564e56b0e"
+				"45f39875-f684-40f9-9caa-7d2564e56b0e",
+				"4bce1dcb-9471-4b37-8570-11482d94d9bf"
 			]
 		}
 	],
@@ -72,58 +63,6 @@
 			]
 		},
 		{
-			"uuid": "c56fe474-dc64-49d4-9778-ea456be1b4cd",
-			"title": "passive actions",
-			"description": "",
-			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
-			"steps": [
-				{
-					"details": "chimera - eating, 2 anims",
-					"done": true
-				},
-				{
-					"details": "nerd - playing, 2 anims",
-					"done": true
-				},
-				{
-					"details": "noise - guitar",
-					"done": true
-				},
-				{
-					"details": "bear - ",
-					"done": true
-				},
-				{
-					"details": "all - kasotsky kick, 3 anim",
-					"done": true
-				},
-				{
-					"details": "all - mannrobics, 4 anims",
-					"done": true
-				},
-				{
-					"details": "all - hadooken",
-					"done": true
-				},
-				{
-					"details": "all - Mmmph",
-					"done": true
-				},
-				{
-					"details": "all - /impatient ",
-					"done": true
-				},
-				{
-					"details": "all - romantic",
-					"done": true
-				},
-				{
-					"details": "all - update old anims",
-					"done": true
-				}
-			]
-		},
-		{
 			"uuid": "5267621c-4d3d-48e4-aa4e-2c5028d98c87",
 			"title": "трансляция звуков из камеры",
 			"description": "в душе не чаю как это сделать, так что отложу на потом. Не, ну есть предположения как это делать, но пожалуй все таки сейчас лучше на другом сосредаточится",
@@ -132,54 +71,6 @@
 				{
 					"details": "",
 					"done": false
-				}
-			]
-		},
-		{
-			"uuid": "5e6dee22-3104-4ac8-a562-52bd23919f5a",
-			"title": "поменять точки позиций",
-			"description": "в место того, чтобы тока `fnat_point.gd` была просто каким-то обстракным не понятным чем-то.\nСделай, чтобы анимации или были абсолютно рандомными, или только одними. Ну или еще лучше, сделай словарь \"страшных\" анимаций, и бери тогда от туда анимации ",
-			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
-			"steps": [
-				{
-					"details": "",
-					"done": true
-				}
-			]
-		},
-		{
-			"uuid": "92b532ea-e596-4a1f-9cff-0255f15857c9",
-			"title": "New task",
-			"description": "нужна интуитивность",
-			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
-			"steps": [
-				{
-					"details": "для начала пронумеруй кнопки камер",
-					"done": true
-				},
-				{
-					"details": "после сделай видимыми кнопками, кнопки на мониторе",
-					"done": true
-				},
-				{
-					"details": "после в главном меню не хватало бы сделать пресетов",
-					"done": true
-				},
-				{
-					"details": "обозначение офиса на схеме",
-					"done": true
-				}
-			]
-		},
-		{
-			"uuid": "d2cc32d8-85ac-4340-8f36-5dd2ec5e56ed",
-			"title": "start_shift.ogg",
-			"description": "",
-			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
-			"steps": [
-				{
-					"details": "1",
-					"done": true
 				}
 			]
 		},
@@ -205,58 +96,9 @@
 			"steps": []
 		},
 		{
-			"uuid": "f7263adf-f073-4a18-b3b1-a7b8b162ac20",
-			"title": "New task",
-			"description": "не, просто тупо воспроизвести, а получить словарь, и применить этотсловарь,",
-			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
-			"steps": [
-				{
-					"details": "надо кароче переписать систему со звуками",
-					"done": true
-				}
-			]
-		},
-		{
-			"uuid": "4919919f-a330-42f1-8b62-11613466cd74",
-			"title": "перегнать звуки",
-			"description": "",
-			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
-			"steps": []
-		},
-		{
-			"uuid": "da38b171-c9b1-45bc-863c-d71202c297b6",
-			"title": "шоб типочки ходили",
-			"description": "",
-			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
-			"steps": []
-		},
-		{
 			"uuid": "2b9fd5e9-77ee-42df-92f4-45a97c00ff9e",
 			"title": "эмбиент",
 			"description": "ля башка не барит, кароче сделать так чтобы просто пауза на эмбиантах ставилась",
-			"category": "95686080-b83c-479d-b691-55683f5acac9",
-			"steps": []
-		},
-		{
-			"uuid": "051871c6-81c1-4ba7-9bb4-90e5cbcd216e",
-			"title": "rotate head into Vector3",
-			"description": "",
-			"category": "95686080-b83c-479d-b691-55683f5acac9",
-			"steps": [
-				{
-					"details": "Нука сходи глянь, что там было сделано, на не трезвую голову",
-					"done": false
-				},
-				{
-					"details": "[eqyz у тебя вышла переделывай",
-					"done": false
-				}
-			]
-		},
-		{
-			"uuid": "79e7992e-de71-4236-a45a-32eb2cb5d4c0",
-			"title": "поменять анимацию скримерам",
-			"description": "я тут в раздумиях,\nделать или 4 разных скримера из первых четырех og частей. Или наверное стоит так и сделать",
 			"category": "95686080-b83c-479d-b691-55683f5acac9",
 			"steps": []
 		},
@@ -265,6 +107,13 @@
 			"title": "проблемы с кам интерапшен",
 			"description": "",
 			"category": "95686080-b83c-479d-b691-55683f5acac9",
+			"steps": []
+		},
+		{
+			"uuid": "4bce1dcb-9471-4b37-8570-11482d94d9bf",
+			"title": "poof()",
+			"description": "",
+			"category": "969d723e-d2c3-47f1-b565-082cccf9df52",
 			"steps": []
 		}
 	],
