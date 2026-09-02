@@ -62,21 +62,6 @@ func deloadout() :
 	out_of_power.disconnect(run_out_power)
 	second_pass.disconnect(pass_time)
 
-func roll_batary() :
-	if is_can_add_power == false : 
-		arc_event.play_sfx({"path" = "user/power_error", "volume" = 0})
-		return
-	is_can_add_power = false
-	if randf() < arc.batary / 100 :
-		if arc.batary <= 0 : run_back_power()
-		else : arc.batary = 0
-	else :
-		arc.batary += randi_range(10, 30)
-		arc_event.play_sfx({"path" = "user/power_add", "volume" = 15})
-
-	await get_tree().create_timer(7, false, false, false).timeout
-	is_can_add_power = true
-
 func pass_time() :
 	time += 1
 	if time >= 480 : 
@@ -93,7 +78,8 @@ func pass_time() :
 		SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"}, true )
 	arc.screen.update_text()
 	if batary <= 0 : emit_signal("out_of_power")
-	else : batary -= 1 * usage * .075
+	else : batary -= 1 * usage * .08
+	if arc.night.one_to_ten and randf_range(1,10000) == 10000 : arc_event.one_to_ten() 
 
 func button_delay(button : Button, waiting : float) :
 	var old_string = button.text
@@ -168,7 +154,6 @@ func run_out_power() :
 
 func run_back_power() :
 	out_of_power.connect(run_out_power)
-	arc.usage = 0
 
 func add_word(id : String, word : String) :
 	lang.dictionary[id] = word 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="texture_gif"
+importer_version=2
+type="GIFTexture"
+uid="uid://cqcu7l042kid3"
+path="res://.godot/imported/chicka.gif-7f7891ecfb531f164b5e03a624fdf89f.res"
+
+[deps]
+
+source_file="res://resources/sounds/ambient/long/1t10/chicka.gif"
+dest_files=["res://.godot/imported/chicka.gif-7f7891ecfb531f164b5e03a624fdf89f.res"]
+
+[params]
+
+storage/compress=true

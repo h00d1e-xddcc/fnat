@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dq7os1jqvbv15"]
+
+[ext_resource type="ArrayMesh" uid="uid://c2j48wfikq531" path="res://prefabs/mesh/fnat_milk.res" id="1_gwodo"]
+[ext_resource type="Texture2D" uid="uid://jgcdwohtnwok" path="res://pics/milk.png" id="2_fbogc"]
+[ext_resource type="FontFile" uid="uid://cucn2vc0sr580" path="res://resources/ChimeraRegular-Yxrj.ttf" id="3_fbogc"]
+
+[node name="milk" type="MeshInstance3D" unique_id=1613572217]
+mesh = ExtResource("1_gwodo")
+
+[node name="sprite" type="Sprite3D" parent="." unique_id=1704198027]
+transform = Transform3D(0.03208417, 0, 0, 0, 0.03208417, 0, 0, 0, 0.03208417, 0, 0.2488769, 0.10880969)
+shaded = true
+texture = ExtResource("2_fbogc")
+
+[node name="title" type="Label3D" parent="." unique_id=344282576]
+transform = Transform3D(0.11175557, 0, 0, 0, 0.11175557, 0, 0, 0, 0.11175557, 0, 0.055795155, 0.11009472)
+shaded = true
+text = "MILK
+Chimera"
+font = ExtResource("3_fbogc")
+font_size = 64
+autowrap_mode = 1

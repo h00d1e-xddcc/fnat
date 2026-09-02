@@ -1,0 +1,16 @@
+[remap]
+
+importer="texture_gif"
+importer_version=2
+type="GIFTexture"
+uid="uid://bsjbumjcypgm1"
+path="res://.godot/imported/bon.gif-252cd85162367fbdae036c2cb482e08e.res"
+
+[deps]
+
+source_file="res://resources/sounds/ambient/long/1t10/bon.gif"
+dest_files=["res://.godot/imported/bon.gif-252cd85162367fbdae036c2cb482e08e.res"]
+
+[params]
+
+storage/compress=true

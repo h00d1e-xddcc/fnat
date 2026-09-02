@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tlbc0tkn0nou"
+path="res://.godot/imported/Fernanfloo Arabe Saturado XD Buenas tardeeeeeeees [zMNHVYQW8v4].ogg-2f01b12c2db681de1a5c116805c6ffb8.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/anim/virus/Fernanfloo Arabe Saturado XD Buenas tardeeeeeeees [zMNHVYQW8v4].ogg"
+dest_files=["res://.godot/imported/Fernanfloo Arabe Saturado XD Buenas tardeeeeeeees [zMNHVYQW8v4].ogg-2f01b12c2db681de1a5c116805c6ffb8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

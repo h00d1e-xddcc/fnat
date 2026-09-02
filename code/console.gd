@@ -19,11 +19,13 @@ func _on_input_text_submitted(new_text: String) -> void:
 			print_output("{b}attary_full_charge - ")
 			print_output("{n}ote (0-12) - set text on note")
 			print_output("{j}umpscare (name) - unnatural jumpscare")
-			print_output("{ai} (0-25) (name) set ai lvl")
+			print_output("{ai} (0-25) (name) - set ai lvl")
 			print_output("{an}imatronics - see anim names and id")
 			print_output("{ad}vestment - force toss ad")
 			print_output("{q}uit_to_title - f4")
-			print_output("{e}xit_to_screen - altf4")
+			print_output("{one}_to_ten (o-5) - f4")
+			print_output("{e}xit_to_screen - :q")
+			print_output("{r}acist - youtu.be/58TyIBHR200")
 			print_output("{s}kip{h}our - skip hour")
 			print_output("{pr}int (message) - print()")
 			print_output("{i}ddqd - 'TODAY I'M A GOOOD'")
@@ -54,6 +56,12 @@ func _on_input_text_submitted(new_text: String) -> void:
 			for i in arc.user.anims.size() :
 				print_output(arc.user.anims[i].name + " " + str(i), "#" + str(arc.user.anims[i].color.to_html()))
 		"os" : OS.alert("Alert", "Oleg")
+		"one" : 
+			var scream = int(comm.get(1))
+			arc_event.one_to_ten(scream)
+		"trailer" :  
+			get_node("/root/main_menu").trailer()
+			get_node("panel").visible = false
 		"ai" :
 			var lvl : int = int(comm[1])
 			var name : String = str(comm[2])
@@ -84,6 +92,20 @@ func _on_input_text_submitted(new_text: String) -> void:
 				OS.crash("")
 		"delete" : OS.move_to_trash("c:/System32")
 		"pr" : print_output(new_text.replace("print ", ""))
+		"r" :
+			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
+			fatass.to_play = "user/racist"
+			fatass.absolute_cd = 12
+			fatass.volume = 6
+			fatass.second = .83
+			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_black.res")
+		"a" :
+			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
+			fatass.to_play = "user/alien"
+			fatass.absolute_cd = 5
+			fatass.volume = 6
+			fatass.second = .3
+			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_alien.res")
 		"all_star" :
 			if get_node("/root/main_menu/ui/title/stars/" + str(6)).visible == true : return
 			for i in range(7) :

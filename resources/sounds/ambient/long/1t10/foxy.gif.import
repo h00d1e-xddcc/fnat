@@ -1,0 +1,16 @@
+[remap]
+
+importer="texture_gif"
+importer_version=2
+type="GIFTexture"
+uid="uid://bu1lf4yysaaj7"
+path="res://.godot/imported/foxy.gif-89be925e5a4ae3b5587b9033f5e559f1.res"
+
+[deps]
+
+source_file="res://resources/sounds/ambient/long/1t10/foxy.gif"
+dest_files=["res://.godot/imported/foxy.gif-89be925e5a4ae3b5587b9033f5e559f1.res"]
+
+[params]
+
+storage/compress=true

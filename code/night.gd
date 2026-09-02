@@ -28,6 +28,8 @@ class_name fnat_night
 @export var is_can_random_event : bool = true # thunder_or_etc_random_happend
 @export var true_night : bool = false # add night_count_for_compite
 
+@export var one_to_ten : bool = false
+
 @export var start_power : float = 57.9
 @export var start_usage : float = 1.75
 @export var start_night : int = 0

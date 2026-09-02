@@ -52,7 +52,7 @@ func jumpscare() :
 	arc.user.change_state(4)
 	arc.user.flash_light.visible = false
 	get_node("/root/main/office/user/omni").visible = true
-	set_face("_rage")
+	set_face()
 	global_position = arc.user.global_position + (-arc.user.global_transform.basis.z * 1)
 	global_position.y -= 2
 	look_at(arc.user.global_position)
@@ -238,9 +238,9 @@ func go_back() :
 	global_position = current_point.global_position
 	rotation = current_point.rotation
 
-func set_face(face : String) :
-	if face == "" : return
-	get_node("skelet/Skeleton3D/face").mesh = load ("res://prefabs/mesh/fnat__" + face + ".res")
+func set_face(face : int = -2) :
+	var face_mesh : MeshInstance3D = get_node("skelet/Skeleton3D").get_child(1)
+	face_mesh.set_instance_shader_parameter("f_id", face)
 
 func rotate_head() :
 	var head_position = get_node("skelet/Skeleton3D").get_bone_global_pose(7).origin
@@ -251,6 +251,11 @@ func rotate_head() :
 
 func friendly_marker(boolean : bool = false) :
 	get_node("fr").visible = boolean
+
+func set_pose(pose : String) :
+	animator.play(pose)
+	if pose.contains("kas") : get_node("fr").visible = true
+	else : get_node("fr").visible = false
 
 func poof() :
 	if ai_lvl == -1 : return

@@ -1,0 +1,16 @@
+[remap]
+
+importer="texture_gif"
+importer_version=2
+type="GIFTexture"
+uid="uid://clsetudq00t7u"
+path="res://.godot/imported/mar.gif-a652251642a3e158db0d531b2294105c.res"
+
+[deps]
+
+source_file="res://resources/sounds/ambient/long/1t10/mar.gif"
+dest_files=["res://.godot/imported/mar.gif-a652251642a3e158db0d531b2294105c.res"]
+
+[params]
+
+storage/compress=true

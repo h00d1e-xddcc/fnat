@@ -142,6 +142,50 @@ func play_random():
 			await get_tree().create_timer(3,10).timeout
 			play_some_event("start")
 
+func one_to_ten(value : int = -1) :
+	var image = get_node("/root/main/office/1to10")
+	var gif = get_node("/root/main/office/1to10gif")
+	var to_play
+	var sec = 0
+	if value == -1 : value = randi_range(0,5)
+	image.texture = null
+	gif.stop()
+	gif.gif = null
+	match value :
+		0 : 
+			to_play = "ambient/long/1t10/baldi"
+			image.texture = preload("res://pics/baldi.png")
+		1 : 
+			to_play = "ambient/long/1t10/chicken"
+			image.texture = preload("res://pics/chicken.jpg")
+			sec = .6
+		2 :
+			to_play = "ambient/long/1t10/bad"
+			image.texture = preload("res://resources/sounds/ambient/long/1t10/bad.jpg")
+			sec = 2.4
+		3 :
+			gif.gif = GIFTexture.load_from_file("res://resources/sounds/ambient/long/1t10/mar.gif")
+			to_play = "anim/noise/scream"
+		3 :
+			gif.gif = GIFTexture.load_from_file("res://resources/sounds/ambient/long/1t10/chicka.gif")
+			to_play = "anim/noise/scream"
+		4 :
+			gif.gif = GIFTexture.load_from_file("res://resources/sounds/ambient/long/1t10/bon.gif")
+			to_play = "anim/noise/scream"
+		5:
+			gif.gif = GIFTexture.load_from_file("res://resources/sounds/ambient/long/1t10/foxy.gif")
+			to_play = "anim/noise/scream"
+	turn_off_one_to_ten(await arc_event.play_sfx({"path" = to_play, "volume" = 10, "sec" = sec}))
+	if value > 2 : 
+		gif.visible = true
+		gif.play()
+	else : image.visible = true
+
+func turn_off_one_to_ten(value : float) :
+	await get_tree().create_timer(value).timeout
+	get_node("/root/main/office/1to10").visible = false
+	get_node("/root/main/office/1to10gif").visible = false
+
 func step_hour() :
 	if arc.loss : return
 	while true :

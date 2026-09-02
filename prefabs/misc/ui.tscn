@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlne2diiv70gw"]
 
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="1_8bix8"]
+[ext_resource type="Texture2D" uid="uid://bikce5cjnmexy" path="res://pics/arrow.webp" id="3_b1k8q"]
 [ext_resource type="Texture2D" uid="uid://co5fnl16y5p22" path="res://pics/bootscreen.png" id="3_i4vt5"]
 [ext_resource type="Texture2D" uid="uid://bsk45r67qn7g2" path="res://pics/bolt.png" id="4_5u5yk"]
 [ext_resource type="Texture2D" uid="uid://choqqn7jq20a4" path="res://pics/vi0.svg" id="4_qdm3c"]
@@ -498,6 +499,14 @@ offset_right = 83.869995
 offset_bottom = -336.78455
 color = Color(1, 0.53333336, 0, 1)
 
+[node name="arrow" type="TextureRect" parent="scheme/map/you" unique_id=580240443]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20.738647, 20.836014)
+texture = ExtResource("3_b1k8q")
+flip_h = true
+
 [node name="fire_exit" type="Button" parent="scheme" unique_id=739321568]
 offset_left = -80.561295
 offset_top = -517.4276
@@ -885,6 +894,7 @@ theme_override_fonts/font = ExtResource("1_8bix8")
 text = "+13 энергии"
 
 [node name="word_minigame" type="Control" parent="." unique_id=834981706]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

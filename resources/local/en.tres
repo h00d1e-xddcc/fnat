@@ -44,6 +44,8 @@ dictionary = Dictionary[String, String]({
 "room_warderobe": "warderobe",
 "room_ware": "ware",
 "thanks_ad": "your ad could\\n be here \\n tg@h00d1e_xd",
+"tr_first": "Every first April\\n She Always Comeback",
+"tr_second": "But do you know, why anyone\\nDoesen't know about Akita?",
 "ui_back": "back",
 "ui_bait": "bait",
 "ui_bozo": "ha-ha bozo try\\n againyou lose 1 power",

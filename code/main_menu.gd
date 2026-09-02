@@ -92,6 +92,7 @@ func change_state(state : String, time : float = 0) :
 	get_node("sub/custom").visible = false
 	get_node("sub/thanks").visible = false
 	get_node("sub/build").visible = false
+	get_node("sub/trailer").visible = false
 	get_node("sub/" + state).visible = true
 	await get_tree().create_timer(time).timeout
 	get_node("sub/" + state + "/cam").current = true
@@ -174,6 +175,27 @@ func _on_continue_pressed() -> void:
 	arc_event.play_sfx({"path" = "user/start_shift"})
 	SceneManager.change_scene("res://prefabs/misc/main.tscn", {"pattern" : "curtians"})
 	SceneManager.set_title(arc.lang.get_word("night6"))
+
+func trailer() :
+	$sub/custom.visible = false
+	$sub/thanks.visible = false
+	$sub/main.visible = false
+	$sub/build.visible = false
+	$ui.visible = false
+	#$console.visible = false
+	$audio.stream = preload("res://resources/sounds/anim/virus/0.ogg")
+	$audio.play()
+	$audio.volume_db += 7
+	#$audio.attenuation_filter_db = -12
+	$sub/trailer.visible = true
+	$sub/trailer/cam.current = true
+	$sub/trailer/animation_player.play("trailer")
+
+func trailer_text(title : String) :
+	$sub/trailer/first/label.text = arc.lang.get_word(title)
+	$sub/trailer/first.visible = true
+	await get_tree().create_timer(3).timeout
+	$sub/trailer/first.visible = false
 
 func _on_story_pressed() -> void:
 	get_node("/root/main_menu/ui/loadout_back/continue").visible = false

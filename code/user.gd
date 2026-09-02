@@ -35,6 +35,7 @@ func _process(delta):
 		match state :
 			action.sit, action.hide, action.window:
 				rotation.y = lerp(rotation.y, rotation.y + to_rotate, delta * 1.57)
+				arc.screen.get_node("sub/ui/scheme/map/you/arrow").rotation = -rotation.y
 			action.pc :
 				if arc.screen.cam.visible == true:
 					var rot = cam.rotation_degrees.y + to_rotate
@@ -166,6 +167,7 @@ func flashlight_brake() :
 	arc_event.play_sfx({"path" = "user/flashlight_die", "volume" = -3})
 
 func cancel_call() :
+	arc_event.turn_off_one_to_ten(0)
 	source["call"].stop()
 
 func shake_pos(inten : float = .02, dur : float = .25) :
@@ -326,19 +328,19 @@ func item_swap(to_swap : fnat_item) :
 			match item : # EQUIP
 				"light" :
 					arc.user.flash_light_charge = 0
-					arc.user.flashlight_loss_factor = 2
-					arc.user.flash_light.spot_range = 20
-					arc.user.flash_light.spot_attenuation = .3
-					arc.user.flash_light.spot_angle = 15
-					arc.user.flash_light.spot_angle_attenuation = .8
+					arc.user.flashlight_loss_factor = 1.5
+					arc.user.flash_light.spot_range = 15
+					arc.user.flash_light.spot_attenuation = .2
+					arc.user.flash_light.spot_angle = 10
+					arc.user.flash_light.spot_angle_attenuation = .7
 					$"../decor/light".visible = false
 				"light_big" :
 					arc.user.flash_light_charge = 0
-					arc.user.flashlight_loss_factor = 4
-					arc.user.flash_light.spot_range = 40
-					arc.user.flash_light.spot_attenuation = .6
-					arc.user.flash_light.spot_angle = 30
-					arc.user.flash_light.spot_angle_attenuation = .4
+					arc.user.flashlight_loss_factor = 2.7
+					arc.user.flash_light.spot_range = 30
+					arc.user.flash_light.spot_attenuation = .5
+					arc.user.flash_light.spot_angle = 20
+					arc.user.flash_light.spot_angle_attenuation = .6
 					$"../decor/light_big".visible = false
 			item_right = to_swap
 
@@ -407,18 +409,25 @@ func _ready() -> void:
 				6 : joke_dead = "ambient/calls/" + arc.save.lange + "/dr"
 				6 : joke_dead = "ambient/calls/" + arc.save.lange + "/void"
 				7 : joke_dead = "ambient/calls/" + arc.save.lange + "/wait"
-			source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
+			#source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
 			source["call"].volume_db = arc.save.volume
 			source["call"].play()
 			return
 	if joke_dead != "" and to_play != "" :
-		source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
+		#source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
 		source["call"].volume_db = arc.save.volume
 		source["call"].play()
 		await get_tree().create_timer(source["call"].stream.get_length() + .257).timeout
-	source["call"].stream = load("res://resources/sounds/" + to_play + ".ogg")
+	#source["call"].stream = load("res://resources/sounds/" + to_play + ".ogg")
 	source["call"].volume_db = arc.save.volume
 	source["call"].play()
-	
+
+	if randi_range(0,100) > 99 : 
+			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
+			fatass.to_play = "user/racist"
+			fatass.absolute_cd = 12
+			fatass.volume = 6
+			fatass.second = .83
+			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_black.res")
 	#arc_event.play_sfx({"type" = "2d", "path" = "ambient/calls/" + arc.save.lange + arc.night.resource_name})
 	#if randi_range(0,100 > 90) : arc_event.play_some_event("long")
