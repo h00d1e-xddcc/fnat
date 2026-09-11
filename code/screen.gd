@@ -21,12 +21,20 @@ class_name fnat_screen
 @export var antivuris : int = 90
 @export var cool_down = 3.15
 @export var vissy : Control
+@export var hacking : Control
+
+func disable_all() :
+	hacking.visible = false
+	vissy.visible = false
+	teto_input.visible = false
+	ad.visible = false
+	sfx.playing = false
 
 func _ready() -> void:
-	arc.loadout()
 	input_event.connect(_on_input_event)
 	noise.visible = false
 	vissy.visible = false
+	teto_input.visible = false
 
 func _on_input_event(camera : Camera3D, event : InputEvent, event_position : Vector3, normal : Vector3, shape_idx: int) :
 		if arc.loss : return
@@ -111,9 +119,10 @@ func play_uniq_room_sfx() :
 	play(to_play, volume)
 
 func play(path : String, vol_degr : int = 0, rand : bool = true) :
+	if path == "" : return
 	sfx.stream = load("res://resources/sounds/" + path + ".ogg")
 	sfx.volume_db = vol_degr
-	if rand :  sfx.play(randi_range(0, sfx.stream.get_length()))
+	if rand :  sfx.play(randi_range(0, 5))
 	else : sfx.play()
 
 func _on_ping_pong_pressed() -> void:

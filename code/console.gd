@@ -11,9 +11,10 @@ func print_output(data : String, colir : String = "") :
 
 func _on_input_text_submitted(new_text: String) -> void:
 	var comm = new_text.split(" ")
-	if new_text == "!!" : _on_input_text_submitted(last_comma) 
+	if new_text == "!!" or new_text == "!" : _on_input_text_submitted(last_comma) 
 	match comm[0] :
 		"h" : 
+			print_output("{!!} - last command")
 			print_output("{t}oss (name) - force toss dice at 99 ai")
 			print_output("{s}kip_night - skip da night")
 			print_output("{b}attary_full_charge - ")
@@ -25,6 +26,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 			print_output("{q}uit_to_title - f4")
 			print_output("{one}_to_ten (o-5) - f4")
 			print_output("{e}xit_to_screen - :q")
+			print_output("{mi}nigame (name) - load arcade")
 			print_output("{r}acist - youtu.be/58TyIBHR200")
 			print_output("{s}kip{h}our - skip hour")
 			print_output("{pr}int (message) - print()")
@@ -59,22 +61,40 @@ func _on_input_text_submitted(new_text: String) -> void:
 		"one" : 
 			var scream = int(comm.get(1))
 			arc_event.one_to_ten(scream)
+		"ani" :
+			get_node("panel").visible = false
+			SceneManager.change_scene("res://prefabs/misc/main_anim.tscn", {}, true)
 		"trailer" :  
 			get_node("/root/main_menu").trailer()
 			get_node("panel").visible = false
 		"ai" :
 			var lvl : int = int(comm[1])
-			var name : String = str(comm[2])
-			var anim : fnat_animatronic = get_node("/root/main/" + name)
-			if anim == null : print_output("Bad gateway -> " + name)
+			var _name : String = str(comm[2])
+			var anim : fnat_animatronic = get_node("/root/main/" + _name)
+			if anim == null : print_output("Bad gateway -> " + _name)
 			else : 
 				anim.ai_lvl = lvl
 				print_output(name + " now has ai lvl " + str(lvl))
+		"fu" :
+			var action : String = str(comm.get(1))
+			print_output(str(arc.user.fuse(action)))
+		"guitar" :
+			var fatass : fnat_interact_object = get_node("/root/main/office/decor/guitar")
+			fatass.to_play = "anim/noise/bass/slep"
+			fatass.absolute_cd = 5
+			fatass.volume = 10
+			fatass.second = 0
+			fatass.get_node("fnat_guitar").mesh = preload("res://prefabs/mesh/fnat_gguitar.res")
 		"q" : 
 			arc.deloadout()
 			SceneManager.change_scene("res://prefabs/misc/main_menu.tscn", {"pattern" : "curtians"}, true)
 			SceneManager.set_title("")
 		"e" : get_tree().quit()
+		"mi" :
+			var minigame = comm.get(1)
+			match minigame :
+				"fun" :
+					SceneManager.change_scene("res://prefabs/minigames/fun_whit_teto.tscn", {"pattern" : "curtians"}, true)
 		"sh" : arc.time += 60
 		"ad" : arc.screen.advestment()
 		"popup" : arc_event.popup(preload("res://pics/vi6.svg"), "KYS", "Kiss Your Sister. NOW!", true)
@@ -94,25 +114,31 @@ func _on_input_text_submitted(new_text: String) -> void:
 		"pr" : print_output(new_text.replace("print ", ""))
 		"r" :
 			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
-			fatass.to_play = "user/racist"
-			fatass.absolute_cd = 12
+			if fatass == null : fatass = get_node("/root/main_menu/sub/thanks/fatass")
+			fatass.to_play = "user/nyaga"
+			fatass.absolute_cd = .4
 			fatass.volume = 6
-			fatass.second = .83
+			fatass.second = .0
 			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_black.res")
+			print_output("she says Nigai (にがい) - bitter")
 		"a" :
 			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
+			if fatass == null : fatass = get_node("/root/main_menu/sub/thanks/fatass")
 			fatass.to_play = "user/alien"
 			fatass.absolute_cd = 5
 			fatass.volume = 6
 			fatass.second = .3
 			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_alien.res")
 		"all_star" :
-			if get_node("/root/main_menu/ui/title/stars/" + str(6)).visible == true : return
+			if get_node("/root/main_menu/ui/main/title/stars/" + str(6)).visible == true : return
 			for i in range(7) :
-				get_node("/root/main_menu/ui/title/stars/" + str(i)).visible = true
+				get_node("/root/main_menu/ui/main/title/stars/" + str(i)).visible = true
 			get_node("/root/main_menu/audio").stream = load("res://resources/sounds/ambient/long/star_four.ogg")
 			get_node("/root/main_menu/audio").play()
 			print_output("gaymode activated!")
+		"play" :
+			var anim : String = comm.get(1)
+			get_node("/root/main/animation_player").play(anim)
 		"night" : 
 			var night = int(comm[1])
 			#if night == 1 or night == 2 or night == 3 or night == 4 or night == 5 :

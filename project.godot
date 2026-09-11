@@ -67,6 +67,7 @@ folder_colors={
 "res://resources/sounds/anim/noise/": "blue",
 "res://resources/sounds/anim/pearto/": "teal",
 "res://resources/sounds/anim/pg_sm/": "orange",
+"res://resources/sounds/anim/plush/": "red",
 "res://resources/sounds/anim/tt/": "purple",
 "res://resources/sounds/sort/": "red",
 "res://resources/sounds/user/": "orange",
@@ -164,5 +165,5 @@ console={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 rendering_device/driver.macos="vulkan"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method.mobile="forward_plus"
 occlusion_culling/use_occlusion_culling=true

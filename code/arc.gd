@@ -25,33 +25,34 @@ extends Node3D
 signal out_of_power
 signal second_pass
 
-func loadout() -> void:
-	user = get_node("/root/main/office/user")
-	world = get_node("/root/main/world")
-	screen = get_node("/root/main/office/screen")
-	arc.screen.teto_input.visible = false
+func loadout(type : int = 0) -> void:
+	match type :
+		0 :
+			user = get_node("/root/main/office/user")
+			world = get_node("/root/main/world")
+			screen = get_node("/root/main/office/screen")
 
-	if world == null : return
-	if debug == true:
-		world.environment.background_color = Color.WHITE
-	else :
-		world.environment.background_color = Color.BLACK
+			if world == null : return
+			if debug == true:
+				world.environment.background_color = Color.WHITE
+			else :
+				world.environment.background_color = Color.BLACK
 
-	lang.retranslate_screen()
-	arc_event.connect_all()
-	out_of_power.connect(run_out_power)
-	second_pass.connect(pass_time)
+			second_pass.connect(pass_time)
+			if arc.user.state != arc.user.action.minigame :
+				lang.retranslate_screen()
+				out_of_power.connect(run_out_power)
+				arc_event.connect_all()
+				fatass = get_node("/root/main/office/decor/fatass")
 
-	fatass = get_node("/root/main/office/decor/fatass")
+				change_da_note(arc.lang.get_word("note" + str(randi_range(0,9))))
+				arc.screen.hour = 0
+			loss = false
+			arc.time = 0
 
-	change_da_note(arc.lang.get_word("note" + str(randi_range(0,9))))
-	arc.time = 0
-	arc.screen.hour = 0
-	loss = false
-
-	while true :
-		await get_tree().create_timer(1).timeout
-		emit_signal("second_pass")
+			while loss == false :
+				await get_tree().create_timer(1).timeout
+				emit_signal("second_pass")
 
 func deloadout() :
 	arc_event.connect_all()
@@ -63,23 +64,36 @@ func deloadout() :
 	second_pass.disconnect(pass_time)
 
 func pass_time() :
-	time += 1
-	if time >= 480 : 
-		second_pass.disconnect(pass_time)
-		for i in arc.user.anims.size() :
-			arc.user.anims[i].ai_lvl = 0
-		arc.user.process_mode = Node.PROCESS_MODE_DISABLED
-		await get_tree().create_timer(.257).timeout
-		arc.loss = true
-		SceneManager.set_title("")
-		if arc.night.true_night : 
-			arc.save.night += 1
-			arc.save_settings()
-		SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"}, true )
-	arc.screen.update_text()
-	if batary <= 0 : emit_signal("out_of_power")
-	else : batary -= 1 * usage * .08
-	if arc.night.one_to_ten and randf_range(1,10000) == 10000 : arc_event.one_to_ten() 
+	if time > 999 : return
+	else :time += 1
+
+	if arc.user.state == arc.user.action.minigame :
+		if time >= 999 :
+			second_pass.disconnect(pass_time)
+			arc.user.process_mode = Node.PROCESS_MODE_DISABLED
+			await get_tree().create_timer(.257).timeout
+			arc.loss = true
+			SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"}, true )
+	else :
+		if time >= 480 : 
+			second_pass.disconnect(pass_time)
+			for i in arc.user.anims.size() :
+				arc.user.anims[i].ai_lvl = 0
+			arc.user.process_mode = Node.PROCESS_MODE_DISABLED
+			await get_tree().create_timer(.257).timeout
+			arc.loss = true
+			SceneManager.set_title("")
+			if arc.night.true_night : 
+				arc.save.night += 1
+				arc.save_settings()
+			SceneManager.change_scene("res://prefabs/misc/the_end.tscn", {"pattern" : "curtians"}, true )
+	match arc.user.state :
+		arc.user.action.minigame : pass
+		_ :
+			arc.screen.update_text()
+			if batary <= 0 : emit_signal("out_of_power")
+			else : batary -= 1 * usage * .08
+			if arc.night.one_to_ten and randf_range(1,1000) == 1000 : arc_event.one_to_ten()
 
 func button_delay(button : Button, waiting : float) :
 	var old_string = button.text
@@ -137,6 +151,7 @@ func pause() :
 			is_can_pause = true
 		_ :
 			print("ляяя, надо сделать, чтобы bool имел третье свойство, maybe, вот смеха будет XD")
+	user.source["pause"].volume_db = arc.save.volume - 5
 
 func run_out_power() :
 	out_of_power.disconnect(run_out_power)
@@ -178,7 +193,7 @@ func save_settings() :
 
 func retranslate_title() :
 	# yandere
-	get_node("/root/main_menu/ui/title").text = lang.get_word("ui_title")
+	get_node("/root/main_menu/ui/main/title").text = lang.get_word("ui_title")
 	get_node("/root/main_menu/ui/main/buttons/custom_night").text = lang.get_word("ui_custom")
 	get_node("/root/main_menu/ui/main/buttons/story").text = lang.get_word("ui_story") + str(arc.save.night)
 	get_node("/root/main_menu/ui/main/buttons/thanks").text = lang.get_word("ui_thanks")
@@ -189,17 +204,13 @@ func retranslate_title() :
 	get_node("/root/main_menu/ui/build/control/v_box_container/full-screen").text = lang.get_word("ui_fullscreen")
 	get_node("/root/main_menu/ui/build/control/lang").text = arc.save.lange
 	get_node("/root/main_menu/ui/build/cont/back").text = lang.get_word("ui_back")
+	get_node("/root/main_menu/ui/build/one").text = lang.get_word("one")
 	get_node("/root/main_menu/ui/custom_night/cont/start").text = lang.get_word("ui_cont")
 	get_node("/root/main_menu/ui/custom_night/cont/p_s_").text = lang.get_word("p.s.")
 	get_node("/root/main_menu/ui/custom_night/cont/back").text = lang.get_word("ui_back")
 	get_node("/root/main_menu/ui/disclaimer_back/title").text = lang.get_word("ui_dis_title")
-	get_node("/root/main_menu/ui/disclaimer_back/text").text = lang.get_word("ui_dis_text")
-	get_node("/root/main_menu/ui/disclaimer_back/ps").text = lang.get_word("ui_dis_p.s.")
-	get_node("/root/main_menu/ui/disclaimer_back/cont").text = lang.get_word("ui_dis_cont")
 	
 	get_node("/root/main_menu/ui/loadout_back/loadout/flashlight").text = lang.get_word("ui_flashligh")
-	get_node("/root/main_menu/ui/loadout_back/continue").text = lang.get_word("ui_cont")
-	get_node("/root/main_menu/ui/loadout_back/story").text = lang.get_word("ui_cont")
 	get_node("/root/main_menu/ui/loadout_back/loadout/flashlight_charge").text = lang.get_word("ui_flashlight_recharge")
 	get_node("/root/main_menu/ui/loadout_back/loadout/pc").text = lang.get_word("ui_pc")
 	get_node("/root/main_menu/ui/loadout_back/loadout/left").text = lang.get_word("ui_left")
@@ -216,7 +227,7 @@ func retranslate_title() :
 	get_node("/root/main_menu/sub/thanks/board/thanks").text = lang.get_word("ui_thanks")
 	get_node("/root/main_menu/sub/thanks/board/ad").text = lang.get_word("thanks_ad")
 	
-	get_node("/root/main_menu/ui/build/warning").text = lang.get_word("ui_warn")
+	get_node("/root/main_menu/ui/build/warning").text = lang.get_word("")
 	get_node("/root/main_menu/ui/build/control/v_box_container/option_button").set_item_text(0, lang.get_word("ui_voice"))
 	
 	

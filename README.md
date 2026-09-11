@@ -119,4 +119,3 @@ Name are clickable
 All of you, everyone made some contribution in project,
 But more likey, don't know about this. And won't find out. 
 </details>
-

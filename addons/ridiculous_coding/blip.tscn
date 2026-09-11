@@ -130,10 +130,9 @@ texture_filter = 1
 script = ExtResource("1_tp8nq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1332950595]
-scale = Vector2(5, 5)
+scale = Vector2(1.1196492, 1.1196492)
 sprite_frames = SubResource("SpriteFrames_g4ki7")
-frame = 7
-frame_progress = 1.0
+frame_progress = 0.99783194
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=464749217]
 stream = ExtResource("3_6frqe")
@@ -145,7 +144,6 @@ libraries/ = SubResource("AnimationLibrary_8epm6")
 autoplay = &"default"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1853606022]
-emitting = false
 amount = 50
 lifetime = 0.5
 one_shot = true
@@ -156,13 +154,13 @@ process_material = SubResource("ParticleProcessMaterial_5k50n")
 one_shot = true
 
 [node name="Label" type="Label" parent="." unique_id=947882731]
-modulate = Color(1.7754318, 0.6128883, 1.3870729, 1)
+modulate = Color(1.9580672, 1.2685156, 1.9356983, 1)
 texture_filter = 1
 offset_left = -35.0
-offset_top = -70.0
+offset_top = -32.28417
 offset_right = 35.0
-offset_bottom = -47.0
-scale = Vector2(2, 2)
+offset_bottom = -9.284168
+scale = Vector2(1.0074781, 1.0074781)
 pivot_offset = Vector2(35, 8)
 theme_override_fonts/font = ExtResource("4_ullf3")
 theme_override_font_sizes/font_size = 16

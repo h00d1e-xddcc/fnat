@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://choqqn7jq20a4" path="res://pics/vi0.svg" id="4_qdm3c"]
 [ext_resource type="Texture2D" uid="uid://c4ya6amsxhux5" path="res://pics/ad/25.png" id="5_qdm3c"]
 [ext_resource type="Texture2D" uid="uid://dbesgd7bs2oci" path="res://pics/v1.png" id="7_b1k8q"]
+[ext_resource type="Texture2D" uid="uid://cbe2gwbq8mixn" path="res://pics/fatass.png" id="7_jydip"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mhwow"]
 
@@ -650,16 +651,45 @@ text = "sceme
 "
 icon_alignment = 1
 
-[node name="terminal" type="Button" parent="label" unique_id=1219891531]
+[node name="cards" type="Button" parent="label" unique_id=1925463881]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_8bix8")
 theme_override_font_sizes/font_size = 28
-text = "terminal
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+text = "cards
 "
-flat = true
+icon_alignment = 1
+
+[node name="back" type="Button" parent="label" unique_id=1523366271]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
+text = "back"
 icon_alignment = 1
 
 [node name="time" type="Label" parent="." unique_id=2007929098]
@@ -1075,6 +1105,39 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_p3osw")
 theme_override_styles/focus = SubResource("StyleBoxFlat_p3osw")
 text = "
 "
+
+[node name="hacking" type="Control" parent="." unique_id=1369341697]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="color_rect" type="ColorRect" parent="hacking" unique_id=1358984507]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7176471)
+
+[node name="texture_rect" type="TextureRect" parent="hacking/color_rect" unique_id=2049779386]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = -128.5
+offset_right = 128.5
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jydip")
 
 [node name="booting" type="TextureRect" parent="." unique_id=1400849281]
 visible = false

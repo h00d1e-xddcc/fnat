@@ -1,14 +1,14 @@
 extends Camera3D
 class_name fnat_user
 
-enum action {sit, hide, peek, pc, back, loss, window}
+enum action {sit, hide, peek, pc, back, loss, window, minigame}
 
 @export var state : action
 @export var to_rotate : float
 @export var flash_light : SpotLight3D
 @export var flash_light_charge : float = 100
 @export var flashlight_broke_factor : int = 80
-@export var flashlight_loss_factor : int = 2
+@export var flashlight_loss_factor : float = 2
 @export var spot_light : SpotLight3D
 @export var cast : RayCast3D
 @export var source : Dictionary[String,AudioStreamPlayer]
@@ -21,11 +21,14 @@ enum action {sit, hide, peek, pc, back, loss, window}
 @export var mental_sickness_factor : float
 @export var blink_screen : Node
 @export var is_shaking : bool
+@export var fatass : Node3D
+@export var fuses : Array[Node3D]
 var interaction
 
 @export var item_right : fnat_item
 @export var item_left : fnat_item
 @export var item_head : fnat_item
+@export var items : Dictionary[String, fnat_item]
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause") : arc.pause()
@@ -34,6 +37,7 @@ func _process(delta):
 	if to_rotate != 0 :
 		match state :
 			action.sit, action.hide, action.window:
+				if arc.loss : return
 				rotation.y = lerp(rotation.y, rotation.y + to_rotate, delta * 1.57)
 				arc.screen.get_node("sub/ui/scheme/map/you/arrow").rotation = -rotation.y
 			action.pc :
@@ -53,6 +57,11 @@ func _process(delta):
 					flash_light.light_energy = flash_light_charge / 100
 			_ : if flash_light.visible : flash_light.visible = false
 		if Input.is_action_pressed("light") :
+			if arc.user.state == arc.user.action.minigame :
+				if arc.user.anims[0].current_point.flag == "office" :
+					arc.user.anims[0].hunger = -1000
+					arc.user.anims[0].ai_lvl = -1
+					arc.time = 999
 			var mouse_pos = get_viewport().get_mouse_position()
 			var ray_origin = project_ray_origin(mouse_pos)
 			var ray_direction = project_ray_normal(mouse_pos)
@@ -84,7 +93,7 @@ func _process(delta):
 				_: 
 					if Input.is_action_just_pressed("light") and result.collider is fnat_interact_object : result.collider.touch()
 
-	if spot_light.visible == true :
+	if spot_light.visible == true and fan_rotor != null :
 		fan_rotor.rotation_degrees.y += 1000 * delta
 		if fan_rotor.rotation_degrees.y > 57000: fan_rotor.rotation_degrees.y = 0
 		mental_sickness += .75 * delta * mental_sickness_factor
@@ -120,6 +129,7 @@ func input() :
 	if Input.is_action_just_pressed("cam") and state == action.pc : arc.screen._on_cam_pressed()
 
 func spotlight() :
+	if state == action.minigame : return
 	if is_booting or arc.batary <= 0 : 
 		arc_event.play_sfx({"path" = "user/error"})
 		return
@@ -140,6 +150,7 @@ func spotlight() :
 		source["amb"].stream_paused = false
 		arc.screen.ad_source.stream_paused = false
 		source["whitout"].stream_paused = true
+		arc.screen.disable_all()
 		arc_event.play_sfx({"path" = "user/pc_turn_on"})
 		spot_light.visible = true
 		arc.usage += 1.75
@@ -150,6 +161,7 @@ func spotlight() :
 		is_booting = false
 
 func recharge() :
+	if state == action.minigame : return
 	if arc.user.item_right.resource_path.get_file().get_basename() == "light" or arc.user.item_right.resource_path.get_file().get_basename() == "light_big" : 
 		if randi_range(0,100) > flashlight_broke_factor :
 			flashlight_brake()
@@ -162,11 +174,14 @@ func recharge() :
 		arc_event.play_sfx({"path" = "user/flashlight_charge", "volume" = -3})
 
 func flashlight_brake() :
+	if arc.user.state == arc.user.action.minigame : return
 	arc.user.flash_light.visible = false
 	arc.user.flash_light_charge = 0
 	arc_event.play_sfx({"path" = "user/flashlight_die", "volume" = -3})
 
 func cancel_call() :
+	if state == action.minigame :
+		return
 	arc_event.turn_off_one_to_ten(0)
 	source["call"].stop()
 
@@ -186,7 +201,7 @@ func shake_pos(inten : float = .02, dur : float = .25) :
 	is_shaking = false
 
 func change_state(numba : int = 0) :
-	if state == action.loss : return
+	if state == action.loss or state == action.minigame: return
 	match numba :
 		5 : 
 			state = action.window
@@ -197,8 +212,8 @@ func change_state(numba : int = 0) :
 			to_rotate = 0
 		4 : # loss
 			state = action.loss
-			arc.fatass.position = Vector3(-2.23, .865, -17.834)
-			arc.fatass.rotation_degrees = Vector3(0, 31, 0)
+			fatass.position = Vector3(-2.23, .865, -17.834)
+			fatass.rotation_degrees = Vector3(0, 31, 0)
 			position = Vector3(-2.7, 1.3, -18.9)
 			rotation_degrees.y = -175
 			rotation_degrees.x = 0
@@ -219,8 +234,8 @@ func change_state(numba : int = 0) :
 		1 : # hide
 				if state != action.hide :
 					state = action.hide
-					arc.fatass.position = Vector3(-2.782, .503, -18.876)
-					arc.fatass.rotation_degrees = Vector3(0, 176, 0)
+					fatass.position = Vector3(-2.782, .503, -18.876)
+					fatass.rotation_degrees = Vector3(0, 176, 0)
 					flash_light.visible = false
 					position = Vector3(-2.9, .5, -17.9)
 					rotation = Vector3.ZERO
@@ -230,13 +245,52 @@ func change_state(numba : int = 0) :
 				else :change_state()
 		0, _ : # default
 			state = action.sit
-			arc.fatass.position = Vector3(-2.23, .865, -17.834)
-			arc.fatass.rotation_degrees = Vector3(0, 31, 0)
+			fatass.position = Vector3(-2.23, .865, -17.834)
+			fatass.rotation_degrees = Vector3(0, 31, 0)
 			position = Vector3(-2.7, 1.3, -18.9)
 			rotation_degrees.y = -175
 			rotation_degrees.x = 0
 			rotation_degrees.z = 0
 			to_rotate = 0
+
+func fuse(action : String) -> int :
+	match action :
+		"c" :
+			var f = 0
+			for i in fuses.size() :
+				if fuses[i].visible :
+					f += 1
+					i += 1
+			return f
+		"r" :
+			if fuses[0].visible == false : return -1
+			var disabled = -1
+			var iddqd = 3
+			for i in range(4) : # reverce cycle
+				if fuses[iddqd].visible :
+					disabled = iddqd
+					break
+				else : iddqd -= 1
+			if disabled == -1 : return -2
+			fuses[disabled].visible = false
+			arc_event.play_sfx({"path" = "user/fuse_remove"})
+			if disabled == 0 :
+				arc.batary = 0
+			return disabled
+		"a" :
+			if fuses[3].visible : return -1
+			var disabled = -1
+			for i in range(4) :
+				if fuses[i].visible == false :
+					disabled = i
+					break
+				else : i -= 1
+			if disabled == -1 : return -2
+			fuses[disabled].visible = true
+			arc_event.play_sfx({"path" = "user/fuse_place"})
+			return disabled
+
+	return -1
 
 func open_door(angle : float = 90) :
 	get_node("/root/main/estab/door/door").rotation_degrees.y = angle
@@ -290,6 +344,7 @@ func _input(event) :
 			arc_event.play_sfx({"path" = "user/fish_miss"})
 
 func blink(time : float = 0) :
+	if arc.user.state == arc.user.action.minigame : return
 	blink_screen.visible = true
 	arc.is_can_pause = false
 	await  get_tree().create_timer(time).timeout
@@ -300,8 +355,8 @@ func blink(time : float = 0) :
 
 func door_to() :
 	if state == action.window : return
-	blink(2.57)
-	change_state(5)
+	#blink(2.57)
+	#change_state(5)
 
 func mute() :
 	source["fan"].stream_paused = true
@@ -310,7 +365,7 @@ func mute() :
 	source["whitout"].stream_paused = true
 	arc.screen.ad_source.stream_paused = true
 
-func item_swap(to_swap : fnat_item) :
+func item_swap(to_swap : fnat_item, node3d :Node3D) :
 	var item = to_swap.resource_path.get_file().get_basename()
 	print(item)
 	match to_swap.item_type : # TYPE_OF_SWAPED_ITEM
@@ -318,11 +373,8 @@ func item_swap(to_swap : fnat_item) :
 		to_swap.TYPE_OF_ITEM.RIGHT :
 			if item_right == to_swap : return
 			match item_right.resource_path.get_file().get_basename() :
-				"light" : # TAKE_OFF
-					$"../decor/light".visible = true
-					arc.user.flash_light.visible = false
-				"light_big" :
-					$"../decor/light_big".visible = true
+				"light", "light_big" : 
+					node3d.visible = true
 					arc.user.flash_light.visible = false
 
 			match item : # EQUIP
@@ -333,7 +385,7 @@ func item_swap(to_swap : fnat_item) :
 					arc.user.flash_light.spot_attenuation = .2
 					arc.user.flash_light.spot_angle = 10
 					arc.user.flash_light.spot_angle_attenuation = .7
-					$"../decor/light".visible = false
+					node3d.visible = false
 				"light_big" :
 					arc.user.flash_light_charge = 0
 					arc.user.flashlight_loss_factor = 2.7
@@ -341,7 +393,7 @@ func item_swap(to_swap : fnat_item) :
 					arc.user.flash_light.spot_attenuation = .5
 					arc.user.flash_light.spot_angle = 20
 					arc.user.flash_light.spot_angle_attenuation = .6
-					$"../decor/light_big".visible = false
+					node3d.visible = false
 			item_right = to_swap
 
 
@@ -350,32 +402,36 @@ func item_swap(to_swap : fnat_item) :
 			match item_head.resource_path.get_file().get_basename() :
 				"goggles" :
 					arc.world.environment.background_color = Color("000000")
-					$"../decor/goggles".visible = true
+					node3d.visible = true
 					mental_sickness_factor = 1
 					arc_event.play_sfx({"path" = "user/goggles_off"})
 				"foil_hat" :
 					arc.usage += .57
-					$"../decor/foil_hat".visible = true
+					node3d.visible = true
 					mental_sickness_factor = 1
 					arc_event.play_sfx({"path" = "ambient/short/item/paper"})
 
 			match item : #equip
 				"goggles" :
 					arc.world.environment.background_color = Color("00c400")
-					$"../decor/goggles".visible = false
+					node3d.visible = false
 					mental_sickness_factor = .75
 					arc_event.play_sfx({"path" = "user/goggles"})
 				"foil_hat" :
 					arc.usage -= .57
-					$"../decor/foil_hat".visible = false
+					node3d.visible = false
 					mental_sickness_factor = .5
 					arc_event.play_sfx({"path" = "ambient/short/item/hemlet"})
 			item_head = to_swap
 
 func _ready() -> void:
+	arc.loadout()
+	if state == action.minigame :
+		source["amb"].volume_db = arc.save.volume + 14
+		return
 	change_state()
 	await get_tree().create_timer(.257).timeout
-	get_node("/root/main/office/triggers/vhs").visible = false
+	#get_node("/root/main/office/triggers/vhs").visible = false
 	arc_event.set_up_ambient()
 	arc.start_night(arc.night)
 	arc_event.play_random()
@@ -429,5 +485,12 @@ func _ready() -> void:
 			fatass.volume = 6
 			fatass.second = .83
 			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_black.res")
+	if randi_range(0,100) > 99 : 
+			var fatass : fnat_interact_object = get_node("/root/main/office/decor/guitar")
+			fatass.to_play = "anim/noise/bass/slep"
+			fatass.absolute_cd = 5
+			fatass.volume = 10
+			fatass.second = 0
+			fatass.get_node("fnat_guitar").mesh = preload("res://prefabs/mesh/fnat_gguitar.res")
 	#arc_event.play_sfx({"type" = "2d", "path" = "ambient/calls/" + arc.save.lange + arc.night.resource_name})
 	#if randi_range(0,100 > 90) : arc_event.play_some_event("long")

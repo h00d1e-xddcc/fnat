@@ -40,29 +40,32 @@ func jumpscare() :
 	#while arc.user.state == arc.user.action.hide : 
 		#return
 	arc.is_can_pause = false
+	arc.loss = true
 	await get_tree().create_timer(2.57).timeout
 	arc.user.blink(.15)
 	await get_tree().create_timer(.2).timeout
 	arc.user.blink(.15)
 	await get_tree().create_timer(.257).timeout
 	arc.user.blink(.3)
-	arc.loss = true
-	arc.user.mute()
-	animator.play("mannrobic2")
-	arc.user.change_state(4)
-	arc.user.flash_light.visible = false
-	get_node("/root/main/office/user/omni").visible = true
-	set_face()
-	global_position = arc.user.global_position + (-arc.user.global_transform.basis.z * 1)
-	global_position.y -= 2
+	match arc.user.state :
+		arc.user.action.minigame : 
+			#global_position = arc.user.global_position + (-arc.user.global_transform.basis.z * 1)
+			global_position.y = -.6
+			global_position.y = 0.6
+			global_position.z = -9.6
+		_ :
+			arc.user.mute()
+			animator.play("mannrobic2")
+			arc.user.change_state(4)
+			arc.user.flash_light.visible = false
+			get_node("/root/main/office/user/omni").visible = true
+			set_face()
+			global_position = arc.user.global_position + (-arc.user.global_transform.basis.z * 1)
+			global_position.y -= 2
 	look_at(arc.user.global_position)
 	rotation.x = 0
 	rotation.z = 0
 	arc_event.play_sfx({"path" = "anim/" + name + "/scream"})
-	#if arc.user.spot_light.visible == true : arc.user.spotlight()
-	arc.user.mute()
-	#await get_tree().create_timer(1).timeout
-	#arc.user.blink(99)
 	arc.user.shake_pos(.03, 2.56)
 	await get_tree().create_timer(1.56).timeout
 	arc.user.blink(9999)
@@ -91,13 +94,10 @@ func jumpscare() :
 	SceneManager.change_scene("res://prefabs/misc/main_menu.tscn", {"pattern" : "curtians"}, true)
 
 func move() :
-	arc.screen.interupt_cam()
 	var move_to = current_point.get_random()
-	print(name)
 	if move_to.name == "office" and arc.room_check(-1, "office") == true : return
 	if move_to.occupation != name : 
 		print(name)
-		print(move_to.name)
 		OS.crash("796F7520737475706964206E6967676572")
 
 	match move_to.flag :
@@ -105,11 +105,19 @@ func move() :
 			arc.user.flashlight_brake()
 			visible = false
 			if arc.user.flash_light.visible == true : arc_event.play_sfx({"path" = "user/flashlight_die", "volume" = -3})
-			if current_point.name == "office_vent" : arc_event.play_sfx({"path" = "/anim/vent_quiet" + str(randi_range(0,1)), "volume" = -randi_range(-12, 0)})
-			else : arc_event.play_sfx({"path" = "anim/chimera/knock" , "volume" = -randi_range(-12, 6)})
-			await get_tree().create_timer(2.57).timeout
+			match name :
+				"chimera", "bear", "nerd" :
+					arc_event.play_sfx({"path" = "/anim/vent_quiet" + str(randi_range(0,1)), "volume" = -randi_range(-12, 0)})
+					await get_tree().create_timer(2.57).timeout
+					arc_event.play_sfx({"path" = "anim/"+ name + "/move", "volume" = -randi_range(-12, 6)})
+				"noise" : 
+					arc_event.play_sfx({"path" = "anim/chimera/knock" , "volume" = -randi_range(-12, 6)})
+					await get_tree().create_timer(2.57).timeout
+					arc_event.play_sfx({"path" = "anim/"+ name + "/move", "volume" = -randi_range(-12, 6)})
+				"plush" :
+					arc_event.play_sfx({"path" = "anim/plush/" + current_point.flag, "volume" = randi_range(-8, 0)})
 			#rotate_head()
-			arc_event.play_sfx({"path" = "anim/"+ name + "/move", "volume" = -randi_range(-12, 6)})
+
 			hunger = 100
 			animator.play(move_to.get_pose())
 			arc.user.blink(.257)
@@ -173,9 +181,14 @@ func move() :
 	global_position = move_to.global_position
 	rotation = move_to.rotation
 	current_point = move_to
-	if name == "endo" : arc_event.play_sfx({"path" = str("anim/" + arc.user.anims[randi_range(0,3)].name + "/moved"), "type" = "3d", "node" = str(self.get_path())})
-	#else : arc.play_sound("anim/" + name + "/moved", 0, self, 0, 0)
-	else : arc_event.play_sfx({"path" = "anim/" + name + "/moved" , "type" = "3d", "node" = str(self.get_path())})
+	match name :
+		"endo" :
+			arc_event.play_sfx({"path" = str("anim/" + arc.user.anims[randi_range(0,3)].name + "/moved"), "type" = "3d", "node" = str(self.get_path())})
+			arc.screen.interupt_cam()
+		"plush" : arc_event.play_sfx({"path" = "anim/plush/" + current_point.flag, "volume" = randi_range(-8, 0)})
+		_ : 
+			arc_event.play_sfx({"path" = "anim/" + name + "/moved" , "type" = "3d", "caller" = str(self.get_path())})
+			arc.screen.interupt_cam()
 
 func toss_roll(force : int = 0) :
 	if ai_lvl == -1 : return
@@ -217,6 +230,9 @@ func toss_roll(force : int = 0) :
 						rotation = current_point.rotation
 				"virus" : arc.screen.teto_word_of_the_day()
 				"vissy" : arc.screen.summon_vissy()
+				"plush" : 
+					if arc.user.flash_light.visible : return
+					else : move()
 				_ : move()
 
 func ping() :
@@ -238,9 +254,11 @@ func go_back() :
 	global_position = current_point.global_position
 	rotation = current_point.rotation
 
-func set_face(face : int = -2) :
-	var face_mesh : MeshInstance3D = get_node("skelet/Skeleton3D").get_child(1)
-	face_mesh.set_instance_shader_parameter("f_id", face)
+func set_face(face : float = -.375) :
+	match name :
+		"plush", "vissy", "virus", "endo" : pass
+		_ :
+			acc.set_instance_shader_parameter("f_id", face)
 
 func rotate_head() :
 	var head_position = get_node("skelet/Skeleton3D").get_bone_global_pose(7).origin
@@ -267,7 +285,8 @@ func poof() :
 func _ready() -> void:
 	if mood == behavior_type.DEMO : return
 	in_office.connect(jumpscare)
-	var roll = randi_range(0,100)
+	set_face()
+	#var roll = randi_range(0,100)
 	#match name :
 		#persone.CHIMERA :
 			#if roll > 70 : current_point = get_node("/root/main/path_chimera/hunting/stage")
@@ -317,4 +336,9 @@ func _process(delta: float) -> void:
 			"gnoise" :
 				if hunger >= 140: 
 					poof()
+				else : hunger += 5 * delta
+
+			"plush":
+				if hunger >= 120 :
+					emit_signal("in_office")
 				else : hunger += 5 * delta

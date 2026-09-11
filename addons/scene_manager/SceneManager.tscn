@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://j20v4cg7v8m1"]
 
-[ext_resource type="Script" uid="uid://dgpfrc8qn5gtj" path="res://addons/scene_manager/SceneManager.gd" id="1_22br8"]
-[ext_resource type="Shader" uid="uid://d1v7vtgra0jlf" path="res://addons/scene_manager/Dissolve2d.gdshader" id="2_853wq"]
+[ext_resource type="Script" uid="uid://b1yrt3pggj1i1" path="res://addons/scene_manager/SceneManager.gd" id="1_22br8"]
+[ext_resource type="Shader" uid="uid://b2wqrl6go0ucr" path="res://addons/scene_manager/Dissolve2d.gdshader" id="2_853wq"]
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="2_nh6nu"]
-[ext_resource type="Shader" uid="uid://buj5a8swc3jjp" path="res://test.gdshader" id="3_klngh"]
-[ext_resource type="Animation" uid="uid://dxr1r78uxitcq" path="res://addons/scene_manager/ShaderFade.tres" id="5_anecj"]
+[ext_resource type="Animation" uid="uid://dxr1r78uxitcq" path="res://addons/scene_manager/Fade.tres" id="5_anecj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0imdi"]
 shader = ExtResource("2_853wq")
@@ -13,61 +12,40 @@ shader_parameter/fade_color = Color(0, 0, 0, 1)
 shader_parameter/fade = false
 shader_parameter/inverted = false
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_kvs3k"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klngh"]
-noise = SubResource("FastNoiseLite_kvs3k")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6qgm"]
-shader = ExtResource("3_klngh")
-shader_parameter/position = Vector2(0, 0)
-shader_parameter/radius = 0.0
-shader_parameter/borderWidth = 0.2
-shader_parameter/burnMult = 0.0
-shader_parameter/noiseTexture = SubResource("NoiseTexture2D_klngh")
-shader_parameter/burnColor = Color(1, 1, 1, 0)
-shader_parameter/pixel_size = 0.004
-shader_parameter/blend_steps = 8.5
-
-[sub_resource type="LabelSettings" id="LabelSettings_67nhv"]
-font = ExtResource("2_nh6nu")
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdiyj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh6nu"]
 _data = {
-&"ShaderFade": ExtResource("5_anecj")
+&"Fade": ExtResource("5_anecj")
 }
 
-[node name="SceneManager" type="Node2D" unique_id=1437635890 node_paths=PackedStringArray("title")]
-script = ExtResource("1_22br8")
-title = NodePath("CanvasLayer/title")
+[sub_resource type="LabelSettings" id="LabelSettings_0vcn1"]
+font = ExtResource("2_nh6nu")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2060294247]
+[node name="SceneManager" type="Node2D" unique_id=301235832 node_paths=PackedStringArray("title")]
+script = ExtResource("1_22br8")
+title = NodePath("label")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1204239542]
 layer = 3
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=783345563]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=501028216]
 material = SubResource("ShaderMaterial_0imdi")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 
-[node name="title" type="Label" parent="CanvasLayer" unique_id=1861054679]
-visible = false
-material = SubResource("ShaderMaterial_e6qgm")
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -713.0
-offset_top = 28.0
-offset_right = -25.0
-offset_bottom = 63.0
-grow_horizontal = 0
-text = "2033, Apriel 10
-Four moons before fullmoon"
-label_settings = SubResource("LabelSettings_67nhv")
-horizontal_alignment = 2
+[node name="LoadingScreenLayer" type="CanvasLayer" parent="." unique_id=932331711]
+layer = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=846082751]
-libraries/ = SubResource("AnimationLibrary_bdiyj")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=870770421]
+libraries/ = SubResource("AnimationLibrary_nh6nu")
+
+[node name="label" type="Label" parent="." unique_id=1172724678]
+visible = false
+offset_right = 96.0
+offset_bottom = 16.0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(1, 2)
+offset_transform_visual_only = false
+text = "dsadsd"
+label_settings = SubResource("LabelSettings_0vcn1")

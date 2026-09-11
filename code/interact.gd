@@ -1,7 +1,7 @@
 extends Node3D
 class_name  fnat_interact_object
 
-enum interact_type {TOUCH, SWICH, BUTTON, PATH, ARM, DOOR, ITEM}
+enum interact_type {TOUCH, SWICH, BUTTON, PATH, ARM, DOOR, ITEM, FAN, GUITAR}
 
 @export var type : interact_type
 @export var absolute_cd : float
@@ -44,26 +44,36 @@ func touch() :
 					if return_to_old_pos :
 						global_rotation_degrees = old_rot
 				cout += 1
-				if cout == 257 and to_play == "user/teto" :
-					arc.save.stars[4] = true
-					arc.save_settings()
-					arc_event.popup(preload("res://pics/fatass.png"), arc.lang.get_word("p_star"), arc.lang.get_word("p_fat"))
-		interact_type.DOOR :
-			arc.user.door_to()
-		interact_type.ITEM : arc.user.item_swap(item)
+
+				match to_play :
+					"anim/noise/bass/slep" :
+						arc_event.popup(preload("res://pics/vi8.svg"), "p_star", "p_gui", true)
+						arc.save.stars[3] = true
+						arc.save_settings()
+						arc_event.popup(preload("res://pics/vi8.svg"), arc.lang.get_word("p_star"), arc.lang.get_word("p_gui"), true)
+					"user/teto", "user/nyaga", "user/alien"  :
+						if cout == 257 :
+							arc.save.stars[4] = true
+							arc.save_settings()
+							arc_event.popup(preload("res://pics/fatass.png"), arc.lang.get_word("p_star"), arc.lang.get_word("p_fat"))
+
+		interact_type.DOOR : arc.user.door_to()
+		interact_type.ITEM : arc.user.item_swap(item, self)
 		interact_type.SWICH :
 			if arc.is_can_add_power == false : 
 				arc_event.play_sfx({"path" = "user/power_error", "volume" = 0})
 				return
+			visible = false
 			arc.is_can_add_power = false
-			if randf() < arc.batary / 100 : arc.batary = 0
+			if randf() < arc.batary / 90 : arc.user.fuse("r")
 			else :
-				arc.batary += randi_range(4, 15)
+				arc.batary += randi_range(10, 15)
 				arc.out_of_power.connect(arc.run_out_power)
 				arc_event.play_sfx({"path" = "user/power_add", "volume" = 18})
 
-			await get_tree().create_timer(7, false, false, false).timeout
+			await get_tree().create_timer(15).timeout
 			arc.is_can_add_power = true
+			visible = true
 
 		interact_type.ARM :
 			arc_event.play_sfx({"path" = to_play, "volume" = volume})

@@ -43,7 +43,7 @@ void fragment() {
     float mask = step(tint, ALBEDO.r);
 	float mask_em = step(em, ALBEDO.r);
 	ALBEDO *= mix(albedo.rgb, coloring.rgb, mask);
-	EMISSION *= mix(albedo.rgb, coloring.rgb, mask_em);
+	//EMISSION *= mix(albedo.rgb, coloring.rgb, mask);
 
 	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
 	METALLIC = metallic_tex * metallic;
@@ -52,12 +52,13 @@ void fragment() {
 	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
 	float roughness_tex = dot(texture(texture_roughness, base_uv), roughness_texture_channel);
 	ROUGHNESS = roughness_tex * roughness;
+	EMISSION = coloring.rgb * em;
 }
 "
 
 [resource]
 resource_name = "color_pallete.001"
-render_priority = 0
+render_priority = 1
 shader = SubResource("Shader_5i21c")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = ExtResource("1_5i21c")

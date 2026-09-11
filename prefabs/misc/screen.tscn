@@ -16,7 +16,7 @@ size = Vector2(0.766, 0.46)
 
 [sub_resource type="CameraTexture" id="CameraTexture_dgndv"]
 
-[node name="screen" type="StaticBody3D" unique_id=1479514998 node_paths=PackedStringArray("status", "time", "info", "sub", "mesh", "cam", "scheme", "booting", "sfx", "noise", "noise_sfx", "ad", "ad_source", "teto_input", "vissy")]
+[node name="screen" type="StaticBody3D" unique_id=1479514998 node_paths=PackedStringArray("status", "time", "info", "sub", "mesh", "cam", "scheme", "booting", "sfx", "noise", "noise_sfx", "ad", "ad_source", "teto_input", "vissy", "hacking")]
 script = ExtResource("1_86wwx")
 status = NodePath("sub/ui/status")
 time = NodePath("sub/ui/time")
@@ -33,6 +33,7 @@ ad = NodePath("sub/ui/ad")
 ad_source = NodePath("ad_source")
 teto_input = NodePath("sub/ui/word_minigame/back/teto_word/input")
 vissy = NodePath("sub/ui/vissy")
+hacking = NodePath("sub/ui/hacking")
 
 [node name="collision" type="CollisionShape3D" parent="." unique_id=1015772746]
 transform = Transform3D(0.99999994, -2.9802322e-08, -1.3322676e-15, -1.4901163e-08, 0.99999994, 3.6879621e-31, 3.5527137e-15, -2.1316282e-14, 1, 0, -0.029000003, 0)

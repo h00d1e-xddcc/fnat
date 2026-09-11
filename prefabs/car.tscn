@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ijtfviwohum4"]
+
+[ext_resource type="ArrayMesh" uid="uid://bqcla7ukkxexd" path="res://prefabs/mesh/fnat_car.res" id="1_jqes7"]
+[ext_resource type="Texture2D" uid="uid://jgcdwohtnwok" path="res://pics/milk.png" id="2_eaxvx"]
+
+[node name="milk" type="MeshInstance3D" unique_id=1613572217]
+mesh = ExtResource("1_jqes7")
+
+[node name="sprite" type="Sprite3D" parent="." unique_id=1704198027]
+transform = Transform3D(0.1607698, 0, 0, 0, 0.1607698, 0, 0, 0, 0.1607698, 2.0332375, 2.1177657, -1.4595333)
+shaded = true
+texture = ExtResource("2_eaxvx")
+
+[node name="sprite2" type="Sprite3D" parent="." unique_id=1954839096]
+transform = Transform3D(0.1607698, 0, 0, 0, 0.1607698, 0, 0, 0, 0.1607698, 2.0332375, 2.1177657, 1.4547507)
+shaded = true
+texture = ExtResource("2_eaxvx")

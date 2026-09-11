@@ -10,7 +10,7 @@ class_name main
 func _ready() -> void:
 	if FileAccess.file_exists("user://fnat.tres") : 
 		arc.save = ResourceLoader.load("user://fnat.tres") as fnat_save
-		if arc.save.ver != "26.0.2" : 
+		if arc.save.ver != "26.2.0" : 
 			OS.move_to_trash(ProjectSettings.globalize_path("user://fnat.tres"))
 			OS.crash("")
 		arc.lang = load("res://resources/local/" + arc.save.lange + ".tres")
@@ -29,6 +29,7 @@ func _ready() -> void:
 		get_node("ui/build/control/v_box_container/label").text = arc.lang.get_word("ui_volume")
 		get_node("ui/disclaimer_back/lc/panel/" + arc.save.lange).visible = true
 		get_node("ui/build/control/v_box_container/v-sync").button_pressed = arc.save.vsync
+		$ui/build/one.button_pressed = arc.save.one
 		get_node("ui/build/control/v_box_container/full-screen").button_pressed = arc.save.fullscreen
 	else :
 		arc.save = fnat_save.new()
@@ -37,11 +38,12 @@ func _ready() -> void:
 			"ru" : arc.lang = preload("res://resources/local/ru.tres") 
 			"en", _ : arc.lang = preload("res://resources/local/en.tres")
 		arc.save.fullscreen = false
+		arc.save.one = false
 		arc.save.vsync = false
 		arc.save.stars = [false, false, false, false, false, false, false]
 		arc.save.night = 1
 		arc.save.volume = -15
-		arc.save.ver = "26.0.2"
+		arc.save.ver = "26.2.0"
 		arc.save.night1_deads = 0
 		arc.save.night2_deads = 0
 		arc.save.night6_deads = 0
@@ -57,12 +59,12 @@ func _ready() -> void:
 	get_node("ui/custom_night").visible = false
 	get_node("ui/build").visible = false
 	get_node("ui/thanks").visible = false
-	get_node("ui/main").visible = true
+	get_node("ui/main").visible = false
 	get_node("/root/main_menu/audio").volume_db = arc.save.volume - 10
 	$ui/build/control/v_box_container/label/h_slider.value = arc.save.volume
 	for i in arc.save.stars.size() :
-		get_node("ui/title/stars/" + str(i)).visible = arc.save.stars[i]
-	change_state("main")
+		get_node("ui/main/title/stars/" + str(i)).visible = arc.save.stars[i]
+	change_state("disc")
 	arc.retranslate_title()
 
 func _process(delta: float) -> void:
@@ -91,14 +93,18 @@ func change_state(state : String, time : float = 0) :
 	get_node("sub/main").visible = false
 	get_node("sub/custom").visible = false
 	get_node("sub/thanks").visible = false
+	get_node("sub/pc").visible = false
 	get_node("sub/build").visible = false
 	get_node("sub/trailer").visible = false
+	get_node("sub/disc").visible = false
 	get_node("sub/" + state).visible = true
 	await get_tree().create_timer(time).timeout
 	get_node("sub/" + state + "/cam").current = true
 
 func _on_button_pressed() -> void:
 	get_node("ui/disclaimer_back").visible = false
+	change_state("main")
+	get_node("ui/main").visible = true
 
 func _on_start_pressed() -> void:
 	get_node("/root/main_menu/ui/loadout_back/story").visible = false
@@ -292,6 +298,7 @@ func _voiceover_selected(index: int) -> void:
 	print(index)
 	arc.save.voiceover = index
 	arc.save_settings()
+	$ui/build/warning.text = arc.lang.get_word("ui_warn")
 	$ui/build/warning.visible = true
 
 
@@ -299,3 +306,15 @@ func _set_new_volume(value_changed: bool) -> void:
 	arc.save.volume = $ui/build/control/v_box_container/label/h_slider.value
 	arc.save_settings()
 	get_node("/root/main_menu/audio").volume_db = arc.save.volume + 10
+
+
+func _on_extra_press() -> void:
+	pass
+	#OS.alert("You")
+
+
+func _one_toggled(toggled_on: bool) -> void:
+	arc.save.one = toggled_on
+	arc.save_settings()
+	$ui/build/warning.text = arc.lang.get_word("ui_one")
+	$ui/build/warning.visible = true

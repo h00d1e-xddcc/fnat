@@ -101,8 +101,7 @@ script = ExtResource("4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260710115]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ld5tu")
-frame = 6
-frame_progress = 1.0
+frame_progress = 0.93333334
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=901287732]
 stream = ExtResource("3_jetkh")
@@ -113,13 +112,13 @@ autoplay = true
 one_shot = true
 
 [node name="Label" type="Label" parent="." unique_id=1688259486]
-modulate = Color(1.9648727, 1.7465924, 1.7402284, 1)
+modulate = Color(1.2781085, 0.81562424, 0.53044105, 1)
 texture_filter = 1
 offset_left = -35.0
-offset_top = -70.0
+offset_top = -32.310215
 offset_right = 35.0
-offset_bottom = -47.0
-scale = Vector2(2, 2)
+offset_bottom = -9.310215
+scale = Vector2(1.0081636, 1.0081636)
 pivot_offset = Vector2(35, 8)
 theme_override_fonts/font = ExtResource("5")
 theme_override_font_sizes/font_size = 16

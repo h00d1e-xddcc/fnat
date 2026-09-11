@@ -14,6 +14,7 @@ output = NodePath("panel/rich_text_label")
 input = NodePath("panel/input")
 
 [node name="panel" type="Panel" parent="." unique_id=36756786]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 2
@@ -36,6 +37,7 @@ grow_vertical = 2
 theme_override_constants/paragraph_separation = 16
 theme_override_fonts/normal_font = ExtResource("2_caq8l")
 bbcode_enabled = true
+scroll_following = true
 
 [node name="input" type="LineEdit" parent="panel" unique_id=1191321777]
 z_index = 257

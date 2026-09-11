@@ -4,7 +4,7 @@ extends Node3D
 @export var chimera : Node3D
 
 func _ready() -> void:
-	audio.volume_db = arc.volume
+	audio.volume_db = arc.save.volume
 	audio.play()
 	#await get_tree().create_timer(15).timeout
 	#audio.stream = preload("res://resources/sounds/user/win.wav")
@@ -16,10 +16,10 @@ func _ready() -> void:
 	#chimera.visible = true
 	
 	await get_tree().create_timer(8).timeout
-	if arc.time < 500 :
-		var diff : = true
-		for i in arc.night.diff.size() :
-			if arc.night.diff[i] >= 25 : diff = true
-			else : diff = false
-		if diff : arc_event.play_sfx({"path" = "ambient/calls/" + arc.save.lange + "/14_25"})
+	#if arc.time < 500 :
+		#var diff : = true
+		#for i in arc.night.diff.size() :
+			#if arc.night.diff[i] >= 25 : diff = true
+			#else : diff = false
+		#if diff : arc_event.play_sfx({"path" = "ambient/calls/" + arc.save.lange + "/14_25"})
 	SceneManager.change_scene("res://prefabs/misc/main_menu.tscn", {"pattern" : "curtians"}, true)

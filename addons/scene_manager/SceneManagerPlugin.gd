@@ -1,13 +1,15 @@
 @tool
 extends EditorPlugin
-var _inspector_plugin
+
+const SceneManagerSettings = preload("res://addons/scene_manager/SceneManagerSettings.gd")
+
 
 func _enter_tree():
+	SceneManagerSettings.register()
 	add_autoload_singleton("SceneManager", "res://addons/scene_manager/SceneManager.tscn")
-	_inspector_plugin = load("res://addons/scene_manager/NodeFlagsInspectorPlugin.gd").new()
-	add_inspector_plugin(_inspector_plugin)
 
 
 func _exit_tree():
+	# The settings stay declared: removing them would throw away the project's configuration
+	# every time the plugin is toggled off.
 	remove_autoload_singleton("SceneManager")
-	remove_inspector_plugin(_inspector_plugin)
