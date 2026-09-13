@@ -5,7 +5,7 @@
 # Описание
 Маленький инди "хоррор", сделанный в целях высмеивания самого же себя, и подобного жанра произведений.
 
-Весь код, аддоны, изображения, и прочие ресурсы, хранятся в этом репозитории, и доступны к чтению/редактированию. Самодельные 3D модели хранятся по директории `"prefabs/misc/fnat.blend"`, если кому-то надо
+Весь код, аддоны, изображения, и прочие ресурсы, хранятся в этом репозитории, и доступны к чтению/редактированию. Самодельные 3D модели хранятся по директории `"fnat.blend"`, если кому-то надо
 
 Это пока что, только демонстрационная версия, имеются ошибки, что скажутся на игровом опыте. В планах релизной версии еще пять новых аниматроников и три новые механики на сложность, и еще две чисто по приколу будут выполнены.
 
@@ -55,6 +55,8 @@ http://
 
 [TheViDuelty - you are cute :3](http://youtube.com/@TheViDuelty)
 
+[Jungli! - благодарчик](https://www.youtube.com/@JungliSoIcy)
+
 [CodeMan38 - клевый шрифт](http://github.com/codeman38)
 
 [Blender Foundation - 3D пакет для работы с моделями](http://blender.org/)
@@ -75,7 +77,7 @@ ALL SOUNDS AND TEXTURES WAS GENERETED BY AI, ALL СOINCIDENCE ABSOLUTLY EXACLY M
 
 # Description
 Smoll indie "horror", produced in target self ridiculing, and similar genre titles.
-All code, anddons, pics, and other resources, stores in this repo, and available to read/write. Selfmade 3D models store at dir `prefabs/misc/fnat.blend`, if anyone needs.
+All code, anddons, pics, and other resources, stores in this repo, and available to read/write. Selfmade 3D models store at dir `fnat.blend`, if anyone needs.
 It is demo version, and contains bugs, what affect the experience. In realise plans, to make five more animatronics, and 3 more mechanics to difficult, and two more just for fun.
 All texts was wrote/translated by absolutly illiterate hooman, whit a2 lvl, whitout any ai agents. Srry aboyt grammatical/context mistakes.
 Made in russia, by illiterat me :p
@@ -107,6 +109,8 @@ Name are clickable
 [DrMagexy - cool dude](http://youtube.com/@DrMagexy)
 
 [TheViDuelty - you are cute :3](http://youtube.com/@TheViDuelty)
+
+[Jungli! - Thanks](https://www.youtube.com/@JungliSoIcy)
 
 [CodeMan38 - cool font](http://github.com/codeman38)
 
