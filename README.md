@@ -13,11 +13,13 @@
 
 Сделано в россии, безгмтно мнй :p
 
-# Планы на лето
+# Планы на оставшийся год
 Если кому-то интересно,
-- Во первых хотелось бы добавить еще пять аниматроников. Они уже есть в проекте, но надо бы их довести до ума.
-- Во 2, хочу переработать электричество. Не хочу спойлерить, но простая трата электричества, это как-то скучно.
-- 3 ну и хотелось бы еще реализовать механику случайных событий, как во время ночи, так в начале 
+- 12 аниматроников
+- 4 сюжетные ночи
+- "случайные" события
+- взаимодействие между аниматрониками
+- продвинутое поведение аниматроников
 
 ## Установка
 
@@ -82,11 +84,12 @@ It is demo version, and contains bugs, what affect the experience. In realise pl
 All texts was wrote/translated by absolutly illiterate hooman, whit a2 lvl, whitout any ai agents. Srry aboyt grammatical/context mistakes.
 Made in russia, by illiterat me :p
 
-# Plans on Summer
+# Plans until end of year
 If some interested,
-- Fisrtly, would add five some animatronics. They already in project, but they needs to bring to completion.
-- For 2-nd, would remake electricity. I don't want spoler, but simple electricity loss it's boring.
-- 3 would make event mechanic, as during night, and also starting night.
+- 12 amimatronics
+- "random" events
+- interact between animatronics
+- advanced animatronics behavior
 
 # Installing
 You can install last build in `Releses` tab, in middle-right side of the site. And just press on the blue text, whit blue `fnat_x86_64.exe`
