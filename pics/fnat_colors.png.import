@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpyltwdmavmc4"
 path.s3tc="res://.godot/imported/fnat_colors.png-fec6303dac5afb2934d2989a106fb8ad.s3tc.ctex"
+path.etc2="res://.godot/imported/fnat_colors.png-fec6303dac5afb2934d2989a106fb8ad.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://pics/fnat_colors.png"
-dest_files=["res://.godot/imported/fnat_colors.png-fec6303dac5afb2934d2989a106fb8ad.s3tc.ctex"]
+dest_files=["res://.godot/imported/fnat_colors.png-fec6303dac5afb2934d2989a106fb8ad.s3tc.ctex", "res://.godot/imported/fnat_colors.png-fec6303dac5afb2934d2989a106fb8ad.etc2.ctex"]
 
 [params]
 

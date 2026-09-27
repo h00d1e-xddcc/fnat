@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://qdyuyib0y6ga"
+path="res://.godot/imported/tile.ase-2f88bffad3f989be352bf3d393c74e75.res"
+
+[deps]
+
+source_file="res://pics/textures/tile.ase"
+dest_files=["res://.godot/imported/tile.ase-2f88bffad3f989be352bf3d393c74e75.res"]
+
+[params]
+

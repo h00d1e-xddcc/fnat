@@ -45,7 +45,6 @@ func loadout(type : int = 0) -> void:
 				arc_event.connect_all()
 				fatass = get_node("/root/main/office/decor/fatass")
 
-				change_da_note(arc.lang.get_word("note" + str(randi_range(0,9))))
 				arc.screen.hour = 0
 			loss = false
 			arc.time = 0
@@ -93,7 +92,7 @@ func pass_time() :
 			arc.screen.update_text()
 			if batary <= 0 : emit_signal("out_of_power")
 			else : batary -= 1 * usage * .08
-			if arc.night.one_to_ten and randf_range(1,1000) == 1000 : arc_event.one_to_ten()
+			if arc.save.one and randf_range(1,1000) == 1000 : arc_event.one_to_ten(randi_range(0,7))
 
 func button_delay(button : Button, waiting : float) :
 	var old_string = button.text
@@ -112,6 +111,7 @@ func button_delay(button : Button, waiting : float) :
 	if arc.user.spot_light.visible == true : arc_event.play_sfx({"path" = "user/math_correct", "volume" = 3})
 
 func start_night(night_to_paste : fnat_night) :
+	if night_to_paste == null : return
 	arc.night = night_to_paste
 
 	rand_event = night.is_can_random_event
@@ -170,9 +170,6 @@ func run_out_power() :
 func run_back_power() :
 	out_of_power.connect(run_out_power)
 
-func add_word(id : String, word : String) :
-	lang.dictionary[id] = word 
-
 func room_check(anim_id : int, room : String) -> bool :
 	match anim_id :
 		-1 :
@@ -182,11 +179,15 @@ func room_check(anim_id : int, room : String) -> bool :
 			if user.anims[anim_id].current_point.name == room : return true
 	return false
 
-func change_da_note(text : String, size : int = 18) :
+func change_da_note(value : int = -1, size : int = 18) :
 	var note : Label3D = get_node("/root/main/office/decor/fnat_note/label_3d")
-	note.text = text
-	note.text = text.replace("\\n", "\n")
+	var splash = preload("res://resources/local/splash.tres")
+	if value == -1 : note.text = splash.dictionary.values().pick_random()
+	else : note.text = str(splash.dictionary.values().get(value))
+	print(note.text)
+	note.text = note.text.replace("\\n", "\n")
 	note.font_size = size
+	DisplayServer.window_set_title(note.text)
 
 func save_settings() :
 	ResourceSaver.save(save, "user://fnat.tres")

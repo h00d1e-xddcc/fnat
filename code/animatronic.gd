@@ -26,6 +26,9 @@ enum behavior_type {DIFF, TIME, DEMO}
 @export var face_hunting : Array[String]
 @export var face_scream : String
 
+@export var accs : Dictionary[int, fnat_cosmetic_item]
+@export var accs_slots : Dictionary[int, MeshInstance3D]
+
 # animation_array
 # dab, damn, default, engage, guitar0-1, look, lotos, mrbeast, peta, pootis_pow, reference, absolute, sniper, imp, tpose
 # mannrobic0-4, kas0-4, pc, romantic
@@ -218,7 +221,7 @@ func toss_roll(force : int = 0) :
 						global_position = current_point.global_position
 						rotation = current_point.rotation
 						arc_event.play_sfx({"path" = "anim/nchimera/" + str(randi_range(0,3)), "volume" = randi_range(-15, -8)})
-						#rotate_head()
+						print("movded")
 				"gnoise" :
 					if randi_range(0,100) > 80 - ai_lvl : 
 						if current_point.flag == "office" or arc.user.item_head.resource_path.get_file().get_basename() == "foil_hat" : return
@@ -281,6 +284,9 @@ func poof() :
 	current_point = get_node("/root/main/path/" + name + "/diff")
 	global_position = current_point.global_position
 	rotation = current_point.rotation
+
+#func reload_accs() :
+	#for i in accs.values() :
 
 func _ready() -> void:
 	if mood == behavior_type.DEMO : return

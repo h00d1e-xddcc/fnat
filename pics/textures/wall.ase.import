@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cgo2857dif50f"
+path="res://.godot/imported/wall.ase-b75606c9d19fb49cc6bfbba5bb86a888.res"
+
+[deps]
+
+source_file="res://pics/textures/wall.ase"
+dest_files=["res://.godot/imported/wall.ase-b75606c9d19fb49cc6bfbba5bb86a888.res"]
+
+[params]
+

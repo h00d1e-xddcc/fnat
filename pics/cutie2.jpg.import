@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccdf2cwc5jleq"
 path.s3tc="res://.godot/imported/cutie2.jpg-38d6bf17722584471d3eb708ce543d58.s3tc.ctex"
+path.etc2="res://.godot/imported/cutie2.jpg-38d6bf17722584471d3eb708ce543d58.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pics/cutie2.jpg"
-dest_files=["res://.godot/imported/cutie2.jpg-38d6bf17722584471d3eb708ce543d58.s3tc.ctex"]
+dest_files=["res://.godot/imported/cutie2.jpg-38d6bf17722584471d3eb708ce543d58.s3tc.ctex", "res://.godot/imported/cutie2.jpg-38d6bf17722584471d3eb708ce543d58.etc2.ctex"]
 
 [params]
 

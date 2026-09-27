@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://do6s3sdsxm7se"]
 
-[ext_resource type="Texture2D" uid="uid://c5h0ueepck51h" path="res://pics/tile.png" id="1_bmx2j"]
+[ext_resource type="Texture2D" uid="uid://ci53kupt2ikve" path="res://pics/textures/tile.png" id="1_bmx2j"]
 
 [sub_resource type="Shader" id="Shader_bmx2j"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.6.3.stable's StandardMaterial3D.

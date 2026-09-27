@@ -1,0 +1,696 @@
+[gd_scene format=3 uid="uid://ceddsvvqx7t1a"]
+
+[ext_resource type="Script" uid="uid://r3bbt03ctk0q" path="res://code/user2d.gd" id="1_47a5d"]
+[ext_resource type="Texture2D" uid="uid://ylxmtdu04mko" path="res://pics/color_pallete.png" id="1_lhwif"]
+[ext_resource type="Script" uid="uid://wd7c5k2njue7" path="res://code/interact2d.gd" id="2_jcq62"]
+[ext_resource type="PackedScene" uid="uid://cbdt361xtjwjo" path="res://prefabs/minigames/ui.tscn" id="3_lhwif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mto5o"]
+size = Vector2(403.50015, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fg3yo"]
+size = Vector2(878.0001, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhwif"]
+size = Vector2(49.999992, 532.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aebjg"]
+size = Vector2(195, 118.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n33ga"]
+size = Vector2(4.278123, 1.8100457)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcq62"]
+size = Vector2(121.99997, 170.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8utb"]
+size = Vector2(143, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vcn1"]
+size = Vector2(39.62949, 18.898458)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8pdr"]
+size = Vector2(50.197334, 28.557663)
+
+[node name="mi" type="Node2D" unique_id=2001058856]
+
+[node name="main" type="Node2D" parent="." unique_id=719524807]
+
+[node name="black" type="Sprite2D" parent="main" unique_id=951856676]
+texture_filter = 1
+position = Vector2(-3028.0002, -1911)
+scale = Vector2(4365, 2841)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.1540463, 8.154047, 1.7052977, 1.6902065)
+metadata/_edit_lock_ = true
+
+[node name="backgound" type="StaticBody2D" parent="main" unique_id=858480551]
+position = Vector2(-0.00024414063, 0)
+scale = Vector2(0.99999994, 1)
+
+[node name="left" type="Sprite2D" parent="main/backgound" unique_id=591393931]
+texture_filter = 1
+position = Vector2(197.00027, 45)
+scale = Vector2(42.999996, 556)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5041599, 14.478903, 0.9394207, 0.9472332)
+
+[node name="down" type="Sprite2D" parent="main/backgound" unique_id=1823120636]
+texture_filter = 1
+position = Vector2(231.00026, 530)
+scale = Vector2(793.0001, 49.999992)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5041599, 14.478903, 0.9394207, 0.9472332)
+
+[node name="up" type="Sprite2D" parent="main/backgound" unique_id=881759145]
+texture_filter = 1
+position = Vector2(197.00024, -140)
+scale = Vector2(858.00006, 202.70872)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5041599, 14.478903, 0.9394207, 0.9472332)
+
+[node name="right" type="Sprite2D" parent="main/backgound" unique_id=1544199895]
+texture_filter = 1
+position = Vector2(962.00037, 23)
+scale = Vector2(44.000015, 565)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5041599, 14.478903, 0.9394207, 0.9472332)
+
+[node name="window" type="Sprite2D" parent="main/backgound" unique_id=1896129094]
+texture_filter = 1
+position = Vector2(959.0003, 194)
+scale = Vector2(52.00003, 127.999985)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5041599, 14.478903, 0.9394207, 0.9472332)
+
+[node name="window2" type="Sprite2D" parent="main/backgound" unique_id=1943181800]
+texture_filter = 1
+position = Vector2(192.00027, 196)
+scale = Vector2(52.00003, 127.999985)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5041599, 14.478903, 0.9394207, 0.9472332)
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="main/backgound" unique_id=792808032]
+position = Vector2(352.25024, 28)
+shape = SubResource("RectangleShape2D_mto5o")
+
+[node name="collision_shape_2d2" type="CollisionShape2D" parent="main/backgound" unique_id=1782599416]
+position = Vector2(874.0003, 28)
+shape = SubResource("RectangleShape2D_mto5o")
+
+[node name="collision_shape_2d3" type="CollisionShape2D" parent="main/backgound" unique_id=1808827898]
+position = Vector2(609.0003, 558)
+shape = SubResource("RectangleShape2D_fg3yo")
+
+[node name="collision_shape_2d4" type="CollisionShape2D" parent="main/backgound" unique_id=219875753]
+position = Vector2(214.00026, 280)
+shape = SubResource("RectangleShape2D_lhwif")
+
+[node name="collision_shape_2d5" type="CollisionShape2D" parent="main/backgound" unique_id=413452076]
+position = Vector2(988.00037, 295)
+shape = SubResource("RectangleShape2D_lhwif")
+
+[node name="table" type="StaticBody2D" parent="main" unique_id=276439967]
+position = Vector2(0, -1.5258789e-05)
+scale = Vector2(0.99999994, 1)
+
+[node name="right" type="Sprite2D" parent="main/table" unique_id=561464227]
+position = Vector2(924, 159)
+scale = Vector2(14.999946, 44.000004)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5000572, 14.42618, 1, 1)
+
+[node name="right2" type="Sprite2D" parent="main/table" unique_id=1932293874]
+position = Vector2(786, 159)
+scale = Vector2(14.999946, 44.000004)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5000572, 14.42618, 1, 1)
+
+[node name="up" type="Sprite2D" parent="main/table" unique_id=123059143]
+position = Vector2(773.00006, 68.000015)
+scale = Vector2(179.00003, 106.99998)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5455065, 16.40724, 1, 1)
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="main/table" unique_id=991867409]
+position = Vector2(861.5002, 119.749985)
+shape = SubResource("RectangleShape2D_aebjg")
+
+[node name="knife" type="Sprite2D" parent="main" unique_id=561354547]
+position = Vector2(860, 164.00003)
+rotation = -2.173935
+scale = Vector2(12.660884, 45.276325)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.48331833, 0.51668227, 1, 1)
+
+[node name="blade" type="Sprite2D" parent="main/knife" unique_id=2096552383]
+position = Vector2(-0.16667725, 0.23529422)
+scale = Vector2(1.3333449, 0.32352933)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.48331833, 0.51668227, 1, 1)
+
+[node name="blade2" type="Sprite2D" parent="main/knife" unique_id=1660641987]
+position = Vector2(-0.33333343, 0.47058818)
+scale = Vector2(1.6666763, 0.2941177)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.48331833, 0.51668227, 1, 1)
+
+[node name="blade3" type="Sprite2D" parent="main/knife" unique_id=135101474]
+position = Vector2(0.24999923, -0.08823514)
+scale = Vector2(0.5000049, 0.23529409)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.48331833, 0.51668227, 1, 1)
+
+[node name="koahog" type="Sprite2D" parent="main/knife" unique_id=1149782088]
+position = Vector2(-7.3313713e-06, 0.846154)
+scale = Vector2(1.0000113, 0.5384618)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.48331833, 2.4972987, 1, 1)
+
+[node name="koahog4" type="Sprite2D" parent="main/knife" unique_id=1706847270]
+position = Vector2(0.16667037, 1.346154)
+scale = Vector2(0.66665995, 0.115384564)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.48331833, 2.4972987, 1, 1)
+
+[node name="koahog3" type="Sprite2D" parent="main/knife" unique_id=701873745]
+position = Vector2(-0.50000095, 0.846154)
+scale = Vector2(2.000009, 0.11538478)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.48331833, 2.4972987, 1, 1)
+
+[node name="koahog2" type="Sprite2D" parent="main/knife" unique_id=2121330431]
+position = Vector2(-0.9999932, 0.73076916)
+scale = Vector2(2.8333316, 0.15384583)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.48331833, 2.4972987, 1, 1)
+
+[node name="knife" type="Area2D" parent="main/knife" unique_id=544839467]
+script = ExtResource("2_jcq62")
+
+[node name="knife" type="CollisionShape2D" parent="main/knife/knife" unique_id=2095922762]
+position = Vector2(0.46115112, 0.6280861)
+scale = Vector2(1, 0.99999976)
+shape = SubResource("RectangleShape2D_n33ga")
+script = ExtResource("2_jcq62")
+
+[node name="door" type="StaticBody2D" parent="main" unique_id=86952439]
+
+[node name="main" type="Sprite2D" parent="main/door" unique_id=2144375598]
+position = Vector2(554, -101)
+scale = Vector2(118.99998, 161)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5455065, 16.40724, 1, 1)
+
+[node name="right" type="Sprite2D" parent="main/door" unique_id=586882384]
+position = Vector2(634, 10.999999)
+scale = Vector2(14.999946, 27.000008)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5000572, 14.42618, 1, 1)
+
+[node name="right2" type="Sprite2D" parent="main/door" unique_id=60055651]
+position = Vector2(578, 10)
+scale = Vector2(14.999946, 27.000008)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5000572, 14.42618, 1, 1)
+
+[node name="right3" type="Sprite2D" parent="main/door" unique_id=1267845014]
+position = Vector2(632, -78)
+scale = Vector2(14.999946, 27.000008)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5000572, 14.42618, 1, 1)
+
+[node name="right4" type="Sprite2D" parent="main/door" unique_id=187411998]
+position = Vector2(580, -78)
+scale = Vector2(14.999946, 27.000008)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.5000572, 14.42618, 1, 1)
+
+[node name="right5" type="Sprite2D" parent="main/door" unique_id=856459479]
+position = Vector2(632, -19)
+scale = Vector2(27.999987, 12.999999)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="collision_shape_2d2" type="CollisionShape2D" parent="main/door" unique_id=568376743]
+position = Vector2(614, -19.75)
+shape = SubResource("RectangleShape2D_jcq62")
+
+[node name="door" type="Area2D" parent="main/door" unique_id=2144952398]
+script = ExtResource("2_jcq62")
+
+[node name="door" type="CollisionShape2D" parent="main/door/door" unique_id=1527434655]
+position = Vector2(614.5, 61)
+shape = SubResource("RectangleShape2D_r8utb")
+script = ExtResource("2_jcq62")
+
+[node name="!mirror" type="Area2D" parent="main" unique_id=2049794302]
+position = Vector2(-197, -2)
+script = ExtResource("2_jcq62")
+
+[node name="!mirror" type="CollisionShape2D" parent="main/!mirror" unique_id=1555664735]
+position = Vector2(521, 61)
+shape = SubResource("RectangleShape2D_r8utb")
+script = ExtResource("2_jcq62")
+
+[node name="user" type="CharacterBody2D" parent="." unique_id=675916199 node_paths=PackedStringArray("dialog", "text", "area")]
+process_mode = 1
+process_priority = 2
+position = Vector2(615, 370)
+floor_max_angle = 0.0
+script = ExtResource("1_47a5d")
+speed = 150.0
+is_can_walk = true
+dialog = NodePath("../ui/ui/black")
+text = NodePath("../ui/ui/black/white/label")
+area = NodePath("area_2d")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="user" unique_id=370637099]
+position = Vector2(1, 47.49997)
+scale = Vector2(2.2710376, 2.3811471)
+shape = SubResource("RectangleShape2D_0vcn1")
+
+[node name="camera_2d" type="Camera2D" parent="user" unique_id=663969300]
+position_smoothing_speed = 10.0
+
+[node name="default" type="Node2D" parent="user" unique_id=348311705]
+scale = Vector2(-2.4, 2.4)
+
+[node name="face" type="Node2D" parent="user/default" unique_id=407091600]
+
+[node name="face" type="Sprite2D" parent="user/default/face" unique_id=767536798]
+position = Vector2(-8.000061, -42)
+scale = Vector2(16.000057, 11.999988)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face3" type="Sprite2D" parent="user/default/face" unique_id=551093232]
+position = Vector2(-9, -43)
+scale = Vector2(17.999985, 11.000014)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face4" type="Sprite2D" parent="user/default/face" unique_id=1465300281]
+position = Vector2(-5.999939, -30)
+scale = Vector2(12.992046, 1.5959984)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face6" type="Sprite2D" parent="user/default/face" unique_id=1770119202]
+position = Vector2(-2.0000165, -29.000008)
+scale = Vector2(6.0000324, 4.0000105)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face7" type="Sprite2D" parent="user/default/face" unique_id=537870344]
+position = Vector2(-10.000002, -25.000008)
+scale = Vector2(21.999989, 2.9999678)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face10" type="Sprite2D" parent="user/default/face" unique_id=441323769]
+position = Vector2(-10.000002, -21.000008)
+scale = Vector2(21.999989, 2.9999678)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face11" type="Sprite2D" parent="user/default/face" unique_id=973923858]
+position = Vector2(-8.000035, -19.000008)
+scale = Vector2(17.000042, 2.9999678)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face8" type="Sprite2D" parent="user/default/face" unique_id=632871038]
+position = Vector2(-12.00002, -23.000008)
+scale = Vector2(27.000006, 2.9999678)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face9" type="Sprite2D" parent="user/default/face" unique_id=68000002]
+position = Vector2(-12.00002, -23.000008)
+scale = Vector2(27.000006, 2.9999678)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="face2" type="Sprite2D" parent="user/default/face" unique_id=292897170]
+position = Vector2(-6, -40)
+scale = Vector2(1.9999869, 3.999977)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 10, 1, 1)
+
+[node name="face5" type="Sprite2D" parent="user/default/face" unique_id=1608562560]
+position = Vector2(1, -40)
+scale = Vector2(1.9999869, 3.999977)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 10, 1, 1)
+
+[node name="body" type="Node2D" parent="user/default" unique_id=32003572]
+
+[node name="face10" type="Sprite2D" parent="user/default/body" unique_id=1424678869]
+position = Vector2(-10.000002, -21.000008)
+scale = Vector2(21.999989, 2.9999678)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="asd2" type="Sprite2D" parent="user/default/body" unique_id=2102351329]
+position = Vector2(-13.9999695, -25)
+scale = Vector2(6.9999347, 6.0000052)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="asd3" type="Sprite2D" parent="user/default/body" unique_id=1091332022]
+position = Vector2(-12.000028, -19)
+scale = Vector2(6.999993, 5.9999785)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd5" type="Sprite2D" parent="user/default/body" unique_id=1805611850]
+position = Vector2(8.999974, -19)
+scale = Vector2(4.9999895, 5.9999785)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd4" type="Sprite2D" parent="user/default/body" unique_id=2037418612]
+position = Vector2(-8.000027, -17)
+scale = Vector2(16.999977, 7.000006)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd6" type="Sprite2D" parent="user/default/body" unique_id=1628204098]
+position = Vector2(-10.00002, -17)
+scale = Vector2(22, 7.9999766)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd7" type="Sprite2D" parent="user/default/body" unique_id=1321094667]
+position = Vector2(-8.00001, -9)
+scale = Vector2(18.000013, 6.000009)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd8" type="Sprite2D" parent="user/default/body" unique_id=1806144067]
+position = Vector2(-11.000032, -3.0000005)
+scale = Vector2(23.00002, 6.000009)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd9" type="Sprite2D" parent="user/default/body" unique_id=36913904]
+position = Vector2(-12.99997, 0.9999995)
+scale = Vector2(27.000008, 6.000009)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd10" type="Sprite2D" parent="user/default/body" unique_id=1300695922]
+position = Vector2(-14.999984, 6.9999995)
+scale = Vector2(31.00004, 6.999995)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd11" type="Sprite2D" parent="user/default/body" unique_id=225027415]
+position = Vector2(-16.999985, 13)
+scale = Vector2(35.000042, 7.9999814)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd12" type="Sprite2D" parent="user/default/body" unique_id=1515237861]
+position = Vector2(-18.999985, 21)
+scale = Vector2(39.000004, 7.9999814)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd13" type="Sprite2D" parent="user/default/body" unique_id=1476009245]
+position = Vector2(-17.999992, -20)
+scale = Vector2(6.0000343, 24.999979)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="asd15" type="Sprite2D" parent="user/default/body" unique_id=1657185726]
+position = Vector2(-15.9999695, -23.000002)
+scale = Vector2(3.9999757, 2.999996)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="asd14" type="Sprite2D" parent="user/default/body" unique_id=1956538838]
+position = Vector2(-19.000029, -19)
+scale = Vector2(7.9999614, 5.9999785)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="asd16" type="Sprite2D" parent="user/default/body" unique_id=2116297156]
+position = Vector2(15.000008, -20)
+scale = Vector2(6.0000343, 24.999979)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="asd17" type="Sprite2D" parent="user/default/body" unique_id=457114989]
+position = Vector2(15.000027, -23.000002)
+scale = Vector2(3.9999757, 2.999996)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 12, 1, 1)
+
+[node name="asd18" type="Sprite2D" parent="user/default/body" unique_id=1504937374]
+position = Vector2(13.999971, -19)
+scale = Vector2(7.9999614, 5.9999785)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="hairs" type="Node2D" parent="user/default" unique_id=1195108536]
+
+[node name="asd" type="Sprite2D" parent="user/default/hairs" unique_id=582415840]
+position = Vector2(-11, -47)
+scale = Vector2(25.999992, 5.4166794)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd2" type="Sprite2D" parent="user/default/hairs" unique_id=774299857]
+position = Vector2(-10, -48)
+scale = Vector2(21.999966, 5.0000086)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd4" type="Sprite2D" parent="user/default/hairs" unique_id=1911653707]
+position = Vector2(-10, -48)
+scale = Vector2(21.999966, 5.0000086)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd5" type="Sprite2D" parent="user/default/hairs" unique_id=1978387292]
+position = Vector2(-7.9999933, -49.000004)
+scale = Vector2(17.999985, 1.9999882)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd6" type="Sprite2D" parent="user/default/hairs" unique_id=78054010]
+position = Vector2(-9, -43.975)
+scale = Vector2(17, 2.9999976)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd12" type="Sprite2D" parent="user/default/hairs" unique_id=1773313964]
+position = Vector2(5, -42.999992)
+scale = Vector2(4.9999886, 3.9999816)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd3" type="Sprite2D" parent="user/default/hairs" unique_id=2043070951]
+position = Vector2(8.999998, -43)
+scale = Vector2(6.000003, 24.999985)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd7" type="Sprite2D" parent="user/default/hairs" unique_id=2141305305]
+position = Vector2(12.999998, -46.000008)
+scale = Vector2(3.0000014, 27.000006)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd9" type="Sprite2D" parent="user/default/hairs" unique_id=1204568622]
+position = Vector2(13.999998, -42.00002)
+scale = Vector2(3.0000014, 20)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd10" type="Sprite2D" parent="user/default/hairs" unique_id=309616204]
+position = Vector2(16.000053, -39)
+scale = Vector2(1.9999323, 13.999988)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd8" type="Sprite2D" parent="user/default/hairs" unique_id=1892370832]
+position = Vector2(7.9999986, -39.999977)
+scale = Vector2(3.0000014, 20.99999)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="asd11" type="Sprite2D" parent="user/default/hairs" unique_id=223042165]
+position = Vector2(7.0000134, -33.999992)
+scale = Vector2(2.9999557, 11.000006)
+texture = ExtResource("1_lhwif")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 127, 1, 1)
+
+[node name="area_2d" type="Area2D" parent="user" unique_id=381320545]
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="user/area_2d" unique_id=1151361049]
+position = Vector2(1, 51)
+scale = Vector2(2.2710376, 2.3811471)
+shape = SubResource("RectangleShape2D_w8pdr")
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=387588208]
+
+[node name="ui" parent="ui" unique_id=2098143125 instance=ExtResource("3_lhwif")]
+offset_left = 83.0
+offset_top = 89.0
+offset_right = -54.0
+offset_bottom = -17.0
+
+[node name="black" parent="ui/ui" index="0" unique_id=1645460599]
+visible = false
+offset_top = -245.0
+
+[node name="label" parent="ui/ui/black/white" parent_id_path=PackedInt32Array(2098143125, 1639014420) index="0" unique_id=902895483]
+text = ""
+
+[node name="0" parent="ui/ui/black/white/v_box_container" parent_id_path=PackedInt32Array(2098143125, 1511869760) index="0" unique_id=650425813]
+visible = false
+
+[node name="1" parent="ui/ui/black/white/v_box_container" parent_id_path=PackedInt32Array(2098143125, 1511869760) index="1" unique_id=984933091]
+visible = false
+
+[node name="2" parent="ui/ui/black/white/v_box_container" parent_id_path=PackedInt32Array(2098143125, 1511869760) index="2" unique_id=1574916030]
+visible = false
+
+[connection signal="pressed" from="ui/ui/black/white/v_box_container/0" to="main/knife/knife" method="_on__pressed" binds= [0]]
+[connection signal="pressed" from="ui/ui/black/white/v_box_container/1" to="main/knife/knife" method="_on__pressed" binds= [1]]
+[connection signal="pressed" from="ui/ui/black/white/v_box_container/2" to="main/knife/knife" method="_on__pressed" binds= [2]]
+
+[editable path="ui/ui"]

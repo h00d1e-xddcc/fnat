@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xgxr28lb8jkb"
 path.s3tc="res://.godot/imported/vi6.svg-3adc2f1aeabf16585a559a583a7c8fda.s3tc.ctex"
+path.etc2="res://.godot/imported/vi6.svg-3adc2f1aeabf16585a559a583a7c8fda.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pics/vi6.svg"
-dest_files=["res://.godot/imported/vi6.svg-3adc2f1aeabf16585a559a583a7c8fda.s3tc.ctex"]
+dest_files=["res://.godot/imported/vi6.svg-3adc2f1aeabf16585a559a583a7c8fda.s3tc.ctex", "res://.godot/imported/vi6.svg-3adc2f1aeabf16585a559a583a7c8fda.etc2.ctex"]
 
 [params]
 

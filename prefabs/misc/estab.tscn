@@ -4,8 +4,8 @@
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="2_j0l0y"]
 [ext_resource type="PackedScene" uid="uid://b7dexg7f8r2gi" path="res://prefabs/window.tscn" id="3_h75w1"]
 [ext_resource type="PackedScene" uid="uid://ik275mbakije" path="res://prefabs/door.tscn" id="4_7s1sa"]
-[ext_resource type="PackedScene" uid="uid://cdghcukm0ylg1" path="res://prefabs/walls.tscn" id="5_p7dhe"]
-[ext_resource type="Texture2D" uid="uid://bx2g8enw6snml" path="res://pics/wall.png" id="6_n7eru"]
+[ext_resource type="PackedScene" uid="uid://cdghcukm0ylg1" path="res://prefabs/wall_default.tscn" id="5_p7dhe"]
+[ext_resource type="Texture2D" path="res://pics/wall.png" id="6_n7eru"]
 [ext_resource type="PackedScene" uid="uid://cowv0gi8i1c51" path="res://prefabs/tile_red.tscn" id="7_6u0f4"]
 [ext_resource type="Material" uid="uid://cju1tnaihyves" path="res://resources/materials/solid.tres" id="8_a5y38"]
 [ext_resource type="PackedScene" uid="uid://dyvh6r7wneo3b" path="res://prefabs/tile_white.tscn" id="9_u4bq3"]
@@ -48,23 +48,6 @@ texture_filter = 1
 [sub_resource type="PlaneMesh" id="PlaneMesh_mtbu6"]
 size = Vector2(1, 3)
 center_offset = Vector3(0.5, 0, -1.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etw73"]
-albedo_texture = ExtResource("6_n7eru")
-uv1_scale = Vector3(1.5, 0.3, 1.5)
-uv1_offset = Vector3(0.5, 0, 0)
-uv1_triplanar = true
-uv1_world_triplanar = true
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ecg28"]
-flip_faces = true
-size = Vector2(1, 3)
-center_offset = Vector3(0.5, 0, -1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_8eb8i"]
-material = ExtResource("8_a5y38")
-size = Vector3(1, 0.32, 0.04)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mt0cb"]
 albedo_texture = ExtResource("6_n7eru")
@@ -485,11 +468,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.40
 [node name="door" parent="." unique_id=680225520 instance=ExtResource("4_7s1sa")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -2.3000002, 0, 2.3500004)
 
-[node name="walls" parent="." unique_id=588054537 instance=ExtResource("5_p7dhe")]
-transform = Transform3D(-1.0116719e-07, 1.115, 4.371139e-08, 0, 4.8738197e-08, -1, 1.34, 8.418016e-08, 3.300118e-15, -2, 0, 1)
-material_override = SubResource("StandardMaterial3D_8eb8i")
-mesh = SubResource("PlaneMesh_mtbu6")
-
 [node name="walls2" parent="." unique_id=104707271 instance=ExtResource("5_p7dhe")]
 transform = Transform3D(-0.34, -1.6836032e-07, 6.600236e-15, 0, -4.8738197e-08, -1, 5.1338574e-08, -1.115, 4.371139e-08, -2, 0, 2)
 material_override = SubResource("StandardMaterial3D_8eb8i")
@@ -508,6 +486,11 @@ transform = Transform3D(5.2347603, 5.102656e-07, -2.000396e-14, 0, -4.8738197e-0
 
 [node name="walls5" parent="." unique_id=162927937 instance=ExtResource("5_p7dhe")]
 transform = Transform3D(-4.371139e-08, 1.115, -4.371139e-08, 0, -4.8738197e-08, -1, -1.586, -7.729878e-08, 3.030347e-15, -2, 0, -2.5)
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_mtbu6")
+
+[node name="walls11" parent="." unique_id=588054537 instance=ExtResource("5_p7dhe")]
+transform = Transform3D(-4.371139e-08, 1.115, -4.371139e-08, 0, -4.8738197e-08, -1, -1.586, -7.729878e-08, 3.030347e-15, -2, 0, 2.5)
 material_override = SubResource("StandardMaterial3D_8eb8i")
 mesh = SubResource("PlaneMesh_mtbu6")
 
@@ -568,29 +551,13 @@ transform = Transform3D(-7.54979e-07, 1.115, 4.371139e-08, 0, 4.8738197e-08, -1,
 material_override = SubResource("StandardMaterial3D_8eb8i")
 mesh = SubResource("PlaneMesh_mtbu6")
 
-[node name="walls11" parent="." unique_id=1588906239 instance=ExtResource("5_p7dhe")]
-transform = Transform3D(9.501055, -1.4541823e-07, 5.700836e-15, 0, -4.8738197e-08, -1, -1.6609538e-06, -1.115, 4.371139e-08, -2.3351068, -0.006911278, 5.9992867)
-material_override = SubResource("StandardMaterial3D_8eb8i")
-mesh = SubResource("PlaneMesh_mtbu6")
-surface_material_override/0 = ExtResource("8_a5y38")
-
-[node name="walls2" type="MeshInstance3D" parent="walls11" unique_id=742614611]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30000004, -0.5)
-material_override = SubResource("StandardMaterial3D_etw73")
-mesh = SubResource("PlaneMesh_ecg28")
-
-[node name="up2" type="MeshInstance3D" parent="walls11" unique_id=1397030690]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.14976603, -1.3172933)
-instance_shader_parameters/albedo = Color(0.90588236, 0.30588236, 0.37254903, 1)
-mesh = SubResource("BoxMesh_8eb8i")
-
-[node name="down2" type="MeshInstance3D" parent="walls11" unique_id=10937914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.149766, -0.67594683)
-instance_shader_parameters/albedo = Color(0.90588236, 0.30588236, 0.37254903, 1)
-mesh = SubResource("BoxMesh_8eb8i")
-
 [node name="walls12" parent="." unique_id=1337363571 instance=ExtResource("5_p7dhe")]
 transform = Transform3D(1.9998, -1.4928291e-06, -5.852344e-14, 0, 4.8738197e-08, -1, -1.8227056e-06, -1.115, -4.371139e-08, 9, 0, 6)
+material_override = SubResource("StandardMaterial3D_8eb8i")
+mesh = SubResource("PlaneMesh_mtbu6")
+
+[node name="walls22" parent="." unique_id=1438301731 instance=ExtResource("5_p7dhe")]
+transform = Transform3D(9.511048, -7.0998954e-06, -2.7833747e-13, 0, 4.8738197e-08, -1, -1.8227056e-06, -1.115, -4.371139e-08, -2.3330796, 0, 6)
 material_override = SubResource("StandardMaterial3D_8eb8i")
 mesh = SubResource("PlaneMesh_mtbu6")
 
@@ -677,9 +644,6 @@ transform = Transform3D(-9.861438, 0, 0, 0, 4.8738197e-08, -1, 0, 1.115, 4.37113
 
 [node name="door9" parent="." unique_id=636512774 instance=ExtResource("10_cgrf7")]
 transform = Transform3D(-8.7422784e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -8.7422784e-08, 7, 0, 14)
-
-[node name="door11" parent="." unique_id=466815701 instance=ExtResource("4_7s1sa")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0, 6)
 
 [node name="door12" parent="." unique_id=1817023850 instance=ExtResource("4_7s1sa")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14, 0, 14)
@@ -1680,3 +1644,6 @@ mesh = SubResource("ArrayMesh_pbfbh")
 [node name="Star5" type="MeshInstance3D" parent="plane" unique_id=2021047876]
 transform = Transform3D(-0.17714597, 0.27122352, -0.94607455, 0.026382804, 0.9622408, 0.27091816, 0.9838309, 0.023031771, -0.17761275, 5.148593, 2.3412578, 0.30000007)
 mesh = SubResource("ArrayMesh_pbfbh")
+
+[node name="door11" parent="." unique_id=568040619 instance=ExtResource("4_7s1sa")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.1, 0, 6)

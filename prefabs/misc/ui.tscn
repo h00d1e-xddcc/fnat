@@ -1,13 +1,34 @@
 [gd_scene format=3 uid="uid://dlne2diiv70gw"]
 
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="1_8bix8"]
+[ext_resource type="Texture2D" uid="uid://cwlel4ed8w5v0" path="res://pics/pc/xfce-4.18-final.svg" id="1_hdegj"]
+[ext_resource type="Script" uid="uid://dynulhnyq5hpq" path="res://addons/kenyoni/qr_code/qr_code_rect.gd" id="2_7mcsl"]
+[ext_resource type="Texture2D" uid="uid://cb1gk8o2ist4f" path="res://pics/coin.png" id="3_7mcsl"]
 [ext_resource type="Texture2D" uid="uid://bikce5cjnmexy" path="res://pics/arrow.webp" id="3_b1k8q"]
 [ext_resource type="Texture2D" uid="uid://co5fnl16y5p22" path="res://pics/bootscreen.png" id="3_i4vt5"]
 [ext_resource type="Texture2D" uid="uid://bsk45r67qn7g2" path="res://pics/bolt.png" id="4_5u5yk"]
+[ext_resource type="Texture2D" uid="uid://gioatjq4ffj2" path="res://pics/gem.png" id="4_ng262"]
 [ext_resource type="Texture2D" uid="uid://choqqn7jq20a4" path="res://pics/vi0.svg" id="4_qdm3c"]
 [ext_resource type="Texture2D" uid="uid://c4ya6amsxhux5" path="res://pics/ad/25.png" id="5_qdm3c"]
+[ext_resource type="Texture2D" uid="uid://34460t16auyw" path="res://pics/promo.png" id="5_rhvfu"]
 [ext_resource type="Texture2D" uid="uid://dbesgd7bs2oci" path="res://pics/v1.png" id="7_b1k8q"]
 [ext_resource type="Texture2D" uid="uid://cbe2gwbq8mixn" path="res://pics/fatass.png" id="7_jydip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdegj"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.47007585, 0.47007585, 0.47007585, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_mto5o"]
+font = ExtResource("1_8bix8")
+font_size = 19
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mhwow"]
 
@@ -101,14 +122,231 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="back" type="ColorRect" parent="." unique_id=874011662]
+[node name="wallpaper" type="TextureRect" parent="." unique_id=541043384]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.08274146, 0.08274145, 0.08274143, 1)
+texture = ExtResource("1_hdegj")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="tme" type="TextureRect" parent="wallpaper" unique_id=1837586565]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 615.0
+offset_right = 1025.0
+offset_bottom = 867.0
+expand_mode = 1
+flip_h = true
+flip_v = true
+script = ExtResource("2_7mcsl")
+auto_update = true
+mode = 4
+error_correction = 1
+use_eci = true
+eci_value = 26
+data = "https://t.me/+1faJDDBoj9FkNTAy"
+auto_version = false
+version = 2
+auto_mask_pattern = true
+light_module_color = Color(1, 1, 1, 1)
+dark_module_color = Color(0, 0, 0, 1)
+auto_module_size = false
+module_size = 1
+quiet_zone_size = 4
+metadata/_custom_type_script = "uid://dynulhnyq5hpq"
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"pending_changes": {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "",
+"source_uid": -1
+},
+"slice_section": false
+}
+
+[node name="ds" type="TextureRect" parent="wallpaper" unique_id=1743689882]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 488.0
+offset_right = 1314.0
+offset_bottom = 740.0
+expand_mode = 1
+flip_v = true
+script = ExtResource("2_7mcsl")
+auto_update = true
+mode = 4
+error_correction = 1
+use_eci = true
+eci_value = 26
+data = "https://t.me/+1faJDDBoj9FkNTAy"
+auto_version = false
+version = 2
+auto_mask_pattern = true
+light_module_color = Color(1, 1, 1, 1)
+dark_module_color = Color(0, 0, 0, 1)
+auto_module_size = false
+module_size = 1
+quiet_zone_size = 4
+metadata/_custom_type_script = "uid://dynulhnyq5hpq"
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"pending_changes": {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "",
+"source_uid": -1
+},
+"slice_section": false
+}
+
+[node name="garbage_drop" type="Control" parent="." unique_id=703224090]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="v" type="VBoxContainer" parent="garbage_drop" unique_id=926450743]
+custom_minimum_size = Vector2(100, 106.655)
+layout_mode = 0
+offset_left = 948.0
+offset_top = 92.0
+offset_right = 1094.0
+offset_bottom = 198.655
+
+[node name="coins" type="Button" parent="garbage_drop/v" unique_id=582429805]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 24
+text = "0"
+alignment = 2
+
+[node name="texture_rect" type="TextureRect" parent="garbage_drop/v/coins" unique_id=1269188549]
+layout_mode = 0
+offset_left = 156.0
+offset_top = -3.0
+offset_right = 201.0
+offset_bottom = 38.0
+texture = ExtResource("3_7mcsl")
+expand_mode = 1
+
+[node name="button" type="Button" parent="garbage_drop/v/coins" unique_id=1993135484]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 37.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 32
+text = "+"
+
+[node name="gems" type="Button" parent="garbage_drop/v" unique_id=855986789]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 24
+text = "0"
+alignment = 2
+
+[node name="texture_rect" type="TextureRect" parent="garbage_drop/v/gems" unique_id=1426807340]
+layout_mode = 0
+offset_left = 143.0
+offset_top = -9.0
+offset_right = 209.0
+offset_bottom = 48.0
+texture = ExtResource("4_ng262")
+expand_mode = 1
+
+[node name="button" type="Button" parent="garbage_drop/v/gems" unique_id=156952925]
+visible = false
+layout_mode = 0
+offset_left = -3.0
+offset_right = 37.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.5254902, 0.8784314, 0.44705883, 1)
+theme_override_fonts/font = ExtResource("1_8bix8")
+theme_override_font_sizes/font_size = 32
+text = "+"
+
+[node name="promo" type="Panel" parent="garbage_drop" unique_id=1735729182]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_top = 193.0
+offset_right = 605.0
+offset_bottom = 476.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdegj")
+
+[node name="promo" type="Label" parent="garbage_drop/promo" unique_id=826218453]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 14.0
+offset_right = 427.0
+offset_bottom = 95.0
+text = "Enter your Promocode!"
+label_settings = SubResource("LabelSettings_mto5o")
+
+[node name="line_edit" type="LineEdit" parent="garbage_drop/promo" unique_id=781984426]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 111.0
+offset_right = 349.0
+offset_bottom = 167.0
+
+[node name="text" type="Label" parent="garbage_drop/promo" unique_id=983705316]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 169.0
+offset_right = 404.0
+offset_bottom = 250.0
+text = "this promo already been used!"
+label_settings = SubResource("LabelSettings_mto5o")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="_promo" type="Button" parent="garbage_drop" unique_id=1325201480]
+layout_mode = 0
+offset_left = 1087.0
+offset_top = 184.0
+offset_right = 1153.0
+offset_bottom = 252.0
+icon = ExtResource("5_rhvfu")
+flat = true
+expand_icon = true
 
 [node name="cam" type="TextureRect" parent="." unique_id=1858130358]
 visible = false
@@ -270,7 +508,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = -1179.7047
-offset_top = 293.4405
+offset_top = 247.44049
 offset_right = -891.7047
 offset_bottom = 361.4405
 grow_vertical = 0
@@ -361,10 +599,10 @@ text = "office
 label_settings = SubResource("LabelSettings_0vcn1")
 
 [node name="staff" type="Label" parent="scheme/map" unique_id=194811622]
-offset_left = 11.964526
-offset_top = -501.8006
-offset_right = 131.96454
-offset_bottom = -450.8006
+offset_left = -120.44316
+offset_top = -682.3794
+offset_right = -0.44314575
+offset_bottom = -631.3794
 text = "staff"
 label_settings = SubResource("LabelSettings_0vcn1")
 
@@ -494,57 +732,60 @@ label_settings = SubResource("LabelSettings_0vcn1")
 [node name="you" type="ColorRect" parent="scheme/map" unique_id=643736449]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
-offset_left = 43.869995
-offset_top = -376.78455
-offset_right = 83.869995
-offset_bottom = -336.78455
+offset_left = -74.18024
+offset_top = -342.05786
+offset_right = -34.180237
+offset_bottom = -302.05786
 color = Color(1, 0.53333336, 0, 1)
 
 [node name="arrow" type="TextureRect" parent="scheme/map/you" unique_id=580240443]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.5952721
+offset_top = -1.7363358
+offset_right = 37.801456
+offset_bottom = 38.263664
+rotation = 3.1415927
 pivot_offset = Vector2(20.738647, 20.836014)
 texture = ExtResource("3_b1k8q")
 flip_h = true
 
 [node name="fire_exit" type="Button" parent="scheme" unique_id=739321568]
-offset_left = -80.561295
-offset_top = -517.4276
-offset_right = -21.536148
-offset_bottom = -467.0739
+offset_left = 39.084206
+offset_top = -692.79736
+offset_right = 98.10935
+offset_bottom = -642.44366
 theme = SubResource("Theme_0vcn1")
 text = "00"
 
 [node name="hallway" type="Button" parent="scheme" unique_id=384169104]
-offset_left = 308.68542
-offset_top = -263.9228
-offset_right = 367.71057
-offset_bottom = -213.56909
+offset_left = 311.87598
+offset_top = -281.28616
+offset_right = 370.90118
+offset_bottom = -230.93246
 theme = SubResource("Theme_0vcn1")
 text = "02"
 
 [node name="parts_and_service" type="Button" parent="scheme" unique_id=424230723]
-offset_left = 319.85236
-offset_top = -390.67523
-offset_right = 378.87753
-offset_bottom = -340.32153
+offset_left = 271.99414
+offset_top = -411.51123
+offset_right = 331.0193
+offset_bottom = -361.15753
 theme = SubResource("Theme_0vcn1")
 text = "03"
 
 [node name="ware" type="Button" parent="scheme" unique_id=978602677]
-offset_left = 380.47272
-offset_top = -232.6688
-offset_right = 439.49786
-offset_bottom = -182.3151
+offset_left = 382.068
+offset_top = -241.35046
+offset_right = 441.09314
+offset_bottom = -190.99677
 theme = SubResource("Theme_0vcn1")
 text = "04"
 
 [node name="kitchen" type="Button" parent="scheme" unique_id=213521290]
-offset_left = -270.3988
-offset_top = -449.7106
-offset_right = -211.37366
-offset_bottom = -399.3569
+offset_left = -204.9926
+offset_top = -322.9582
+offset_right = -145.96745
+offset_bottom = -272.6045
 theme = SubResource("Theme_0vcn1")
 text = "01"
 
@@ -603,96 +844,8 @@ offset_right = -394.83014
 offset_bottom = -72.92604
 theme = SubResource("Theme_0vcn1")
 
-[node name="label" type="HBoxContainer" parent="." unique_id=2132759669]
-layout_mode = 1
-offset_left = 87.0
-offset_top = 20.0
-offset_right = 615.0
-offset_bottom = 60.0
-theme_override_constants/separation = 28
-
-[node name="cam" type="Button" parent="label" unique_id=1880539845]
-layout_mode = 2
-theme_type_variation = &"FlatButton"
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_8bix8")
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
-text = "cam"
-icon_alignment = 1
-
-[node name="scheme" type="Button" parent="label" unique_id=1391376075]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_8bix8")
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
-text = "sceme
-"
-icon_alignment = 1
-
-[node name="cards" type="Button" parent="label" unique_id=1925463881]
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_8bix8")
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
-text = "cards
-"
-icon_alignment = 1
-
-[node name="back" type="Button" parent="label" unique_id=1523366271]
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_8bix8")
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdd1f")
-theme_override_styles/focus = SubResource("StyleBoxFlat_vdd1f")
-text = "back"
-icon_alignment = 1
-
 [node name="time" type="Label" parent="." unique_id=2007929098]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -712,6 +865,7 @@ autowrap_mode = 1
 autowrap_trim_flags = 128
 
 [node name="status" type="Label" parent="." unique_id=1588223738]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

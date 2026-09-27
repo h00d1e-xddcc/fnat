@@ -35,18 +35,18 @@ func dissconect_all():
 	_passed_half_night.disconnect(half_night)
 	_last_hour.disconnect(last_hour)
 
-func play_sfx(d : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, "sec" = 0, "node" = "", "rand" = false, pos = Vector3.ZERO, node_path = null }) -> int :
-	var dict : Dictionary = { "volume" = d.get("volume", 0), "delay" = d.get("delay", 0), "node" = d.get("node", ""), "rand" = d.get("rand", false), "path" = d.get("path", ""), "type" = d.get("type", "2d"), "sec" = d.get("sec", 0), "pos" = d.get("pos", Vector3.ZERO), "caller" = d.get("caller", null) }
+func play_sfx(d : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, "sec" = 0, "node" = "", "rand" = false, pos = Vector3.ZERO, node_path = null, "form" = ".ogg" }) -> int :
+	var dict : Dictionary = { "volume" = d.get("volume", 0), "delay" = d.get("delay", 0), "node" = d.get("node", ""), "rand" = d.get("rand", false), "path" = d.get("path", ""), "type" = d.get("type", "2d"), "sec" = d.get("sec", 0), "pos" = d.get("pos", Vector3.ZERO), "caller" = d.get("caller", null), "form" = d.get("form", ".ogg"), "pitch" = d.get("pitch", 1) }
 	var sfx
 	if dict["path"] == "" : return 0
-	var audio : AudioStreamOggVorbis = load("res://resources/sounds/" + dict["path"] + ".ogg")
+	var audio : AudioStream = load("res://resources/sounds/" + dict["path"] + dict["form"])
 	if audio == null :
 		audio = load("res://resources/sounds/user/alarm.ogg")
 
 	match dict["type"] :
 		"2d" : 
 			sfx = AudioStreamPlayer.new()
-			arc.add_child(sfx)
+			arc_event.add_child(sfx)
 		"3d" : 
 			sfx = AudioStreamPlayer3D.new()
 			sfx.max_distance = dict.get("max_distance", 0)
@@ -66,6 +66,7 @@ func play_sfx(d : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, 
 			print("crash, " + dict["path"])
 			return 0
 
+	sfx.pitch_scale = dict["pitch"]
 	sfx.volume_db = dict.get("volume", 0)
 	sfx.volume_db -= - arc.save.volume
 	sfx.stream = audio
@@ -80,7 +81,7 @@ func play_sfx(d : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, 
 
 func play_some_event(event : String) :
 	if arc.loss == true : return
-	var dict : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, "sec" = 0, "node" = "", "child" = "", "rand" = false, "type" = "2d" }
+	var dict : Dictionary = { "volume" = 0, "delay" = 0, "max_distance" = 0, "sec" = 0, "node" = "", "child" = "", "rand" = false, "type" = "2d", "form" = ".ogg" }
 	match event :
 		#"long" :
 		"start" :
@@ -98,28 +99,28 @@ func play_some_event(event : String) :
 					dict["volume"] = -12
 				3 :
 					dict["path"] = "ambient/short/vent_tap" 
-					dict["volume"] = -14
+					dict["volume"] = -17
 				4 :
 					dict["path"] = "ambient/short/punch" 
-					dict["volume"] = -16
+					dict["volume"] = -19
 				5 :
 					dict["path"] = "ambient/long/roof_walk" 
-					dict["volume"] = -13
+					dict["volume"] = -15
 				6 :
 					dict["path"] = "ambient/short/siren" 
-					dict["volume"] = -15
+					dict["volume"] = -18
 				7 :
 					dict["path"] = "ambient/short/fall_pot" 
-					dict["volume"] = -25
+					dict["volume"] = -20
 				8 :
 					dict["path"] = "ambient/short/fall_armature" 
-					dict["volume"] = -24
+					dict["volume"] = -20
 				9 :
 					dict["path"] = "ambient/short/pipes" 
-					dict["volume"] = -17
+					dict["volume"] = -15
 				10 :
 					dict["path"] = "ambient/short/fire_alarm" 
-					dict["volume"] = -24
+					dict["volume"] = -20
 				_: arc.user.blink(randf_range(0.15, 2.56))
 			dict["volume"] += amplify_vol
 
@@ -131,10 +132,11 @@ func play_some_event(event : String) :
 				1 : dict["path"] = "ambient/short/deerclops" + str(randi_range(0,2))
 				2 : dict["path"] = "ambient/short/laugh"
 				3 : dict["path"] = "anim/nchimera/" + str(randi_range(0,3))
-				4 : dict["path"] = "anim/" + arc.user.anims[randi_range(0,4)].name + "/moved"
+				4 : dict["path"] = "anim/" + arc.user.anims[randi_range(0,3)].name + "/moved"
 				5 : dict["path"] = "anim/it/breath" + str(randi_range(-7,0))
 
 	dict.volume -= arc.save.volume
+	dict.type = "3d"
 	arc_event.play_sfx(dict)
 
 func play_random():
@@ -185,7 +187,7 @@ func one_to_ten(value : int = -1) :
 		7 :
 			gif.gif = GIFTexture.load_from_file("res://resources/sounds/ambient/long/1t10/mar.gif")
 			to_play = "anim/noise/scream"
-	turn_off_one_to_ten(await arc_event.play_sfx({"path" = to_play, "volume" = 10, "sec" = sec}))
+	turn_off_one_to_ten(await arc_event.play_sfx({"path" = to_play, "volume" = 5, "sec" = sec}))
 	if value > 3 : 
 		gif.visible = true
 		gif.play()
@@ -210,9 +212,8 @@ func set_up_ambient() :
 	arc.user.source["fan"].volume_db = arc.save.volume
 	arc.user.source["spot"].volume_db = arc.save.volume
 
-	for i in arc.night.diff.size() :
-		if arc.night.diff[i] > i : hiest_diff = arc.night.diff[i]
-	print(hiest_diff)
+	#for i in arc.night.diff.size() :
+		#if arc.night.diff[i] > i : hiest_diff = arc.night.diff[i]
 	if hiest_diff > 1 : 
 		arc.user.source["amb"].stream = preload("res://resources/sounds/ambient/long/start/0.ogg")
 		arc.user.source["whitout"].stream = preload("res://resources/sounds/ambient/long/whitout/1.ogg")

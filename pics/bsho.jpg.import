@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmlh08ghfccpo"
 path.s3tc="res://.godot/imported/bsho.jpg-6915f9282c8ffebe6b04d6d02275449f.s3tc.ctex"
+path.etc2="res://.godot/imported/bsho.jpg-6915f9282c8ffebe6b04d6d02275449f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pics/bsho.jpg"
-dest_files=["res://.godot/imported/bsho.jpg-6915f9282c8ffebe6b04d6d02275449f.s3tc.ctex"]
+dest_files=["res://.godot/imported/bsho.jpg-6915f9282c8ffebe6b04d6d02275449f.s3tc.ctex", "res://.godot/imported/bsho.jpg-6915f9282c8ffebe6b04d6d02275449f.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://du1erv81l1rg1"
 path.s3tc="res://.godot/imported/codeman38.png-ef7d6b8cfac093c44c48f88b04e02023.s3tc.ctex"
+path.etc2="res://.godot/imported/codeman38.png-ef7d6b8cfac093c44c48f88b04e02023.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pics/codeman38.png"
-dest_files=["res://.godot/imported/codeman38.png-ef7d6b8cfac093c44c48f88b04e02023.s3tc.ctex"]
+dest_files=["res://.godot/imported/codeman38.png-ef7d6b8cfac093c44c48f88b04e02023.s3tc.ctex", "res://.godot/imported/codeman38.png-ef7d6b8cfac093c44c48f88b04e02023.etc2.ctex"]
 
 [params]
 

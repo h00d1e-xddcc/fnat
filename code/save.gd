@@ -13,6 +13,9 @@ class_name fnat_save
 @export var night2_deads : int = -1
 @export var night6_deads : int = -1
 @export var voiceover : int = -1
+@export var promo_used : Array[String] = []
+@export var coins : int = -1
+@export var gems : int = -1
 
 
 # long story short about ver

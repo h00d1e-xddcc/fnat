@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://jgcdwohtnwok"
 path.s3tc="res://.godot/imported/milk.png-76f865b307df1fcdbe9bf1e1dee6cc6d.s3tc.ctex"
+path.etc2="res://.godot/imported/milk.png-76f865b307df1fcdbe9bf1e1dee6cc6d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pics/milk.png"
-dest_files=["res://.godot/imported/milk.png-76f865b307df1fcdbe9bf1e1dee6cc6d.s3tc.ctex"]
+dest_files=["res://.godot/imported/milk.png-76f865b307df1fcdbe9bf1e1dee6cc6d.s3tc.ctex", "res://.godot/imported/milk.png-76f865b307df1fcdbe9bf1e1dee6cc6d.etc2.ctex"]
 
 [params]
 

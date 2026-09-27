@@ -18,19 +18,19 @@ func _ready() -> void:
 			arc.lang = preload("res://resources/local/en.tres")
 			arc.retranslate_title()
 			get_node("ui/disclaimer_back/lc/panel/en" ).visible = true
-		$ui/build/control/lang.text = arc.save.lange
+		#$ui/build/control/lang.text = arc.save.lange
 		if arc.save.fullscreen : get_window().mode = Window.MODE_FULLSCREEN
 
 		if arc.save.vsync : DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 		else : DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 
-		$ui/build/control/v_box_container/option_button.select(arc.save.voiceover)
-
-		get_node("ui/build/control/v_box_container/label").text = arc.lang.get_word("ui_volume")
-		get_node("ui/disclaimer_back/lc/panel/" + arc.save.lange).visible = true
-		get_node("ui/build/control/v_box_container/v-sync").button_pressed = arc.save.vsync
-		$ui/build/one.button_pressed = arc.save.one
-		get_node("ui/build/control/v_box_container/full-screen").button_pressed = arc.save.fullscreen
+		#$ui/build/control/v_box_container/option_button.select(arc.save.voiceover)
+#
+		#get_node("ui/build/control/v_box_container/label").text = arc.lang.get_word("ui_volume")
+		#get_node("ui/disclaimer_back/lc/panel/" + arc.save.lange).visible = true
+		#get_node("ui/build/control/v_box_container/v-sync").button_pressed = arc.save.vsync
+		#$ui/build/one.button_pressed = arc.save.one
+		#get_node("ui/build/control/v_box_container/full-screen").button_pressed = arc.save.fullscreen
 	else :
 		arc.save = fnat_save.new()
 		var local = OS.get_locale().substr(0, 2)
@@ -48,46 +48,27 @@ func _ready() -> void:
 		arc.save.night2_deads = 0
 		arc.save.night6_deads = 0
 		arc.save.voiceover = 0
+		arc.save.promo_used = []
+		arc.save.coins = 0
+		arc.save.gems = 0
 		arc.save_settings()
-		get_node("ui/disclaimer_back/lc/panel/" + local).visible = true
-	for i in anims.size() :
-		get_node("sub/custom").get_child(i).get_node("light").visible = false
-	get_node("sub/custom/fnat_pc").visible = false
+		#get_node("ui/disclaimer_back/lc/panel/" + local).visible = true
+	#for i in anims.size() :
+		#get_node("sub/custom").get_child(i).get_node("light").visible = false
+	#get_node("sub/custom/fnat_pc").visible = false
 	
-	get_node("ui/disclaimer_back").visible = true
-	get_node("ui/loadout_back").visible = false
-	get_node("ui/custom_night").visible = false
-	get_node("ui/build").visible = false
-	get_node("ui/thanks").visible = false
-	get_node("ui/main").visible = false
-	get_node("/root/main_menu/audio").volume_db = arc.save.volume - 10
-	$ui/build/control/v_box_container/label/h_slider.value = arc.save.volume
-	for i in arc.save.stars.size() :
-		get_node("ui/main/title/stars/" + str(i)).visible = arc.save.stars[i]
-	change_state("disc")
-	arc.retranslate_title()
-
-func _process(delta: float) -> void:
-	light.light_energy = randf_range(.75, 1)
-	
-	var roll = randi_range(0,2542)
-	if roll < 1 : 
-		light.light_energy = 0
-		var node : Node3D = get_node("sub/main/" + str(randi_range(0,4)))
-		if node.position.y == -20 : node.position.y = 0
-		else  : node.position.y = -20
-
-	if Input.is_action_just_pressed("light") :
-		var mouse_pos = get_viewport().get_mouse_position()
-		var space_state = get_viewport().get_camera_3d().get_world_3d().direct_space_state
-		var ray_origin = get_viewport().get_camera_3d().project_ray_origin(mouse_pos)
-		var ray_normal = get_viewport().get_camera_3d().project_ray_normal(mouse_pos)
-		var ray_end = ray_origin + ray_normal * 20
-		var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
-		var result = space_state.intersect_ray(query)
-		if result.collider is fnat_interact_object : result.collider.touch()
-
-## rigeonend
+	#get_node("ui/disclaimer_back").visible = true
+	#get_node("ui/loadout_back").visible = false
+	#get_node("ui/custom_night").visible = false
+	#get_node("ui/build").visible = false
+	#get_node("ui/thanks").visible = false
+	#get_node("ui/main").visible = false
+	#get_node("/root/main_menu/audio").volume_db = arc.save.volume - 10
+	#$ui/build/control/v_box_container/label/h_slider.value = arc.save.volume
+	#for i in arc.save.stars.size() :
+		#get_node("ui/main/title/stars/" + str(i)).visible = arc.save.stars[i]
+	#change_state("disc")
+	#arc.retranslate_title()
 
 func change_state(state : String, time : float = 0) :
 	get_node("sub/main").visible = false

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnxxyw8cyw8nd"
 path.s3tc="res://.godot/imported/scott.webp-cf6e7375c4a45023fd974c94c444b206.s3tc.ctex"
+path.etc2="res://.godot/imported/scott.webp-cf6e7375c4a45023fd974c94c444b206.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pics/scott.webp"
-dest_files=["res://.godot/imported/scott.webp-cf6e7375c4a45023fd974c94c444b206.s3tc.ctex"]
+dest_files=["res://.godot/imported/scott.webp-cf6e7375c4a45023fd974c94c444b206.s3tc.ctex", "res://.godot/imported/scott.webp-cf6e7375c4a45023fd974c94c444b206.etc2.ctex"]
 
 [params]
 

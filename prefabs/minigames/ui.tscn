@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://cbdt361xtjwjo"]
+
+[ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="1_rg505"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg505"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.7490196)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="ui" type="Control" unique_id=2098143125]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="black" type="ColorRect" parent="." unique_id=1645460599]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -301.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="white" type="ColorRect" parent="black" unique_id=1639014420]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="label" type="RichTextLabel" parent="black/white" unique_id=902895483]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 28.0
+offset_right = -256.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 20
+theme_override_fonts/normal_font = ExtResource("1_rg505")
+theme_override_font_sizes/normal_font_size = 20
+text = "sld,las,dasda
+as
+da
+sd
+as
+d"
+scroll_active = false
+autowrap_trim_flags = 0
+shortcut_keys_enabled = false
+
+[node name="v_box_container" type="VBoxContainer" parent="black/white" unique_id=1511869760]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-20, 0)
+offset_transform_visual_only = false
+
+[node name="0" type="Button" parent="black/white/v_box_container" unique_id=650425813]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rg505")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxFlat_rg505")
+text = "option zero"
+flat = true
+
+[node name="1" type="Button" parent="black/white/v_box_container" unique_id=984933091]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rg505")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxFlat_rg505")
+text = "option one"
+flat = true
+
+[node name="2" type="Button" parent="black/white/v_box_container" unique_id=1574916030]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rg505")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxFlat_rg505")
+text = "option two"
+flat = true

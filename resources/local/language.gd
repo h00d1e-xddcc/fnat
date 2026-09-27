@@ -4,14 +4,11 @@ class_name fnat_lange
 @export var dictionary : Dictionary[String,String]
 
 func retranslate_screen() :
-	arc.get_node("/root/main/office/screen/sub/ui/label/cam").text = dictionary["ui_cam"]
-	arc.get_node("/root/main/office/screen/sub/ui/label/scheme").text = dictionary["ui_scheme"]
 	arc.get_node("/root/main/office/screen/sub/ui/audio").text = dictionary["ui_only_audio"]
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/info").text = dictionary["ui_start"]
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/buttons/ping_pong").text = dictionary["ui_ping_pong"]
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/buttons/play_sound").text = dictionary["ui_bait"]
-	
-	#arc.get_node("/root/main/office/screen/sub/ui/scheme/map/").text = dictionary["room_"]
+
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/map/office").text = dictionary["room_office"]
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/map/staff").text = dictionary["room_staff"]
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/map/kitchen").text = dictionary["room_kitchen"]
@@ -29,7 +26,7 @@ func retranslate_screen() :
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/map/downstairs").text = dictionary["room_downstairs"]
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/map/toilet").text = dictionary["room_toilet"]
 	arc.get_node("/root/main/office/screen/sub/ui/scheme/map/jeffry").text = dictionary["room_jeffry"]
-	arc.get_node("/root/main/office/screen/sub/ui/scheme/map/swim").text = dictionary["room_swim"]
+	#arc.get_node("/root/main/office/screen/sub/ui/scheme/map/swim").text = dictionary["room_swim"]
 	arc.get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/bozo").text = get_word("ui_bozo")
 	arc.get_node("/root/main/office/screen/sub/ui/ad/panel/sprite/button").text = get_word("ui_cont")
 	

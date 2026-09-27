@@ -14,6 +14,7 @@ class_name fnat_screen
 @export var noise_sfx : AudioStreamPlayer3D
 @export var ad : Control
 @export var ad_source : AudioStreamPlayer
+@export var garbage : Control
 @export var teto_input : Control
 @export var teto_word : String
 @export var hour : int
@@ -22,6 +23,7 @@ class_name fnat_screen
 @export var cool_down = 3.15
 @export var vissy : Control
 @export var hacking : Control
+@export var array : MultiMeshInstance2D
 
 func disable_all() :
 	hacking.visible = false
@@ -35,6 +37,8 @@ func _ready() -> void:
 	noise.visible = false
 	vissy.visible = false
 	teto_input.visible = false
+	if randi_range(0,100) > 80 : $sub/ui/wallpaper/tme.visible = true
+	if randi_range(0,100) > 80 : $sub/ui/wallpaper/ds.visible = true
 
 func _on_input_event(camera : Camera3D, event : InputEvent, event_position : Vector3, normal : Vector3, shape_idx: int) :
 		if arc.loss : return
@@ -53,8 +57,8 @@ func update_text() :
 	status.text += "\n" + arc.lang.get_word("ui_power") + " " + str(int(arc.batary))
 	hour = int(arc.time / 60)
 	
-	time.text = str(arc.night.start_night) + " " + arc.lang.get_word("ui_night")
-	time.text += "\n" + str(hour) + " " + arc.lang.get_word("ui_time_am")
+	#time.text = str(arc.night.start_night) + " " + arc.lang.get_word("ui_night")
+	#time.text += "\n" + str(hour) + " " + arc.lang.get_word("ui_time_am")
 
 func _pressed(extra_arg_0: StringName) -> void:
 	info.text = arc.lang.get_word("ui_cam") + " > " + arc.lang.get_word("room_" + extra_arg_0)
@@ -72,12 +76,14 @@ func _pressed(extra_arg_0: StringName) -> void:
 func _on_scheme_pressed() -> void:
 	if scheme.visible == true or arc.user.spot_light.visible == false : return
 	cam.visible = false
+	arc.screen.garbage.visible = false
 	scheme.visible = true
 	get_node("sub/ui/audio").visible = false
 	arc_event.play_sfx({"type" = "2d", "path" = "user/swap"})
 	
 func _on_cam_pressed() -> void:
 	if cam.visible == true or arc.user.spot_light.visible == false : return
+	garbage.visible = false
 	scheme.visible = false
 	if arc.user.cam.is_audio_only :
 		cam.visible = false
@@ -165,6 +171,12 @@ func teto_word_of_the_day():
 	teto_word = rand_word
 	teto_input.visible = true
 	arc_event.play_sfx({"path" = "anim/virus/teto_word" + str(randi_range(0,2))})
+
+func clear_screen() :
+	$sub/ui/wallpaper.visible = true
+	cam.visible = false
+	scheme.visible = false
+	garbage.visible = false
 
 func advestment(value : int = -1) :
 	if randi_range(0,100) > adblock : return
@@ -307,3 +319,52 @@ func _vhovered(extra_arg_0: int) -> void:
 		16 : line = "v_powerd"
 		17 : line = "v_power"
 	get_node("sub/ui/vissy/panel/desc").text = arc.lang.get_word(line)
+
+func update_garbage() :
+	$sub/ui/garbage_drop/v/coins.text = str(arc.save.coins)
+	$sub/ui/garbage_drop/v/gems.text = str(arc.save.gems)
+
+func promo(boolean : bool = false) :
+	get_node("sub/ui/garbage_drop/promo").visible = boolean
+
+func promo_enter(new_text: String) -> void:
+	if arc.save.promo_used.has(new_text) : return
+	match new_text :
+		"gaben" :
+			arc.save.gems =+ 99999
+			arc.save.coins =+ 99999
+		"zoomer" :
+			arc.save.gems =+ 5
+			arc.save.coins =+ 15
+	arc.save.promo_used.append(new_text)
+	arc.save_settings()
+	update_garbage()
+	promo()
+
+func _promo_pressed() -> void:
+	promo(!get_node("sub/ui/garbage_drop/promo").visible)
+
+func _on_garbage_pressed() -> void:
+	clear_screen()
+	match garbage.visible :
+		true :
+			garbage.visible = !true
+		false :
+			garbage.visible = !false
+			$sub/scenes/garbage.visible = !false
+
+func slut_ad(time : float = 5) :
+	advestment()
+	var but : Button = $sub/ui/ad/panel/sprite/button
+	var timer = time
+	but.disabled = true
+	but.text = arc.lang.get_word("ui_cont") + " (" + str(int(time)) + ")"
+	for i in range(8) :
+		await get_tree().create_timer(1).timeout
+		time -= 1
+		but.text = arc.lang.get_word("ui_cont") + " (" + str(int(time)) + ")"
+	but.text = arc.lang.get_word("ui_cont")
+	but.disabled = false
+	arc.save.coins += 4
+	arc.save_settings()
+	update_garbage()

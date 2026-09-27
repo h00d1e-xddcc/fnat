@@ -11,23 +11,28 @@ func print_output(data : String, colir : String = "") :
 
 func _on_input_text_submitted(new_text: String) -> void:
 	var comm = new_text.split(" ")
-	if new_text == "!!" or new_text == "!" : _on_input_text_submitted(last_comma) 
+	if new_text == "!!" : 
+		_on_input_text_submitted(last_comma)
+		return
 	match comm[0] :
 		"h" : 
 			print_output("{!!} - last command")
 			print_output("{t}oss (name) - force toss dice at 99 ai")
 			print_output("{s}kip_night - skip da night")
 			print_output("{b}attary_full_charge - ")
-			print_output("{n}ote (0-12) - set text on note")
+			print_output("{n}ote (0-30) - set text on note")
 			print_output("{j}umpscare (name) - unnatural jumpscare")
 			print_output("{ai} (0-25) (name) - set ai lvl")
 			print_output("{an}imatronics - see anim names and id")
 			print_output("{ad}vestment - force toss ad")
 			print_output("{q}uit_to_title - f4")
-			print_output("{one}_to_ten (o-5) - f4")
+			print_output("{one}_to_ten (o-5) - force fun")
+			print_output("{fl}ashlight - ultimate")
 			print_output("{e}xit_to_screen - :q")
 			print_output("{mi}nigame (name) - load arcade")
 			print_output("{r}acist - youtu.be/58TyIBHR200")
+			print_output("{gaben} - get 9999 money")
+			print_output("{forgor} - used promo")
 			print_output("{s}kip{h}our - skip hour")
 			print_output("{pr}int (message) - print()")
 			print_output("{i}ddqd - 'TODAY I'M A GOOOD'")
@@ -45,7 +50,10 @@ func _on_input_text_submitted(new_text: String) -> void:
 		"foff" : arc.user.flashlight_brake()
 		"s" : arc.time = 999999
 		"b" : arc.batary = 9999
-		"n" : arc.change_da_note(arc.get_word("note" + comm[1]))
+		"bl" : arc.user.blink(3,true)
+		"n" : 
+			var val : int = int(comm[1])
+			arc.change_da_note(val)
 		"j" : 
 			var anim : fnat_animatronic = get_node("/root/main/" + comm[1])
 			if anim != null : anim.jumpscare()
@@ -95,15 +103,24 @@ func _on_input_text_submitted(new_text: String) -> void:
 			match minigame :
 				"fun" :
 					SceneManager.change_scene("res://prefabs/minigames/fun_whit_teto.tscn", {"pattern" : "curtians"}, true)
+				"cabin" :
+					SceneManager.change_scene("res://prefabs/minigames/cabin.tscn", {"pattern" : "curtians"}, true)
 		"sh" : arc.time += 60
 		"ad" : arc.screen.advestment()
 		"popup" : arc_event.popup(preload("res://pics/vi6.svg"), "KYS", "Kiss Your Sister. NOW!", true)
+		"fl" : arc.user.flashlight_loss_factor = 0
 		"help" :
 			match arc.night.start_night :
 				1 : arc.user.source["call"].stream = load("res://resources/sounds/ambient/calls/" + arc.save.lange + "/console1.ogg")
 				2 : arc.user.source["call"].stream = load("res://resources/sounds/ambient/calls/" + arc.save.lange + "/console2.ogg")
-			arc.user.source["call"].play()
+			#arc.user.source["call"].play()
 		"commands" : OS.crash("")
+		"forgor" : 
+			arc.save.promo_used = []
+		"gaben" :
+			arc.save.coins = 9999
+			arc.save.gems = 9999
+			arc.screen.update_garbage()
 		"boobs", "tits", "bobs", "pussy", "hamburger", "titties", "scrumpe", "titos" : 
 			arc_event.popup(preload("res://pics/vi3.svg"), "NO " + comm[0], "GO FUCK YOURSELF", true)
 		"reset" : 
@@ -119,8 +136,18 @@ func _on_input_text_submitted(new_text: String) -> void:
 			fatass.absolute_cd = .4
 			fatass.volume = 6
 			fatass.second = .0
+			fatass.nbt["pitch"] = 1
 			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_black.res")
 			print_output("she says Nigai (にがい) - bitter")
+		"pyro" : 
+			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
+			if fatass == null : fatass = get_node("/root/main_menu/sub/thanks/fatass")
+			fatass.to_play = "user/pyro" + str(randi_range(0,5))
+			fatass.absolute_cd = 1.2
+			fatass.volume = 6
+			fatass.second = .0
+			fatass.nbt["pitch"] = 1.8
+			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_pyro_sit.res")
 		"a" :
 			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
 			if fatass == null : fatass = get_node("/root/main_menu/sub/thanks/fatass")
@@ -128,6 +155,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 			fatass.absolute_cd = 5
 			fatass.volume = 6
 			fatass.second = .3
+			fatass.nbt["pitch"] = 1
 			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_alien.res")
 		"all_star" :
 			if get_node("/root/main_menu/ui/main/title/stars/" + str(6)).visible == true : return
@@ -146,7 +174,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 				arc.save.night = night
 				arc.retranslate_title()
 		_ : 
-			if new_text == "!!" : pass
+			if new_text == "!!"  : pass
 			else : print_output(new_text + ": command not found")
 	if new_text != "!!" : last_comma = new_text
 	input.text = "" # how this think works?

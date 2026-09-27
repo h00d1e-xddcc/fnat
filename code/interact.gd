@@ -18,9 +18,12 @@ enum interact_type {TOUCH, SWICH, BUTTON, PATH, ARM, DOOR, ITEM, FAN, GUITAR}
 @export var return_to_old_pos : bool = true
 @export var sound : bool = true
 @export var item : fnat_item
+@export var nbt : Dictionary
 
 func _ready() -> void:
 	current_cd = absolute_cd
+	if !nbt.has("pitch") :
+		nbt["pitch"] = 1
 	if funny_bool :
 		while true :
 			await get_tree().create_timer(absolute_cd).timeout
@@ -29,12 +32,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if current_cd > 0 : current_cd -= delta
 
-func touch() :
+func touch() :		
 	match type :
 		interact_type.TOUCH :
 			if current_cd < .1 :
 				current_cd = absolute_cd
-				if sound : arc_event.play_sfx({"path" = to_play, "volume" = volume, "sec" = second})
+				if sound : arc_event.play_sfx({"path" = to_play, "volume" = volume, "sec" = second, "pitch" = nbt["pitch"]})
 				if shake_scale > 0 :
 					var old_rot = global_rotation_degrees
 					global_rotation_degrees =+ Vector3(randi_range(-angle_jump,angle_jump), 31, randi_range(-angle_jump,angle_jump)) * shake_scale
@@ -52,10 +55,14 @@ func touch() :
 						arc.save_settings()
 						arc_event.popup(preload("res://pics/vi8.svg"), arc.lang.get_word("p_star"), arc.lang.get_word("p_gui"), true)
 					"user/teto", "user/nyaga", "user/alien"  :
+						angle_jump = int(arc.time / 60) + 1
 						if cout == 257 :
 							arc.save.stars[4] = true
 							arc.save_settings()
 							arc_event.popup(preload("res://pics/fatass.png"), arc.lang.get_word("p_star"), arc.lang.get_word("p_fat"))
+					"user/pyro0", "user/pyro1", "user/pyro2", "user/pyro3", "user/pyro4", "user/pyro5" :
+						angle_jump = int(arc.time / 60) + 2
+						to_play = "user/pyro" + str(randi_range(0,5))
 
 		interact_type.DOOR : arc.user.door_to()
 		interact_type.ITEM : arc.user.item_swap(item, self)

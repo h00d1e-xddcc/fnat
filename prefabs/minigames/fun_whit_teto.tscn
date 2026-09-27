@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cuthkmoswfd7r" path="res://code/animatronic.gd" id="2_6pcwy"]
 [ext_resource type="ArrayMesh" uid="uid://1ib2fk1d3cj3" path="res://prefabs/mesh/fnat_chair.res" id="2_wtp5j"]
 [ext_resource type="ArrayMesh" uid="uid://dgw4rvoyxmb60" path="res://prefabs/mesh/fnat_fatass.res" id="3_wp0ce"]
-[ext_resource type="PackedScene" uid="uid://cdghcukm0ylg1" path="res://prefabs/walls.tscn" id="4_wp0ce"]
+[ext_resource type="PackedScene" uid="uid://cdghcukm0ylg1" path="res://prefabs/wall_default.tscn" id="4_wp0ce"]
 [ext_resource type="PackedScene" uid="uid://bq2dfg3uh5fqi" path="res://prefabs/doorway.tscn" id="5_iqpjl"]
 [ext_resource type="Script" uid="uid://b3afhg2bg5hcd" path="res://code/user.gd" id="6_t6444"]
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="6_x2wva"]
@@ -201,7 +201,7 @@ root_node = NodePath("../..")
 
 [node name="user" type="Camera3D" parent="office" unique_id=1298149827 node_paths=PackedStringArray("flash_light", "spot_light", "cast", "source", "anims", "blink_screen")]
 process_mode = 3
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1, -10.006451)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.978, -10.127921)
 rotation_order = 0
 cull_mask = 1048571
 current = true
@@ -222,7 +222,7 @@ source = {
 "whitout": null
 }
 anims = [NodePath("../../plush")]
-blink_screen = NodePath("../../walls/spot_light_3d")
+blink_screen = NodePath("../triggers/blink")
 item_right = ExtResource("7_x2wva")
 item_left = SubResource("Resource_5recr")
 item_head = SubResource("Resource_bj7pf")
@@ -560,7 +560,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -10)
 mesh = ExtResource("21_2gr0b")
 
 [node name="fnat_baguette" type="MeshInstance3D" parent="fnat_nkasane" unique_id=2061714954]
-transform = Transform3D(0.59962654, 0, 0.70710677, 0, 1, 0, -0.59962654, 0, 0.70710677, 2.2067585, 0, 6.0593653)
+transform = Transform3D(-0.18081021, 0, 0.9770043, 0, 1, 0, -0.8284997, 0, -0.21321952, 0.9930161, -2.3841858e-07, 1.5385675)
 mesh = ExtResource("22_uo4ai")
 
 [node name="fnat_nkasane_acc" type="MeshInstance3D" parent="." unique_id=1508825294]

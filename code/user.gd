@@ -1,7 +1,7 @@
 extends Camera3D
 class_name fnat_user
 
-enum action {sit, hide, peek, pc, back, loss, window, minigame}
+enum action {sit, hide, peek, pc, back, loss, window, minigame, stand}
 
 @export var state : action
 @export var to_rotate : float
@@ -19,7 +19,8 @@ enum action {sit, hide, peek, pc, back, loss, window, minigame}
 @export var anims : Array[fnat_animatronic]
 @export var mental_sickness : float
 @export var mental_sickness_factor : float
-@export var blink_screen : Node
+@export var point : StaticBody3D
+@export var blink_screen : ColorRect
 @export var is_shaking : bool
 @export var fatass : Node3D
 @export var fuses : Array[Node3D]
@@ -46,6 +47,9 @@ func _process(delta):
 					cam.rotation_degrees.y = lerp(cam.rotation_degrees.y, rot, delta * 100)
 					if cam.rotation_degrees.y > cam.min : cam.rotation_degrees.y = cam.min
 					if cam.rotation_degrees.y < cam.max : cam.rotation_degrees.y = cam.max
+			action.stand : 
+				if Input.is_action_just_pressed("left") : rotation_degrees.y += 90
+				if Input.is_action_just_pressed("right") : rotation_degrees.y -= 90
 
 	if state != action.pc : 
 		match item_right.resource_path.get_file().get_basename() :
@@ -91,6 +95,11 @@ func _process(delta):
 							"flash" : get_node("/root/main/noise").hunger += 25 * delta * (flash_light_charge / 50)
 							"flash_big" : get_node("/root/main/noise").hunger += 75 * delta * (flash_light_charge / 50)
 				_: 
+					if result.collider.is_in_group("teto") :
+						point.get_child(0).disabled = false
+						point = result.collider
+						global_position = point.global_position
+						point.get_child(0).disabled = true
 					if Input.is_action_just_pressed("light") and result.collider is fnat_interact_object : result.collider.touch()
 
 	if spot_light.visible == true and fan_rotor != null :
@@ -104,9 +113,34 @@ func _process(delta):
 		arc_event.play_some_event("mental")
 		mental_sickness -= 40
 
+func _physics_process(delta):
+	if state != action.stand : return
+	if  Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down") :  
+		var input := Input.get_axis("down", "up")
+		var forward := -global_transform.basis.z
+		var motion = forward * input * 100 * delta
+	
+		if can_move(motion):
+			global_position += motion
+
+func can_move(motion: Vector3) -> bool:
+	var space_state := get_world_3d().direct_space_state
+	
+	var query := PhysicsRayQueryParameters3D.create(
+		global_position,
+		global_position + motion
+	)
+	
+	var result := space_state.intersect_ray(query)
+	if not result.is_empty() :
+		match result.collider.name :
+			"sit" : change_state()
+			
+	return result.is_empty()
+
 func input() :
 	if state == action.loss : return
-	if Input.is_action_just_pressed("hide") : change_state(1)
+	if Input.is_action_just_pressed("hide") : change_state(6)
 	if Input.is_action_just_pressed("left") : to_rotate = 1
 	if Input.is_action_just_released("left") : to_rotate = 0
 	
@@ -121,12 +155,13 @@ func input() :
 	if Input.is_action_just_pressed("pc") : change_state(3)
 	if Input.is_action_just_pressed("spotlight") : spotlight()
 
-	if Input.is_action_just_pressed("peek") : change_state(2)
-	if Input.is_action_just_released("peek") : change_state(0)
+	#if Input.is_action_just_pressed("peek") : change_state(2)
+	#if Input.is_action_just_released("peek") : change_state(0)
 
-
-	if Input.is_action_just_pressed("scheme") and state == action.pc : arc.screen._on_scheme_pressed()
-	if Input.is_action_just_pressed("cam") and state == action.pc : arc.screen._on_cam_pressed()
+	if state == action.pc :
+		if Input.is_action_just_pressed("scheme") : arc.screen._on_scheme_pressed()
+		if Input.is_action_just_pressed("cam") : arc.screen._on_cam_pressed()
+		if Input.is_action_just_pressed("garbage") : arc.screen._on_garbage_pressed()
 
 func spotlight() :
 	if state == action.minigame : return
@@ -203,6 +238,14 @@ func shake_pos(inten : float = .02, dur : float = .25) :
 func change_state(numba : int = 0) :
 	if state == action.loss or state == action.minigame: return
 	match numba :
+		6 : 
+			match state :
+				action.sit :
+					state = action.stand
+					point = get_node("/root/main/office/points/stand")
+					global_position = point.global_position
+					global_rotation_degrees.y = snappedf(global_rotation_degrees.y, 180)
+					to_rotate = 0
 		5 : 
 			state = action.window
 			position = Vector3(-3.75, 1.765, -14.362)
@@ -212,45 +255,31 @@ func change_state(numba : int = 0) :
 			to_rotate = 0
 		4 : # loss
 			state = action.loss
-			fatass.position = Vector3(-2.23, .865, -17.834)
-			fatass.rotation_degrees = Vector3(0, 31, 0)
-			position = Vector3(-2.7, 1.3, -18.9)
-			rotation_degrees.y = -175
-			rotation_degrees.x = 0
-			rotation_degrees.z = 0
-			to_rotate = 0
 		3 : #pc
 			if state != action.pc :
+				if point == null : return
+				if point.name != "sit" : return
 				state = action.pc
 				flash_light.visible = false
-				position = Vector3(-3.2, 1.2, -18.4)
-				look_at(get_node("/root/main/office/screen").position)
+				point = get_node("/root/main/office/points/pc")
+				global_position = point.global_position
 				if randi_range(0, 100) > 70 : get_node("/root/main/office/decor/baguette").rotation_degrees.y -= 7
+				#look_at(-get_node("/root/main/office/screen").position)
+				rotation_degrees = Vector3(0,165,0)
 			else : change_state()
 		2 : # peek
 			state = action.peek
 			position = Vector3(-2.3, 1.3, -18.9)
 			rotation_degrees.y = 160
-		1 : # hide
-				if state != action.hide :
-					state = action.hide
-					fatass.position = Vector3(-2.782, .503, -18.876)
-					fatass.rotation_degrees = Vector3(0, 176, 0)
-					flash_light.visible = false
-					position = Vector3(-2.9, .5, -17.9)
-					rotation = Vector3.ZERO
-					if randi_range(0,100) > 90 :
-						var strg = arc.lang.get_word("note" + str(randi_range(0,7)))
-						arc.change_da_note(strg, 18)
-				else :change_state()
+		#1 : # hide
+				#if state != action.hide :
+					#state = action.hide
+					#flash_light.visible = false
+				#else :change_state()
 		0, _ : # default
 			state = action.sit
-			fatass.position = Vector3(-2.23, .865, -17.834)
-			fatass.rotation_degrees = Vector3(0, 31, 0)
-			position = Vector3(-2.7, 1.3, -18.9)
-			rotation_degrees.y = -175
-			rotation_degrees.x = 0
-			rotation_degrees.z = 0
+			point = get_node("/root/main/office/points/sit")
+			global_position = point.global_position
 			to_rotate = 0
 
 func fuse(action : String) -> int :
@@ -312,51 +341,74 @@ func _input(event) :
 	#if event.is_action_pressed("ui_cancel") : get_tree().quit()
 	if state != action.pc or spot_light.visible == false: return
 
-	if Input.is_action_just_pressed("light") and interaction :
+	if interaction :
 		interaction = null
 		set_physics_process(true)
 
-	elif event.is_action_pressed("light") and cast.is_colliding() :
+	elif cast.is_colliding() :
 		var collider = cast.get_collider()
 		interaction = collider
 		set_physics_process(false)
 
-	if arc.screen.teto_input.visible == true and event is InputEventKey and event.pressed:
-		var line = get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/input")
-		var text = char(event.unicode)
-		if event.unicode != 0 :
-			if text == " " : return
-			line.text += str(text)
-			if line.text == "gimmestar" :
-				arc.save.stars[5] = true
-				arc.save_settings()
-				arc_event.popup(preload("res://pics/vi0.svg"), arc.lang.get_word("p_star"), arc.lang.get_word("p_cho"), true)
-			if line.text == arc.screen.teto_word :
-				arc.screen.teto_input.visible = false
+	if event is InputEventKey and event.pressed :
+		if arc.screen.garbage.visible :
+			var line : LineEdit = get_node("/root/main/office/screen/sub/ui/garbage_drop/promo/line_edit")
+			var text = char(event.unicode)
+			if event.unicode != 0 :
+				if text == " " : return
+				line.text += str(text)
 
-		if event.keycode == KEY_BACKSPACE or line.text.length() == 18 :
-			line.text = ""
-			line.visible = true
-			arc.batary -= 1
-			arc.screen.teto_input.get_node("back/teto_word/teto_right").texture = load("res://pics/vi" + str(randi_range(0,8)) + ".svg")
-			arc.screen.teto_input.get_node("back/teto_word/teto_left").texture = load("res://pics/vi" + str(randi_range(0,8)) + ".svg")
-			get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/bozo").visible = true
-			arc_event.play_sfx({"path" = "user/fish_miss"})
+			if event.keycode == KEY_BACKSPACE or line.text.length() == 18 :
+				line.text = ""
+				line.visible = true
+			arc.screen.promo_enter(line.text)
+			line.caret_column = line.text.length()
 
-func blink(time : float = 0) :
-	if arc.user.state == arc.user.action.minigame : return
+		if arc.screen.teto_input.visible == true :
+			var line = get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/input")
+			var text = char(event.unicode)
+			if event.unicode != 0 :
+				if text == " " : return
+				line.text += str(text)
+				if line.text == "gimmestar" :
+					arc.save.stars[5] = true
+					arc.save_settings()
+					arc_event.popup(preload("res://pics/vi0.svg"), arc.lang.get_word("p_star"), arc.lang.get_word("p_cho"), true)
+				if line.text == arc.screen.teto_word :
+					arc.screen.teto_input.visible = false
+
+			if event.keycode == KEY_BACKSPACE or line.text.length() == 18 :
+				line.text = ""
+				line.visible = true
+				arc.batary -= 1
+				arc.screen.teto_input.get_node("back/teto_word/teto_right").texture = load("res://pics/vi" + str(randi_range(0,8)) + ".svg")
+				arc.screen.teto_input.get_node("back/teto_word/teto_left").texture = load("res://pics/vi" + str(randi_range(0,8)) + ".svg")
+				get_node("/root/main/office/screen/sub/ui/word_minigame/back/teto_word/bozo").visible = true
+				arc_event.play_sfx({"path" = "user/fish_miss"})
+
+func blink(time : float = 0, is_soft : bool = false) :
 	blink_screen.visible = true
-	arc.is_can_pause = false
-	await  get_tree().create_timer(time).timeout
-	blink_screen.visible = false
-	arc.is_can_pause = true
-	var roll = randi_range(0,100)
-	if roll > 90 : blink(0.13)
+	if is_soft == false :
+		blink_screen.color.a = 1.0
+		await  get_tree().create_timer(time).timeout
+		blink_screen.color.a = 0.0
+	else :
+		var tween = create_tween()
+		blink_screen.color.a = 0.0
+		tween.tween_property(blink_screen, "color:a", 1.0, 0.3)
+		tween.play()
+		await get_tree().create_timer(time).timeout
+		var out = create_tween()
+		out.tween_property(blink_screen, "color:a", 0.0, 0.3)
+		out.play()
+		await get_tree().create_timer(.3).timeout
+		blink_screen.color.a = 0.0
+	if randi_range(0,100) > 90 : blink(0.13)
 
 func door_to() :
 	if state == action.window : return
-	#blink(2.57)
-	#change_state(5)
+	blink(2.57)
+	change_state(5)
 
 func mute() :
 	source["fan"].stream_paused = true
@@ -429,54 +481,55 @@ func _ready() -> void:
 	if state == action.minigame :
 		source["amb"].volume_db = arc.save.volume + 14
 		return
-	change_state()
+	change_state(6)
+	arc.change_da_note()
 	await get_tree().create_timer(.257).timeout
 	#get_node("/root/main/office/triggers/vhs").visible = false
 	arc_event.set_up_ambient()
 	arc.start_night(arc.night)
-	arc_event.play_random()
+	if randi_range(0,100) > 40 : arc_event.play_random()
 	await get_tree().create_timer(3.1).timeout
 	arc.is_can_pause = true
-	await get_tree().create_timer(await arc_event.play_sfx({"path" = "ambient/calls/" + str(randi_range(0,2)) }) + 2.57).timeout
+	#await get_tree().create_timer(await arc_event.play_sfx({"path" = "ambient/calls/" + str(randi_range(0,2)) }) + 2.57).timeout
 
-	var joke_dead : String = ""
-	var to_play : String = ""
-	match arc.night.start_night :
-		0 : to_play = "ambient/short/noise"
-		1 : 
-			match arc.save.night1_deads :
-				1 : joke_dead = "ambient/calls/" + arc.save.lange + "/first"
-				2 : joke_dead = "ambient/calls/" + arc.save.lange + "/play_parody"
-				3 : joke_dead = "ambient/calls/" + arc.save.lange + "/comment"
-			to_play = "ambient/calls/" + arc.save.lange + "/night1"
-		2 : 
-			match arc.save.night2_deads :
-				1 : joke_dead = "ambient/calls/" + arc.save.lange + "/gnoise"
-				2 : joke_dead = "ambient/calls/" + arc.save.lange + "/bear"
-				5 : joke_dead = "ambient/calls/" + arc.save.lange + "/determination"
-			to_play = "ambient/calls/" + arc.save.lange + "/night2"
-		6, _ : 
-			match randi_range(0,7) :
-				1 : joke_dead = "ambient/calls/" + arc.save.lange + "/bober"
-				2 : joke_dead = "ambient/calls/" + arc.save.lange + "/cake"
-				3 : joke_dead = "ambient/calls/" + arc.save.lange + "/curse"
-				4 : joke_dead = "ambient/calls/" + arc.save.lange + "/damn"
-				5 : joke_dead = "ambient/calls/" + arc.save.lange + "/console"
-				6 : joke_dead = "ambient/calls/" + arc.save.lange + "/dr"
-				6 : joke_dead = "ambient/calls/" + arc.save.lange + "/void"
-				7 : joke_dead = "ambient/calls/" + arc.save.lange + "/wait"
-			#source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
-			source["call"].volume_db = arc.save.volume
-			source["call"].play()
-			return
-	if joke_dead != "" and to_play != "" :
-		#source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
-		source["call"].volume_db = arc.save.volume
-		source["call"].play()
-		await get_tree().create_timer(source["call"].stream.get_length() + .257).timeout
-	#source["call"].stream = load("res://resources/sounds/" + to_play + ".ogg")
-	source["call"].volume_db = arc.save.volume
-	source["call"].play()
+	#var joke_dead : String = ""
+	#var to_play : String = ""
+	#match arc.night.start_night :
+		#0 : to_play = "ambient/short/noise"
+		#1 : 
+			#match arc.save.night1_deads :
+				#1 : joke_dead = "ambient/calls/" + arc.save.lange + "/first"
+				#2 : joke_dead = "ambient/calls/" + arc.save.lange + "/play_parody"
+				#3 : joke_dead = "ambient/calls/" + arc.save.lange + "/comment"
+			#to_play = "ambient/calls/" + arc.save.lange + "/night1"
+		#2 : 
+			#match arc.save.night2_deads :
+				#1 : joke_dead = "ambient/calls/" + arc.save.lange + "/gnoise"
+				#2 : joke_dead = "ambient/calls/" + arc.save.lange + "/bear"
+				#5 : joke_dead = "ambient/calls/" + arc.save.lange + "/determination"
+			#to_play = "ambient/calls/" + arc.save.lange + "/night2"
+		#6, _ : 
+			#match randi_range(0,7) :
+				#1 : joke_dead = "ambient/calls/" + arc.save.lange + "/bober"
+				#2 : joke_dead = "ambient/calls/" + arc.save.lange + "/cake"
+				#3 : joke_dead = "ambient/calls/" + arc.save.lange + "/curse"
+				#4 : joke_dead = "ambient/calls/" + arc.save.lange + "/damn"
+				#5 : joke_dead = "ambient/calls/" + arc.save.lange + "/console"
+				#6 : joke_dead = "ambient/calls/" + arc.save.lange + "/dr"
+				#6 : joke_dead = "ambient/calls/" + arc.save.lange + "/void"
+				#7 : joke_dead = "ambient/calls/" + arc.save.lange + "/wait"
+			##source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
+			#source["call"].volume_db = arc.save.volume
+			#source["call"].play()
+			#return
+	#if joke_dead != "" and to_play != "" :
+		##source["call"].stream = load("res://resources/sounds/" + joke_dead + ".ogg")
+		#source["call"].volume_db = arc.save.volume
+		#source["call"].play()
+		#await get_tree().create_timer(source["call"].stream.get_length() + .257).timeout
+	##source["call"].stream = load("res://resources/sounds/" + to_play + ".ogg")
+	#source["call"].volume_db = arc.save.volume
+	#source["call"].play()
 
 	if randi_range(0,100) > 99 : 
 			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
