@@ -11,7 +11,7 @@ enum action {sit, hide, peek, pc, back, loss, window, minigame, stand}
 @export var flashlight_loss_factor : float = 2
 @export var spot_light : SpotLight3D
 @export var cast : RayCast3D
-@export var source : Dictionary[String,AudioStreamPlayer]
+@export var source : Dictionary[String,Node]
 @export var cam : fnat_camera
 @export var fan_rotor : MeshInstance3D
 @export var is_booting : bool
@@ -22,6 +22,7 @@ enum action {sit, hide, peek, pc, back, loss, window, minigame, stand}
 @export var point : StaticBody3D
 @export var blink_screen : ColorRect
 @export var is_shaking : bool
+@export var is_noclip : bool
 @export var fatass : Node3D
 @export var fuses : Array[Node3D]
 var interaction
@@ -117,19 +118,16 @@ func _physics_process(delta):
 	if state != action.stand : return
 	if  Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down") :  
 		var input := Input.get_axis("down", "up")
-		var forward := -global_transform.basis.z
-		var motion = forward * input * 100 * delta
+		var motion = -global_transform.basis.z * input * 100 * delta
 	
 		if can_move(motion):
 			global_position += motion
 
 func can_move(motion: Vector3) -> bool:
+	if is_noclip : return true
 	var space_state := get_world_3d().direct_space_state
 	
-	var query := PhysicsRayQueryParameters3D.create(
-		global_position,
-		global_position + motion
-	)
+	var query := PhysicsRayQueryParameters3D.create(global_position,global_position + motion)
 	
 	var result := space_state.intersect_ray(query)
 	if not result.is_empty() :
@@ -281,6 +279,7 @@ func change_state(numba : int = 0) :
 			point = get_node("/root/main/office/points/sit")
 			global_position = point.global_position
 			to_rotate = 0
+	arc.screen.get_node("sub/ui/scheme/map/you/arrow").rotation = -rotation.y
 
 func fuse(action : String) -> int :
 	match action :
@@ -403,6 +402,7 @@ func blink(time : float = 0, is_soft : bool = false) :
 		out.play()
 		await get_tree().create_timer(.3).timeout
 		blink_screen.color.a = 0.0
+		blink_screen.visible = false
 	if randi_range(0,100) > 90 : blink(0.13)
 
 func door_to() :
@@ -483,6 +483,7 @@ func _ready() -> void:
 		return
 	change_state(6)
 	arc.change_da_note()
+	arc.retranslate_title()
 	await get_tree().create_timer(.257).timeout
 	#get_node("/root/main/office/triggers/vhs").visible = false
 	arc_event.set_up_ambient()
@@ -544,6 +545,6 @@ func _ready() -> void:
 			fatass.absolute_cd = 5
 			fatass.volume = 10
 			fatass.second = 0
-			fatass.get_node("fnat_guitar").mesh = preload("res://prefabs/mesh/fnat_gguitar.res")
+			fatass.get_node("fnat_guitar").mesh = preload("res://prefabs/mesh/fnat_goggles.res")
 	#arc_event.play_sfx({"type" = "2d", "path" = "ambient/calls/" + arc.save.lange + arc.night.resource_name})
 	#if randi_range(0,100 > 90) : arc_event.play_some_event("long")

@@ -79,7 +79,11 @@ dictionary = Dictionary[String, String]({
 "note75": "also play\\n Five night\\n at Candy\\n Remaster!",
 "note76": "Spode \\nleft us",
 "note77": "Also try\\n FNiB2!",
+"note78": "абсолют синема\\nиз космоса",
+"note79": "sesbian\\nlex",
 "note8": "Спорий \\nпокинул нас",
+"note80": "Don't Kill The\\nGibuses",
+"note81": "Без цветочного\\n проклятия 100%",
 "note9": "так же\\n попробуйте\\n FNiB2!"
 })
 metadata/_custom_type_script = "uid://bqpuiajyynyh5"

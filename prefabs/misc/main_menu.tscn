@@ -24,7 +24,7 @@
 [ext_resource type="ArrayMesh" uid="uid://n8tsjisrp7xf" path="res://prefabs/mesh/fnat_shelf.res" id="27_uoqgc"]
 [ext_resource type="Texture2D" uid="uid://57peobvd68a2" path="res://pics/2c8b8c8123eb082c2938c45d2675d5ca.jpg" id="28_1ojbv"]
 [ext_resource type="Texture2D" uid="uid://dkopme3xfqfx1" path="res://pics/cutie.jpg" id="28_o8kjn"]
-[ext_resource type="ArrayMesh" uid="uid://rqbw3lm63vkd" path="res://prefabs/mesh/fnat_banana_peel.res" id="29_lqqix"]
+[ext_resource type="ArrayMesh" uid="uid://bneeu3vuegycp" path="res://prefabs/mesh/fnat_banana_peel.res" id="29_lqqix"]
 [ext_resource type="Texture2D" uid="uid://c1nh04axlaqi4" path="res://pics/18a7c9bd2bd03cccc909d6e0da612c5f.jpg" id="29_xjrve"]
 [ext_resource type="PackedScene" uid="uid://n2mxbvv5cgpa" path="res://prefabs/misc/console.tscn" id="30_urhsd"]
 [ext_resource type="Script" uid="uid://c20fq5x3jcd24" path="res://code/interact.gd" id="38_pn05y"]
@@ -78,7 +78,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ckgkcijtddn3y" path="res://prefabs/mesh/fnat_balloon.res" id="92_ywvq6"]
 [ext_resource type="ArrayMesh" uid="uid://dydmr55ppxlc3" path="res://prefabs/mesh/fnat_pkasane.res" id="93_a0otc"]
 [ext_resource type="ArrayMesh" uid="uid://wqfm4plgb1tm" path="res://prefabs/mesh/fnat_pkasane_acc.res" id="94_2p56n"]
-[ext_resource type="ArrayMesh" uid="uid://de526ngf4v6bn" path="res://prefabs/mesh/fnat_fish.res" id="94_un3k5"]
+[ext_resource type="ArrayMesh" uid="uid://dgqgvffy08ums" path="res://prefabs/mesh/fnat_fish.res" id="94_un3k5"]
 [ext_resource type="Texture2D" uid="uid://cxl5anp4vsfs5" path="res://pics/star.png" id="95_anyh7"]
 [ext_resource type="ArrayMesh" uid="uid://vgs0mo4uaf2u" path="res://prefabs/mesh/fnat_valve.res" id="95_edi8c"]
 [ext_resource type="ArrayMesh" uid="uid://dw8s463p4p5p4" path="res://prefabs/mesh/fnat_phone.res" id="96_anyh7"]
@@ -91,7 +91,7 @@
 [ext_resource type="Texture2D" uid="uid://dnfw4xsuu1ryb" path="res://pics/MAC.png" id="101_udoig"]
 [ext_resource type="Texture2D" uid="uid://hvn1vhxpde8h" path="res://pics/icon.svg" id="102_ih4kp"]
 [ext_resource type="Texture2D" uid="uid://jgcdwohtnwok" path="res://pics/milk.png" id="103_o1yha"]
-[ext_resource type="Texture2D" uid="uid://ghd083derc0o" path="res://pics/microsoft.png" id="104_ebbiv"]
+[ext_resource type="Texture2D" uid="uid://ghd083derc0o" path="res://pics/microslop.png" id="104_ebbiv"]
 [ext_resource type="Texture2D" uid="uid://cbe2gwbq8mixn" path="res://pics/fatass.png" id="105_5k0b2"]
 [ext_resource type="Texture2D" uid="uid://wwhma38gh0yb" path="res://pics/CERO_C.svg" id="106_udoig"]
 
@@ -1425,7 +1425,7 @@ font = ExtResource("4_gacyl")
 font_size = 12
 
 [sub_resource type="TextMesh" id="TextMesh_lqqix"]
-text = "Garbage
+text = "MusoR
 Drop"
 font = ExtResource("4_gacyl")
 horizontal_alignment = 0
@@ -1485,10 +1485,6 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 4)
 is_lock = true
 is_static = true
-
-[node name="face" parent="sub/custom/chimera/skelet/Skeleton3D" parent_id_path=PackedInt32Array(1173604488, 1645935245) index="0" unique_id=1420931667]
-instance_shader_parameters/uv_off = Vector2(0, -1)
-surface_material_override/0 = null
 
 [node name="light" type="SpotLight3D" parent="sub/custom/chimera" unique_id=1304273582]
 transform = Transform3D(0.8647526, -0.4890877, -0.11400109, -0.003500824, -0.23286946, 0.97250175, -0.502186, -0.8405742, -0.20308667, -0.41170073, 4.8106513, -0.9713392)
@@ -4430,11 +4426,11 @@ metadata/_edit_use_anchors_ = true
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.7335741, 0, -0.94309354)
 mesh = ExtResource("64_01npy")
 
-[node name="fnat_pc" type="MeshInstance3D" parent="." unique_id=273831192]
-transform = Transform3D(0.74037296, 0, 0, 0, 0.527155, 0, 0, 0, 0.589, 0.76233387, 1.8934119, -0.54856336)
+[node name="fnat_pc" type="MeshInstance3D" parent="fnat_arcade" unique_id=273831192]
+transform = Transform3D(-0.74037296, 0, -5.1492016e-08, 0, 0.527155, 0, 6.472546e-08, 0, -0.589, -0.028759718, 1.8934119, -0.39453018)
 mesh = ExtResource("6_xpylm")
 
-[node name="mesh_instance_3d" type="MeshInstance3D" parent="fnat_pc" unique_id=1146957077]
+[node name="mesh_instance_3d" type="MeshInstance3D" parent="fnat_arcade/fnat_pc" unique_id=1146957077]
 transform = Transform3D(1.7269324, 0, 0, 0, 2.785077, 0, 0, 0, 2.1707537, -0.9328952, 1.0420005, 0.21599996)
 instance_shader_parameters/coloring = Color(0.90588236, 0.30588236, 0.37254903, 1)
 instance_shader_parameters/em = 2.0
@@ -4443,8 +4439,8 @@ instance_shader_parameters/trans = 0.0
 mesh = SubResource("TextMesh_lqqix")
 surface_material_override/0 = ExtResource("2_pxua0")
 
-[node name="fnat_fish" type="MeshInstance3D" parent="fnat_pc/mesh_instance_3d" unique_id=1595927357]
-transform = Transform3D(0.90804285, 0, 0, 0, -3.4566174e-08, 0.7907819, 0, -0.90804297, -3.969182e-08, 0.7640679, -0.103084326, 0.03939578)
+[node name="fnat_fish" type="MeshInstance3D" parent="fnat_arcade/fnat_pc/mesh_instance_3d" unique_id=1595927357]
+transform = Transform3D(0.82250875, 3.1310176e-08, -0.71629345, 0.822509, -3.1310186e-08, 0.7162934, 0, -1.1632031, -5.0845223e-08, 0.8123185, -0.09681773, 0.007136017)
 instance_shader_parameters/coloring = Color(0.67481464, 0.67481464, 0.6748146, 1)
 instance_shader_parameters/em = 0.9910000470725
 mesh = ExtResource("94_un3k5")

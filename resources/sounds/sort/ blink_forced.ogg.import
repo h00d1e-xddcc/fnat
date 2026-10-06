@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://blkysckjio2ir"
+path="res://.godot/imported/ blink_forced.ogg-a363aa8c5f08e2bc61327f28e94338b8.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/sort/ blink_forced.ogg"
+dest_files=["res://.godot/imported/ blink_forced.ogg-a363aa8c5f08e2bc61327f28e94338b8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

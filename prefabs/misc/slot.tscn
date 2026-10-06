@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ce5fjh18v0vbu"]
+
+[ext_resource type="Texture2D" uid="uid://d1vi2ohxtx45f" path="res://pics/items/panel.png" id="1_l6cs4"]
+[ext_resource type="Texture2D" uid="uid://cpveppma785gr" path="res://pics/items/scrap.png" id="2_eebcw"]
+
+[node name="slot" type="TextureRect" unique_id=815669681]
+custom_minimum_size = Vector2(100, 100)
+texture = ExtResource("1_l6cs4")
+expand_mode = 1
+
+[node name="item" type="TextureRect" parent="." unique_id=838303838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eebcw")
+expand_mode = 1

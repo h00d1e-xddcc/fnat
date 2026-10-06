@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4rdv4wkukc5g"]
 
 [ext_resource type="Texture2D" uid="uid://dl75e74oom1i3" path="res://addons/ridiculous_coding/boom.png" id="1"]
-[ext_resource type="AudioStream" uid="uid://d1t1li4rhhsi3" path="res://addons/ridiculous_coding/custom_sfx/w_big_01.wav" id="3_jetkh"]
+[ext_resource type="AudioStream" uid="uid://c3uol8ynmwe0i" path="res://addons/ridiculous_coding/custom_sfx/plant.ogg" id="3_jetkh"]
 [ext_resource type="Script" uid="uid://bsgw2blsalrdx" path="res://addons/ridiculous_coding/boom.gd" id="4"]
 [ext_resource type="FontFile" uid="uid://bvwnnnja1ur2i" path="res://addons/ridiculous_coding/font.tres" id="5"]
 
@@ -101,7 +101,8 @@ script = ExtResource("4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260710115]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ld5tu")
-frame_progress = 0.93333334
+frame = 6
+frame_progress = 1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=901287732]
 stream = ExtResource("3_jetkh")
@@ -112,13 +113,13 @@ autoplay = true
 one_shot = true
 
 [node name="Label" type="Label" parent="." unique_id=1688259486]
-modulate = Color(1.2781085, 0.81562424, 0.53044105, 1)
+modulate = Color(1.3639846, 0.50294214, 1.585526, 1)
 texture_filter = 1
 offset_left = -35.0
-offset_top = -32.310215
+offset_top = -70.0
 offset_right = 35.0
-offset_bottom = -9.310215
-scale = Vector2(1.0081636, 1.0081636)
+offset_bottom = -47.0
+scale = Vector2(2, 2)
 pivot_offset = Vector2(35, 8)
 theme_override_fonts/font = ExtResource("5")
 theme_override_font_sizes/font_size = 16

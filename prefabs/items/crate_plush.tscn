@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bhfwlb08n12fs"]
+
+[ext_resource type="ArrayMesh" uid="uid://67cj030yas61" path="res://prefabs/mesh/fnat_crate.res" id="1_qmvy0"]
+[ext_resource type="Texture2D" uid="uid://k20ogg44uftv" path="res://pics/pc/plush.png" id="2_nqles"]
+
+[node name="crate_plush" type="MeshInstance3D" unique_id=1665816379]
+mesh = ExtResource("1_qmvy0")
+
+[node name="sprite_3d" type="Sprite3D" parent="." unique_id=1919633935]
+transform = Transform3D(0.0967725, 0, 0, 0, 0.0967725, 0, 0, 0, 0.0967725, 0.027350426, 0.41096202, 0.4598198)
+texture = ExtResource("2_nqles")

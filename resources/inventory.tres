@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="fnat_inventory" format=3 uid="uid://cuocbvqgj7y2i"]
+
+[ext_resource type="Script" uid="uid://coudim14y2o4q" path="res://code/resource_inventory.gd" id="1_3tbgx"]
+[ext_resource type="Script" uid="uid://d3q62xo7qd2w1" path="res://code/resource_cosmetic_item.gd" id="2_7hhfx"]
+
+[resource]
+script = ExtResource("1_3tbgx")
+metadata/_custom_type_script = "uid://coudim14y2o4q"

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cr3tr0xnx61py"]
+
+[ext_resource type="ArrayMesh" uid="uid://c630ayagn1sbr" path="res://prefabs/mesh/fnat_crate_mega.res" id="1_jpu5u"]
+[ext_resource type="Texture2D" uid="uid://b6anmamr13lvy" path="res://pics/pc/hat.png" id="2_00umo"]
+
+[node name="crate_hat" type="MeshInstance3D" unique_id=1139000488]
+mesh = ExtResource("1_jpu5u")
+
+[node name="sprite_3d" type="Sprite3D" parent="." unique_id=1568686496]
+transform = Transform3D(0.0864, 0, 0, 0, 0.0864, 0, 0, 0, 0.0864, -0.012255907, 0.41826683, 0.45656586)
+texture = ExtResource("2_00umo")
+
+[node name="sprite_3d2" type="Sprite3D" parent="." unique_id=1148891443]
+transform = Transform3D(0.0864, 0, 0, 0, 0.0864, 0, 0, 0, 0.0864, -0.012255907, 0.41826683, -0.4485016)
+texture = ExtResource("2_00umo")

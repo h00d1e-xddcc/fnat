@@ -5,8 +5,6 @@
 [ext_resource type="Script" uid="uid://dw2cn81r7e200" path="res://code/resource_item.gd" id="3_gsg4a"]
 [ext_resource type="FontFile" uid="uid://cn2qpv2hkrmvl" path="res://resources/PressStart2P.ttf" id="4_wh8ru"]
 [ext_resource type="AudioStream" uid="uid://bywng5s6wsc6g" path="res://resources/sounds/user/pause_loop.ogg" id="5_ji34b"]
-[ext_resource type="AudioStream" uid="uid://dohgis0xlhksa" path="res://resources/sounds/user/light.ogg" id="6_aeqvx"]
-[ext_resource type="AudioStream" uid="uid://bosyqc5vq55mk" path="res://resources/sounds/user/fan.ogg" id="7_nmppk"]
 [ext_resource type="ArrayMesh" uid="uid://dhait1hagqoy8" path="res://prefabs/mesh/fnat_pipe_blank.res" id="8_1tsy0"]
 [ext_resource type="ArrayMesh" uid="uid://1ib2fk1d3cj3" path="res://prefabs/mesh/fnat_chair.res" id="9_bh538"]
 [ext_resource type="ArrayMesh" uid="uid://cheiwebccyc4j" path="res://prefabs/mesh/fnat_note.res" id="10_pgi2u"]
@@ -26,24 +24,24 @@
 [ext_resource type="Texture2D" uid="uid://r7fmhpj5poc2" path="res://pics/ad/10.jpg" id="40_5tu1q"]
 [ext_resource type="PackedScene" uid="uid://dq7os1jqvbv15" path="res://prefabs/items/milk.tscn" id="41_kmxab"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ct76k"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_p0q4w"]
 viewport_path = NodePath("sub")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajdny"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23h17"]
 resource_local_to_scene = true
 shading_mode = 0
 diffuse_mode = 3
-albedo_texture = SubResource("ViewportTexture_ct76k")
+albedo_texture = SubResource("ViewportTexture_p0q4w")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_bdtl7"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_ct76k"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_ajdny")
+material = SubResource("StandardMaterial3D_23h17")
 size = Vector2(1, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4ig7p"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ajdny"]
 viewport_path = NodePath("../../../../cams")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0gdfp"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bdtl7"]
 viewport_path = NodePath("../../../minimap")
 
 [sub_resource type="Resource" id="Resource_g5sym"]
@@ -451,7 +449,7 @@ transform = Transform3D(0.99999994, -1.4901161e-08, -8.881784e-16, -1.4901161e-0
 
 [node name="mesh" parent="screen" index="1" unique_id=630072916]
 transform = Transform3D(0.76, -1.4901161e-08, -4.440892e-16, 0, 0.999, 0, 8.881784e-16, -7.1054274e-15, 0.46, -5.3638477, -16.161922, -0.001999259)
-mesh = SubResource("PlaneMesh_bdtl7")
+mesh = SubResource("PlaneMesh_ct76k")
 
 [node name="sfx" parent="screen" index="2" unique_id=2121313411]
 transform = Transform3D(1.0000001, -1.4901161e-08, -8.881784e-16, 1.4901161e-08, 1.0000001, 0, 8.881784e-16, 0, 1, -5.3658476, -16.161922, 7.1525574e-07)
@@ -459,14 +457,14 @@ transform = Transform3D(1.0000001, -1.4901161e-08, -8.881784e-16, 1.4901161e-08,
 [node name="noise" parent="screen" index="3" unique_id=743127527]
 transform = Transform3D(1.0000001, -1.4901161e-08, -8.881784e-16, 1.4901161e-08, 1.0000001, 0, 8.881784e-16, 0, 1, -5.3658476, -16.161922, 7.1525574e-07)
 
-[node name="cam" parent="screen/sub/ui" parent_id_path=PackedInt32Array(1479514998, 927469561) index="1" unique_id=1858130358]
+[node name="cam" parent="screen/sub/ui" parent_id_path=PackedInt32Array(1479514998, 927469561) index="2" unique_id=1858130358]
 texture_filter = 1
-texture = SubResource("ViewportTexture_4ig7p")
+texture = SubResource("ViewportTexture_ajdny")
 
 [node name="map" parent="screen/sub/ui/scheme" parent_id_path=PackedInt32Array(1479514998, 927469561, 1092765403) index="3" unique_id=2014552017]
-texture = SubResource("ViewportTexture_0gdfp")
+texture = SubResource("ViewportTexture_bdtl7")
 
-[node name="hacking" parent="screen/sub/ui" parent_id_path=PackedInt32Array(1479514998, 927469561) index="9" unique_id=1369341697]
+[node name="hacking" parent="screen/sub/ui" parent_id_path=PackedInt32Array(1479514998, 927469561) index="10" unique_id=1369341697]
 visible = true
 
 [node name="user" type="Camera3D" parent="." unique_id=1291642223 node_paths=PackedStringArray("flash_light", "cast", "source", "anims", "blink_screen", "fuses")]
@@ -599,14 +597,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01675582, -0.015966415, -0
 omni_range = 0.22
 omni_attenuation = 1.48
 omni_shadow_mode = 0
-
-[node name="spotlight" type="AudioStreamPlayer" parent="spolight" unique_id=1535948933]
-stream = ExtResource("6_aeqvx")
-volume_db = 1.0
-
-[node name="fan" type="AudioStreamPlayer" parent="spolight" unique_id=1907624707]
-stream = ExtResource("7_nmppk")
-volume_db = -1.0
 
 [node name="office_collision" type="StaticBody3D" parent="." unique_id=1946933418]
 transform = Transform3D(1.394, 0, 0, 0, 1.3940002, 1.4901161e-08, 0, -1.4901161e-08, 1.3940002, -3.0925982, -1.0660753, -17.99077)
@@ -884,3 +874,11 @@ texture = ExtResource("40_5tu1q")
 
 [editable path="screen"]
 [editable path="screen/sub/ui"]
+[editable path="screen/sub/scenes/custom/chimera"]
+[editable path="screen/sub/scenes/custom/noise"]
+[editable path="screen/sub/scenes/custom/nerd"]
+[editable path="screen/sub/scenes/custom/bear"]
+[editable path="screen/sub/scenes/custom/nchimera"]
+[editable path="screen/sub/scenes/custom/gnoise"]
+[editable path="screen/sub/scenes/custom/hakua"]
+[editable path="screen/sub/scenes/trailer/nerd"]

@@ -45,11 +45,6 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://resources/materials/color_pallete.tres",
 "use_external/path": "uid://dx1glvanqu83s"
-},
-"faces": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://resources/materials/faces.tres",
-"use_external/path": "uid://b6boaj66aw4og"
 }
 },
 "meshes": {
@@ -88,132 +83,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_Star.res",
 "save_to_file/path": "uid://cni1kl2e51h1n"
-},
-"fnat___p": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat___p.res",
-"save_to_file/path": "uid://c043mclx6l7bn"
-},
-"fnat__glass": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__glass.res",
-"save_to_file/path": "uid://baelg3npjf7j0"
-},
-"fnat__man_face": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__man_face.res",
-"save_to_file/path": "uid://xse262qq3mbe"
-},
-"fnat__nsmmile": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__nsmmile.res",
-"save_to_file/path": "uid://qjutss2jncs0"
-},
-"fnat__rage": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__rage.res",
-"save_to_file/path": "uid://twm50px5tf4t"
-},
-"fnat__sad": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__sad.res",
-"save_to_file/path": "uid://c0hs0mx14lj1h"
-},
-"fnat__sharp": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__sharp.res",
-"save_to_file/path": "uid://2abdp7bcms7x"
-},
-"fnat__shock": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__shock.res",
-"save_to_file/path": "uid://dfyatbhdxuqlc"
-},
-"fnat__smile": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__smile.res",
-"save_to_file/path": "uid://p26j4o31o2a4"
-},
-"fnat__uwu": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat__uwu.res",
-"save_to_file/path": "uid://cwrpkcw7phlwh"
-},
-"fnat_akita": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_akita.res",
-"save_to_file/path": "uid://b4sw2hsk8eutc"
-},
-"fnat_akita_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_akita_acc.res",
-"save_to_file/path": "uid://co03v50sc3a68"
-},
-"fnat_alien": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_alien.res",
-"save_to_file/path": "uid://bmeh6gvpxtsp4"
-},
-"fnat_alien_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_alien_acc.res",
-"save_to_file/path": "uid://bmluvcvfrmrbk"
 },
 "fnat_arcade": {
 "generate/lightmap_uv": 0,
@@ -278,15 +147,6 @@ _subresources={
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_basket.res",
 "save_to_file/path": "uid://djaakkff4x8o4"
 },
-"fnat_belt": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_belt.res",
-"save_to_file/path": "uid://b68sswjcrkbs"
-},
 "fnat_board": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -295,15 +155,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_board.res",
 "save_to_file/path": "uid://dosxk7efg7srb"
-},
-"fnat_bocchi": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_bocchi.res",
-"save_to_file/path": "uid://biydn0g0e3l3d"
 },
 "fnat_brain": {
 "generate/lightmap_uv": 0,
@@ -521,24 +372,6 @@ _subresources={
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_e_bunny.res",
 "save_to_file/path": "uid://cfthiidu0gd28"
 },
-"fnat_e_eve": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_e_eve.res",
-"save_to_file/path": "uid://e3srpmtwlaut"
-},
-"fnat_e_eve_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_e_eve_acc.res",
-"save_to_file/path": "uid://byntamp5yp5bt"
-},
 "fnat_e_robe": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -548,15 +381,6 @@ _subresources={
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_e_robe.res",
 "save_to_file/path": "uid://dmppok1w27caj"
 },
-"fnat_endo": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_endo.res",
-"save_to_file/path": "uid://dkmq6bflt7ubf"
-},
 "fnat_extinguisher": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -565,15 +389,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_extinguisher.res",
 "save_to_file/path": "uid://bww50m6vp033k"
-},
-"fnat_face": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_face.res",
-"save_to_file/path": "uid://bywhqhithkvwg"
 },
 "fnat_fan": {
 "generate/lightmap_uv": 0,
@@ -628,6 +443,15 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_fatass.res",
 "save_to_file/path": "uid://dgw4rvoyxmb60"
+},
+"fnat_fatass_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://prefabs/mesh/fnat_fatass_001.res",
+"save_to_file/path": "uid://cpcn5fr308rlb"
 },
 "fnat_fatass_alien": {
 "generate/lightmap_uv": 0,
@@ -773,41 +597,14 @@ _subresources={
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_gasmask.res",
 "save_to_file/path": "uid://63plxk2dw1ct"
 },
-"fnat_gguitar": {
+"fnat_ghost": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_gguitar.res",
-"save_to_file/path": "uid://dqf8qmbkhv8g3"
-},
-"fnat_ghatsune": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_ghatsune.res",
-"save_to_file/path": "uid://chde00bpxqla5"
-},
-"fnat_ghatsune_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_ghatsune_acc.res",
-"save_to_file/path": "uid://dq2ubycpk3erf"
-},
-"fnat_gibus": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_gibus.res",
-"save_to_file/path": "uid://d1f25fypvmsec"
+"save_to_file/fallback_path": "res://prefabs/mesh/fnat_ghost.res",
+"save_to_file/path": "uid://22nbiwdlkfxx"
 },
 "fnat_goggles": {
 "generate/lightmap_uv": 0,
@@ -817,24 +614,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_goggles.res",
 "save_to_file/path": "uid://13elpbmqhsx2"
-},
-"fnat_guitar": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_guitar.res",
-"save_to_file/path": "uid://dwdt42cmj7p0k"
-},
-"fnat_gumi": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_gumi.res",
-"save_to_file/path": "uid://b8qhk84dvorci"
 },
 "fnat_hammer": {
 "generate/lightmap_uv": 0,
@@ -854,24 +633,6 @@ _subresources={
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_hat.res",
 "save_to_file/path": "uid://rr2aigpa02r5"
 },
-"fnat_hatsune": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_hatsune.res",
-"save_to_file/path": "uid://bspym3x04pvkp"
-},
-"fnat_hatsune_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_hatsune_acc.res",
-"save_to_file/path": "uid://ch68acm3f1teu"
-},
 "fnat_item_cloks": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -889,24 +650,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_jackhammer.res",
 "save_to_file/path": "uid://dr8m4pyn1vl7r"
-},
-"fnat_kasane": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_kasane.res",
-"save_to_file/path": "uid://dqwkvswvv61rv"
-},
-"fnat_kasane_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_kasane_acc.res",
-"save_to_file/path": "uid://bg5o350lfn7tx"
 },
 "fnat_keyboard": {
 "generate/lightmap_uv": 0,
@@ -980,33 +723,6 @@ _subresources={
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_mirror.res",
 "save_to_file/path": "uid://crdlo4bm0x3nv"
 },
-"fnat_nkasane": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_nkasane.res",
-"save_to_file/path": "uid://puwqylh2feoe"
-},
-"fnat_nkasane_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_nkasane_acc.res",
-"save_to_file/path": "uid://cuj16wwoa8rre"
-},
-"fnat_noteboot": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_noteboot.res",
-"save_to_file/path": "uid://dfvsfc2igur8l"
-},
 "fnat_office_table": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -1042,15 +758,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_pc.res",
 "save_to_file/path": "uid://c6wql3jx6ahn3"
-},
-"fnat_pearto": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_pearto.res",
-"save_to_file/path": "uid://bimfpyrn3gvyt"
 },
 "fnat_phone": {
 "generate/lightmap_uv": 0,
@@ -1124,6 +831,15 @@ _subresources={
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_pod.res",
 "save_to_file/path": "uid://b03ma525urio8"
 },
+"fnat_pumpkin": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://prefabs/mesh/fnat_pumpkin.res",
+"save_to_file/path": "uid://troge7xg017h"
+},
 "fnat_pyro": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -1141,24 +857,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_pyro_sit.res",
 "save_to_file/path": "uid://dgguuv6bko3me"
-},
-"fnat_rin": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_rin.res",
-"save_to_file/path": "uid://bvrfrfd0vm6cg"
-},
-"fnat_rin_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_rin_acc.res",
-"save_to_file/path": "uid://d1lou03vgntyl"
 },
 "fnat_rozetka": {
 "generate/lightmap_uv": 0,
@@ -1349,33 +1047,6 @@ _subresources={
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_trans_mirror.res",
 "save_to_file/path": "uid://dxosuy36lsa3d"
 },
-"fnat_tt_close": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_tt_close.res",
-"save_to_file/path": "uid://cy6xq7yhqs7ph"
-},
-"fnat_tt_smile": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_tt_smile.res",
-"save_to_file/path": "uid://dds8mbiwgxevl"
-},
-"fnat_tt_way": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_tt_way.res",
-"save_to_file/path": "uid://ukd36o6mv0tg"
-},
 "fnat_valve": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -1429,24 +1100,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://prefabs/mesh/fnat_window.res",
 "save_to_file/path": "uid://b7milqfb0xs33"
-},
-"fnat_yi_xi": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_yi_xi.res",
-"save_to_file/path": "uid://cwks5b3lpgu7j"
-},
-"fnat_yi_xi_acc": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://prefabs/mesh/fnat_yi_xi_acc.res",
-"save_to_file/path": "uid://dltds2v1dm81t"
 }
 }
 }

@@ -92,7 +92,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 			fatass.absolute_cd = 5
 			fatass.volume = 10
 			fatass.second = 0
-			fatass.get_node("fnat_guitar").mesh = preload("res://prefabs/mesh/fnat_gguitar.res")
+			fatass.get_node("fnat_guitar").mesh = preload("res://prefabs/mesh/fnat_goggles.res")
 		"q" : 
 			arc.deloadout()
 			SceneManager.change_scene("res://prefabs/misc/main_menu.tscn", {"pattern" : "curtians"}, true)
@@ -118,8 +118,9 @@ func _on_input_text_submitted(new_text: String) -> void:
 		"forgor" : 
 			arc.save.promo_used = []
 		"gaben" :
-			arc.save.coins = 9999
-			arc.save.gems = 9999
+			arc.save.coins += 999
+			arc_event.play_sfx({"path" = "user/gaben"})
+			arc.save.gems += 999
 			arc.screen.update_garbage()
 		"boobs", "tits", "bobs", "pussy", "hamburger", "titties", "scrumpe", "titos" : 
 			arc_event.popup(preload("res://pics/vi3.svg"), "NO " + comm[0], "GO FUCK YOURSELF", true)
@@ -137,7 +138,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 			fatass.volume = 6
 			fatass.second = .0
 			fatass.nbt["pitch"] = 1
-			fatass.get_node("fnat_fatass").mesh = preload("res://prefabs/mesh/fnat_fatass_black.res")
+			fatass.get_node("fnat_fatass").set_instance_shader_parameter("coloring", Color("886d62"))
 			print_output("she says Nigai (にがい) - bitter")
 		"pyro" : 
 			var fatass : fnat_interact_object = get_node("/root/main/office/decor/fatass")
@@ -167,6 +168,9 @@ func _on_input_text_submitted(new_text: String) -> void:
 		"play" :
 			var anim : String = comm.get(1)
 			get_node("/root/main/animation_player").play(anim)
+		"noclip" :
+			arc.user.is_noclip = !arc.user.is_noclip
+			print_output("noclip is " + str(arc.user.is_noclip))
 		"night" : 
 			var night = int(comm[1])
 			#if night == 1 or night == 2 or night == 3 or night == 4 or night == 5 :

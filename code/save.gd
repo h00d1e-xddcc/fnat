@@ -16,6 +16,7 @@ class_name fnat_save
 @export var promo_used : Array[String] = []
 @export var coins : int = -1
 @export var gems : int = -1
+@export var inventory : fnat_inventory
 
 
 # long story short about ver

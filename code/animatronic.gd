@@ -12,7 +12,9 @@ enum behavior_type {DIFF, TIME, DEMO}
 @export var color : Color
 @export var animator : AnimationPlayer
 @export var hunger : float = 0
-@export var acc : Node3D
+@export var mesh_acc : MeshInstance3D
+@export var mesh_main : MeshInstance3D
+@export var mesh_face : MeshInstance3D
 @export var noise : AudioStreamPlayer3D
 @export var is_lock : bool
 @export var is_static : bool
@@ -21,6 +23,7 @@ enum behavior_type {DIFF, TIME, DEMO}
 
 @export var pose_default : Array[String]
 @export var pose_hunting : Array[String]
+@export var cosmetics : Array[fnat_cosmetic_item]
 
 @export var face_default : Array[String]
 @export var face_hunting : Array[String]
@@ -258,10 +261,11 @@ func go_back() :
 	rotation = current_point.rotation
 
 func set_face(face : float = -.375) :
+	if mesh_face == null : return
 	match name :
 		"plush", "vissy", "virus", "endo" : pass
 		_ :
-			acc.set_instance_shader_parameter("f_id", face)
+			mesh_face.set_instance_shader_parameter("f_id", face)
 
 func rotate_head() :
 	var head_position = get_node("skelet/Skeleton3D").get_bone_global_pose(7).origin
@@ -285,10 +289,32 @@ func poof() :
 	global_position = current_point.global_position
 	rotation = current_point.rotation
 
+func model_reload() :
+	var base = preload("res://prefabs/anims/anim_base.tscn").instantiate()
+	add_child(base)
+	mesh_main = MeshInstance3D.new()
+	mesh_acc = MeshInstance3D.new()
+	mesh_face = MeshInstance3D.new()
+
+	$anim.add_child(mesh_main)
+	$anim.add_child(mesh_acc)
+	$anim.add_child(mesh_face)
+
+	mesh_main.mesh = preload("res://prefabs/mesh/anims_kasane.res")
+	mesh_acc.mesh = preload("res://prefabs/mesh/anims_kasane_acc.res")
+	print(mesh_main.skin)
+	mesh_face.mesh = preload("res://prefabs/mesh/anims_face.res")
+
+	animator = $anim/AnimationPlayer
+	animator.play("reference")
+	#match name :
+		
+
 #func reload_accs() :
 	#for i in accs.values() :
 
 func _ready() -> void:
+	if name == "kasane" : model_reload()
 	if mood == behavior_type.DEMO : return
 	in_office.connect(jumpscare)
 	set_face()

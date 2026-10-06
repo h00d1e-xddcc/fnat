@@ -13,11 +13,10 @@ func _ready() -> void:
 		if arc.save.ver != "26.2.0" : 
 			OS.move_to_trash(ProjectSettings.globalize_path("user://fnat.tres"))
 			OS.crash("")
-		arc.lang = load("res://resources/local/" + arc.save.lange + ".tres")
+		arc.lang = load("res://resources/local/" + arc.save.lange + ".tres") as fnat_lange
 		if arc.save.lange == "" : 
 			arc.lang = preload("res://resources/local/en.tres")
-			arc.retranslate_title()
-			get_node("ui/disclaimer_back/lc/panel/en" ).visible = true
+			#get_node("ui/disclaimer_back/lc/panel/en" ).visible = true
 		#$ui/build/control/lang.text = arc.save.lange
 		if arc.save.fullscreen : get_window().mode = Window.MODE_FULLSCREEN
 
@@ -37,7 +36,10 @@ func _ready() -> void:
 		match local :
 			"ru" : arc.lang = preload("res://resources/local/ru.tres") 
 			"en", _ : arc.lang = preload("res://resources/local/en.tres")
+		arc.save.lange = local
 		arc.save.fullscreen = false
+		arc.save.inventory = fnat_inventory.new()
+		arc.save.inventory.init()
 		arc.save.one = false
 		arc.save.vsync = false
 		arc.save.stars = [false, false, false, false, false, false, false]
@@ -98,12 +100,6 @@ func stars_load() :
 	#match stars :
 		#4 :
 
-func _on_vsync_toggled(toggled_on: bool) -> void:
-	if toggled_on : DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
-	else : DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-	arc.save.vsync = toggled_on
-	arc.save_settings()
-
 func _on_the_building() -> void:
 	$ui/build/warning.visible = false
 	get_node("ui/main").visible = false
@@ -113,28 +109,10 @@ func _on_the_building() -> void:
 	get_node("/root/main_menu/audio").volume_db = arc.save.volume + 10
 	get_node("/root/main_menu/audio").play(randi_range(0,20))
 
-func _fullscreen_swap() -> void:
-	var toggled_on : bool = $"ui/build/control/v_box_container/full-screen".button_pressed # ничего себе, как можно
-	if toggled_on : get_window().mode = Window.MODE_FULLSCREEN
-	else : get_window().mode = Window.MODE_WINDOWED
-	arc.save.fullscreen = toggled_on
-	arc.save_settings()
-
 #func _on_h_slider_drag_ended(value_changed: bool) -> void:
 	#var volume = get_node("ui/main/control/label/h_slider").value
 	#arc.volume = volume
 	#get_node("audio").volume_db = arc.volume - 30
-
-func swap_lang() :
-	if arc.lang.dictionary["ui_lang"] == "en" :
-		arc.lang = preload("res://resources/local/ru.tres")
-		get_node("ui/build/control/lang").text = "ru"
-	else :
-		arc.lang = preload("res://resources/local/en.tres")
-		get_node("ui/build/control/lang").text = "en"
-	arc.save.lange = str(get_node("ui/build/control/lang").text)
-	arc.save_settings()
-	arc.retranslate_title()
 
 func _on_continue_pressed() -> void:
 	get_node("ui/loadout_back/continue").disabled = true
@@ -274,28 +252,3 @@ func add(extra_arg_0: int) -> void:
 			arc_event.play_sfx({"path" = "ambient/short/squek", "volume" = -21})
 	if anims[7].ai_lvl > 0 or anims[8].ai_lvl > 0 : get_node("sub/custom/fnat_pc").visible = true
 	else : get_node("sub/custom/fnat_pc").visible = false
-
-func _voiceover_selected(index: int) -> void:
-	print(index)
-	arc.save.voiceover = index
-	arc.save_settings()
-	$ui/build/warning.text = arc.lang.get_word("ui_warn")
-	$ui/build/warning.visible = true
-
-
-func _set_new_volume(value_changed: bool) -> void:
-	arc.save.volume = $ui/build/control/v_box_container/label/h_slider.value
-	arc.save_settings()
-	get_node("/root/main_menu/audio").volume_db = arc.save.volume + 10
-
-
-func _on_extra_press() -> void:
-	pass
-	#OS.alert("You")
-
-
-func _one_toggled(toggled_on: bool) -> void:
-	arc.save.one = toggled_on
-	arc.save_settings()
-	$ui/build/warning.text = arc.lang.get_word("ui_one")
-	$ui/build/warning.visible = true

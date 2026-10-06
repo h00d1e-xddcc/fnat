@@ -209,8 +209,8 @@ func step_hour() :
 func set_up_ambient() :
 	if arc.loss : return
 	var hiest_diff : int
-	arc.user.source["fan"].volume_db = arc.save.volume
-	arc.user.source["spot"].volume_db = arc.save.volume
+	arc.user.source["fan"].volume_db = arc.save.volume - 20
+	arc.user.source["spot"].volume_db = arc.save.volume - 5
 
 	#for i in arc.night.diff.size() :
 		#if arc.night.diff[i] > i : hiest_diff = arc.night.diff[i]

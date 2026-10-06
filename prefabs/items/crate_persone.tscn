@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://tku7phh65rqq"]
+
+[ext_resource type="ArrayMesh" uid="uid://dg6un85f7ryq5" path="res://prefabs/mesh/fnat_crate_big_mega.res" id="1_qv40s"]
+[ext_resource type="Texture2D" uid="uid://bemxq5cia4nfu" path="res://pics/pc/persone.png" id="2_0l0hu"]
+
+[node name="crate_persone" type="MeshInstance3D" unique_id=171536513]
+mesh = ExtResource("1_qv40s")
+
+[node name="sprite_3d" type="Sprite3D" parent="." unique_id=1344968286]
+transform = Transform3D(0.092214, 0, 0, 0, 0.092214, 0, 0, 0, 0.092214, 0.6013987, 0.406483, 0.45375824)
+texture = ExtResource("2_0l0hu")
+
+[node name="sprite_3d2" type="Sprite3D" parent="." unique_id=570180949]
+transform = Transform3D(-0.09219387, -0.0018233891, -0.0006228639, -0.001824681, 0.09219577, 0.00018560117, 0.0006190706, 0.00019788547, -0.09221171, -0.56677866, 0.406483, 0.45375824)
+texture = ExtResource("2_0l0hu")

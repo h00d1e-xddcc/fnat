@@ -43,7 +43,7 @@ naming/script_name_casing=2
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/gd-blender-3d-shortcuts/plugin.cfg", "res://addons/godot-dictionary-inspector/addons/dictionary_inspector/plugin.cfg", "res://addons/godot_gif/plugin.cfg", "res://addons/inspector_tabs/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/kenyoni/qr_code/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/gd-blender-3d-shortcuts/plugin.cfg", "res://addons/godot_gif/plugin.cfg", "res://addons/inspector_tabs/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/kenyoni/qr_code/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [file_customization]
 

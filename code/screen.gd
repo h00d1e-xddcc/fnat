@@ -24,6 +24,9 @@ class_name fnat_screen
 @export var vissy : Control
 @export var hacking : Control
 @export var array : MultiMeshInstance2D
+@export var wallpaper : Control
+@export var inventory : Control
+@export var inventory_slots : Array[Control]
 
 func disable_all() :
 	hacking.visible = false
@@ -37,6 +40,11 @@ func _ready() -> void:
 	noise.visible = false
 	vissy.visible = false
 	teto_input.visible = false
+	for i in arc.save.inventory.slots.size() :
+		var button = preload("res://prefabs/misc/slot.tscn").instantiate()
+		get_node("$sub/ui/garbage_drop/background/texture_rect/inventory/grid_container").add_child(button)
+		#button.get_node("item").texture = arc.save.inventory[i].texture
+		
 	if randi_range(0,100) > 80 : $sub/ui/wallpaper/tme.visible = true
 	if randi_range(0,100) > 80 : $sub/ui/wallpaper/ds.visible = true
 
@@ -44,11 +52,11 @@ func _on_input_event(camera : Camera3D, event : InputEvent, event_position : Vec
 		if arc.loss : return
 		var mouse3D = mesh.global_transform.affine_inverse() * event_position
 		var mouse2D = Vector2(mouse3D.x,mouse3D.z)
-		
+
 		var plane_size = mesh.mesh.size
 		mouse2D += plane_size / 2
 		mouse2D /= plane_size
-		
+
 		event.position = mouse2D * Vector2(sub.size)
 		sub.push_input(event)
 
@@ -78,6 +86,7 @@ func _on_scheme_pressed() -> void:
 	cam.visible = false
 	arc.screen.garbage.visible = false
 	scheme.visible = true
+	wallpaper.visible = true
 	get_node("sub/ui/audio").visible = false
 	arc_event.play_sfx({"type" = "2d", "path" = "user/swap"})
 	
@@ -173,31 +182,40 @@ func teto_word_of_the_day():
 	arc_event.play_sfx({"path" = "anim/virus/teto_word" + str(randi_range(0,2))})
 
 func clear_screen() :
-	$sub/ui/wallpaper.visible = true
+	wallpaper.visible = true
 	cam.visible = false
 	scheme.visible = false
 	garbage.visible = false
+	$sub/scenes/custom.visible = false
+	$sub/scenes/garbage.visible = false
+	$sub/scenes/build.visible = false
+	$sub/scenes/trailer.visible = false
 
 func advestment(value : int = -1) :
 	if randi_range(0,100) > adblock : return
-	var roll = randi_range(0,117)
+	var roll = randi_range(0,123)
 	if value != -1 : roll = value
 	if arc.save.lange == "ru" and randi_range(0, 100) > 85 :
-		ad.get_node("panel/sprite").texture = load("res://pics/ad/ru/" + str(randi_range(0,15)) + ".jpg")
+		ad.get_node("panel/sprite").texture = load("res://pics/ad/ru/" + str(randi_range(0,16)) + ".jpg")
 	else :
 		ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".jpg")
 		if ad.get_node("panel/sprite").texture == null : ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".webp")
 		if ad.get_node("panel/sprite").texture == null : ad.get_node("panel/sprite").texture = load("res://pics/ad/" + str(roll) + ".png")
 
-	var roll_audio = str(randi_range(0,14))
+	var roll_audio = str(randi_range(0,22))
+	if arc.save.lange == "ru"  and randi_range(0,100) > 99 : roll_audio = "-1"
 	ad_source.stream = load("res://resources/sounds/anim/virus/" + roll_audio + ".ogg")
-	if roll_audio == "9" : ad_source.volume_db = randi_range(-30, -25)
+	if roll_audio == "9" or roll_audio == "22" : ad_source.volume_db = randi_range(-30, -25)
 	else : ad_source.volume_db = randi_range(-17, -10)
-	ad_source.play(1)
+	ad_source.pitch_scale = randf_range(.9,1.15)
+	ad_source.play(randf_range(1,7))
 	if ad.get_node("panel/sprite").texture == null :
 		if arc.save.lange == "ru" :
 			ad.get_node("panel/sprite").texture = preload("res://pics/ad/ru/adblock.jpg")
-		else : preload("res://pics/ad/adblock.png")
+			push_error("403 ad_ru -> " + str(value))
+		else : 
+			ad.get_node("panel/sprite").texture = preload("res://pics/ad/adblock.png")
+			push_error("403 ad -> " + str(value))
 		ad_source.stop()
 	ad.get_node("panel/sprite/button").position = Vector2(randi_range(120, 800), randi_range(30, 500))
 	ad.visible = true
@@ -251,6 +269,8 @@ func shock(extra_arg_0: StringName) -> void:
 func _ad_skip() -> void:
 	ad.visible = false
 	ad_source.stop()
+
+#region vissy
 
 func summon_vissy() :
 	if vissy.visible == true : return
@@ -320,6 +340,10 @@ func _vhovered(extra_arg_0: int) -> void:
 		17 : line = "v_power"
 	get_node("sub/ui/vissy/panel/desc").text = arc.lang.get_word(line)
 
+#endregion
+
+#region tf2_panel
+
 func update_garbage() :
 	$sub/ui/garbage_drop/v/coins.text = str(arc.save.coins)
 	$sub/ui/garbage_drop/v/gems.text = str(arc.save.gems)
@@ -331,11 +355,13 @@ func promo_enter(new_text: String) -> void:
 	if arc.save.promo_used.has(new_text) : return
 	match new_text :
 		"gaben" :
+			arc_event.play_sfx({"path" = "user/gaben"})
 			arc.save.gems =+ 99999
 			arc.save.coins =+ 99999
 		"zoomer" :
 			arc.save.gems =+ 5
 			arc.save.coins =+ 15
+		_ : return
 	arc.save.promo_used.append(new_text)
 	arc.save_settings()
 	update_garbage()
@@ -348,10 +374,10 @@ func _on_garbage_pressed() -> void:
 	clear_screen()
 	match garbage.visible :
 		true :
-			garbage.visible = !true
+			garbage.visible = false
 		false :
-			garbage.visible = !false
-			$sub/scenes/garbage.visible = !false
+			garbage.visible = true
+			wallpaper.visible = false
 
 func slut_ad(time : float = 5) :
 	advestment()
@@ -368,3 +394,59 @@ func slut_ad(time : float = 5) :
 	arc.save.coins += 4
 	arc.save_settings()
 	update_garbage()
+#endregion
+
+#region settings
+
+func _swap_screen(extra_arg_0: String) -> void:
+	$sub/ui/garbage_drop/background/texture_rect/settings.visible = false
+	$sub/ui/garbage_drop/background/texture_rect/inventory.visible = false
+	$sub/ui/garbage_drop/background/texture_rect/shop.visible = false
+	$sub/ui/garbage_drop/background/texture_rect/scrap.visible = false
+	get_node("sub/ui/garbage_drop/background/texture_rect/" + extra_arg_0).visible = true
+
+func _on_lange_item_selected(index: int) -> void:
+	match index :
+		0 : arc.lang = preload("res://resources/local/en.tres")
+		1 : arc.lang = preload("res://resources/local/ru.tres")
+	arc.save.lange = arc.lang.get_lange()
+	arc.retranslate_title()
+	arc.save_settings()
+
+func _on_option_button_item_selected(index: int) -> void:
+	arc.save.voiceover = index
+	arc.save_settings()
+
+func _voiceover_selected(index: int) -> void:
+	print(index)
+	arc.save.voiceover = index
+	arc.save_settings()
+	update_warning(arc.lang.get_word("ui_warn"))
+
+func _on_vsync_toggled(toggled_on: bool) -> void:
+	if toggled_on : DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else : DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	arc.save.vsync = toggled_on
+	arc.save_settings()
+
+func _set_new_volume(value_changed: bool) -> void:
+	arc.save.volume = $/root/main/office/screen/sub/ui/garbage_drop/background/texture_rect/settings/control/slider/grid_container/label.value
+	arc.save_settings()
+############################################################################################################
+
+func _one_toggled(toggled_on: bool) -> void:
+	arc.save.one = toggled_on
+	arc.save_settings()
+	update_warning(arc.lang.get_word("ui_one"))
+
+func _fullscreen_swap() -> void:
+	var toggled_on : bool = $"/root/main/office/screen/sub/ui/garbage_drop/background/texture_rect/settings/control/check/grid_container/full-screen".button_pressed # ничего себе, как можно
+	if toggled_on : get_window().mode = Window.MODE_FULLSCREEN
+	else : get_window().mode = Window.MODE_WINDOWED
+	arc.save.fullscreen = toggled_on
+	arc.save_settings()
+
+func update_warning(text : String) :
+	$/root/main/office/screen/sub/ui/garbage_drop/texture_rect/settings/warning.text = text
+	$/root/main/office/screen/sub/ui/garbage_drop/texture_rect/settings/warning.visible = true
+#endregion
